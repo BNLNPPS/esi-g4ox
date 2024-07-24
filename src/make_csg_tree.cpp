@@ -1,0 +1,52 @@
+#include <algorithm>
+#include <string>
+#include <vector>
+
+#include "g4ox.h"
+
+using namespace std;
+
+
+class ArgParser
+{
+ public:
+  ArgParser(int &argc, char **argv);
+  string get_value(const string &option) const;
+ private:
+   vector<string> args;
+};
+
+
+int main(int argc, char **argv)
+{
+  ArgParser arg_parser(argc, argv);
+
+  string gdmlpath = arg_parser.get_value("-f");
+
+  from_gdml(gdmlpath);
+
+  return EXIT_SUCCESS;
+} 
+
+
+ArgParser::ArgParser(int &argc, char **argv)
+{
+  for (int i=1; i < argc; ++i)
+    args.push_back( string(argv[i]) );
+}
+
+string ArgParser::get_value(const string &option) const
+{
+  auto itr = find(args.begin(), args.end(), option);
+
+  string value{""};
+
+  if (itr != args.end() && ++itr != args.end()) {
+    value = *itr;
+  }
+
+  // Default values
+  if (value.empty() && option == "-f") return "geom.gdml";
+
+  return value;
+}
