@@ -27,6 +27,7 @@ set(G4OX_CMAKE_PROJECT_CONFIG_FILE  "${G4OX_CMAKE_CONFIG_DIR}/${PROJECT_NAME}Con
 
 # Set up external dependencies
 find_package(Geant4 REQUIRED)
+find_package(g4cx REQUIRED)
 
 add_subdirectory(src)
 
