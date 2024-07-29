@@ -1,6 +1,11 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <iostream>
+
+#include <plog/Init.h>
+#include <plog/Formatters/TxtFormatter.h>
+#include <plog/Appenders/ColorConsoleAppender.h>
 
 #include "g4ox.h"
 
@@ -20,6 +25,10 @@ class ArgParser
 int main(int argc, char **argv)
 {
   ArgParser arg_parser(argc, argv);
+
+  using PLogFormat = plog::TxtFormatter;
+  static plog::ColorConsoleAppender<PLogFormat> consoleAppender;
+  plog::init(plog::debug, &consoleAppender);
 
   string gdmlpath = arg_parser.get_value("-f");
 
