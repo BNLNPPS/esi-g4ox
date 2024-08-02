@@ -25,6 +25,8 @@ set(G4OX_CMAKE_CONFIG_DIR           "${CMAKE_CURRENT_BINARY_DIR}")
 set(G4OX_CMAKE_VERSION_CONFIG_FILE  "${G4OX_CMAKE_CONFIG_DIR}/${PROJECT_NAME}ConfigVersion.cmake")
 set(G4OX_CMAKE_PROJECT_CONFIG_FILE  "${G4OX_CMAKE_CONFIG_DIR}/${PROJECT_NAME}Config.cmake")
 
+list(APPEND CMAKE_MODULE_PATH "$ENV{OPTICKS_HOME}/cmake/Modules")
+
 # Set up external dependencies
 find_package(Geant4 REQUIRED)
 find_package(g4cx REQUIRED)
