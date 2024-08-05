@@ -1,0 +1,2419 @@
+<?xml version="1.0"?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+  <define>
+    <matrix name="RINDEX__Vacuum" coldim="2" values="1e-09 1
+5.1e-09 1"/>
+    <matrix name="RINDEX__AirOptical" coldim="2" values="1e-09 1.00029
+5.1e-09 1.00029"/>
+    <matrix name="ABSLENGTH__AirOptical" coldim="2" values="1e-09 4
+5.1e-09 4"/>
+    <matrix name="RINDEX__Quartz" coldim="2" values="1e-09 1.46
+5.1e-09 1.46"/>
+    <matrix name="RINDEX__N2" coldim="2" values="1e-09 1.00033
+4e-09 1.00033
+5.1e-09 1.00033"/>
+    <matrix name="RINDEX__Pyrex" coldim="2" values="1e-09 1.5
+4e-09 1.5
+5.1e-09 1.5"/>
+    <matrix name="ABSLENGTH__Pyrex" coldim="2" values="1e-09 10
+4e-09 10
+5.1e-09 10"/>
+    <matrix name="RINDEX__DIRCQuartz" coldim="2" values="1.90745e-09 1.45653
+1.93725e-09 1.45681
+1.968e-09 1.4571
+1.99974e-09 1.4574
+2.03253e-09 1.45771
+2.0664e-09 1.45804
+2.10143e-09 1.45838
+2.13766e-09 1.45873
+2.17516e-09 1.45911
+2.214e-09 1.4595
+2.25426e-09 1.45991
+2.296e-09 1.46034
+2.33932e-09 1.4608
+2.38431e-09 1.46128
+2.43106e-09 1.46179
+2.47968e-09 1.46233
+2.53029e-09 1.4629
+2.583e-09 1.4635
+2.63796e-09 1.46415
+2.69531e-09 1.46483
+2.7552e-09 1.46557
+2.81782e-09 1.46635
+2.88335e-09 1.46719
+2.952e-09 1.46809
+3.024e-09 1.46907
+3.0996e-09 1.47012
+3.17908e-09 1.47125
+3.26274e-09 1.47249
+3.35092e-09 1.47383
+3.44401e-09 1.47529
+3.54241e-09 1.47689
+3.64659e-09 1.47865
+3.7571e-09 1.48059
+3.87451e-09 1.48274
+3.99949e-09 1.48513
+4.13281e-09 1.48779"/>
+    <matrix name="ABSLENGTH__DIRCQuartz" coldim="2" values="1.90745e-09 233615
+1.93725e-09 219567
+1.968e-09 206162
+1.99974e-09 193381
+2.03253e-09 181203
+2.0664e-09 169610
+2.10143e-09 158582
+2.13766e-09 148101
+2.17516e-09 138148
+2.214e-09 128706
+2.25426e-09 119756
+2.296e-09 111281
+2.33932e-09 103264
+2.38431e-09 95688.5
+2.43106e-09 88537.4
+2.47968e-09 81794.9
+2.53029e-09 75445
+2.583e-09 69472.2
+2.63796e-09 63861.3
+2.69531e-09 58597.3
+2.7552e-09 53665.6
+2.81782e-09 49052
+2.88335e-09 44742.5
+2.952e-09 40723.3
+3.024e-09 36981.3
+3.0996e-09 33503.2
+3.17908e-09 30276.4
+3.26274e-09 27288.6
+3.35092e-09 24527.5
+3.44401e-09 21981.4
+3.54241e-09 19639
+3.64659e-09 17488.9
+3.7571e-09 15520.4
+3.87451e-09 13722.9
+3.99949e-09 12086.3
+4.13281e-09 10600.6"/>
+    <matrix name="RINDEX__DIRCEpotek" coldim="2" values="1.90745e-09 1.55403
+1.93725e-09 1.55557
+1.968e-09 1.55698
+1.99974e-09 1.55827
+2.03253e-09 1.55945
+2.0664e-09 1.56056
+2.10143e-09 1.5616
+2.13766e-09 1.5626
+2.17516e-09 1.56358
+2.214e-09 1.56455
+2.25426e-09 1.56553
+2.296e-09 1.56654
+2.33932e-09 1.5676
+2.38431e-09 1.56872
+2.43106e-09 1.56993
+2.47968e-09 1.57125
+2.53029e-09 1.57269
+2.583e-09 1.57427
+2.63796e-09 1.57601
+2.69531e-09 1.57793
+2.7552e-09 1.58005
+2.81782e-09 1.58238
+2.88335e-09 1.58495
+2.952e-09 1.58777
+3.024e-09 1.59086
+3.0996e-09 1.59424
+3.17908e-09 1.59793
+3.26274e-09 1.60195
+3.35092e-09 1.60631
+3.44401e-09 1.61103
+3.54241e-09 1.61614
+3.64659e-09 1.62165
+3.7571e-09 1.62758
+3.87451e-09 1.63395
+3.99949e-09 1.64077
+4.13281e-09 1.64807"/>
+    <matrix name="ABSLENGTH__DIRCEpotek" coldim="2" values="1.90745e-09 254000
+1.93725e-09 254000
+1.968e-09 254000
+1.99974e-09 254000
+2.03253e-09 254000
+2.0664e-09 254000
+2.10143e-09 254000
+2.13766e-09 254000
+2.17516e-09 254000
+2.214e-09 254000
+2.25426e-09 254000
+2.296e-09 254000
+2.33932e-09 254000
+2.38431e-09 254000
+2.43106e-09 254000
+2.47968e-09 254000
+2.53029e-09 254000
+2.583e-09 254000
+2.63796e-09 254000
+2.69531e-09 254000
+2.7552e-09 254000
+2.81782e-09 254000
+2.88335e-09 254000
+2.952e-09 254000
+3.024e-09 254000
+3.0996e-09 25.3987
+3.17908e-09 12.6987
+3.26274e-09 5.07873
+3.35092e-09 2.53873
+3.44401e-09 1.26873
+3.54241e-09 0.845396
+3.64659e-09 0.633729
+3.7571e-09 0.563173
+3.87451e-09 0.361586
+3.99949e-09 0.195626
+4.13281e-09 0.0983324"/>
+    <matrix name="RINDEX__DIRCNlak33a" coldim="2" values="1e-09 1.73816
+1.2511e-09 1.73836
+1.26386e-09 1.73858
+1.27687e-09 1.73881
+1.29016e-09 1.73904
+1.30372e-09 1.73928
+1.31758e-09 1.73952
+1.33173e-09 1.73976
+1.34619e-09 1.74001
+1.36097e-09 1.74026
+1.37607e-09 1.74052
+1.39152e-09 1.74078
+1.40731e-09 1.74105
+1.42347e-09 1.74132
+1.44e-09 1.7416
+1.45692e-09 1.74189
+1.47425e-09 1.74218
+1.49199e-09 1.74249
+1.51016e-09 1.74279
+1.52878e-09 1.74311
+1.54787e-09 1.74344
+1.56744e-09 1.74378
+1.58751e-09 1.74412
+1.6081e-09 1.74448
+1.62923e-09 1.74485
+1.65092e-09 1.74522
+1.6732e-09 1.74562
+1.69609e-09 1.74602
+1.71961e-09 1.74644
+1.7438e-09 1.74687
+1.76868e-09 1.74732
+1.79427e-09 1.74779
+1.82062e-09 1.74827
+1.84775e-09 1.74878
+1.87571e-09 1.7493
+1.90452e-09 1.74985
+1.93423e-09 1.75042
+1.96488e-09 1.75101
+1.99652e-09 1.75163
+2.0292e-09 1.75228
+2.06296e-09 1.75296
+2.09787e-09 1.75368
+2.13398e-09 1.75443
+2.17135e-09 1.75521
+2.21006e-09 1.75604
+2.25017e-09 1.75692
+2.29176e-09 1.75784
+2.33492e-09 1.75882
+2.37973e-09 1.75985
+2.42631e-09 1.76095
+2.47473e-09 1.76211
+2.52514e-09 1.76335
+2.57763e-09 1.76467
+2.63236e-09 1.76608
+2.68946e-09 1.76758
+2.7491e-09 1.7692
+2.81143e-09 1.77093
+2.87666e-09 1.77279
+2.94499e-09 1.7748
+3.01665e-09 1.77698
+3.09187e-09 1.77934
+3.17095e-09 1.7819
+3.25418e-09 1.7847
+3.34189e-09 1.78775
+3.43446e-09 1.79111
+3.53231e-09 1.79481
+3.6359e-09 1.79889
+3.74575e-09 1.80343
+3.86244e-09 1.8085
+3.98663e-09 1.81419
+4.11908e-09 1.82061
+4.26062e-09 1.8279
+4.41225e-09 1.83625
+4.57506e-09 1.84589
+4.75035e-09 1.85713
+4.93961e-09 1.87039"/>
+    <matrix name="RINDEX__VM2000" coldim="2" values="1.3776e-09 1.42
+4.13281e-09 1.42"/>
+    <matrix name="ABSLENGTH__DIRCNlak33a" coldim="2" values="1e-09 37181.3
+1.2511e-09 35209.5
+1.26386e-09 33102.1
+1.27687e-09 31081.4
+1.29016e-09 29145.8
+1.30372e-09 27293.7
+1.31758e-09 25523.8
+1.33173e-09 23834.2
+1.34619e-09 22223.4
+1.36097e-09 20689.7
+1.37607e-09 19231.3
+1.39152e-09 17846.3
+1.40731e-09 16533.1
+1.42347e-09 15289.6
+1.44e-09 14114
+1.45692e-09 13004.3
+1.47425e-09 11958.5
+1.49199e-09 10974.7
+1.51016e-09 10050.7
+1.52878e-09 9184.63
+1.54787e-09 8374.31
+1.56744e-09 7617.67
+1.58751e-09 6912.61
+1.6081e-09 6257.02
+1.62923e-09 5648.8
+1.65092e-09 5085.83
+1.6732e-09 4566.01
+1.69609e-09 4087.24
+1.71961e-09 3647.46
+1.7438e-09 3244.58
+1.76868e-09 2876.59
+1.79427e-09 2541.46
+1.82062e-09 2237.22
+1.84775e-09 1961.93
+1.87571e-09 1713.69
+1.90452e-09 1490.65
+1.93423e-09 1291.02
+1.96488e-09 1113.03
+1.99652e-09 955.013
+2.0292e-09 815.33
+2.06296e-09 692.425
+2.09787e-09 584.804
+2.13398e-09 491.046
+2.17135e-09 409.804
+2.21006e-09 339.806
+2.25017e-09 279.854
+2.29176e-09 228.832
+2.33492e-09 185.699
+2.37973e-09 149.492
+2.42631e-09 119.328
+2.47473e-09 94.3973
+2.52514e-09 73.9657
+2.57763e-09 57.3715
+2.63236e-09 44.0228
+2.68946e-09 33.394
+2.7491e-09 25.0229
+2.81143e-09 18.5064
+2.87666e-09 13.4967
+2.94499e-09 9.69664
+3.01665e-09 6.85529
+3.09187e-09 4.76343
+3.17095e-09 3.24882
+3.25418e-09 2.17174
+3.34189e-09 1.42056
+3.43446e-09 0.907612
+3.53231e-09 0.565267
+3.6359e-09 0.34241
+3.74575e-09 0.201226
+3.86244e-09 0.114403
+3.98663e-09 0.062722
+4.11908e-09 0.0330414
+4.26062e-09 0.0166558
+4.41225e-09 0.00799649
+4.57506e-09 0.00363677
+4.75035e-09 0.00155708
+4.93961e-09 0.000623089"/>
+    <matrix name="RINDEX__DIRCSapphire" coldim="2" values="1.02212e-09 1.75188
+1.05518e-09 1.75253
+1.09045e-09 1.75319
+1.1261e-09 1.75382
+1.16307e-09 1.75444
+1.20023e-09 1.75505
+1.23984e-09 1.75567
+1.28043e-09 1.75629
+1.32221e-09 1.75691
+1.36561e-09 1.75754
+1.41019e-09 1.75818
+1.45641e-09 1.75883
+1.50393e-09 1.75949
+1.5531e-09 1.76017
+1.60393e-09 1.76088
+1.65643e-09 1.7616
+1.71059e-09 1.76235
+1.76665e-09 1.76314
+1.82437e-09 1.76395
+1.88397e-09 1.7648
+1.94576e-09 1.7657
+2.00946e-09 1.76664
+2.07504e-09 1.76763
+2.14283e-09 1.76867
+2.21321e-09 1.76978
+2.28542e-09 1.77095
+2.36025e-09 1.77219
+2.43727e-09 1.7735
+2.51693e-09 1.7749
+2.59924e-09 1.77639
+2.6848e-09 1.77799
+2.77245e-09 1.77968
+2.86337e-09 1.7815
+2.95693e-09 1.78343
+3.05379e-09 1.78551
+3.1532e-09 1.78772
+3.25674e-09 1.79011
+3.36273e-09 1.79265
+3.47294e-09 1.7954
+3.58646e-09 1.79835
+3.70433e-09 1.80154
+3.82549e-09 1.80497
+3.94979e-09 1.80864
+4.07976e-09 1.81266
+4.21285e-09 1.81696
+4.35032e-09 1.82163
+4.4938e-09 1.82674
+4.64012e-09 1.83223
+4.79258e-09 1.83825
+4.94946e-09 1.8448
+5.11064e-09 1.85191
+5.27816e-09 1.85975
+5.44985e-09 1.86829
+5.62797e-09 1.87774
+5.81266e-09 1.88822
+6.00407e-09 1.89988
+6.1992e-09 1.9127"/>
+    <matrix name="ABSLENGTH__DIRCSapphire" coldim="2" values="1.02212e-09 35.0051
+1.05518e-09 30.6241
+1.09045e-09 27.2261
+1.1261e-09 27.9226
+1.16307e-09 28.6437
+1.20023e-09 29.3904
+1.23984e-09 30.1904
+1.28043e-09 31.0351
+1.32221e-09 31.9283
+1.36561e-09 32.8902
+1.41019e-09 33.9286
+1.45641e-09 35.0525
+1.50393e-09 36.2724
+1.5531e-09 37.6214
+1.60393e-09 39.1412
+1.65643e-09 40.8131
+1.71059e-09 42.7135
+1.76665e-09 44.9164
+1.82437e-09 47.424
+1.88397e-09 50.3751
+1.94576e-09 42.4371
+2.00946e-09 45.0512
+2.07504e-09 48.1764
+2.14283e-09 51.9629
+2.21321e-09 26.4962
+2.28542e-09 27.7522
+2.36025e-09 29.2202
+2.43727e-09 30.9495
+2.51693e-09 33.0389
+2.59924e-09 35.5962
+2.6848e-09 27.9174
+2.77245e-09 29.9856
+2.86337e-09 32.5849
+2.95693e-09 35.8828
+3.05379e-09 28.6622
+3.1532e-09 31.5914
+3.25674e-09 30.132
+3.36273e-09 28.986
+3.47294e-09 32.8204
+3.58646e-09 32.0766
+3.70433e-09 37.7382
+3.82549e-09 37.7423
+3.94979e-09 32.0861
+4.07976e-09 39.585
+4.21285e-09 52.7699
+4.35032e-09 82.6489
+4.4938e-09 217.006
+4.64012e-09 0
+4.79258e-09 0
+4.94946e-09 0
+5.11064e-09 0
+5.27816e-09 0
+5.44985e-09 11.861
+5.62797e-09 1.2869
+5.81266e-09 0.479845
+6.00407e-09 0.232194
+6.1992e-09 0.228269"/>
+    <matrix name="REFLECTIVITY_mirror" coldim="2" values="1e-09 0.9
+4e-09 0.9
+5.1e-09 0.9"/>
+    <matrix name="REFLECTIVITY_DIRC_mirror" coldim="2" values="1.90745e-09 0.8755
+1.93725e-09 0.882
+1.968e-09 0.889
+1.99974e-09 0.895
+2.03253e-09 0.9
+2.0664e-09 0.9025
+2.10143e-09 0.91
+2.13766e-09 0.913
+2.17516e-09 0.9165
+2.214e-09 0.92
+2.25426e-09 0.923
+2.296e-09 0.9245
+2.33932e-09 0.9285
+2.38431e-09 0.932
+2.43106e-09 0.934
+2.47968e-09 0.935
+2.53029e-09 0.936
+2.583e-09 0.9385
+2.63796e-09 0.9395
+2.69531e-09 0.94
+2.7552e-09 0.9405
+2.81782e-09 0.9405
+2.88335e-09 0.9405
+2.952e-09 0.9405
+3.024e-09 0.94
+3.0996e-09 0.9385
+3.17908e-09 0.936
+3.26274e-09 0.934
+3.35092e-09 0.931
+3.44401e-09 0.9295
+3.54241e-09 0.928
+3.64659e-09 0.928
+3.7571e-09 0.921
+3.87451e-09 0.92
+3.99949e-09 0.927
+4.13281e-09 0.9215"/>
+    <matrix name="RINDEX__Aerogel" coldim="2" values="1e-09 1.03
+4e-09 1.03
+5.1e-09 1.03"/>
+    <matrix name="ABSLENGTH__Aerogel" coldim="2" values="1e-09 4
+4e-09 4
+5.1e-09 4"/>
+    <matrix name="RINDEX__Acrylic" coldim="2" values="1.12727e-09 1.49
+2.06667e-09 1.49
+3.1e-09 1.49"/>
+    <matrix name="ABSLENGTH__Acrylic" coldim="2" values="1.12727e-09 263.1
+1.24e-09 263.1
+1.37778e-09 263.1
+1.55e-09 263.1
+1.77143e-09 250
+2.06667e-09 227.2
+2.48e-09 200
+3.1e-09 131.5
+4.13334e-09 161.3
+4.96e-09 74
+5.51111e-09 12.5
+5.90477e-09 1
+6.2e-09 0"/>
+    <matrix name="RINDEX__C2F6_DRICH" coldim="2" values="1.23984e-09 1.00075
+1.30969e-09 1.00075
+1.38788e-09 1.00075
+1.476e-09 1.00075
+1.57607e-09 1.00075
+1.69069e-09 1.00075
+1.8233e-09 1.00075
+1.97847e-09 1.00075
+2.16251e-09 1.00075
+2.38431e-09 1.00076
+2.6568e-09 1.00076
+2.99962e-09 1.00076
+3.44401e-09 1.00077
+4.04296e-09 1.00078
+4.89411e-09 1.0008
+6.19921e-09 1.00084"/>
+    <matrix name="ABSLENGTH__C2F6_DRICH" coldim="2" values="1.23984e-09 3000
+6.19921e-09 3000"/>
+    <matrix name="RINDEX__C4F10_PFRICH" coldim="2" values="1.23984e-09 1.0013
+1.30969e-09 1.0013
+1.38788e-09 1.0013
+1.476e-09 1.0013
+1.57607e-09 1.0013
+1.69069e-09 1.0013
+1.8233e-09 1.0013
+1.97847e-09 1.00131
+2.16251e-09 1.00131
+2.38431e-09 1.00131
+2.6568e-09 1.00132
+2.99962e-09 1.00133
+3.44401e-09 1.00134
+4.04296e-09 1.00137
+4.89411e-09 1.00141
+6.19921e-09 1.00149"/>
+    <matrix name="ABSLENGTH__C4F10_PFRICH" coldim="2" values="1.23984e-09 600
+6.19921e-09 600"/>
+    <matrix name="RINDEX__Aerogel_DRICH" coldim="2" values="1.23984e-09 1.01826
+1.28348e-09 1.01828
+1.3303e-09 1.01829
+1.38067e-09 1.01831
+1.435e-09 1.01833
+1.49379e-09 1.01835
+1.55759e-09 1.01838
+1.62709e-09 1.0184
+1.70308e-09 1.01844
+1.78652e-09 1.01847
+1.87855e-09 1.01852
+1.96673e-09 1.01856
+2.0549e-09 1.01861
+2.14308e-09 1.01866
+2.23126e-09 1.01871
+2.31943e-09 1.01876
+2.40761e-09 1.01881
+2.49579e-09 1.01887
+2.58396e-09 1.01893
+2.67214e-09 1.01899
+2.76032e-09 1.01905
+2.84849e-09 1.01912
+2.93667e-09 1.01919
+3.02485e-09 1.01926
+3.11302e-09 1.01933
+3.2012e-09 1.01941
+3.28938e-09 1.01948
+3.37755e-09 1.01956
+3.46573e-09 1.01965
+3.55391e-09 1.01973
+3.64208e-09 1.01982
+3.73026e-09 1.01991
+3.81844e-09 1.02001
+3.90661e-09 1.0201
+3.99479e-09 1.0202
+4.08297e-09 1.0203
+4.17114e-09 1.02041
+4.25932e-09 1.02052
+4.3475e-09 1.02063
+4.43567e-09 1.02074
+4.52385e-09 1.02086
+4.61203e-09 1.02098
+4.7002e-09 1.02111
+4.78838e-09 1.02123
+4.87656e-09 1.02136
+4.96473e-09 1.0215
+5.05291e-09 1.02164
+5.14109e-09 1.02178
+5.22927e-09 1.02193
+5.31744e-09 1.02208
+5.40562e-09 1.02223
+5.4938e-09 1.02239
+5.58197e-09 1.02255
+5.67015e-09 1.02271
+5.75833e-09 1.02288
+5.8465e-09 1.02306
+5.93468e-09 1.02324
+6.02286e-09 1.02342
+6.11103e-09 1.02361
+6.19921e-09 1.02381"/>
+    <matrix name="ABSLENGTH__Aerogel_DRICH" coldim="2" values="1.23984e-09 58.735
+1.25237e-09 58.729
+1.26514e-09 58.722
+1.27819e-09 58.715
+1.2915e-09 58.709
+1.3051e-09 58.702
+1.31898e-09 58.695
+1.33316e-09 58.688
+1.34765e-09 58.682
+1.36246e-09 58.675
+1.3776e-09 58.668
+1.39308e-09 58.661
+1.40891e-09 58.655
+1.42511e-09 58.648
+1.44168e-09 58.64
+1.45864e-09 58.632
+1.476e-09 58.622
+1.49379e-09 58.611
+1.512e-09 58.599
+1.53067e-09 58.586
+1.5498e-09 58.571
+1.56942e-09 58.554
+1.58954e-09 58.536
+1.61018e-09 58.515
+1.63137e-09 58.491
+1.65312e-09 58.465
+1.67546e-09 58.435
+1.69841e-09 58.401
+1.722e-09 58.363
+1.74626e-09 58.32
+1.7712e-09 58.272
+1.79687e-09 58.217
+1.8233e-09 58.154
+1.85051e-09 58.082
+1.87855e-09 58.001
+1.90745e-09 57.908
+1.93725e-09 57.801
+1.968e-09 57.679
+1.99974e-09 57.539
+2.03253e-09 57.378
+2.0664e-09 57.193
+2.10143e-09 56.979
+2.13766e-09 56.733
+2.17516e-09 56.448
+2.214e-09 56.118
+2.25426e-09 55.737
+2.296e-09 55.295
+2.33932e-09 54.783
+2.38431e-09 54.19
+2.43106e-09 53.503
+2.47968e-09 52.71
+2.53029e-09 51.793
+2.583e-09 50.738
+2.63796e-09 49.527
+2.69531e-09 48.145
+2.7552e-09 46.574
+2.81782e-09 44.803
+2.88335e-09 42.823
+2.952e-09 40.631
+3.024e-09 38.232
+3.0996e-09 35.642
+3.17908e-09 32.886
+3.26274e-09 30.003
+3.35092e-09 27.04
+3.44401e-09 24.052
+3.54241e-09 21.099
+3.64659e-09 18.239
+3.7571e-09 15.529
+3.87451e-09 13.016
+3.99949e-09 10.734
+4.13281e-09 8.708
+4.27532e-09 6.947
+4.42801e-09 5.449
+4.59201e-09 4.203
+4.76862e-09 3.187
+4.95937e-09 2.376
+5.16601e-09 1.741
+5.39062e-09 1.254
+5.63564e-09 0.886
+5.90401e-09 0.615
+6.19921e-09 0.418"/>
+    <matrix name="RAYLEIGH__Aerogel_DRICH" coldim="2" values="1.23984e-09 148.148
+1.28348e-09 129.005
+1.3303e-09 111.779
+1.38067e-09 96.339
+1.435e-09 82.5565
+1.49379e-09 70.3086
+1.55759e-09 59.4769
+1.62709e-09 49.9477
+1.70308e-09 41.6123
+1.78652e-09 34.3664
+1.87855e-09 28.1107
+1.96673e-09 23.3984
+2.0549e-09 19.6334
+2.14308e-09 16.5962
+2.23126e-09 14.1242
+2.31943e-09 12.0958
+2.40761e-09 10.4188
+2.49579e-09 9.0226
+2.58396e-09 7.8527
+2.67214e-09 6.8663
+2.76032e-09 6.0301
+2.84849e-09 5.3174
+2.93667e-09 4.707
+3.02485e-09 4.1816
+3.11302e-09 3.7277
+3.2012e-09 3.3336
+3.28938e-09 2.9903
+3.37755e-09 2.69
+3.46573e-09 2.4265
+3.55391e-09 2.1946
+3.64208e-09 1.9896
+3.73026e-09 1.808
+3.81844e-09 1.6468
+3.90661e-09 1.503
+3.99479e-09 1.3746
+4.08297e-09 1.2596
+4.17114e-09 1.1564
+4.25932e-09 1.0637
+4.3475e-09 0.9799
+4.43567e-09 0.9043
+4.52385e-09 0.8358
+4.61203e-09 0.7738
+4.7002e-09 0.7172
+4.78838e-09 0.6659
+4.87656e-09 0.6191
+4.96473e-09 0.5762
+5.05291e-09 0.537
+5.14109e-09 0.5011
+5.22927e-09 0.4681
+5.31744e-09 0.4379
+5.40562e-09 0.41
+5.4938e-09 0.3844
+5.58197e-09 0.3606
+5.67015e-09 0.3386
+5.75833e-09 0.3184
+5.8465e-09 0.2996
+5.93468e-09 0.2822
+6.02286e-09 0.266
+6.11103e-09 0.251
+6.19921e-09 0.237"/>
+    <matrix name="RINDEX__Acrylic_DRICH" coldim="2" values="4.13281e-09 1.5017
+8.45347e-09 1.5017"/>
+    <matrix name="ABSLENGTH__Acrylic_DRICH" coldim="2" values="4.13281e-09 8.20704
+4.22099e-09 3.69138
+4.30916e-09 1.33325
+4.39734e-09 0.503627
+4.48552e-09 0.23393
+4.57369e-09 0.136177
+4.66187e-09 0.0933192
+4.75005e-09 0.0708268
+4.83822e-09 0.0573082
+4.9264e-09 0.0483641
+5.01458e-09 0.0420282
+5.10275e-09 0.0373102
+5.19093e-09 0.033662
+5.27911e-09 0.0307572
+5.36728e-09 0.0283902
+5.45546e-09 0.0264235
+5.54364e-09 0.0247641
+5.63181e-09 0.0233453
+5.71999e-09 0.0221177
+5.80817e-09 0.0210456
+5.89634e-09 0.0201012
+5.98452e-09 0.0192627
+6.0727e-09 0.0185134
+6.16087e-09 0.0178399
+6.24905e-09 0.0172309
+6.33723e-09 0.0166779
+6.4254e-09 0.0166779
+6.51358e-09 0.0166779
+6.60176e-09 0.0166779
+6.68993e-09 0.0166779
+6.77811e-09 0.0166779
+6.86629e-09 0.0166779
+6.95446e-09 0.0166779
+7.04264e-09 0.0166779
+7.13082e-09 0.0166779
+7.21899e-09 0.0166779
+7.30717e-09 0.0166779
+7.39535e-09 0.0166779
+7.48353e-09 0.0166779
+7.5717e-09 0.0166779
+7.65988e-09 0.0166779
+7.74806e-09 0.0166779
+7.83623e-09 0.0166779
+7.92441e-09 0.0166779
+8.01259e-09 0.0166779
+8.10076e-09 0.0166779
+8.18894e-09 0.0166779
+8.27712e-09 0.0166779
+8.36529e-09 0.0166779
+8.45347e-09 0.0166779"/>
+    <matrix name="RINDEX__0x56336cc78cc0" coldim="2" values="1.034e-09 1.5
+4.136e-09 1.5"/>
+    <matrix name="REFLECTIVITY__0x56336cc785f0" coldim="2" values="1.12727e-09 0.08
+3.1e-09 0.08"/>
+    <matrix name="REFLECTIVITY__0x56336cc81d50" coldim="2" values="1e-09 0.9
+7e-09 0.9"/>
+    <matrix name="EFFICIENCY__0x56336cc81fd0" coldim="2" values="1e-09 1
+7e-09 1"/>
+    <matrix name="BirksConstant_0x56336cd80250" coldim="1" values="3.32999824789"/>
+    <matrix name="BirksConstant_0x56336cd8ff90" coldim="1" values="12.5999933704"/>
+    <matrix name="BirksConstant_0x56336cd90a50" coldim="1" values="3.32999824789"/>
+    <matrix name="BirksConstant_0x56336cd9f080" coldim="1" values="12.5999933704"/>
+    <matrix name="BirksConstant_0x56336cda8330" coldim="1" values="12.5999933704"/>
+    <position name="RICHEndcapN_wnd_0inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-1.41000002623" unit="cm"/>
+    <position name="RICHEndcapN_ceramic_1inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-0.770000040531" unit="cm"/>
+    <position name="RICHEndcapN_plating_2inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-0.770000040531" unit="cm"/>
+    <position name="RICHEndcapN_mcp_3inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-0.74900004128" unit="cm"/>
+    <position name="RICHEndcapN_pd_4inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-1.21850002861" unit="cm"/>
+    <position name="RICHEndcapN_qd_5inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-1.21950002861" unit="cm"/>
+    <position name="RICHEndcapN_pcb_6inRICHEndcapN_air_hrppdpos" x="0" y="0" z="-0.120000050962" unit="cm"/>
+    <position name="RICHEndcapN_asic_7inRICHEndcapN_air_hrppdpos" x="-2.79999995232" y="-2.79999995232" z="0.0309999512732" unit="cm"/>
+    <position name="RICHEndcapN_asic_8inRICHEndcapN_air_hrppdpos" x="-2.79999995232" y="2.79999995232" z="0.0309999512732" unit="cm"/>
+    <position name="RICHEndcapN_asic_9inRICHEndcapN_air_hrppdpos" x="2.79999995232" y="-2.79999995232" z="0.0309999512732" unit="cm"/>
+    <position name="RICHEndcapN_asic_10inRICHEndcapN_air_hrppdpos" x="2.79999995232" y="2.79999995232" z="0.0309999512732" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_0inRICHEndcapN_Volpos" x="-49" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_1inRICHEndcapN_Volpos" x="-49" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_2inRICHEndcapN_Volpos" x="-53" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_3inRICHEndcapN_Volpos" x="-49" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_4inRICHEndcapN_Volpos" x="-49" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_5inRICHEndcapN_Volpos" x="-36.75" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_6inRICHEndcapN_Volpos" x="-36.75" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_7inRICHEndcapN_Volpos" x="-36.75" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_8inRICHEndcapN_Volpos" x="-40.75" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_9inRICHEndcapN_Volpos" x="-36.75" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_10inRICHEndcapN_Volpos" x="-36.75" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_11inRICHEndcapN_Volpos" x="-36.75" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_12inRICHEndcapN_Volpos" x="-24.5" y="-49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_13inRICHEndcapN_Volpos" x="-24.5" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_14inRICHEndcapN_Volpos" x="-24.5" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_15inRICHEndcapN_Volpos" x="-24.5" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_16inRICHEndcapN_Volpos" x="-28.5" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_17inRICHEndcapN_Volpos" x="-24.5" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_18inRICHEndcapN_Volpos" x="-24.5" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_19inRICHEndcapN_Volpos" x="-24.5" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_20inRICHEndcapN_Volpos" x="-24.5" y="49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_21inRICHEndcapN_Volpos" x="-12.25" y="-49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_22inRICHEndcapN_Volpos" x="-12.25" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_23inRICHEndcapN_Volpos" x="-12.25" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_24inRICHEndcapN_Volpos" x="-12.25" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_25inRICHEndcapN_Volpos" x="-16.25" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_26inRICHEndcapN_Volpos" x="-12.25" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_27inRICHEndcapN_Volpos" x="-12.25" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_28inRICHEndcapN_Volpos" x="-12.25" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_29inRICHEndcapN_Volpos" x="-12.25" y="49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_30inRICHEndcapN_Volpos" x="0" y="-49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_31inRICHEndcapN_Volpos" x="0" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_32inRICHEndcapN_Volpos" x="0" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_33inRICHEndcapN_Volpos" x="0" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_34inRICHEndcapN_Volpos" x="0" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_35inRICHEndcapN_Volpos" x="0" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_36inRICHEndcapN_Volpos" x="0" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_37inRICHEndcapN_Volpos" x="0" y="49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_38inRICHEndcapN_Volpos" x="12.25" y="-49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_39inRICHEndcapN_Volpos" x="12.25" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_40inRICHEndcapN_Volpos" x="12.25" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_41inRICHEndcapN_Volpos" x="12.25" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_42inRICHEndcapN_Volpos" x="12.25" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_43inRICHEndcapN_Volpos" x="12.25" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_44inRICHEndcapN_Volpos" x="12.25" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_45inRICHEndcapN_Volpos" x="12.25" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_46inRICHEndcapN_Volpos" x="12.25" y="49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_47inRICHEndcapN_Volpos" x="24.5" y="-49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_48inRICHEndcapN_Volpos" x="24.5" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_49inRICHEndcapN_Volpos" x="24.5" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_50inRICHEndcapN_Volpos" x="24.5" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_51inRICHEndcapN_Volpos" x="24.5" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_52inRICHEndcapN_Volpos" x="24.5" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_53inRICHEndcapN_Volpos" x="24.5" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_54inRICHEndcapN_Volpos" x="24.5" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_55inRICHEndcapN_Volpos" x="24.5" y="49" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_56inRICHEndcapN_Volpos" x="36.75" y="-36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_57inRICHEndcapN_Volpos" x="36.75" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_58inRICHEndcapN_Volpos" x="36.75" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_59inRICHEndcapN_Volpos" x="36.75" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_60inRICHEndcapN_Volpos" x="36.75" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_61inRICHEndcapN_Volpos" x="36.75" y="24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_62inRICHEndcapN_Volpos" x="36.75" y="36.75" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_63inRICHEndcapN_Volpos" x="49" y="-24.5" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_64inRICHEndcapN_Volpos" x="49" y="-12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_65inRICHEndcapN_Volpos" x="49" y="0" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_66inRICHEndcapN_Volpos" x="49" y="12.25" z="23.375" unit="cm"/>
+    <position name="RICHEndcapN_air_hrppd_67inRICHEndcapN_Volpos" x="49" y="24.5" z="23.375" unit="cm"/>
+    <position name="aerogel_inner-0-00_68inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-00_69inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-01_70inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-01_71inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-02_72inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-02_73inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-03_74inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-03_75inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-04_76inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-04_77inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-05_78inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-05_79inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-06_80inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-06_81inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-07_82inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-07_83inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel_inner-0-08_84inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="sp_inner-0-08_85inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel-1-00_86inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="RICHEndcapN_sptube_87inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel-1-01_88inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-01_88inRICHEndcapN_Volrot" x="-0" y="-0" z="-25.7142857143" unit="deg"/>
+    <position name="RICHEndcapN_sptube_89inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_89inRICHEndcapN_Volrot" x="-0" y="-0" z="-25.7142857143" unit="deg"/>
+    <position name="aerogel-1-02_90inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-02_90inRICHEndcapN_Volrot" x="-0" y="-0" z="-51.4285714286" unit="deg"/>
+    <position name="RICHEndcapN_sptube_91inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_91inRICHEndcapN_Volrot" x="-0" y="-0" z="-51.4285714286" unit="deg"/>
+    <position name="aerogel-1-03_92inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-03_92inRICHEndcapN_Volrot" x="-0" y="-0" z="-77.1428571429" unit="deg"/>
+    <position name="RICHEndcapN_sptube_93inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_93inRICHEndcapN_Volrot" x="-0" y="-0" z="-77.1428571429" unit="deg"/>
+    <position name="aerogel-1-04_94inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-04_94inRICHEndcapN_Volrot" x="-0" y="-0" z="-102.857142857" unit="deg"/>
+    <position name="RICHEndcapN_sptube_95inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_95inRICHEndcapN_Volrot" x="-0" y="-0" z="-102.857142857" unit="deg"/>
+    <position name="aerogel-1-05_96inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-05_96inRICHEndcapN_Volrot" x="-0" y="-0" z="-128.571428571" unit="deg"/>
+    <position name="RICHEndcapN_sptube_97inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_97inRICHEndcapN_Volrot" x="-0" y="-0" z="-128.571428571" unit="deg"/>
+    <position name="aerogel-1-06_98inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-06_98inRICHEndcapN_Volrot" x="-0" y="-0" z="-154.285714286" unit="deg"/>
+    <position name="RICHEndcapN_sptube_99inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_99inRICHEndcapN_Volrot" x="-0" y="-0" z="-154.285714286" unit="deg"/>
+    <position name="aerogel-1-07_100inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-07_100inRICHEndcapN_Volrot" x="-0" y="-0" z="-180" unit="deg"/>
+    <position name="RICHEndcapN_sptube_101inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_101inRICHEndcapN_Volrot" x="-0" y="-0" z="-180" unit="deg"/>
+    <position name="aerogel-1-08_102inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-08_102inRICHEndcapN_Volrot" x="-0" y="-0" z="154.285714286" unit="deg"/>
+    <position name="RICHEndcapN_sptube_103inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_103inRICHEndcapN_Volrot" x="-0" y="-0" z="154.285714286" unit="deg"/>
+    <position name="aerogel-1-09_104inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-09_104inRICHEndcapN_Volrot" x="-0" y="-0" z="128.571428571" unit="deg"/>
+    <position name="RICHEndcapN_sptube_105inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_105inRICHEndcapN_Volrot" x="-0" y="-0" z="128.571428571" unit="deg"/>
+    <position name="aerogel-1-10_106inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-10_106inRICHEndcapN_Volrot" x="-0" y="-0" z="102.857142857" unit="deg"/>
+    <position name="RICHEndcapN_sptube_107inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_107inRICHEndcapN_Volrot" x="-0" y="-0" z="102.857142857" unit="deg"/>
+    <position name="aerogel-1-11_108inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-11_108inRICHEndcapN_Volrot" x="-0" y="-0" z="77.1428571429" unit="deg"/>
+    <position name="RICHEndcapN_sptube_109inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_109inRICHEndcapN_Volrot" x="-0" y="-0" z="77.1428571429" unit="deg"/>
+    <position name="aerogel-1-12_110inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-12_110inRICHEndcapN_Volrot" x="-0" y="-0" z="51.4285714286" unit="deg"/>
+    <position name="RICHEndcapN_sptube_111inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_111inRICHEndcapN_Volrot" x="-0" y="-0" z="51.4285714286" unit="deg"/>
+    <position name="aerogel-1-13_112inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-1-13_112inRICHEndcapN_Volrot" x="-0" y="-0" z="25.7142857143" unit="deg"/>
+    <position name="RICHEndcapN_sptube_113inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_113inRICHEndcapN_Volrot" x="-0" y="-0" z="25.7142857143" unit="deg"/>
+    <position name="aerogel-2-00_114inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="RICHEndcapN_sptube_115inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="aerogel-2-01_116inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-01_116inRICHEndcapN_Volrot" x="-0" y="-0" z="-18" unit="deg"/>
+    <position name="RICHEndcapN_sptube_117inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_117inRICHEndcapN_Volrot" x="-0" y="-0" z="-18" unit="deg"/>
+    <position name="aerogel-2-02_118inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-02_118inRICHEndcapN_Volrot" x="-0" y="-0" z="-36" unit="deg"/>
+    <position name="RICHEndcapN_sptube_119inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_119inRICHEndcapN_Volrot" x="-0" y="-0" z="-36" unit="deg"/>
+    <position name="aerogel-2-03_120inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-03_120inRICHEndcapN_Volrot" x="-0" y="-0" z="-54" unit="deg"/>
+    <position name="RICHEndcapN_sptube_121inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_121inRICHEndcapN_Volrot" x="-0" y="-0" z="-54" unit="deg"/>
+    <position name="aerogel-2-04_122inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-04_122inRICHEndcapN_Volrot" x="-0" y="-0" z="-72" unit="deg"/>
+    <position name="RICHEndcapN_sptube_123inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_123inRICHEndcapN_Volrot" x="-0" y="-0" z="-72" unit="deg"/>
+    <position name="aerogel-2-05_124inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-05_124inRICHEndcapN_Volrot" x="-0" y="-0" z="-90" unit="deg"/>
+    <position name="RICHEndcapN_sptube_125inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_125inRICHEndcapN_Volrot" x="-0" y="-0" z="-90" unit="deg"/>
+    <position name="aerogel-2-06_126inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-06_126inRICHEndcapN_Volrot" x="-0" y="-0" z="-108" unit="deg"/>
+    <position name="RICHEndcapN_sptube_127inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_127inRICHEndcapN_Volrot" x="-0" y="-0" z="-108" unit="deg"/>
+    <position name="aerogel-2-07_128inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-07_128inRICHEndcapN_Volrot" x="-0" y="-0" z="-126" unit="deg"/>
+    <position name="RICHEndcapN_sptube_129inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_129inRICHEndcapN_Volrot" x="-0" y="-0" z="-126" unit="deg"/>
+    <position name="aerogel-2-08_130inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-08_130inRICHEndcapN_Volrot" x="-0" y="-0" z="-144" unit="deg"/>
+    <position name="RICHEndcapN_sptube_131inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_131inRICHEndcapN_Volrot" x="-0" y="-0" z="-144" unit="deg"/>
+    <position name="aerogel-2-09_132inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-09_132inRICHEndcapN_Volrot" x="-0" y="-0" z="-162" unit="deg"/>
+    <position name="RICHEndcapN_sptube_133inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_133inRICHEndcapN_Volrot" x="-0" y="-0" z="-162" unit="deg"/>
+    <position name="aerogel-2-10_134inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-10_134inRICHEndcapN_Volrot" x="-0" y="-0" z="-180" unit="deg"/>
+    <position name="RICHEndcapN_sptube_135inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_135inRICHEndcapN_Volrot" x="-0" y="-0" z="-180" unit="deg"/>
+    <position name="aerogel-2-11_136inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-11_136inRICHEndcapN_Volrot" x="-0" y="-0" z="162" unit="deg"/>
+    <position name="RICHEndcapN_sptube_137inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_137inRICHEndcapN_Volrot" x="-0" y="-0" z="162" unit="deg"/>
+    <position name="aerogel-2-12_138inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-12_138inRICHEndcapN_Volrot" x="-0" y="-0" z="144" unit="deg"/>
+    <position name="RICHEndcapN_sptube_139inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_139inRICHEndcapN_Volrot" x="-0" y="-0" z="144" unit="deg"/>
+    <position name="aerogel-2-13_140inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-13_140inRICHEndcapN_Volrot" x="-0" y="-0" z="126" unit="deg"/>
+    <position name="RICHEndcapN_sptube_141inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_141inRICHEndcapN_Volrot" x="-0" y="-0" z="126" unit="deg"/>
+    <position name="aerogel-2-14_142inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-14_142inRICHEndcapN_Volrot" x="-0" y="-0" z="108" unit="deg"/>
+    <position name="RICHEndcapN_sptube_143inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_143inRICHEndcapN_Volrot" x="-0" y="-0" z="108" unit="deg"/>
+    <position name="aerogel-2-15_144inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-15_144inRICHEndcapN_Volrot" x="-0" y="-0" z="90" unit="deg"/>
+    <position name="RICHEndcapN_sptube_145inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_145inRICHEndcapN_Volrot" x="-0" y="-0" z="90" unit="deg"/>
+    <position name="aerogel-2-16_146inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-16_146inRICHEndcapN_Volrot" x="-0" y="-0" z="72" unit="deg"/>
+    <position name="RICHEndcapN_sptube_147inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_147inRICHEndcapN_Volrot" x="-0" y="-0" z="72" unit="deg"/>
+    <position name="aerogel-2-17_148inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-17_148inRICHEndcapN_Volrot" x="-0" y="-0" z="54" unit="deg"/>
+    <position name="RICHEndcapN_sptube_149inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_149inRICHEndcapN_Volrot" x="-0" y="-0" z="54" unit="deg"/>
+    <position name="aerogel-2-18_150inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-18_150inRICHEndcapN_Volrot" x="-0" y="-0" z="36" unit="deg"/>
+    <position name="RICHEndcapN_sptube_151inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_151inRICHEndcapN_Volrot" x="-0" y="-0" z="36" unit="deg"/>
+    <position name="aerogel-2-19_152inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="aerogel-2-19_152inRICHEndcapN_Volrot" x="-0" y="-0" z="18" unit="deg"/>
+    <position name="RICHEndcapN_sptube_153inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <rotation name="RICHEndcapN_sptube_153inRICHEndcapN_Volrot" x="-0" y="-0" z="18" unit="deg"/>
+    <position name="RICHEndcapN_radial_sptube_inner_154inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="RICHEndcapN_radial_sptube_155inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="RICHEndcapN_radial_sptube_156inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="RICHEndcapN_radial_sptube_157inRICHEndcapN_Volpos" x="0" y="0" z="-23.0316992386" unit="cm"/>
+    <position name="RICHEndcapN_inner_mirror_158inRICHEndcapN_Volpos" x="0" y="0" z="0" unit="cm"/>
+    <position name="RICHEndcapN_outer_mirror_159inRICHEndcapN_Volpos" x="0" y="0" z="0" unit="cm"/>
+    <position name="RICHEndcapN_ac_160inRICHEndcapN_Volpos" x="0" y="0" z="-21.3" unit="cm"/>
+    <position name="RICHEndcapN_Vol_0inworld_volumepos" x="0" y="0" z="-149" unit="cm"/>
+    <rotation name="RICHEndcapN_Vol_0inworld_volumerot" x="-180" y="-0" z="-180" unit="deg"/>
+  </define>
+  <materials>
+    <element name="C_elm" formula="C" Z="6" N="12">
+      <atom unit="g/mole" value="12.0107"/>
+    </element>
+    <element name="F_elm" formula="F" Z="9" N="18">
+      <atom unit="g/mole" value="18.9984"/>
+    </element>
+    <material name="C4F10_PFRICH">
+      <property name="RINDEX" ref="RINDEX__C4F10_PFRICH"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH__C4F10_PFRICH"/>
+      <D unit="g/cm3" value="0.009935"/>
+      <fraction n="0.201837778091" ref="C_elm"/>
+      <fraction n="0.798162221909" ref="F_elm"/>
+    </material>
+    <element name="N_elm" formula="N" Z="7" N="14">
+      <atom unit="g/mole" value="14.0068"/>
+    </element>
+    <element name="O_elm" formula="O" Z="8" N="15">
+      <atom unit="g/mole" value="15.9994"/>
+    </element>
+    <element name="Ar_elm" formula="Ar" Z="18" N="39">
+      <atom unit="g/mole" value="39.9477"/>
+    </element>
+    <material name="AirOptical">
+      <property name="RINDEX" ref="RINDEX__AirOptical"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH__AirOptical"/>
+      <D unit="g/cm3" value="0.0012"/>
+      <fraction n="0.0120000001043" ref="Ar_elm"/>
+      <fraction n="0.754000008106" ref="N_elm"/>
+      <fraction n="0.233999997377" ref="O_elm"/>
+    </material>
+    <material name="Air">
+      <D unit="g/cm3" value="0.0012"/>
+      <fraction n="0.0120000001043" ref="Ar_elm"/>
+      <fraction n="0.754000008106" ref="N_elm"/>
+      <fraction n="0.233999997377" ref="O_elm"/>
+    </material>
+    <material name="VacuumOptical">
+      <property name="RINDEX" ref="RINDEX__Vacuum"/>
+      <D unit="g/cm3" value="1e-10"/>
+      <fraction n="0.0120000001043" ref="Ar_elm"/>
+      <fraction n="0.754000008106" ref="N_elm"/>
+      <fraction n="0.233999997377" ref="O_elm"/>
+    </material>
+    <element name="H_elm" formula="H" Z="1" N="1">
+      <atom unit="g/mole" value="1.00794"/>
+    </element>
+    <material name="Acrylic_DRICH">
+      <property name="RINDEX" ref="RINDEX__Acrylic_DRICH"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH__Acrylic_DRICH"/>
+      <D unit="g/cm3" value="1.19"/>
+      <fraction n="0.599422454834" ref="C_elm"/>
+      <fraction n="0.0804389789701" ref="H_elm"/>
+      <fraction n="0.320138573647" ref="O_elm"/>
+    </material>
+  </materials>
+  <solids>
+    <box name="world_volume_shape_0x56336cda90f0" x="6000" y="6000" z="20000" lunit="cm"/>
+    <tube name="TGeoTubeSeg" rmin="0" rmax="5.76499986649" z="50" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <tube name="TGeoTubeSeg0x1" rmin="0" rmax="2.7349998951" z="50" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <union name="TGeoCompositeShape">
+      <first ref="TGeoTubeSeg"/>
+      <second ref="TGeoTubeSeg0x1"/>
+      <position name="TGeoCompositeShapeTGeoTubeSeg0x1pos" x="-6.76000022888" y="0" z="0" unit="cm"/>
+    </union>
+    <trap name="TGeoTrap" z="50" theta="0" phi="0" x1="10.3069072477" x2="4.8897469027" x3="10.3069072477" x4="4.8897469027" y1="5.40187899874" y2="5.40187899874" alpha1="0" alpha2="0" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_Vol_shape_0x56336cdf98c0_left" rmin="0" rmax="65" z="50" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <union name="aerogel_inner-0-00_shape_0x56336d1c4ff0_right">
+      <first ref="TGeoCompositeShape"/>
+      <second ref="TGeoTrap"/>
+      <position name="aerogel_inner-0-00_shape_0x56336d1c4ff0_rightTGeoTrappos" x="-5.28495559982" y="0" z="0" unit="cm"/>
+      <rotation name="aerogel_inner-0-00_shape_0x56336d1c4ff0_rightTGeoTraprot" x="0" y="-0" z="90" unit="deg"/>
+    </union>
+    <subtraction name="RICHEndcapN_Vol_shape_0x56336cdf98c0">
+      <first ref="RICHEndcapN_Vol_shape_0x56336cdf98c0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <box name="RICHEndcapN_air_hrppd_shape_0x56336c733620" x="12" y="12" z="3.20000004768" lunit="cm"/>
+    <box name="RICHEndcapN_wnd_shape_0x56336ce61720" x="12" y="12" z="0.379999995232" lunit="cm"/>
+    <box name="RICHEndcapN_ceramic_shape_0x56336d1ab420_left" x="12" y="12" z="0.899999976158" lunit="cm"/>
+    <box name="RICHEndcapN_ceramic_shape_0x56336d1ab420_right" x="11.3999996185" y="11.3999996185" z="0.899999976158" lunit="cm"/>
+    <subtraction name="RICHEndcapN_ceramic_shape_0x56336d1ab420">
+      <first ref="RICHEndcapN_ceramic_shape_0x56336d1ab420_left"/>
+      <second ref="RICHEndcapN_ceramic_shape_0x56336d1ab420_right"/>
+      <position name="RICHEndcapN_ceramic_shape_0x56336d1ab420RICHEndcapN_ceramic_shape_0x56336d1ab420_rightpos" x="0" y="0" z="-0.300000011921" unit="cm"/>
+    </subtraction>
+    <box name="RICHEndcapN_plating_shape_0x56336d1abf10" x="11.3999996185" y="11.3999996185" z="0.00600000005215" lunit="cm"/>
+    <box name="RICHEndcapN_mcp_shape_0x56336d1ac5a0" x="11.3999996185" y="11.3999996185" z="0.0359999984503" lunit="cm"/>
+    <box name="RICHEndcapN_pd_shape_0x56336d1acc20" x="10.8000001907" y="10.8000001907" z="0.001" lunit="cm"/>
+    <box name="RICHEndcapN_qd_shape_0x56336d1ad280" x="10.8000001907" y="10.8000001907" z="0.001" lunit="cm"/>
+    <box name="RICHEndcapN_pcb_shape_0x56336d1ad8e0" x="11.1999998093" y="11.1999998093" z="0.20000000298" lunit="cm"/>
+    <box name="RICHEndcapN_asic_shape_0x56336d1adf60" x="1.60000002384" y="1.60000002384" z="0.10000000149" lunit="cm"/>
+    <tube name="aerogel_inner-0-00_shape_0x56336d1c4ff0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="0" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-00_shape_0x56336d1c4ff0">
+      <first ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-00_shape_0x56336d1c5cb0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="39.8202318451" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-00_shape_0x56336d1c5cb0">
+      <first ref="sp_inner-0-00_shape_0x56336d1c5cb0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-01_shape_0x56336d1c65b0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="40" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-01_shape_0x56336d1c65b0">
+      <first ref="aerogel_inner-0-01_shape_0x56336d1c65b0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-01_shape_0x56336d1c6d40_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="79.8202318451" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-01_shape_0x56336d1c6d40">
+      <first ref="sp_inner-0-01_shape_0x56336d1c6d40_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-02_shape_0x56336d1c7640_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="80" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-02_shape_0x56336d1c7640">
+      <first ref="aerogel_inner-0-02_shape_0x56336d1c7640_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-02_shape_0x56336d1c7dd0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="119.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-02_shape_0x56336d1c7dd0">
+      <first ref="sp_inner-0-02_shape_0x56336d1c7dd0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-03_shape_0x56336d1c86d0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="120" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-03_shape_0x56336d1c86d0">
+      <first ref="aerogel_inner-0-03_shape_0x56336d1c86d0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-03_shape_0x56336d1c8e60_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="159.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-03_shape_0x56336d1c8e60">
+      <first ref="sp_inner-0-03_shape_0x56336d1c8e60_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-04_shape_0x56336d1c9760_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="160" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-04_shape_0x56336d1c9760">
+      <first ref="aerogel_inner-0-04_shape_0x56336d1c9760_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-04_shape_0x56336d1c9ef0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="199.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-04_shape_0x56336d1c9ef0">
+      <first ref="sp_inner-0-04_shape_0x56336d1c9ef0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-05_shape_0x56336d1ca7f0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="200" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-05_shape_0x56336d1ca7f0">
+      <first ref="aerogel_inner-0-05_shape_0x56336d1ca7f0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-05_shape_0x56336d1caf80_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="239.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-05_shape_0x56336d1caf80">
+      <first ref="sp_inner-0-05_shape_0x56336d1caf80_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-06_shape_0x56336d1cb880_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="240" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-06_shape_0x56336d1cb880">
+      <first ref="aerogel_inner-0-06_shape_0x56336d1cb880_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-06_shape_0x56336d1cc010_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="279.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-06_shape_0x56336d1cc010">
+      <first ref="sp_inner-0-06_shape_0x56336d1cc010_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-07_shape_0x56336d1cc910_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="280" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-07_shape_0x56336d1cc910">
+      <first ref="aerogel_inner-0-07_shape_0x56336d1cc910_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-07_shape_0x56336d1cd0a0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="319.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-07_shape_0x56336d1cd0a0">
+      <first ref="sp_inner-0-07_shape_0x56336d1cd0a0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel_inner-0-08_shape_0x56336d1cd9a0_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="320" deltaphi="39.8202318451" aunit="deg" lunit="cm"/>
+    <subtraction name="aerogel_inner-0-08_shape_0x56336d1cd9a0">
+      <first ref="aerogel_inner-0-08_shape_0x56336d1cd9a0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="sp_inner-0-08_shape_0x56336d1ce130_left" rmin="6.61159992218" rmax="25.1172018051" z="2.5" startphi="359.820231845" deltaphi="0.179768154937" aunit="deg" lunit="cm"/>
+    <subtraction name="sp_inner-0-08_shape_0x56336d1ce130">
+      <first ref="sp_inner-0-08_shape_0x56336d1ce130_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="aerogel-1-00_shape_0x56336d1cedc0" rmin="25.1672018059" rmax="43.6728036888" z="2.5" startphi="0" deltaphi="25.6313238857" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_sptube_shape_0x56336d1ceea0" rmin="25.1672018059" rmax="43.6728036888" z="2.5" startphi="25.6313238857" deltaphi="0.0829618286085" aunit="deg" lunit="cm"/>
+    <tube name="aerogel-2-00_shape_0x56336d21ad30" rmin="43.7228036895" rmax="62.2284055725" z="2.5" startphi="0" deltaphi="17.9460844645" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_sptube_shape_0x56336d21ae10" rmin="43.7228036895" rmax="62.2284055725" z="2.5" startphi="17.9460844645" deltaphi="0.0539155355398" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_radial_sptube_inner_shape_0x56336d22a970_left" rmin="6.6015996933" rmax="6.61159969307" z="2.5" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <subtraction name="RICHEndcapN_radial_sptube_inner_shape_0x56336d22a970">
+      <first ref="RICHEndcapN_radial_sptube_inner_shape_0x56336d22a970_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <tube name="RICHEndcapN_radial_sptube_shape_0x56336d22b580" rmin="25.117201576" rmax="25.1672015768" z="2.5" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_radial_sptube_shape_0x56336d22bbb0" rmin="43.6728034597" rmax="43.7228034604" z="2.5" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_radial_sptube_shape_0x56336d22c1e0" rmin="62.2284053434" rmax="62.3284053449" z="2.5" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <cone name="RICHEndcapN_inner_mirror_shape_0x56336d22c5a0_left" z="42.9633984607" rmin1="6.6015996933" rmin2="12" rmax1="6.70159969479" rmax2="12.1000000015" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <subtraction name="RICHEndcapN_inner_mirror_shape_0x56336d22c5a0">
+      <first ref="RICHEndcapN_inner_mirror_shape_0x56336d22c5a0_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+    <cone name="RICHEndcapN_outer_mirror_shape_0x56336d22cff0" z="42.9633984607" rmin1="62.3283996582" rmin2="57" rmax1="62.5283996612" rmax2="57.200000003" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <tube name="RICHEndcapN_ac_shape_0x56336d22d410_left" rmin="9.6015996933" rmax="61.3283996582" z="0.3" startphi="0" deltaphi="360" aunit="deg" lunit="cm"/>
+    <subtraction name="RICHEndcapN_ac_shape_0x56336d22d410">
+      <first ref="RICHEndcapN_ac_shape_0x56336d22d410_left"/>
+      <second ref="aerogel_inner-0-00_shape_0x56336d1c4ff0_right"/>
+    </subtraction>
+  </solids>
+  <structure>
+    <volume name="RICHEndcapN_wnd">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="RICHEndcapN_wnd_shape_0x56336ce61720"/>
+    </volume>
+    <volume name="RICHEndcapN_ceramic">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_ceramic_shape_0x56336d1ab420"/>
+    </volume>
+    <volume name="RICHEndcapN_plating">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_plating_shape_0x56336d1abf10"/>
+    </volume>
+    <volume name="RICHEndcapN_mcp">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_mcp_shape_0x56336d1ac5a0"/>
+    </volume>
+    <volume name="RICHEndcapN_pd">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_pd_shape_0x56336d1acc20"/>
+    </volume>
+    <volume name="RICHEndcapN_qd">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_qd_shape_0x56336d1ad280"/>
+    </volume>
+    <volume name="RICHEndcapN_pcb">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_pcb_shape_0x56336d1ad8e0"/>
+    </volume>
+    <volume name="RICHEndcapN_asic">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_asic_shape_0x56336d1adf60"/>
+    </volume>
+    <volume name="RICHEndcapN_air_hrppd">
+      <materialref ref="Air"/>
+      <solidref ref="RICHEndcapN_air_hrppd_shape_0x56336c733620"/>
+      <physvol name="RICHEndcapN_wnd_0" copynumber="0">
+        <volumeref ref="RICHEndcapN_wnd"/>
+        <positionref ref="RICHEndcapN_wnd_0inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_ceramic_1" copynumber="1">
+        <volumeref ref="RICHEndcapN_ceramic"/>
+        <positionref ref="RICHEndcapN_ceramic_1inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_plating_2" copynumber="2">
+        <volumeref ref="RICHEndcapN_plating"/>
+        <positionref ref="RICHEndcapN_plating_2inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_mcp_3" copynumber="3">
+        <volumeref ref="RICHEndcapN_mcp"/>
+        <positionref ref="RICHEndcapN_mcp_3inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_pd_4" copynumber="4">
+        <volumeref ref="RICHEndcapN_pd"/>
+        <positionref ref="RICHEndcapN_pd_4inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_qd_5" copynumber="5">
+        <volumeref ref="RICHEndcapN_qd"/>
+        <positionref ref="RICHEndcapN_qd_5inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_pcb_6" copynumber="6">
+        <volumeref ref="RICHEndcapN_pcb"/>
+        <positionref ref="RICHEndcapN_pcb_6inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_asic_7" copynumber="7">
+        <volumeref ref="RICHEndcapN_asic"/>
+        <positionref ref="RICHEndcapN_asic_7inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_asic_8" copynumber="8">
+        <volumeref ref="RICHEndcapN_asic"/>
+        <positionref ref="RICHEndcapN_asic_8inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_asic_9" copynumber="9">
+        <volumeref ref="RICHEndcapN_asic"/>
+        <positionref ref="RICHEndcapN_asic_9inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_asic_10" copynumber="10">
+        <volumeref ref="RICHEndcapN_asic"/>
+        <positionref ref="RICHEndcapN_asic_10inRICHEndcapN_air_hrppdpos"/>
+      </physvol>
+    </volume>
+    <volume name="aerogel_inner-0-00">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-00_shape_0x56336d1c4ff0"/>
+    </volume>
+    <volume name="sp_inner-0-00">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-00_shape_0x56336d1c5cb0"/>
+    </volume>
+    <volume name="aerogel_inner-0-01">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-01_shape_0x56336d1c65b0"/>
+    </volume>
+    <volume name="sp_inner-0-01">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-01_shape_0x56336d1c6d40"/>
+    </volume>
+    <volume name="aerogel_inner-0-02">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-02_shape_0x56336d1c7640"/>
+    </volume>
+    <volume name="sp_inner-0-02">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-02_shape_0x56336d1c7dd0"/>
+    </volume>
+    <volume name="aerogel_inner-0-03">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-03_shape_0x56336d1c86d0"/>
+    </volume>
+    <volume name="sp_inner-0-03">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-03_shape_0x56336d1c8e60"/>
+    </volume>
+    <volume name="aerogel_inner-0-04">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-04_shape_0x56336d1c9760"/>
+    </volume>
+    <volume name="sp_inner-0-04">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-04_shape_0x56336d1c9ef0"/>
+    </volume>
+    <volume name="aerogel_inner-0-05">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-05_shape_0x56336d1ca7f0"/>
+    </volume>
+    <volume name="sp_inner-0-05">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-05_shape_0x56336d1caf80"/>
+    </volume>
+    <volume name="aerogel_inner-0-06">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-06_shape_0x56336d1cb880"/>
+    </volume>
+    <volume name="sp_inner-0-06">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-06_shape_0x56336d1cc010"/>
+    </volume>
+    <volume name="aerogel_inner-0-07">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-07_shape_0x56336d1cc910"/>
+    </volume>
+    <volume name="sp_inner-0-07">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-07_shape_0x56336d1cd0a0"/>
+    </volume>
+    <volume name="aerogel_inner-0-08">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel_inner-0-08_shape_0x56336d1cd9a0"/>
+    </volume>
+    <volume name="sp_inner-0-08">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="sp_inner-0-08_shape_0x56336d1ce130"/>
+    </volume>
+    <volume name="aerogel-1-00">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-01">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x1">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-02">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x2">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-03">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x3">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-04">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x4">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-05">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x5">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-06">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x6">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-07">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x7">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-08">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x8">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-09">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x9">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-10">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x10">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-11">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x11">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-12">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x12">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-1-13">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-1-00_shape_0x56336d1cedc0"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x13">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d1ceea0"/>
+    </volume>
+    <volume name="aerogel-2-00">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x14">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-01">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x15">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-02">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x16">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-03">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x17">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-04">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x18">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-05">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x19">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-06">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x20">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-07">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x21">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-08">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x22">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-09">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x23">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-10">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x24">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-11">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x25">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-12">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x26">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-13">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x27">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-14">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x28">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-15">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x29">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-16">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x30">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-17">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x31">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-18">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x32">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="aerogel-2-19">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="aerogel-2-00_shape_0x56336d21ad30"/>
+    </volume>
+    <volume name="RICHEndcapN_sptube0x33">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_sptube_shape_0x56336d21ae10"/>
+    </volume>
+    <volume name="RICHEndcapN_radial_sptube_inner">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="RICHEndcapN_radial_sptube_inner_shape_0x56336d22a970"/>
+    </volume>
+    <volume name="RICHEndcapN_radial_sptube">
+      <materialref ref="AirOptical"/>
+      <solidref ref="RICHEndcapN_radial_sptube_shape_0x56336d22b580"/>
+    </volume>
+    <volume name="RICHEndcapN_radial_sptube0x1">
+      <materialref ref="AirOptical"/>
+      <solidref ref="RICHEndcapN_radial_sptube_shape_0x56336d22bbb0"/>
+    </volume>
+    <volume name="RICHEndcapN_radial_sptube0x2">
+      <materialref ref="AirOptical"/>
+      <solidref ref="RICHEndcapN_radial_sptube_shape_0x56336d22c1e0"/>
+    </volume>
+    <volume name="RICHEndcapN_inner_mirror">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_inner_mirror_shape_0x56336d22c5a0"/>
+    </volume>
+    <volume name="RICHEndcapN_outer_mirror">
+      <materialref ref="Acrylic_DRICH"/>
+      <solidref ref="RICHEndcapN_outer_mirror_shape_0x56336d22cff0"/>
+    </volume>
+    <volume name="RICHEndcapN_ac">
+      <materialref ref="C4F10_PFRICH"/>
+      <solidref ref="RICHEndcapN_ac_shape_0x56336d22d410"/>
+    </volume>
+    <volume name="RICHEndcapN_Vol">
+      <materialref ref="VacuumOptical"/>
+      <solidref ref="RICHEndcapN_Vol_shape_0x56336cdf98c0"/>
+      <physvol name="RICHEndcapN_air_hrppd_0" copynumber="0">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_0inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_1" copynumber="1">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_1inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_2" copynumber="2">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_2inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_3" copynumber="3">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_3inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_4" copynumber="4">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_4inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_5" copynumber="5">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_5inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_6" copynumber="6">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_6inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_7" copynumber="7">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_7inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_8" copynumber="8">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_8inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_9" copynumber="9">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_9inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_10" copynumber="10">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_10inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_11" copynumber="11">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_11inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_12" copynumber="12">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_12inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_13" copynumber="13">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_13inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_14" copynumber="14">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_14inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_15" copynumber="15">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_15inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_16" copynumber="16">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_16inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_17" copynumber="17">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_17inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_18" copynumber="18">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_18inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_19" copynumber="19">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_19inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_20" copynumber="20">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_20inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_21" copynumber="21">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_21inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_22" copynumber="22">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_22inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_23" copynumber="23">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_23inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_24" copynumber="24">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_24inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_25" copynumber="25">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_25inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_26" copynumber="26">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_26inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_27" copynumber="27">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_27inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_28" copynumber="28">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_28inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_29" copynumber="29">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_29inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_30" copynumber="30">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_30inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_31" copynumber="31">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_31inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_32" copynumber="32">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_32inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_33" copynumber="33">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_33inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_34" copynumber="34">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_34inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_35" copynumber="35">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_35inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_36" copynumber="36">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_36inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_37" copynumber="37">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_37inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_38" copynumber="38">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_38inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_39" copynumber="39">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_39inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_40" copynumber="40">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_40inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_41" copynumber="41">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_41inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_42" copynumber="42">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_42inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_43" copynumber="43">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_43inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_44" copynumber="44">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_44inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_45" copynumber="45">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_45inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_46" copynumber="46">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_46inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_47" copynumber="47">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_47inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_48" copynumber="48">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_48inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_49" copynumber="49">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_49inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_50" copynumber="50">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_50inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_51" copynumber="51">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_51inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_52" copynumber="52">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_52inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_53" copynumber="53">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_53inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_54" copynumber="54">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_54inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_55" copynumber="55">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_55inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_56" copynumber="56">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_56inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_57" copynumber="57">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_57inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_58" copynumber="58">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_58inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_59" copynumber="59">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_59inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_60" copynumber="60">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_60inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_61" copynumber="61">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_61inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_62" copynumber="62">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_62inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_63" copynumber="63">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_63inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_64" copynumber="64">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_64inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_65" copynumber="65">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_65inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_66" copynumber="66">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_66inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_air_hrppd_67" copynumber="67">
+        <volumeref ref="RICHEndcapN_air_hrppd"/>
+        <positionref ref="RICHEndcapN_air_hrppd_67inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-00_68" copynumber="68">
+        <volumeref ref="aerogel_inner-0-00"/>
+        <positionref ref="aerogel_inner-0-00_68inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-00_69" copynumber="69">
+        <volumeref ref="sp_inner-0-00"/>
+        <positionref ref="sp_inner-0-00_69inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-01_70" copynumber="70">
+        <volumeref ref="aerogel_inner-0-01"/>
+        <positionref ref="aerogel_inner-0-01_70inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-01_71" copynumber="71">
+        <volumeref ref="sp_inner-0-01"/>
+        <positionref ref="sp_inner-0-01_71inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-02_72" copynumber="72">
+        <volumeref ref="aerogel_inner-0-02"/>
+        <positionref ref="aerogel_inner-0-02_72inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-02_73" copynumber="73">
+        <volumeref ref="sp_inner-0-02"/>
+        <positionref ref="sp_inner-0-02_73inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-03_74" copynumber="74">
+        <volumeref ref="aerogel_inner-0-03"/>
+        <positionref ref="aerogel_inner-0-03_74inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-03_75" copynumber="75">
+        <volumeref ref="sp_inner-0-03"/>
+        <positionref ref="sp_inner-0-03_75inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-04_76" copynumber="76">
+        <volumeref ref="aerogel_inner-0-04"/>
+        <positionref ref="aerogel_inner-0-04_76inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-04_77" copynumber="77">
+        <volumeref ref="sp_inner-0-04"/>
+        <positionref ref="sp_inner-0-04_77inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-05_78" copynumber="78">
+        <volumeref ref="aerogel_inner-0-05"/>
+        <positionref ref="aerogel_inner-0-05_78inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-05_79" copynumber="79">
+        <volumeref ref="sp_inner-0-05"/>
+        <positionref ref="sp_inner-0-05_79inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-06_80" copynumber="80">
+        <volumeref ref="aerogel_inner-0-06"/>
+        <positionref ref="aerogel_inner-0-06_80inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-06_81" copynumber="81">
+        <volumeref ref="sp_inner-0-06"/>
+        <positionref ref="sp_inner-0-06_81inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-07_82" copynumber="82">
+        <volumeref ref="aerogel_inner-0-07"/>
+        <positionref ref="aerogel_inner-0-07_82inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-07_83" copynumber="83">
+        <volumeref ref="sp_inner-0-07"/>
+        <positionref ref="sp_inner-0-07_83inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel_inner-0-08_84" copynumber="84">
+        <volumeref ref="aerogel_inner-0-08"/>
+        <positionref ref="aerogel_inner-0-08_84inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="sp_inner-0-08_85" copynumber="85">
+        <volumeref ref="sp_inner-0-08"/>
+        <positionref ref="sp_inner-0-08_85inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel-1-00_86" copynumber="86">
+        <volumeref ref="aerogel-1-00"/>
+        <positionref ref="aerogel-1-00_86inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_87" copynumber="87">
+        <volumeref ref="RICHEndcapN_sptube"/>
+        <positionref ref="RICHEndcapN_sptube_87inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel-1-01_88" copynumber="88">
+        <volumeref ref="aerogel-1-01"/>
+        <positionref ref="aerogel-1-01_88inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-01_88inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_89" copynumber="89">
+        <volumeref ref="RICHEndcapN_sptube0x1"/>
+        <positionref ref="RICHEndcapN_sptube_89inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_89inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-02_90" copynumber="90">
+        <volumeref ref="aerogel-1-02"/>
+        <positionref ref="aerogel-1-02_90inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-02_90inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_91" copynumber="91">
+        <volumeref ref="RICHEndcapN_sptube0x2"/>
+        <positionref ref="RICHEndcapN_sptube_91inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_91inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-03_92" copynumber="92">
+        <volumeref ref="aerogel-1-03"/>
+        <positionref ref="aerogel-1-03_92inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-03_92inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_93" copynumber="93">
+        <volumeref ref="RICHEndcapN_sptube0x3"/>
+        <positionref ref="RICHEndcapN_sptube_93inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_93inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-04_94" copynumber="94">
+        <volumeref ref="aerogel-1-04"/>
+        <positionref ref="aerogel-1-04_94inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-04_94inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_95" copynumber="95">
+        <volumeref ref="RICHEndcapN_sptube0x4"/>
+        <positionref ref="RICHEndcapN_sptube_95inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_95inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-05_96" copynumber="96">
+        <volumeref ref="aerogel-1-05"/>
+        <positionref ref="aerogel-1-05_96inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-05_96inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_97" copynumber="97">
+        <volumeref ref="RICHEndcapN_sptube0x5"/>
+        <positionref ref="RICHEndcapN_sptube_97inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_97inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-06_98" copynumber="98">
+        <volumeref ref="aerogel-1-06"/>
+        <positionref ref="aerogel-1-06_98inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-06_98inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_99" copynumber="99">
+        <volumeref ref="RICHEndcapN_sptube0x6"/>
+        <positionref ref="RICHEndcapN_sptube_99inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_99inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-07_100" copynumber="100">
+        <volumeref ref="aerogel-1-07"/>
+        <positionref ref="aerogel-1-07_100inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-07_100inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_101" copynumber="101">
+        <volumeref ref="RICHEndcapN_sptube0x7"/>
+        <positionref ref="RICHEndcapN_sptube_101inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_101inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-08_102" copynumber="102">
+        <volumeref ref="aerogel-1-08"/>
+        <positionref ref="aerogel-1-08_102inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-08_102inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_103" copynumber="103">
+        <volumeref ref="RICHEndcapN_sptube0x8"/>
+        <positionref ref="RICHEndcapN_sptube_103inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_103inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-09_104" copynumber="104">
+        <volumeref ref="aerogel-1-09"/>
+        <positionref ref="aerogel-1-09_104inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-09_104inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_105" copynumber="105">
+        <volumeref ref="RICHEndcapN_sptube0x9"/>
+        <positionref ref="RICHEndcapN_sptube_105inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_105inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-10_106" copynumber="106">
+        <volumeref ref="aerogel-1-10"/>
+        <positionref ref="aerogel-1-10_106inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-10_106inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_107" copynumber="107">
+        <volumeref ref="RICHEndcapN_sptube0x10"/>
+        <positionref ref="RICHEndcapN_sptube_107inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_107inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-11_108" copynumber="108">
+        <volumeref ref="aerogel-1-11"/>
+        <positionref ref="aerogel-1-11_108inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-11_108inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_109" copynumber="109">
+        <volumeref ref="RICHEndcapN_sptube0x11"/>
+        <positionref ref="RICHEndcapN_sptube_109inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_109inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-12_110" copynumber="110">
+        <volumeref ref="aerogel-1-12"/>
+        <positionref ref="aerogel-1-12_110inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-12_110inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_111" copynumber="111">
+        <volumeref ref="RICHEndcapN_sptube0x12"/>
+        <positionref ref="RICHEndcapN_sptube_111inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_111inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-1-13_112" copynumber="112">
+        <volumeref ref="aerogel-1-13"/>
+        <positionref ref="aerogel-1-13_112inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-1-13_112inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_113" copynumber="113">
+        <volumeref ref="RICHEndcapN_sptube0x13"/>
+        <positionref ref="RICHEndcapN_sptube_113inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_113inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-00_114" copynumber="114">
+        <volumeref ref="aerogel-2-00"/>
+        <positionref ref="aerogel-2-00_114inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_115" copynumber="115">
+        <volumeref ref="RICHEndcapN_sptube0x14"/>
+        <positionref ref="RICHEndcapN_sptube_115inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="aerogel-2-01_116" copynumber="116">
+        <volumeref ref="aerogel-2-01"/>
+        <positionref ref="aerogel-2-01_116inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-01_116inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_117" copynumber="117">
+        <volumeref ref="RICHEndcapN_sptube0x15"/>
+        <positionref ref="RICHEndcapN_sptube_117inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_117inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-02_118" copynumber="118">
+        <volumeref ref="aerogel-2-02"/>
+        <positionref ref="aerogel-2-02_118inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-02_118inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_119" copynumber="119">
+        <volumeref ref="RICHEndcapN_sptube0x16"/>
+        <positionref ref="RICHEndcapN_sptube_119inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_119inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-03_120" copynumber="120">
+        <volumeref ref="aerogel-2-03"/>
+        <positionref ref="aerogel-2-03_120inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-03_120inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_121" copynumber="121">
+        <volumeref ref="RICHEndcapN_sptube0x17"/>
+        <positionref ref="RICHEndcapN_sptube_121inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_121inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-04_122" copynumber="122">
+        <volumeref ref="aerogel-2-04"/>
+        <positionref ref="aerogel-2-04_122inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-04_122inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_123" copynumber="123">
+        <volumeref ref="RICHEndcapN_sptube0x18"/>
+        <positionref ref="RICHEndcapN_sptube_123inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_123inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-05_124" copynumber="124">
+        <volumeref ref="aerogel-2-05"/>
+        <positionref ref="aerogel-2-05_124inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-05_124inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_125" copynumber="125">
+        <volumeref ref="RICHEndcapN_sptube0x19"/>
+        <positionref ref="RICHEndcapN_sptube_125inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_125inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-06_126" copynumber="126">
+        <volumeref ref="aerogel-2-06"/>
+        <positionref ref="aerogel-2-06_126inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-06_126inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_127" copynumber="127">
+        <volumeref ref="RICHEndcapN_sptube0x20"/>
+        <positionref ref="RICHEndcapN_sptube_127inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_127inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-07_128" copynumber="128">
+        <volumeref ref="aerogel-2-07"/>
+        <positionref ref="aerogel-2-07_128inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-07_128inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_129" copynumber="129">
+        <volumeref ref="RICHEndcapN_sptube0x21"/>
+        <positionref ref="RICHEndcapN_sptube_129inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_129inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-08_130" copynumber="130">
+        <volumeref ref="aerogel-2-08"/>
+        <positionref ref="aerogel-2-08_130inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-08_130inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_131" copynumber="131">
+        <volumeref ref="RICHEndcapN_sptube0x22"/>
+        <positionref ref="RICHEndcapN_sptube_131inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_131inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-09_132" copynumber="132">
+        <volumeref ref="aerogel-2-09"/>
+        <positionref ref="aerogel-2-09_132inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-09_132inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_133" copynumber="133">
+        <volumeref ref="RICHEndcapN_sptube0x23"/>
+        <positionref ref="RICHEndcapN_sptube_133inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_133inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-10_134" copynumber="134">
+        <volumeref ref="aerogel-2-10"/>
+        <positionref ref="aerogel-2-10_134inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-10_134inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_135" copynumber="135">
+        <volumeref ref="RICHEndcapN_sptube0x24"/>
+        <positionref ref="RICHEndcapN_sptube_135inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_135inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-11_136" copynumber="136">
+        <volumeref ref="aerogel-2-11"/>
+        <positionref ref="aerogel-2-11_136inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-11_136inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_137" copynumber="137">
+        <volumeref ref="RICHEndcapN_sptube0x25"/>
+        <positionref ref="RICHEndcapN_sptube_137inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_137inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-12_138" copynumber="138">
+        <volumeref ref="aerogel-2-12"/>
+        <positionref ref="aerogel-2-12_138inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-12_138inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_139" copynumber="139">
+        <volumeref ref="RICHEndcapN_sptube0x26"/>
+        <positionref ref="RICHEndcapN_sptube_139inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_139inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-13_140" copynumber="140">
+        <volumeref ref="aerogel-2-13"/>
+        <positionref ref="aerogel-2-13_140inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-13_140inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_141" copynumber="141">
+        <volumeref ref="RICHEndcapN_sptube0x27"/>
+        <positionref ref="RICHEndcapN_sptube_141inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_141inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-14_142" copynumber="142">
+        <volumeref ref="aerogel-2-14"/>
+        <positionref ref="aerogel-2-14_142inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-14_142inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_143" copynumber="143">
+        <volumeref ref="RICHEndcapN_sptube0x28"/>
+        <positionref ref="RICHEndcapN_sptube_143inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_143inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-15_144" copynumber="144">
+        <volumeref ref="aerogel-2-15"/>
+        <positionref ref="aerogel-2-15_144inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-15_144inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_145" copynumber="145">
+        <volumeref ref="RICHEndcapN_sptube0x29"/>
+        <positionref ref="RICHEndcapN_sptube_145inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_145inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-16_146" copynumber="146">
+        <volumeref ref="aerogel-2-16"/>
+        <positionref ref="aerogel-2-16_146inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-16_146inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_147" copynumber="147">
+        <volumeref ref="RICHEndcapN_sptube0x30"/>
+        <positionref ref="RICHEndcapN_sptube_147inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_147inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-17_148" copynumber="148">
+        <volumeref ref="aerogel-2-17"/>
+        <positionref ref="aerogel-2-17_148inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-17_148inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_149" copynumber="149">
+        <volumeref ref="RICHEndcapN_sptube0x31"/>
+        <positionref ref="RICHEndcapN_sptube_149inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_149inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-18_150" copynumber="150">
+        <volumeref ref="aerogel-2-18"/>
+        <positionref ref="aerogel-2-18_150inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-18_150inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_151" copynumber="151">
+        <volumeref ref="RICHEndcapN_sptube0x32"/>
+        <positionref ref="RICHEndcapN_sptube_151inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_151inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="aerogel-2-19_152" copynumber="152">
+        <volumeref ref="aerogel-2-19"/>
+        <positionref ref="aerogel-2-19_152inRICHEndcapN_Volpos"/>
+        <rotationref ref="aerogel-2-19_152inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_sptube_153" copynumber="153">
+        <volumeref ref="RICHEndcapN_sptube0x33"/>
+        <positionref ref="RICHEndcapN_sptube_153inRICHEndcapN_Volpos"/>
+        <rotationref ref="RICHEndcapN_sptube_153inRICHEndcapN_Volrot"/>
+      </physvol>
+      <physvol name="RICHEndcapN_radial_sptube_inner_154" copynumber="154">
+        <volumeref ref="RICHEndcapN_radial_sptube_inner"/>
+        <positionref ref="RICHEndcapN_radial_sptube_inner_154inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_radial_sptube_155" copynumber="155">
+        <volumeref ref="RICHEndcapN_radial_sptube"/>
+        <positionref ref="RICHEndcapN_radial_sptube_155inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_radial_sptube_156" copynumber="156">
+        <volumeref ref="RICHEndcapN_radial_sptube0x1"/>
+        <positionref ref="RICHEndcapN_radial_sptube_156inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_radial_sptube_157" copynumber="157">
+        <volumeref ref="RICHEndcapN_radial_sptube0x2"/>
+        <positionref ref="RICHEndcapN_radial_sptube_157inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_inner_mirror_158" copynumber="158">
+        <volumeref ref="RICHEndcapN_inner_mirror"/>
+        <positionref ref="RICHEndcapN_inner_mirror_158inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_outer_mirror_159" copynumber="159">
+        <volumeref ref="RICHEndcapN_outer_mirror"/>
+        <positionref ref="RICHEndcapN_outer_mirror_159inRICHEndcapN_Volpos"/>
+      </physvol>
+      <physvol name="RICHEndcapN_ac_160" copynumber="160">
+        <volumeref ref="RICHEndcapN_ac"/>
+        <positionref ref="RICHEndcapN_ac_160inRICHEndcapN_Volpos"/>
+      </physvol>
+    </volume>
+    <volume name="world_volume">
+      <materialref ref="Air"/>
+      <solidref ref="world_volume_shape_0x56336cda90f0"/>
+      <physvol name="RICHEndcapN_Vol_0" copynumber="0">
+        <volumeref ref="RICHEndcapN_Vol"/>
+        <positionref ref="RICHEndcapN_Vol_0inworld_volumepos"/>
+        <rotationref ref="RICHEndcapN_Vol_0inworld_volumerot"/>
+      </physvol>
+    </volume>
+  </structure>
+  <setup name="default" version="1.0">
+    <world ref="world_volume"/>
+  </setup>
+</gdml>
