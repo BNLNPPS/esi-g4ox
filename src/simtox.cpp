@@ -3,10 +3,6 @@
 #include <string>
 #include <vector>
 
-#include <plog/Init.h>
-#include <plog/Formatters/TxtFormatter.h>
-#include <plog/Appenders/ColorConsoleAppender.h>
-
 #include <curand_kernel.h>
 
 #include "SysRap/NP.hh"
@@ -20,10 +16,6 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-  using PLogFormat = plog::TxtFormatter;
-  static plog::ColorConsoleAppender<PLogFormat> consoleAppender;
-  plog::init(plog::debug, &consoleAppender);
-
   unsigned n_torches = 1; // create one torch
   unsigned n_photons = 100;
   bool dump = true;
@@ -42,7 +34,6 @@ int main(int argc, char **argv)
   gs->dump();
   cout << torch->desc() << endl;
 
-  NP* se = NP::Make<int>(n_photons);
   NP* ph = NP::Make<float>(n_photons, 4, 4);
 
   const quad6* qtorch = reinterpret_cast<quad6*>(gs->bytes());
