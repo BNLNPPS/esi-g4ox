@@ -24,3 +24,6 @@ install(TARGETS g4ox EXPORT g4oxTargets
 
 add_executable(make_csg_tree make_csg_tree.cpp)
 target_link_libraries(make_csg_tree g4ox)
+
+add_executable(simtox simtox.cpp)
+target_link_libraries(simtox Opticks::SysRap)
