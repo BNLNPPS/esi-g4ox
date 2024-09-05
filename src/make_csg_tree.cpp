@@ -1,61 +1,46 @@
 #include <algorithm>
-#include <string>
-#include <vector>
 #include <iostream>
+#include <string>
 
 #include <plog/Init.h>
 #include <plog/Formatters/TxtFormatter.h>
 #include <plog/Appenders/ColorConsoleAppender.h>
+
+#include <argparse/argparse.hpp>
 
 #include "g4ox.h"
 
 using namespace std;
 
 
-class ArgParser
-{
- public:
-  ArgParser(int &argc, char **argv);
-  string get_value(const string &option) const;
- private:
-   vector<string> args;
-};
-
-
 int main(int argc, char **argv)
 {
-  ArgParser arg_parser(argc, argv);
-
   using PLogFormat = plog::TxtFormatter;
   static plog::ColorConsoleAppender<PLogFormat> consoleAppender;
   plog::init(plog::debug, &consoleAppender);
 
-  string gdmlpath = arg_parser.get_value("-f");
+  argparse::ArgumentParser program("consgeo", "0.0.0");
 
-  from_gdml(gdmlpath);
+  string gdml_file;
 
-  return EXIT_SUCCESS;
-} 
+  program.add_argument("-g", "--gdml")
+    .help("path to GDML file")
+    .default_value(string("geom.gdml"))
+    .nargs(1)
+    .store_into(gdml_file);
 
-
-ArgParser::ArgParser(int &argc, char **argv)
-{
-  for (int i=1; i < argc; ++i)
-    args.push_back( string(argv[i]) );
-}
-
-string ArgParser::get_value(const string &option) const
-{
-  auto itr = find(args.begin(), args.end(), option);
-
-  string value{""};
-
-  if (itr != args.end() && ++itr != args.end()) {
-    value = *itr;
+  try {
+    program.parse_args(argc, argv);
+  }
+  catch (const exception& err) {
+    cerr << err.what() << endl;
+    cerr << program;
+    exit(EXIT_FAILURE);
   }
 
-  // Default values
-  if (value.empty() && option == "-f") return "geom.gdml";
+  cout << "gdml_file: " << gdml_file << endl;
 
-  return value;
+  from_gdml(gdml_file);
+
+  return EXIT_SUCCESS;
 }

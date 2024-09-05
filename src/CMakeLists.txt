@@ -22,8 +22,9 @@ install(TARGETS g4ox EXPORT g4oxTargets
     ARCHIVE   DESTINATION ${G4OX_ARCHIVE_INSTALL_DIR}
     FRAMEWORK DESTINATION ${G4OX_FRAMEWORK_INSTALL_DIR})
 
-add_executable(make_csg_tree make_csg_tree.cpp)
+add_executable(make_csg_tree make_csg_tree.cpp ../include/argparse/argparse.hpp)
 target_link_libraries(make_csg_tree g4ox)
+target_include_directories(make_csg_tree PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
 
 add_executable(simg4ox simg4ox.cpp)
 target_link_libraries(simg4ox g4ox)
