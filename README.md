@@ -19,3 +19,9 @@ To run a test that generates a NumPy file (`out/photons.npy`) with the simulated
 ```bash
 ./build/src/simtox
 ```
+
+Similarly, to start a Geant4-based simulation of optical photons, run:
+
+```bash
+./build/src/simg4ox
+```
