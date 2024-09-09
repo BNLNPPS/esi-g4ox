@@ -1,55 +1,66 @@
-#include <algorithm>
 #include <iostream>
 #include <string>
-#include <vector>
-
-#include <curand_kernel.h>
 
 #include "SysRap/NP.hh"
 #include "SysRap/SEvent.hh"
 #include "SysRap/sphoton.h"
 #include "SysRap/srng.h"
 #include "SysRap/storch.h"
+#include "SysRap/storchtype.h"
 
 using namespace std;
 
 
 int main(int argc, char **argv)
 {
-  unsigned n_torches = 1; // create one torch
   unsigned n_photons = 100;
-  bool dump = true;
 
-  NP* gs = NP::Make<float>(n_torches, 6, 4);
+  // Initialize one torch object
+  storch torch;
 
-  storch* torch = reinterpret_cast<storch*>(gs->bytes());
+  // Assign values to all data members based on the FillGenstep function
+  torch.gentype = OpticksGenstep_TORCH;
+  torch.trackid = 0;
+  torch.matline = 0;
+  torch.numphoton = n_photons;
 
-  for(unsigned torch_id = 0; torch_id < gs->shape[0]; torch_id++)
-  {
-    cout << "torch_id: " << torch_id << endl;
-    // Set all torch parameters
-    storch::FillGenstep(torch[torch_id], torch_id, n_photons, dump);
-  }
+  // Assign default values for position, time, momentum, and other attributes
+  torch.pos = {0.0f, 0.0f, -90.0f};
+  torch.time = 0.0f;
 
-  gs->dump();
-  cout << torch->desc() << endl;
+  torch.mom = {0.0f, 0.0f, 1.0f};
+  torch.mom = normalize(torch.mom);
+  torch.weight = 0.0f;
 
-  NP* ph = NP::Make<float>(n_photons, 4, 4);
+  torch.pol = {1.0f, 0.0f, 0.0f};
+  torch.wavelength = 420.0f;
 
-  const quad6* qtorch = reinterpret_cast<quad6*>(gs->bytes());
-  sphoton* photons = reinterpret_cast<sphoton*>(ph->bytes());
+  torch.zenith = {0.0f, 1.0f};
+  torch.azimuth = {0.0f, 1.0f};
+
+  torch.radius = 50.0f;
+  torch.distance = 0.0f;
+  torch.mode = 255;
+  torch.type = T_DISC;
+
+  cout << torch.desc() << endl;
+
+  NP* photons = NP::Make<float>(n_photons, 4, 4);
+
+  const quad6& qtorch = *reinterpret_cast<quad6*>(&torch);
+  sphoton* qphotons = reinterpret_cast<sphoton*>(photons->bytes());
   int unused = -1;
 
   srng rng(12345);
 
   for(unsigned photon_id = 0; photon_id < n_photons; photon_id++)
   {
-    storch::generate(photons[photon_id], rng, *qtorch, unused, unused);
+    storch::generate(qphotons[photon_id], rng, qtorch, unused, unused);
   }
 
-  ph->set_meta({"my photon meta info 1", "additional meta info"});
-  ph->dump();
-  ph->save("out/photons.npy");
+  photons->set_meta({"my photon meta info 1", "additional meta info"});
+  photons->dump();
+  photons->save("out/photons.npy");
 
   return EXIT_SUCCESS;
 }
