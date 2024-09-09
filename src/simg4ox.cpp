@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <filesystem>
 #include <iostream>
 #include <string>
@@ -12,8 +11,16 @@
 #include "G4VPhysicalVolume.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
+#include "G4OpticalPhoton.hh"
+#include "G4PrimaryVertex.hh"
+#include "G4PrimaryParticle.hh"
+#include "G4PhysicalConstants.hh"
+#include "G4SystemOfUnits.hh"
+#include "G4ThreeVector.hh"
 
 #include "G4CX/G4CXOpticks.hh"
+#include "SysRap/NP.hh"
+#include "SysRap/sphoton.h"
 
 using namespace std;
 
@@ -38,7 +45,41 @@ struct DetectorConstruction : G4VUserDetectorConstruction
 
 struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 {
-  void GeneratePrimaries(G4Event* evt) {}
+  void GeneratePrimaries(G4Event* event) {
+
+    NP* photons = NP::Make<float>(0, 4, 4);
+
+    cout << "read photons" << endl;
+    photons->load("out/photons.npy");
+    //photons->dump();
+
+    size_t n_photons = photons->num_items();
+    sphoton* sphotons = reinterpret_cast<sphoton*>(photons->bytes());
+
+    for (int i=0; i < n_photons; i++)
+    {
+      sphoton &p = sphotons[i];
+      //cout << "val: " << i << ": " << p;
+
+      G4ThreeVector position_mm(p.pos.x, p.pos.y, p.pos.z);
+      G4double time_ns = p.time;
+      G4ThreeVector direction(p.mom.x, p.mom.y, p.mom.z);
+      //direction = direction.unit();
+      G4double wavelength_nm = p.wavelength ;
+      G4ThreeVector polarization(p.pol.x, p.pol.y, p.pol.z);
+
+      G4PrimaryVertex* vertex = new G4PrimaryVertex(position_mm, time_ns);
+      G4double kineticEnergy = h_Planck*c_light/(wavelength_nm*nm) ;
+
+      G4PrimaryParticle* particle = new G4PrimaryParticle(G4OpticalPhoton::Definition());
+      particle->SetKineticEnergy(kineticEnergy);
+      particle->SetMomentumDirection(direction);
+      particle->SetPolarization(polarization);
+
+      vertex->SetPrimary(particle);
+      event->AddPrimaryVertex(vertex);
+    }
+  }
 };
 
 
@@ -77,6 +118,7 @@ int main(int argc, char **argv)
   }
 
   // Configure Geant4
+  // The physics list must be instantiated before other user actions
   G4RunManager run_mgr;
   run_mgr.SetUserInitialization(new G4GenericPhysicsList);
 
@@ -85,7 +127,7 @@ int main(int argc, char **argv)
   run_mgr.SetUserInitialization(g4app->det_cons_);
   run_mgr.SetUserAction(g4app->prim_gen_);
   run_mgr.Initialize();
-  run_mgr.BeamOn(2);
+  run_mgr.BeamOn(1);
 
   return EXIT_SUCCESS;
 }
