@@ -8,7 +8,6 @@
 #include "G4EmStandardPhysics_option4.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
-#include "G4GenericPhysicsList.hh"
 #include "G4RunManager.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4VUserDetectorConstruction.hh"
@@ -123,12 +122,8 @@ int main(int argc, char **argv)
 
   // Configure Geant4
   // The physics list must be instantiated before other user actions
-  G4VModularPhysicsList *physics_list = new FTFP_BERT;
-  physics_list->ReplacePhysics(new G4EmStandardPhysics_option4);
-  physics_list->RegisterPhysics(new G4OpticalPhysics);
-
   G4RunManager run_mgr;
-  run_mgr.SetUserInitialization(physics_list);
+  run_mgr.SetUserInitialization(new FTFP_BERT);
 
   G4App* g4app = new G4App(gdml_file);
 
