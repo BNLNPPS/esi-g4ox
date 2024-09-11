@@ -12,7 +12,6 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
 #include "G4OpticalPhoton.hh"
-#include "G4OpticalPhysics.hh"
 #include "G4PrimaryVertex.hh"
 #include "G4PrimaryParticle.hh"
 #include "G4PhysicalConstants.hh"
