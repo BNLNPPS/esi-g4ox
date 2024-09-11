@@ -4,9 +4,9 @@
 
 #include <argparse/argparse.hpp>
 
+#include "FTFP_BERT.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
-#include "G4GenericPhysicsList.hh"
 #include "G4RunManager.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4VUserDetectorConstruction.hh"
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
   // Configure Geant4
   // The physics list must be instantiated before other user actions
   G4RunManager run_mgr;
-  run_mgr.SetUserInitialization(new G4GenericPhysicsList);
+  run_mgr.SetUserInitialization(new FTFP_BERT);
 
   G4App* g4app = new G4App(gdml_file);
 
