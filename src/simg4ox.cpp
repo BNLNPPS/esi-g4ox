@@ -4,6 +4,8 @@
 
 #include <argparse/argparse.hpp>
 
+#include "FTFP_BERT.hh"
+#include "G4EmStandardPhysics_option4.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
 #include "G4GenericPhysicsList.hh"
@@ -12,11 +14,13 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
 #include "G4OpticalPhoton.hh"
+#include "G4OpticalPhysics.hh"
 #include "G4PrimaryVertex.hh"
 #include "G4PrimaryParticle.hh"
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
+#include "G4VModularPhysicsList.hh"
 
 #include "G4CX/G4CXOpticks.hh"
 #include "SysRap/NP.hh"
@@ -119,8 +123,12 @@ int main(int argc, char **argv)
 
   // Configure Geant4
   // The physics list must be instantiated before other user actions
+  G4VModularPhysicsList *physics_list = new FTFP_BERT;
+  physics_list->ReplacePhysics(new G4EmStandardPhysics_option4);
+  physics_list->RegisterPhysics(new G4OpticalPhysics);
+
   G4RunManager run_mgr;
-  run_mgr.SetUserInitialization(new G4GenericPhysicsList);
+  run_mgr.SetUserInitialization(physics_list);
 
   G4App* g4app = new G4App(gdml_file);
 
