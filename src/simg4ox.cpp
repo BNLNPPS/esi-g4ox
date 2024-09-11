@@ -5,7 +5,6 @@
 #include <argparse/argparse.hpp>
 
 #include "FTFP_BERT.hh"
-#include "G4EmStandardPhysics_option4.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
 #include "G4RunManager.hh"
@@ -19,7 +18,6 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
-#include "G4VModularPhysicsList.hh"
 
 #include "G4CX/G4CXOpticks.hh"
 #include "SysRap/NP.hh"
