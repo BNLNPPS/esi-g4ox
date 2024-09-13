@@ -19,6 +19,7 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
+#include "G4UserSteppingAction.hh"
 
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
@@ -89,16 +90,27 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 };
 
 
+struct SteppingAction : G4UserSteppingAction
+{
+  void UserSteppingAction(const G4Step* step)
+  {
+    cout << step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << endl;
+  }
+};
+
+
 struct G4App
 {
   G4App(filesystem::path gdml_file) :
     det_cons_(new DetectorConstruction(gdml_file)),
-    prim_gen_(new PrimaryGenerator)
+    prim_gen_(new PrimaryGenerator),
+    stepping_(new SteppingAction)
   {
   }
 
   G4VUserDetectorConstruction*   det_cons_;
   G4VUserPrimaryGeneratorAction* prim_gen_;
+  SteppingAction* stepping_;
 };
 
 
