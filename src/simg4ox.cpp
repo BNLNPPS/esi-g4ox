@@ -18,6 +18,10 @@
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
 
+#include "G4VisExecutive.hh"
+#include "G4UIExecutive.hh"
+#include "G4UImanager.hh"
+
 #include "G4CX/G4CXOpticks.hh"
 #include "SysRap/NP.hh"
 #include "SysRap/sphoton.h"
@@ -127,6 +131,14 @@ int main(int argc, char **argv)
   run_mgr.SetUserInitialization(g4app->det_cons_);
   run_mgr.SetUserAction(g4app->prim_gen_);
   run_mgr.Initialize();
+
+  G4VisManager *visManager = new G4VisExecutive;
+  visManager->Initialize();
+  G4UIExecutive *ui = new G4UIExecutive(argc, argv);
+  G4UImanager *UImanager = G4UImanager::GetUIpointer();
+  UImanager->ApplyCommand("/control/execute vis.mac");
+  ui->SessionStart();
+
   run_mgr.BeamOn(1);
 
   return EXIT_SUCCESS;
