@@ -120,7 +120,7 @@ int main(int argc, char **argv)
     .store_into(macro_name);
 
   program.add_argument("-i", "--interactive")
-    .help("whether to open a interactive window with a viewer")
+    .help("whether to open an interactive window with a viewer")
     .flag()
     .store_into(interactive);
 

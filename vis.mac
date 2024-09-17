@@ -1,5 +1,4 @@
-# Macro file for  initialization 
-# in interactive session
+# Geant4 macro file for interactive session with a graphical viewer
 #
 # Set verbosity
 /control/verbose 2
