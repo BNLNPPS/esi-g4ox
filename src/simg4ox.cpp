@@ -133,12 +133,10 @@ int main(int argc, char **argv)
   run_mgr.SetUserInitialization(new FTFP_BERT);
 
   G4App* g4app = new G4App(gdml_file);
-
   run_mgr.SetUserInitialization(g4app->det_cons_);
   run_mgr.SetUserAction(g4app->prim_gen_);
   run_mgr.Initialize();
 
-  G4cout << macro_name << G4endl;
   if(macro_name == "vis.mac")
   	{
 	G4VisManager *visManager = new G4VisExecutive;
@@ -153,8 +151,6 @@ int main(int argc, char **argv)
         {
   	ui->SessionStart();
 	}
-
-  //run_mgr.BeamOn(1);
 
   return EXIT_SUCCESS;
 }
