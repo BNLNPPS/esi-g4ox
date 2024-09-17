@@ -105,6 +105,7 @@ int main(int argc, char **argv)
   argparse::ArgumentParser program("simg4ox", "0.0.0");
 
   string gdml_file, macro_name;
+  bool interactive;
 
   program.add_argument("-g", "--gdml")
     .help("path to GDML file")
@@ -113,10 +114,15 @@ int main(int argc, char **argv)
     .store_into(gdml_file);
 
   program.add_argument("-m", "--macro")
-  .help("path to G4 macro")
-  .default_value(string("vis.mac"))
-  .nargs(1)
-  .store_into(macro_name);
+    .help("path to G4 macro")
+    .default_value(string("run.mac"))
+    .nargs(1)
+    .store_into(macro_name);
+
+  program.add_argument("-i", "--interactive")
+    .help("whether to open a interactive window with a viewer")
+    .flag()
+    .store_into(interactive);
 
   try {
     program.parse_args(argc, argv);
@@ -137,21 +143,23 @@ int main(int argc, char **argv)
   run_mgr.SetUserAction(g4app->prim_gen_);
   run_mgr.Initialize();
 
-  if(macro_name == "vis.mac")
-  {
-    G4VisManager *visManager = new G4VisExecutive;
-    visManager->Initialize();
+  G4UIExecutive *uix = nullptr;
+  G4VisManager  *vis = nullptr;
+
+  if (interactive) {
+    uix = new G4UIExecutive(argc, argv);
+    vis = new G4VisExecutive;
+    vis->Initialize();
   }
 
-  G4UIExecutive *ui = new G4UIExecutive(argc, argv);
-  G4UImanager *UImanager = G4UImanager::GetUIpointer();
-  string command = "/control/execute ";
-  UImanager->ApplyCommand(command+macro_name);
+  G4UImanager *ui = G4UImanager::GetUIpointer();
+  ui->ApplyCommand("/control/execute " + macro_name);
 
-  if(macro_name == "vis.mac")
-  {
-    ui->SessionStart();
+  if (interactive) {
+    uix->SessionStart();
   }
+
+  delete uix;
 
   return EXIT_SUCCESS;
 }
