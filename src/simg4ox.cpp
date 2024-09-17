@@ -104,13 +104,19 @@ int main(int argc, char **argv)
 {
   argparse::ArgumentParser program("simg4ox", "0.0.0");
 
-  string gdml_file;
+  string gdml_file, macro_name;
 
   program.add_argument("-g", "--gdml")
     .help("path to GDML file")
     .default_value(string("geom.gdml"))
     .nargs(1)
     .store_into(gdml_file);
+
+    program.add_argument("-m", "--macro")
+    .help("path to G4 macro")
+    .default_value(string("vis.mac"))
+    .nargs(1)
+    .store_into(macro_name);
 
   try {
     program.parse_args(argc, argv);
@@ -132,14 +138,23 @@ int main(int argc, char **argv)
   run_mgr.SetUserAction(g4app->prim_gen_);
   run_mgr.Initialize();
 
-  G4VisManager *visManager = new G4VisExecutive;
-  visManager->Initialize();
+  G4cout << macro_name << G4endl;
+  if(macro_name == "vis.mac")
+  	{
+	G4VisManager *visManager = new G4VisExecutive;
+  	visManager->Initialize();
+	}
   G4UIExecutive *ui = new G4UIExecutive(argc, argv);
   G4UImanager *UImanager = G4UImanager::GetUIpointer();
-  UImanager->ApplyCommand("/control/execute vis.mac");
-  ui->SessionStart();
+  string command = "/control/execute ";
+  UImanager->ApplyCommand(command+macro_name);
+  
+  if(macro_name == "vis.mac")
+        {
+  	ui->SessionStart();
+	}
 
-  run_mgr.BeamOn(1);
+  //run_mgr.BeamOn(1);
 
   return EXIT_SUCCESS;
 }
