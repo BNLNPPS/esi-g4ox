@@ -18,6 +18,10 @@
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
 
+#include "G4VisExecutive.hh"
+#include "G4UIExecutive.hh"
+#include "G4UImanager.hh"
+
 #include "G4CX/G4CXOpticks.hh"
 #include "SysRap/NP.hh"
 #include "SysRap/sphoton.h"
@@ -100,13 +104,25 @@ int main(int argc, char **argv)
 {
   argparse::ArgumentParser program("simg4ox", "0.0.0");
 
-  string gdml_file;
+  string gdml_file, macro_name;
+  bool interactive;
 
   program.add_argument("-g", "--gdml")
     .help("path to GDML file")
     .default_value(string("geom.gdml"))
     .nargs(1)
     .store_into(gdml_file);
+
+  program.add_argument("-m", "--macro")
+    .help("path to G4 macro")
+    .default_value(string("run.mac"))
+    .nargs(1)
+    .store_into(macro_name);
+
+  program.add_argument("-i", "--interactive")
+    .help("whether to open an interactive window with a viewer")
+    .flag()
+    .store_into(interactive);
 
   try {
     program.parse_args(argc, argv);
@@ -123,11 +139,27 @@ int main(int argc, char **argv)
   run_mgr.SetUserInitialization(new FTFP_BERT);
 
   G4App* g4app = new G4App(gdml_file);
-
   run_mgr.SetUserInitialization(g4app->det_cons_);
   run_mgr.SetUserAction(g4app->prim_gen_);
   run_mgr.Initialize();
-  run_mgr.BeamOn(1);
+
+  G4UIExecutive *uix = nullptr;
+  G4VisManager  *vis = nullptr;
+
+  if (interactive) {
+    uix = new G4UIExecutive(argc, argv);
+    vis = new G4VisExecutive;
+    vis->Initialize();
+  }
+
+  G4UImanager *ui = G4UImanager::GetUIpointer();
+  ui->ApplyCommand("/control/execute " + macro_name);
+
+  if (interactive) {
+    uix->SessionStart();
+  }
+
+  delete uix;
 
   return EXIT_SUCCESS;
 }

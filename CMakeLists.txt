@@ -28,7 +28,7 @@ set(G4OX_CMAKE_PROJECT_CONFIG_FILE  "${G4OX_CMAKE_CONFIG_DIR}/${PROJECT_NAME}Con
 list(APPEND CMAKE_MODULE_PATH "$ENV{OPTICKS_HOME}/cmake/Modules")
 
 # Set up external dependencies
-find_package(Geant4 REQUIRED)
+find_package(Geant4 REQUIRED ui_all vis_all)
 find_package(g4cx REQUIRED)
 find_package(sysrap REQUIRED)
 
