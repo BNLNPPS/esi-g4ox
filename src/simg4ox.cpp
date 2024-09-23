@@ -20,6 +20,8 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
+#include "G4Track.hh"
+#include "G4TrackStatus.hh"
 #include "G4UserEventAction.hh"
 #include "G4UserSteppingAction.hh"
 #include "G4UserTrackingAction.hh"
@@ -34,6 +36,7 @@
 #include "SysRap/STrackInfo.h"
 #include "SysRap/spho.h"
 #include "SysRap/sphoton.h"
+#include "U4/U4Random.hh"
 #include "U4/U4StepPoint.hh"
 #include "U4/U4Track.h"
 
@@ -117,6 +120,18 @@ struct EventAction : G4UserEventAction {
 };
 
 
+void GetLabel(spho& ulabel, const G4Track* track)
+{
+    spho* label = STrackInfo<spho>::GetRef(track);
+    assert( label && label->isDefined() && "all photons are expected to be labelled" );
+
+    std::array<int,spho::N> a_label ;
+    label->serialize(a_label) ;
+
+    ulabel.load(a_label);
+}
+
+
 struct SteppingAction : G4UserSteppingAction {
 
   void UserSteppingAction(const G4Step* step) {
@@ -173,46 +188,99 @@ struct SteppingAction : G4UserSteppingAction {
     //spho ulabel{};
 
     spho* label = STrackInfo<spho>::GetRef(track);
-
-    //STrackInfo<T>* trackinfo = GetTrackInfo(track);
     cout << "label: " << *label << endl;
-
-    //std::array<int, spho::N> a_label;
-    //label->serialize(a_label);
-    //ulabel.load(a_label);
-
-    //cout << "ulabel: " << ulabel << endl;
-
-    //cout << STrackInfo<spho>::Desc(track) << endl;
-    //STrackInfo<T>* trackinfo = GetTrackInfo(track);
-
-    //G4VUserTrackInformation* ui = track->GetUserInformation();
-
-    //assert( ui && "ui created" );
-
-    //STrackInfo<G4Track>* trackinfo = ui ? static_cast<STrackInfo<G4Track>*>(ui) : nullptr;
-
-    //assert( trackinfo && "trackinfo created" );
-
-    //return trackinfo ? &(trackinfo->label) : nullptr ;
-
-    //assert( label && "label created" );
-    //assert( label && label->isDefined() && "all photons are expected to be labelled" );
-    //cout << "label: " << label << endl;
-    //sev->pointPhoton(ulabel);        // sctx::point copying current into buffers
-    //sev->pointPhoton(*label);        // sctx::point copying current into buffers
-    //cout << label.gs == other.gs && ix == other.ix && id == other.id ;
   }
 };
 
 
 struct TrackingAction : G4UserTrackingAction
 {
-  void PostUserTrackingAction(const G4Track*) override {}
+  const G4Track* transient_fSuspend_track = nullptr;
+
+  void PreUserTrackingAction_Optical_FabricateLabel( const G4Track* track )
+  {
+      U4Track::SetFabricatedLabel<spho>(track);
+      spho* label = STrackInfo<spho>::GetRef(track);
+      assert(label) ;
+      //saveOrLoadStates(label->id);  // moved here as labelling happens once per torch/input photon
+  }
+
 
   void PreUserTrackingAction(const G4Track* track) override {
-    U4Track::SetFabricatedLabel<spho>(track);
-    sev->beginPhoton(ulabel);
+    spho ulabel = {} ;
+
+    spho* label = STrackInfo<spho>::GetRef(track);
+
+    if( label == nullptr )
+    {
+        PreUserTrackingAction_Optical_FabricateLabel(track) ;
+        label = STrackInfo<spho>::GetRef(track);
+    }
+    assert( label && label->isDefined() );
+
+    std::array<int,spho::N> a_label ;
+    label->serialize(a_label) ;
+
+    ulabel.load(a_label);
+
+    U4Random::SetSequenceIndex(ulabel.id);
+
+    bool resume_fSuspend = track == transient_fSuspend_track ;
+
+    SEvt* sev = SEvt::Get_ECPU();
+    //LOG_IF(fatal, sev == nullptr) << " SEvt::Get(1) returned nullptr " ;
+    assert(sev);
+
+
+    if(ulabel.gen() == 0)
+    {
+        if(resume_fSuspend == false)
+        {
+            sev->beginPhoton(ulabel);  // THIS ZEROS THE SLOT
+        }
+        else  // resume_fSuspend:true happens following FastSim ModelTrigger:YES, DoIt
+        {
+            sev->resumePhoton(ulabel);
+        }
+    }
+    else if( ulabel.gen() > 0 )   // HMM: thats going to stick for reemission photons
+    {
+        if(resume_fSuspend == false)
+        {
+            sev->rjoinPhoton(ulabel);
+        }
+        else   // resume_fSuspend:true happens following FastSim ModelTrigger:YES, DoIt
+        {
+            sev->rjoin_resumePhoton(ulabel);
+        }
+    }
+  }
+
+
+  void PostUserTrackingAction(const G4Track* track) override {
+    G4TrackStatus tstat = track->GetTrackStatus();
+
+    bool is_fStopAndKill = tstat == fStopAndKill;
+    bool is_fSuspend     = tstat == fSuspend;
+    bool is_fStopAndKill_or_fSuspend = is_fStopAndKill || is_fSuspend;
+
+    assert( is_fStopAndKill_or_fSuspend );
+
+    spho ulabel = {} ;
+    GetLabel( ulabel, track );
+    //if(!Enabled(ulabel)) return ; // EIDX, GIDX skipping
+
+    if(is_fStopAndKill)
+    {
+        SEvt* sev = SEvt::Get_ECPU();
+        U4Random::SetSequenceIndex(-1);
+        sev->finalPhoton(ulabel);
+        transient_fSuspend_track = nullptr ;
+    }
+    else if(is_fSuspend)
+    {
+        transient_fSuspend_track = track ;
+    }
   }
 };
 
