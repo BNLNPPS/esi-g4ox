@@ -25,3 +25,11 @@ Similarly, to start a Geant4-based simulation of optical photons, run:
 ```bash
 ./build/src/simg4ox
 ```
+
+Before runnning `simg4ox` it is recommended to set the following environment variables:
+
+```
+export TMP=/tmp/myname
+export GEOM=mygeom
+export OPTICKS_EVENT_MODE=DebugLite
+```
