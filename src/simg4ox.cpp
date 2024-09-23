@@ -20,6 +20,7 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
+#include "G4UserEventAction.hh"
 #include "G4UserSteppingAction.hh"
 #include "G4UserTrackingAction.hh"
 
@@ -98,6 +99,20 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     SEvt* sev = SEvt::Get_ECPU();
     sev->SetInputPhoton(photons);
+  }
+};
+
+
+struct EventAction : G4UserEventAction {
+
+  void BeginOfEventAction(const G4Event *event) override {
+    sev->beginOfEvent(event->GetEventID());
+  }
+
+  void EndOfEventAction(const G4Event *event) override {
+    sev->addEventConfigArray();
+    sev->gather();
+    sev->endOfEvent(event->GetEventID());
   }
 };
 
@@ -208,7 +223,8 @@ struct G4App
     det_cons_(new DetectorConstruction(gdml_file)),
     prim_gen_(new PrimaryGenerator),
     stepping_(new SteppingAction),
-    tracking_(new TrackingAction)
+    tracking_(new TrackingAction),
+    event_act_(new EventAction)
   {
   }
 
@@ -216,6 +232,7 @@ struct G4App
   G4VUserPrimaryGeneratorAction* prim_gen_;
   SteppingAction* stepping_;
   TrackingAction* tracking_;
+  EventAction*    event_act_;
 };
 
 
@@ -266,6 +283,7 @@ int main(int argc, char **argv)
   G4App* g4app = new G4App(gdml_file);
   run_mgr.SetUserInitialization(g4app->det_cons_);
   run_mgr.SetUserAction(g4app->prim_gen_);
+  run_mgr.SetUserAction(g4app->event_act_);
   run_mgr.SetUserAction(g4app->tracking_);
   run_mgr.SetUserAction(g4app->stepping_);
   run_mgr.Initialize();
