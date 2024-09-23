@@ -39,6 +39,8 @@
 using namespace std;
 
 
+SEvt* sev = nullptr;
+
 struct DetectorConstruction : G4VUserDetectorConstruction
 {
   DetectorConstruction(filesystem::path gdml_file) : gdml_file_(gdml_file) {}
@@ -93,6 +95,9 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
       vertex->SetPrimary(particle);
       event->AddPrimaryVertex(vertex);
     }
+
+    SEvt* sev = SEvt::Get_ECPU();
+    sev->SetInputPhoton(photons);
   }
 };
 
@@ -122,8 +127,6 @@ struct SteppingAction : G4UserSteppingAction {
     //const G4StepPoint* post = step->GetPostStepPoint();
     const G4Track*     track = step->GetTrack();
     //G4VPhysicalVolume* pv = track->GetVolume();
-
-    SEvt* sev = SEvt::Create_ECPU();
 
     // populate current photon with pos, mom, pol, time, wavelength
     sphoton& photon = sev->current_ctx.p;
@@ -248,6 +251,9 @@ int main(int argc, char **argv)
     cerr << program;
     exit(EXIT_FAILURE);
   }
+
+  // Create global event
+  sev = SEvt::HighLevelCreate(SEvt::ECPU);
 
   // Configure Geant4
   // The physics list must be instantiated before other user actions
