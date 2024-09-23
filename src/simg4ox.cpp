@@ -13,6 +13,7 @@
 #include "G4VProcess.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
+#include "G4OpBoundaryProcess.hh"
 #include "G4OpticalPhoton.hh"
 #include "G4OpticalPhysics.hh"
 #include "G4PrimaryVertex.hh"
@@ -38,6 +39,7 @@
 #include "SysRap/sphoton.h"
 #include "U4/U4Random.hh"
 #include "U4/U4StepPoint.hh"
+#include "U4/U4Touchable.h"
 #include "U4/U4Track.h"
 
 using namespace std;
@@ -45,16 +47,19 @@ using namespace std;
 
 SEvt* sev = nullptr;
 
-struct DetectorConstruction : G4VUserDetectorConstruction
-{
+struct DetectorConstruction : G4VUserDetectorConstruction {
+
   DetectorConstruction(filesystem::path gdml_file) : gdml_file_(gdml_file) {}
 
-  G4VPhysicalVolume* Construct()
-  {
+  G4VPhysicalVolume* Construct() override {
     G4GDMLParser parser;
     parser.Read(gdml_file_.string(), false);
 
-    return parser.GetWorldVolume();
+    G4VPhysicalVolume* world = parser.GetWorldVolume();
+
+    G4CXOpticks::SetGeometry(world);
+
+    return world;
   }
 
  private:
@@ -63,10 +68,9 @@ struct DetectorConstruction : G4VUserDetectorConstruction
 };
 
 
-struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
-{
-  void GeneratePrimaries(G4Event* event) {
+struct PrimaryGenerator : G4VUserPrimaryGeneratorAction {
 
+  void GeneratePrimaries(G4Event* event) override {
     NP* photons = NP::Make<float>(0, 4, 4);
 
     cout << "read photons" << endl;
@@ -76,8 +80,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
     size_t n_photons = photons->num_items();
     sphoton* sphotons = reinterpret_cast<sphoton*>(photons->bytes());
 
-    for (int i=0; i < n_photons; i++)
-    {
+    for (int i=0; i < n_photons; i++) {
       sphoton &p = sphotons[i];
       //cout << "val: " << i << ": " << p;
 
@@ -113,9 +116,14 @@ struct EventAction : G4UserEventAction {
   }
 
   void EndOfEventAction(const G4Event *event) override {
+    int eventID = event->GetEventID();
     sev->addEventConfigArray();
     sev->gather();
-    sev->endOfEvent(event->GetEventID());
+    sev->endOfEvent(eventID);
+
+    // GPU-based simulation
+    G4CXOpticks* gx = G4CXOpticks::Get() ;
+    gx->simulate(eventID, true ) ;
   }
 };
 
@@ -137,58 +145,64 @@ struct SteppingAction : G4UserSteppingAction {
   void UserSteppingAction(const G4Step* step) {
     static int photon_id = 0;
 
-    if (step->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition()) {
-      cout << "optical photon: " << photon_id << " - "
-           << step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << " - ";
-
-      const G4VProcess* process = step->GetPreStepPoint()->GetProcessDefinedStep();
-
-      if (process == nullptr) {
-        cout << "no process defined" << endl;
-        return;
-      } else {
-        cout << process->GetProcessName() << endl;
-      }
-    } else {
+    if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
       return;
+
+    cout << "XXX optical photon: " << photon_id << " - "
+         << step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << " - ";
+
+    const G4VProcess* process = step->GetPreStepPoint()->GetProcessDefinedStep();
+
+    if (process == nullptr) {
+      cout << "no process defined" << endl;
+      return;
+    } else {
+      cout << process->GetProcessName() << endl;
     }
 
-    const G4StepPoint* pre = step->GetPreStepPoint();
-    //const G4StepPoint* post = step->GetPostStepPoint();
-    const G4Track*     track = step->GetTrack();
-    //G4VPhysicalVolume* pv = track->GetVolume();
+    const G4Track* track = step->GetTrack();
+    G4VPhysicalVolume* pv = track->GetVolume();
+    const G4VTouchable* touch = track->GetTouchable();
 
-    // populate current photon with pos, mom, pol, time, wavelength
-    sphoton& photon = sev->current_ctx.p;
+    spho ulabel = {} ;
+    GetLabel( ulabel, track );
 
-    const G4ThreeVector& pos = pre->GetPosition();
-    const G4ThreeVector& mom = pre->GetMomentumDirection();
-    const G4ThreeVector& pol = pre->GetPolarization();
+    const G4StepPoint* pre = step->GetPreStepPoint() ;
+    const G4StepPoint* post = step->GetPostStepPoint() ;
 
-    G4double time = pre->GetGlobalTime();
-    G4double energy = pre->GetKineticEnergy();
-    G4double wavelength = h_Planck*c_light/energy ;
+    G4ThreeVector delta = step->GetDeltaPosition();
+    double step_mm = delta.mag()/mm  ;
 
-    photon.pos.x = pos.x();
-    photon.pos.y = pos.y();
-    photon.pos.z = pos.z();
-    photon.time  = time/ns ;
+    SEvt* sev = SEvt::Get_ECPU();
+    sev->checkPhotonLineage(ulabel);
 
-    photon.mom.x = mom.x();
-    photon.mom.y = mom.y();
-    photon.mom.z = mom.z();
+    sphoton& current_photon = sev->current_ctx.p ;
 
-    photon.pol.x = pol.x();
-    photon.pol.y = pol.y();
-    photon.pol.z = pol.z();
-    photon.wavelength = wavelength/nm ;
+    // first_flag identified by the flagmask having a single bit (all genflag are single bits, set in beginPhoton)
+    bool first_flag = current_photon.flagmask_count() == 1 ;
+    if(first_flag)
+    {
+        //LOG(LEVEL) << " first_flag, track " << track ;
+        U4StepPoint::Update(current_photon, pre);   // populate current_photon with pos,mom,pol,time,wavelength
+        sev->pointPhoton(ulabel);        // sctx::point copying current into buffers
+    }
 
-    cout << photon << endl;
+    bool warn = true ;
+    bool is_tir = false ;
+    unsigned flag = U4StepPoint::Flag<G4OpBoundaryProcess>(post, warn, is_tir ) ;
 
-    //spho ulabel{};
+    bool is_fastsim_flag = flag == DEFER_FSTRACKINFO ;
+    bool is_boundary_flag = OpticksPhoton::IsBoundaryFlag(flag) ;  // SD SA DR SR BR BT
+    bool is_surface_flag = OpticksPhoton::IsSurfaceDetectOrAbsorbFlag(flag) ;  // SD SA
+    bool is_detect_flag = OpticksPhoton::IsSurfaceDetectFlag(flag) ;  // SD
 
-    spho* label = STrackInfo<spho>::GetRef(track);
-    cout << "label: " << *label << endl;
+    current_photon.iindex = is_detect_flag ? U4Touchable::ImmediateReplicaNumber(touch) : U4Touchable::AncestorReplicaNumber(touch) ;
+
+    U4StepPoint::Update(current_photon, post);
+
+    current_photon.set_flag( flag );
+
+    sev->pointPhoton(ulabel);     // save SEvt::current_photon/rec/seq/prd into sevent
   }
 };
 
