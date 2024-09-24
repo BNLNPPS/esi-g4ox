@@ -3,4 +3,4 @@
 #
 /run/verbose 1
 /run/initialize
-/run/beamOn 10
+/run/beamOn 1
