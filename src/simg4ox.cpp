@@ -258,18 +258,18 @@ struct G4App
 {
   G4App(filesystem::path gdml_file) :
     det_cons_(new DetectorConstruction(gdml_file)),
-    prim_gen_(new PrimaryGenerator),
-    stepping_(new SteppingAction),
-    tracking_(new TrackingAction),
+    prim_act_(new PrimaryGenerator),
+    step_act_(new SteppingAction),
+    track_act_(new TrackingAction),
     event_act_(new EventAction)
   {
   }
 
   G4VUserDetectorConstruction*   det_cons_;
-  G4VUserPrimaryGeneratorAction* prim_gen_;
-  SteppingAction* stepping_;
-  TrackingAction* tracking_;
-  EventAction*    event_act_;
+  G4VUserPrimaryGeneratorAction* prim_act_;
+  G4UserSteppingAction* step_act_;
+  G4UserTrackingAction* track_act_;
+  G4UserEventAction*    event_act_;
 };
 
 
@@ -319,10 +319,10 @@ int main(int argc, char **argv)
 
   G4App* g4app = new G4App(gdml_file);
   run_mgr.SetUserInitialization(g4app->det_cons_);
-  run_mgr.SetUserAction(g4app->prim_gen_);
+  run_mgr.SetUserAction(g4app->prim_act_);
   run_mgr.SetUserAction(g4app->event_act_);
-  run_mgr.SetUserAction(g4app->tracking_);
-  run_mgr.SetUserAction(g4app->stepping_);
+  run_mgr.SetUserAction(g4app->track_act_);
+  run_mgr.SetUserAction(g4app->step_act_);
   run_mgr.Initialize();
 
   G4UIExecutive *uix = nullptr;
