@@ -1,0 +1,41 @@
+name: Build Pull Request
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+   cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: [gpu]
+
+    container:
+      image: ghcr.io/bnlnpps/esi-shell:latest
+      volumes:
+        - /usr/local/optix:/usr/local/optix
+      options: -i -t
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          id
+          pwd
+          ls -la .
+          cd ..
+          pwd
+          ls -la .
+          ls -la /esi
+          ls -ls /opt/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/
+          curl --version
+          spack find
+          spack find cmake
+          which cmake
+          cmake --version
+          cmake -S esi-g4ox/ -B build
+          cmake --build build
