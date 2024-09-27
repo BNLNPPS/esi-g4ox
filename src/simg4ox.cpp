@@ -118,8 +118,8 @@ struct EventAction : G4UserEventAction {
     sev->endOfEvent(eventID);
 
     // GPU-based simulation
-    G4CXOpticks* gx = G4CXOpticks::Get() ;
-    gx->simulate(eventID, true ) ;
+    G4CXOpticks* gx = G4CXOpticks::Get();
+    gx->simulate(eventID, true);
   }
 };
 
@@ -129,7 +129,7 @@ void get_label(spho& ulabel, const G4Track* track)
   spho* label = STrackInfo<spho>::GetRef(track);
   assert(label && label->isDefined() && "all photons are expected to be labelled");
 
-  std::array<int, spho::N> a_label;
+  std::array<int, 4> a_label;
   label->serialize(a_label);
 
   ulabel.load(a_label);
@@ -170,8 +170,9 @@ struct SteppingAction : G4UserSteppingAction {
       sev->pointPhoton(ulabel);  // copying current into buffers
     }
 
-    bool tir;
-    unsigned flag = U4StepPoint::Flag<G4OpBoundaryProcess>(post, true, tir);
+    bool total_internal_reflection;
+    bool print_errors = true;
+    unsigned flag = U4StepPoint::Flag<G4OpBoundaryProcess>(post, print_errors, total_internal_reflection);
     bool is_detect_flag = OpticksPhoton::IsSurfaceDetectFlag(flag);
 
     current_photon.iindex = is_detect_flag ? U4Touchable::ImmediateReplicaNumber(touch) : U4Touchable::AncestorReplicaNumber(touch);
@@ -207,7 +208,7 @@ struct TrackingAction : G4UserTrackingAction
 
     assert(label && label->isDefined());
 
-    std::array<int, spho::N> a_label;
+    std::array<int, 4> a_label;
     label->serialize(a_label);
 
     spho ulabel = {};
