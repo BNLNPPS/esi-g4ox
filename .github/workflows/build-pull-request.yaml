@@ -24,19 +24,14 @@ jobs:
 
       - name: Build
         shell: bash
+        env:
+          TMP: /tmp/test
+          GEOM: geom
+          OPTICKS_EVENT_MODE: DebugLite
         run: |
-          id
-          pwd
-          ls -la .
-          cd ..
-          pwd
-          ls -la .
-          ls -la /esi
-          ls -ls /opt/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/
-          curl --version
-          spack find
-          spack find cmake
-          which cmake
-          cmake --version
-          cmake -S esi-g4ox/ -B build
+          cmake -S . -B build
           cmake --build build
+          build/src/simtox
+          build/src/simg4ox -g geom/raindrop.gdml -m run.mac
+          ls -la /tmp/myname/GEOM/mygeom/simg4ox/ALL0/A000
+          ls -la /tmp/myname/GEOM/mygeom/simg4ox/ALL0/B000
