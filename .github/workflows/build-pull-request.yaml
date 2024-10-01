@@ -9,7 +9,7 @@ concurrency:
    cancel-in-progress: true
 
 jobs:
-  build:
+  build-n-test:
     runs-on: [gpu]
 
     container:
@@ -24,14 +24,19 @@ jobs:
 
       - name: Build
         shell: bash
-        env:
-          GEOM: testgeom
-          OPTICKS_EVENT_MODE: DebugLite
         run: |
           cmake -S . -B build
           cmake --build build
+
+      - name: Test
+        shell: bash
+        env:
+          GEOM: fakegeom
+          OPTICKS_EVENT_MODE: DebugLite
+        run: |
           QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
           build/src/simtox
           build/src/simg4ox -g geom/raindrop.gdml -m run.mac
-          ls -la /tmp/GEOM/testgeom/simg4ox/ALL0/A000
-          ls -la /tmp/GEOM/testgeom/simg4ox/ALL0/B000
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/A000
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/B000
+          python tests/compare_ab.py
