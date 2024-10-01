@@ -13,7 +13,7 @@ jobs:
     runs-on: [gpu]
 
     container:
-      image: ghcr.io/bnlnpps/esi-shell:latest
+      image: ghcr.io/bnlnpps/esi-shell:1.0.0
       volumes:
         - /usr/local/optix:/usr/local/optix
       options: -i -t
