@@ -31,6 +31,9 @@ jobs:
         run: |
           cmake -S . -B build
           cmake --build build
+          opticks-rngdir
+          #qudarap-prepare-installation
+          QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
           build/src/simtox
           build/src/simg4ox -g geom/raindrop.gdml -m run.mac
           ls -la /tmp/myname/GEOM/mygeom/simg4ox/ALL0/A000
