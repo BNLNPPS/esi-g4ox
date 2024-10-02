@@ -1,0 +1,42 @@
+name: Build Pull Request
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+   cancel-in-progress: true
+
+jobs:
+  build-n-test:
+    runs-on: [gpu]
+
+    container:
+      image: ghcr.io/bnlnpps/esi-shell:1.0.0
+      volumes:
+        - /usr/local/optix:/usr/local/optix
+      options: -i -t
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build
+        shell: bash
+        run: |
+          cmake -S . -B build
+          cmake --build build
+
+      - name: Test
+        shell: bash
+        env:
+          GEOM: fakegeom
+          OPTICKS_EVENT_MODE: DebugLite
+        run: |
+          QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
+          build/src/simtox
+          build/src/simg4ox -g geom/raindrop.gdml -m run.mac
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/A000
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/B000
+          python tests/compare_ab.py
