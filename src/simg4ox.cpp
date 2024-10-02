@@ -44,7 +44,6 @@
 
 using namespace std;
 
-
 struct DetectorConstruction : G4VUserDetectorConstruction
 {
 
