@@ -21,8 +21,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           style: microsoft
+          ignore: |
+            include/argparse
           thread-comments: true
-          files-changed-only: false
           tidy-checks: '-*'
 
       - name: Fail fast?!
