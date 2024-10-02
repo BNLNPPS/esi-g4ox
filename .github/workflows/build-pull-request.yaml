@@ -9,6 +9,28 @@ concurrency:
    cancel-in-progress: true
 
 jobs:
+
+  cpp-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cpp-linter/cpp-linter-action@main
+        id: linter
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          style: microsoft
+          thread-comments: true
+          files-changed-only: false
+          tidy-checks: '-*'
+
+      - name: Fail fast?!
+        if: steps.linter.outputs.checks-failed != 0
+        run: |
+          echo "some linter checks failed. ${{ steps.linter.outputs.checks-failed }}"
+          exit 1
+
   build-n-test:
     runs-on: [gpu]
 
