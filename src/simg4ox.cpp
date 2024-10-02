@@ -44,7 +44,6 @@
 
 using namespace std;
 
-SEvt *sev = nullptr;
 
 struct DetectorConstruction : G4VUserDetectorConstruction
 {
@@ -71,6 +70,9 @@ struct DetectorConstruction : G4VUserDetectorConstruction
 
 struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 {
+    SEvt *sev;
+
+    PrimaryGenerator(SEvt *sev) : sev(sev) {}
 
     void GeneratePrimaries(G4Event *event) override
     {
@@ -110,6 +112,9 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
 struct EventAction : G4UserEventAction
 {
+    SEvt *sev;
+
+    EventAction(SEvt *sev) : sev(sev) {}
 
     void BeginOfEventAction(const G4Event *event) override
     {
@@ -142,6 +147,9 @@ void get_label(spho &ulabel, const G4Track *track)
 
 struct SteppingAction : G4UserSteppingAction
 {
+    SEvt *sev;
+
+    SteppingAction(SEvt *sev) : sev(sev) {}
 
     void UserSteppingAction(const G4Step *step)
     {
@@ -195,6 +203,9 @@ struct SteppingAction : G4UserSteppingAction
 struct TrackingAction : G4UserTrackingAction
 {
     const G4Track *transient_fSuspend_track = nullptr;
+    SEvt *sev;
+
+    TrackingAction(SEvt *sev) : sev(sev) {}
 
     void PreUserTrackingAction_Optical_FabricateLabel(const G4Track *track)
     {
@@ -270,16 +281,23 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(filesystem::path gdml_file)
-        : det_cons_(new DetectorConstruction(gdml_file)), prim_gen_(new PrimaryGenerator),
-          stepping_(new SteppingAction), tracking_(new TrackingAction), event_act_(new EventAction)
+        : sev(SEvt::HighLevelCreate(SEvt::ECPU)),
+          det_cons_(new DetectorConstruction(gdml_file)),
+          prim_gen_(new PrimaryGenerator(sev)),
+          event_act_(new EventAction(sev)),
+          stepping_(new SteppingAction(sev)),
+          tracking_(new TrackingAction(sev))
     {
     }
 
+    // Create "global" event
+    SEvt *sev;
+
     G4VUserDetectorConstruction *det_cons_;
     G4VUserPrimaryGeneratorAction *prim_gen_;
+    EventAction *event_act_;
     SteppingAction *stepping_;
     TrackingAction *tracking_;
-    EventAction *event_act_;
 };
 
 int main(int argc, char **argv)
@@ -316,9 +334,6 @@ int main(int argc, char **argv)
         cerr << program;
         exit(EXIT_FAILURE);
     }
-
-    // Create global event
-    sev = SEvt::HighLevelCreate(SEvt::ECPU);
 
     // Configure Geant4
     // The physics list must be instantiated before other user actions
