@@ -72,7 +72,9 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 {
     SEvt *sev;
 
-    PrimaryGenerator(SEvt *sev) : sev(sev) {}
+    PrimaryGenerator(SEvt *sev) : sev(sev)
+    {
+    }
 
     void GeneratePrimaries(G4Event *event) override
     {
@@ -114,7 +116,9 @@ struct EventAction : G4UserEventAction
 {
     SEvt *sev;
 
-    EventAction(SEvt *sev) : sev(sev) {}
+    EventAction(SEvt *sev) : sev(sev)
+    {
+    }
 
     void BeginOfEventAction(const G4Event *event) override
     {
@@ -149,7 +153,9 @@ struct SteppingAction : G4UserSteppingAction
 {
     SEvt *sev;
 
-    SteppingAction(SEvt *sev) : sev(sev) {}
+    SteppingAction(SEvt *sev) : sev(sev)
+    {
+    }
 
     void UserSteppingAction(const G4Step *step)
     {
@@ -205,7 +211,9 @@ struct TrackingAction : G4UserTrackingAction
     const G4Track *transient_fSuspend_track = nullptr;
     SEvt *sev;
 
-    TrackingAction(SEvt *sev) : sev(sev) {}
+    TrackingAction(SEvt *sev) : sev(sev)
+    {
+    }
 
     void PreUserTrackingAction_Optical_FabricateLabel(const G4Track *track)
     {
@@ -281,11 +289,8 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(filesystem::path gdml_file)
-        : sev(SEvt::HighLevelCreate(SEvt::ECPU)),
-          det_cons_(new DetectorConstruction(gdml_file)),
-          prim_gen_(new PrimaryGenerator(sev)),
-          event_act_(new EventAction(sev)),
-          stepping_(new SteppingAction(sev)),
+        : sev(SEvt::HighLevelCreate(SEvt::ECPU)), det_cons_(new DetectorConstruction(gdml_file)),
+          prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), stepping_(new SteppingAction(sev)),
           tracking_(new TrackingAction(sev))
     {
     }
