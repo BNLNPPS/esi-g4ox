@@ -24,6 +24,7 @@ jobs:
           ignore: |
             include/argparse
           thread-comments: true
+          format-review: true
           tidy-checks: '-*'
 
       - name: Fail fast?!
