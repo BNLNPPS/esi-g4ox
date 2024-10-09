@@ -8,6 +8,7 @@
     <matrix coldim="2" name="GROUPVEL0x560299349110" values="1.55e-06 299.792 1.55e-05 299.792"/>
     <matrix coldim="2" name="RINDEX0x5602993a1df0" values="1.512e-06 1 2.0664e-05 1"/>
     <matrix coldim="2" name="REFLECTIVITY0x5602993a4e30" values="1.512e-06 0.2 2.0664e-05 0.2"/>
+    <matrix coldim="2" name="TRANSMITTANCE_0" values="1.512e-06 0.4 2.0664e-05 0.4"/>
     <matrix coldim="2" name="GROUPVEL0x56029939be20" values="1.512e-06 299.792 2.0664e-05 299.792"/>
   </define>
 
@@ -130,6 +131,12 @@
       <property name="REFLECTIVITY" ref="REFLECTIVITY0x5602993a4e30"/>
       <property name="GROUPVEL" ref="GROUPVEL0x56029939be20"/>
     </opticalsurface>
+    <opticalsurface finish="0" model="1" name="medium_drop_border" type="0" value="0">
+      <property name="RINDEX" ref="RINDEX0x5602993a1df0"/>
+      <property name="REFLECTIVITY" ref="REFLECTIVITY0x5602993a4e30"/>
+      <property name="TRANSMITTANCE" ref="TRANSMITTANCE_0"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x56029939be20"/>
+    </opticalsurface>
     <box lunit="mm" name="G4_Pb_solid0x560299392a50" x="440" y="440" z="440"/>
     <box lunit="mm" name="VACUUM_solid0x56029938bd10" x="480" y="480" z="480"/>
   </solids>
@@ -163,6 +170,10 @@
     <bordersurface name="medium_container_bs0x5602993a4ed0" surfaceproperty="medium_container_bs0x560299397a10">
       <physvolref ref="medium_pv0x560299397680"/>
       <physvolref ref="container_pv0x5602993977b0"/>
+    </bordersurface>
+    <bordersurface name="medium_drop" surfaceproperty="medium_drop_border">
+      <physvolref ref="medium_pv0x560299397680"/>
+      <physvolref ref="drop_pv0x560299393260"/>
     </bordersurface>
   </structure>
 
