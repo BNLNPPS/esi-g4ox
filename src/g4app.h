@@ -1,15 +1,15 @@
 #include <filesystem>
 
 #include "G4BooleanSolid.hh"
-#include "G4SubtractionSolid.hh"
-#include "G4LogicalVolumeStore.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
+#include "G4LogicalVolumeStore.hh"
 #include "G4OpBoundaryProcess.hh"
 #include "G4OpticalPhoton.hh"
 #include "G4PhysicalConstants.hh"
 #include "G4PrimaryParticle.hh"
 #include "G4PrimaryVertex.hh"
+#include "G4SubtractionSolid.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
 #include "G4Track.hh"
@@ -33,22 +33,21 @@
 #include "U4/U4Touchable.h"
 #include "U4/U4Track.h"
 
-
-bool IsSubtractionSolid(G4VSolid* solid)
+bool IsSubtractionSolid(G4VSolid *solid)
 {
     if (!solid)
         return false;
 
     // Check if the solid is directly a G4SubtractionSolid
-    if (dynamic_cast<G4SubtractionSolid*>(solid))
+    if (dynamic_cast<G4SubtractionSolid *>(solid))
         return true;
 
     // If the solid is a Boolean solid, check its constituent solids
-    G4BooleanSolid* booleanSolid = dynamic_cast<G4BooleanSolid*>(solid);
+    G4BooleanSolid *booleanSolid = dynamic_cast<G4BooleanSolid *>(solid);
     if (booleanSolid)
     {
-        G4VSolid* solidA = booleanSolid->GetConstituentSolid(0);
-        G4VSolid* solidB = booleanSolid->GetConstituentSolid(1);
+        G4VSolid *solidA = booleanSolid->GetConstituentSolid(0);
+        G4VSolid *solidB = booleanSolid->GetConstituentSolid(1);
 
         // Recursively check the constituent solids
         if (IsSubtractionSolid(solidA) || IsSubtractionSolid(solidB))
@@ -75,29 +74,29 @@ struct DetectorConstruction : G4VUserDetectorConstruction
 
         G4CXOpticks::SetGeometry(world);
 
-	G4LogicalVolumeStore* lvStore = G4LogicalVolumeStore::GetInstance();
+        G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
 
-    	static G4VisAttributes invisibleVisAttr(false);
+        static G4VisAttributes invisibleVisAttr(false);
 
-       	// Check if the store is not empty
-    	if (lvStore && !lvStore->empty())
-    	{
-        // Iterate over all logical volumes in the store
-        for (auto& logicalVolume : *lvStore)
-        	{
-            	G4VSolid* solid = logicalVolume->GetSolid();
+        // Check if the store is not empty
+        if (lvStore && !lvStore->empty())
+        {
+            // Iterate over all logical volumes in the store
+            for (auto &logicalVolume : *lvStore)
+            {
+                G4VSolid *solid = logicalVolume->GetSolid();
 
-            	// Check if the solid uses subtraction
-            	if (IsSubtractionSolid(solid))
-            		{
-                	// Assign the invisible visual attributes to the logical volume
-                	logicalVolume->SetVisAttributes(&invisibleVisAttr);
+                // Check if the solid uses subtraction
+                if (IsSubtractionSolid(solid))
+                {
+                    // Assign the invisible visual attributes to the logical volume
+                    logicalVolume->SetVisAttributes(&invisibleVisAttr);
 
-                	// Optionally, print out the name of the logical volume
-                	G4cout << "Hiding logical volume: " << logicalVolume->GetName() << G4endl;
-            		}
-        	}
-    	}	
+                    // Optionally, print out the name of the logical volume
+                    G4cout << "Hiding logical volume: " << logicalVolume->GetName() << G4endl;
+                }
+            }
+        }
 
         return world;
     }
