@@ -398,7 +398,7 @@
       <second ref="Tmp0x56008bf895e0"/>
     </subtraction>
     <tube aunit="deg" deltaphi="0.209255778574781" lunit="mm" name="Tmp0x56008bf89990" rmax="205.375" rmin="67" startphi="39.7907442214252" z="25"/>
-    <subtraction name="A-Spacer--0-000x56008bf89f40">
+    <subtraction name="A-Spacer-_-0-000x56008bf89f40">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
     </subtraction>
@@ -407,96 +407,96 @@
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-010x56008bf8a970_rot" unit="deg" x="0" y="0" z="40"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-010x56008bf8acd0">
+    <subtraction name="A-Spacer-_-0-010x56008bf8acd0">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-010x56008bf8acd0_rot" unit="deg" x="0" y="0" z="40"/>
+      <rotation name="A-Spacer-_-0-010x56008bf8acd0_rot" unit="deg" x="0" y="0" z="40"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-020x56008bf8b2a0">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-020x56008bf8b2a0_rot" unit="deg" x="0" y="0" z="80"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-020x56008bf8bc50">
+    <subtraction name="A-Spacer-_-0-020x56008bf8bc50">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-020x56008bf8bc50_rot" unit="deg" x="0" y="0" z="80"/>
+      <rotation name="A-Spacer-_-0-020x56008bf8bc50_rot" unit="deg" x="0" y="0" z="80"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-030x56008bf8c1d0">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-030x56008bf8c1d0_rot" unit="deg" x="0" y="0" z="120"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-030x56008bf8c530">
+    <subtraction name="A-Spacer-_-0-030x56008bf8c530">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-030x56008bf8c530_rot" unit="deg" x="0" y="0" z="120"/>
+      <rotation name="A-Spacer-_-0-030x56008bf8c530_rot" unit="deg" x="0" y="0" z="120"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-040x56008bf8ca60">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-040x56008bf8ca60_rot" unit="deg" x="0" y="0" z="160"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-040x56008bf8cdc0">
+    <subtraction name="A-Spacer-_-0-040x56008bf8cdc0">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-040x56008bf8cdc0_rot" unit="deg" x="0" y="0" z="160"/>
+      <rotation name="A-Spacer-_-0-040x56008bf8cdc0_rot" unit="deg" x="0" y="0" z="160"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-050x56008bf8d390">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-050x56008bf8d390_rot" unit="deg" x="0" y="0" z="-160"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-050x56008bf8d6f0">
+    <subtraction name="A-Spacer-_-0-050x56008bf8d6f0">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-050x56008bf8d6f0_rot" unit="deg" x="0" y="0" z="-160"/>
+      <rotation name="A-Spacer-_-0-050x56008bf8d6f0_rot" unit="deg" x="0" y="0" z="-160"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-060x56008bf8dc70">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-060x56008bf8dc70_rot" unit="deg" x="0" y="0" z="-120"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-060x56008bf8dfd0">
+    <subtraction name="A-Spacer-_-0-060x56008bf8dfd0">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-060x56008bf8dfd0_rot" unit="deg" x="0" y="0" z="-120"/>
+      <rotation name="A-Spacer-_-0-060x56008bf8dfd0_rot" unit="deg" x="0" y="0" z="-120"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-070x56008bf8e610">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-070x56008bf8e610_rot" unit="deg" x="0" y="0" z="-80"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-070x56008bf8ea60">
+    <subtraction name="A-Spacer-_-0-070x56008bf8ea60">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-070x56008bf8ea60_rot" unit="deg" x="0" y="0" z="-80"/>
+      <rotation name="A-Spacer-_-0-070x56008bf8ea60_rot" unit="deg" x="0" y="0" z="-80"/>
     </subtraction>
     <subtraction name="BelleIIAerogel3-0-080x56008bf8f0e0">
       <first ref="Tmp0x56008bf89880"/>
       <second ref="Tmp0x56008bf895e0"/>
       <rotation name="BelleIIAerogel3-0-080x56008bf8f0e0_rot" unit="deg" x="0" y="0" z="-40"/>
     </subtraction>
-    <subtraction name="A-Spacer--0-080x56008bf8f530">
+    <subtraction name="A-Spacer-_-0-080x56008bf8f530">
       <first ref="Tmp0x56008bf89990"/>
       <second ref="Tmp0x56008bf895e0"/>
-      <rotation name="A-Spacer--0-080x56008bf8f530_rot" unit="deg" x="0" y="0" z="-40"/>
+      <rotation name="A-Spacer-_-0-080x56008bf8f530_rot" unit="deg" x="0" y="0" z="-40"/>
     </subtraction>
     <tube aunit="deg" deltaphi="23.7921490708012" lunit="mm" name="BelleIIAerogel3-1-000x56008bf8fb90" rmax="343.75" rmin="206.375" startphi="0.104150474006966" z="25"/>
-    <tube aunit="deg" deltaphi="0.103700455191843" lunit="mm" name="A-Spacer--1-000x56008bf8fda0" rmax="344.25" rmin="205.875" startphi="23.8962995448082" z="25"/>
+    <tube aunit="deg" deltaphi="0.103700455191843" lunit="mm" name="A-Spacer-_-1-000x56008bf8fda0" rmax="344.25" rmin="205.875" startphi="23.8962995448082" z="25"/>
     <tube aunit="deg" deltaphi="16.2255113408574" lunit="mm" name="BelleIIAerogel3-2-000x56008bf94050" rmax="482.625" rmin="345.25" startphi="0.0692082494495936" z="25"/>
-    <tube aunit="deg" deltaphi="0.0689167733293811" lunit="mm" name="A-Spacer--2-000x56008bf94260" rmax="483.125" rmin="344.75" startphi="16.294719590307" z="25"/>
+    <tube aunit="deg" deltaphi="0.0689167733293811" lunit="mm" name="A-Spacer-_-2-000x56008bf94260" rmax="483.125" rmin="344.75" startphi="16.294719590307" z="25"/>
     <tube aunit="deg" deltaphi="12.7537067468796" lunit="mm" name="BelleIIAerogel3-3-000x56008bf9b3a0" rmax="621.5" rmin="484.125" startphi="0.0518220730474458" z="25"/>
-    <tube aunit="deg" deltaphi="0.0516140372158004" lunit="mm" name="A-Spacer--3-000x56008bf9b5b0" rmax="622" rmin="483.625" startphi="12.8055288199271" z="25"/>
+    <tube aunit="deg" deltaphi="0.0516140372158004" lunit="mm" name="A-Spacer-_-3-000x56008bf9b5b0" rmax="622" rmin="483.625" startphi="12.8055288199271" z="25"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="Tmp0x56008bfa3a50" rmax="67" rmin="66" startphi="0" z="25"/>
-    <subtraction name="R-Spacer--0-000x56008bfa3b60">
+    <subtraction name="R-Spacer-_-0-000x56008bfa3b60">
       <first ref="Tmp0x56008bfa3a50"/>
       <second ref="Tmp0x56008bf895e0"/>
     </subtraction>
-    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer--1-000x56008bfa4050" rmax="205.875" rmin="205.375" startphi="0" z="25"/>
-    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer--2-000x56008bfa4460" rmax="344.75" rmin="344.25" startphi="0" z="25"/>
-    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer--3-000x56008bfa4870" rmax="483.625" rmin="483.125" startphi="0" z="25"/>
-    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer--4-000x56008bfa4c80" rmax="623" rmin="622" startphi="0" z="25"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer-_-1-000x56008bfa4050" rmax="205.875" rmin="205.375" startphi="0" z="25"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer-_-2-000x56008bfa4460" rmax="344.75" rmin="344.25" startphi="0" z="25"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer-_-3-000x56008bfa4870" rmax="483.625" rmin="483.125" startphi="0" z="25"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="R-Spacer-_-4-000x56008bfa4c80" rmax="623" rmin="622" startphi="0" z="25"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="Tmp0x56008bfa5090" rmax="623" rmin="66" startphi="0" z="3"/>
     <subtraction name="Acrylic0x56008bfa51a0">
       <first ref="Tmp0x56008bfa5090"/>
@@ -1030,613 +1030,613 @@
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-000x56008bf89b40"/>
     </volume>
-    <volume name="A-Spacer--0-000x56008bf8a190">
+    <volume name="A-Spacer-_-0-000x56008bf8a190">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-000x56008bf89f40"/>
+      <solidref ref="A-Spacer-_-0-000x56008bf89f40"/>
     </volume>
     <volume name="BelleIIAerogel3-0-010x56008bf8abc0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-010x56008bf8a970"/>
     </volume>
-    <volume name="A-Spacer--0-010x56008bf8af20">
+    <volume name="A-Spacer-_-0-010x56008bf8af20">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-010x56008bf8acd0"/>
+      <solidref ref="A-Spacer-_-0-010x56008bf8acd0"/>
     </volume>
     <volume name="BelleIIAerogel3-0-020x56008bf8bb40">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-020x56008bf8b2a0"/>
     </volume>
-    <volume name="A-Spacer--0-020x56008bf8bea0">
+    <volume name="A-Spacer-_-0-020x56008bf8bea0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-020x56008bf8bc50"/>
+      <solidref ref="A-Spacer-_-0-020x56008bf8bc50"/>
     </volume>
     <volume name="BelleIIAerogel3-0-030x56008bf8c420">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-030x56008bf8c1d0"/>
     </volume>
-    <volume name="A-Spacer--0-030x56008bf8c780">
+    <volume name="A-Spacer-_-0-030x56008bf8c780">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-030x56008bf8c530"/>
+      <solidref ref="A-Spacer-_-0-030x56008bf8c530"/>
     </volume>
     <volume name="BelleIIAerogel3-0-040x56008bf8ccb0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-040x56008bf8ca60"/>
     </volume>
-    <volume name="A-Spacer--0-040x56008bf8d010">
+    <volume name="A-Spacer-_-0-040x56008bf8d010">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-040x56008bf8cdc0"/>
+      <solidref ref="A-Spacer-_-0-040x56008bf8cdc0"/>
     </volume>
     <volume name="BelleIIAerogel3-0-050x56008bf8d5e0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-050x56008bf8d390"/>
     </volume>
-    <volume name="A-Spacer--0-050x56008bf8d940">
+    <volume name="A-Spacer-_-0-050x56008bf8d940">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-050x56008bf8d6f0"/>
+      <solidref ref="A-Spacer-_-0-050x56008bf8d6f0"/>
     </volume>
     <volume name="BelleIIAerogel3-0-060x56008bf8dec0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-060x56008bf8dc70"/>
     </volume>
-    <volume name="A-Spacer--0-060x56008bf8e220">
+    <volume name="A-Spacer-_-0-060x56008bf8e220">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-060x56008bf8dfd0"/>
+      <solidref ref="A-Spacer-_-0-060x56008bf8dfd0"/>
     </volume>
     <volume name="BelleIIAerogel3-0-070x56008bf8e900">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-070x56008bf8e610"/>
     </volume>
-    <volume name="A-Spacer--0-070x56008bf8ecb0">
+    <volume name="A-Spacer-_-0-070x56008bf8ecb0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-070x56008bf8ea60"/>
+      <solidref ref="A-Spacer-_-0-070x56008bf8ea60"/>
     </volume>
     <volume name="BelleIIAerogel3-0-080x56008bf8f3d0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-0-080x56008bf8f0e0"/>
     </volume>
-    <volume name="A-Spacer--0-080x56008bf8f780">
+    <volume name="A-Spacer-_-0-080x56008bf8f780">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--0-080x56008bf8f530"/>
+      <solidref ref="A-Spacer-_-0-080x56008bf8f530"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf8ff60">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf90120">
+    <volume name="A-Spacer-_-1-000x56008bf90120">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf905b0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf906f0">
+    <volume name="A-Spacer-_-1-000x56008bf906f0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf90a00">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf90b50">
+    <volume name="A-Spacer-_-1-000x56008bf90b50">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf90ed0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf90ff0">
+    <volume name="A-Spacer-_-1-000x56008bf90ff0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf912e0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf91450">
+    <volume name="A-Spacer-_-1-000x56008bf91450">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf917d0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf918c0">
+    <volume name="A-Spacer-_-1-000x56008bf918c0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf91b80">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf91ca0">
+    <volume name="A-Spacer-_-1-000x56008bf91ca0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf91f90">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf920b0">
+    <volume name="A-Spacer-_-1-000x56008bf920b0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf923c0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf924e0">
+    <volume name="A-Spacer-_-1-000x56008bf924e0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf92870">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf92990">
+    <volume name="A-Spacer-_-1-000x56008bf92990">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf92c00">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf92d20">
+    <volume name="A-Spacer-_-1-000x56008bf92d20">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf93030">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf93150">
+    <volume name="A-Spacer-_-1-000x56008bf93150">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf93460">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf93580">
+    <volume name="A-Spacer-_-1-000x56008bf93580">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf93890">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf939b0">
+    <volume name="A-Spacer-_-1-000x56008bf939b0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-1-000x56008bf93cc0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-1-000x56008bf8fb90"/>
     </volume>
-    <volume name="A-Spacer--1-000x56008bf93de0">
+    <volume name="A-Spacer-_-1-000x56008bf93de0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--1-000x56008bf8fda0"/>
+      <solidref ref="A-Spacer-_-1-000x56008bf8fda0"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf94470">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf94630">
+    <volume name="A-Spacer-_-2-000x56008bf94630">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf94ac0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf94c00">
+    <volume name="A-Spacer-_-2-000x56008bf94c00">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf94f10">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf95060">
+    <volume name="A-Spacer-_-2-000x56008bf95060">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf953e0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf95500">
+    <volume name="A-Spacer-_-2-000x56008bf95500">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf957f0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf95960">
+    <volume name="A-Spacer-_-2-000x56008bf95960">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf95ce0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf95dd0">
+    <volume name="A-Spacer-_-2-000x56008bf95dd0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf96090">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf961b0">
+    <volume name="A-Spacer-_-2-000x56008bf961b0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf964a0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf965c0">
+    <volume name="A-Spacer-_-2-000x56008bf965c0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf968d0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf96a80">
+    <volume name="A-Spacer-_-2-000x56008bf96a80">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf96ea0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf96fc0">
+    <volume name="A-Spacer-_-2-000x56008bf96fc0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf97230">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf97350">
+    <volume name="A-Spacer-_-2-000x56008bf97350">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf97660">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf97780">
+    <volume name="A-Spacer-_-2-000x56008bf97780">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf97a90">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf97bb0">
+    <volume name="A-Spacer-_-2-000x56008bf97bb0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf97ec0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf97fe0">
+    <volume name="A-Spacer-_-2-000x56008bf97fe0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf982f0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf98410">
+    <volume name="A-Spacer-_-2-000x56008bf98410">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf98720">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf98840">
+    <volume name="A-Spacer-_-2-000x56008bf98840">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf98b50">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf98c70">
+    <volume name="A-Spacer-_-2-000x56008bf98c70">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf992b0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf993d0">
+    <volume name="A-Spacer-_-2-000x56008bf993d0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf996e0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf99800">
+    <volume name="A-Spacer-_-2-000x56008bf99800">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf99b10">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf99c30">
+    <volume name="A-Spacer-_-2-000x56008bf99c30">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf99f40">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf9a060">
+    <volume name="A-Spacer-_-2-000x56008bf9a060">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-2-000x56008bf9a9c0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-2-000x56008bf94050"/>
     </volume>
-    <volume name="A-Spacer--2-000x56008bf9b130">
+    <volume name="A-Spacer-_-2-000x56008bf9b130">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--2-000x56008bf94260"/>
+      <solidref ref="A-Spacer-_-2-000x56008bf94260"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9b7c0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9b980">
+    <volume name="A-Spacer-_-3-000x56008bf9b980">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9be10">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9bf50">
+    <volume name="A-Spacer-_-3-000x56008bf9bf50">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9c260">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9c3b0">
+    <volume name="A-Spacer-_-3-000x56008bf9c3b0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9c730">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9c850">
+    <volume name="A-Spacer-_-3-000x56008bf9c850">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9cb40">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9ccb0">
+    <volume name="A-Spacer-_-3-000x56008bf9ccb0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9d030">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9d120">
+    <volume name="A-Spacer-_-3-000x56008bf9d120">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9d3e0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9d500">
+    <volume name="A-Spacer-_-3-000x56008bf9d500">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9d7f0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9d910">
+    <volume name="A-Spacer-_-3-000x56008bf9d910">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9dc20">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9dd40">
+    <volume name="A-Spacer-_-3-000x56008bf9dd40">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9dfb0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9e0d0">
+    <volume name="A-Spacer-_-3-000x56008bf9e0d0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9e340">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9e460">
+    <volume name="A-Spacer-_-3-000x56008bf9e460">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9e770">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9e890">
+    <volume name="A-Spacer-_-3-000x56008bf9e890">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9eba0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9ecc0">
+    <volume name="A-Spacer-_-3-000x56008bf9ecc0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9efd0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9f0f0">
+    <volume name="A-Spacer-_-3-000x56008bf9f0f0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9f400">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9f520">
+    <volume name="A-Spacer-_-3-000x56008bf9f520">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9f830">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9f950">
+    <volume name="A-Spacer-_-3-000x56008bf9f950">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bf9fc60">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bf9fe90">
+    <volume name="A-Spacer-_-3-000x56008bf9fe90">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa04d0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa05f0">
+    <volume name="A-Spacer-_-3-000x56008bfa05f0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa1110">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa1230">
+    <volume name="A-Spacer-_-3-000x56008bfa1230">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa1540">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa1660">
+    <volume name="A-Spacer-_-3-000x56008bfa1660">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa1970">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa1a90">
+    <volume name="A-Spacer-_-3-000x56008bfa1a90">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa1da0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa1ec0">
+    <volume name="A-Spacer-_-3-000x56008bfa1ec0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa21d0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa22f0">
+    <volume name="A-Spacer-_-3-000x56008bfa22f0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa2600">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa2720">
+    <volume name="A-Spacer-_-3-000x56008bfa2720">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa2a30">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa2b50">
+    <volume name="A-Spacer-_-3-000x56008bfa2b50">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa2e60">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa2f80">
+    <volume name="A-Spacer-_-3-000x56008bfa2f80">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa3290">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa33b0">
+    <volume name="A-Spacer-_-3-000x56008bfa33b0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
     <volume name="BelleIIAerogel3-3-000x56008bfa36c0">
       <materialref ref="BelleIIAerogel30x56008beff0d0"/>
       <solidref ref="BelleIIAerogel3-3-000x56008bf9b3a0"/>
     </volume>
-    <volume name="A-Spacer--3-000x56008bfa37e0">
+    <volume name="A-Spacer-_-3-000x56008bfa37e0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="A-Spacer--3-000x56008bf9b5b0"/>
+      <solidref ref="A-Spacer-_-3-000x56008bf9b5b0"/>
     </volume>
-    <volume name="R-Spacer--0-000x56008bfa3dd0">
+    <volume name="R-Spacer-_-0-000x56008bfa3dd0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="R-Spacer--0-000x56008bfa3b60"/>
+      <solidref ref="R-Spacer-_-0-000x56008bfa3b60"/>
     </volume>
-    <volume name="R-Spacer--1-000x56008bfa41e0">
+    <volume name="R-Spacer-_-1-000x56008bfa41e0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="R-Spacer--1-000x56008bfa4050"/>
+      <solidref ref="R-Spacer-_-1-000x56008bfa4050"/>
     </volume>
-    <volume name="R-Spacer--2-000x56008bfa45f0">
+    <volume name="R-Spacer-_-2-000x56008bfa45f0">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="R-Spacer--2-000x56008bfa4460"/>
+      <solidref ref="R-Spacer-_-2-000x56008bfa4460"/>
     </volume>
-    <volume name="R-Spacer--3-000x56008bfa4a00">
+    <volume name="R-Spacer-_-3-000x56008bfa4a00">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="R-Spacer--3-000x56008bfa4870"/>
+      <solidref ref="R-Spacer-_-3-000x56008bfa4870"/>
     </volume>
-    <volume name="R-Spacer--4-000x56008bfa4e10">
+    <volume name="R-Spacer-_-4-000x56008bfa4e10">
       <materialref ref="Absorber0x56008bf13750"/>
-      <solidref ref="R-Spacer--4-000x56008bfa4c80"/>
+      <solidref ref="R-Spacer-_-4-000x56008bfa4c80"/>
     </volume>
     <volume name="Acrylic0x56008bfa5410">
       <materialref ref="Acrylic0x56008bf095f0"/>
@@ -1665,753 +1665,753 @@
         <volumeref ref="BelleIIAerogel3-0-000x56008bf89cb0"/>
         <position name="BelleIIAerogel3-0-000x56008bf8a750_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="A-Spacer--0-000x56008bf8a810">
-        <volumeref ref="A-Spacer--0-000x56008bf8a190"/>
-        <position name="A-Spacer--0-000x56008bf8a810_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="A-Spacer-_-0-000x56008bf8a810">
+        <volumeref ref="A-Spacer-_-0-000x56008bf8a190"/>
+        <position name="A-Spacer-_-0-000x56008bf8a810_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-010x56008bf8b030">
         <volumeref ref="BelleIIAerogel3-0-010x56008bf8abc0"/>
         <position name="BelleIIAerogel3-0-010x56008bf8b030_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-010x56008bf8b030_rot" unit="deg" x="0" y="0" z="40"/>
       </physvol>
-      <physvol name="A-Spacer--0-010x56008bf8b0f0">
-        <volumeref ref="A-Spacer--0-010x56008bf8af20"/>
-        <position name="A-Spacer--0-010x56008bf8b0f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-010x56008bf8b0f0_rot" unit="deg" x="0" y="0" z="40"/>
+      <physvol name="A-Spacer-_-0-010x56008bf8b0f0">
+        <volumeref ref="A-Spacer-_-0-010x56008bf8af20"/>
+        <position name="A-Spacer-_-0-010x56008bf8b0f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-010x56008bf8b0f0_rot" unit="deg" x="0" y="0" z="40"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-020x56008bf8bfb0">
         <volumeref ref="BelleIIAerogel3-0-020x56008bf8bb40"/>
         <position name="BelleIIAerogel3-0-020x56008bf8bfb0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-020x56008bf8bfb0_rot" unit="deg" x="0" y="0" z="80"/>
       </physvol>
-      <physvol name="A-Spacer--0-020x56008bf8c070">
-        <volumeref ref="A-Spacer--0-020x56008bf8bea0"/>
-        <position name="A-Spacer--0-020x56008bf8c070_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-020x56008bf8c070_rot" unit="deg" x="0" y="0" z="80"/>
+      <physvol name="A-Spacer-_-0-020x56008bf8c070">
+        <volumeref ref="A-Spacer-_-0-020x56008bf8bea0"/>
+        <position name="A-Spacer-_-0-020x56008bf8c070_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-020x56008bf8c070_rot" unit="deg" x="0" y="0" z="80"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-030x56008bf8c890">
         <volumeref ref="BelleIIAerogel3-0-030x56008bf8c420"/>
         <position name="BelleIIAerogel3-0-030x56008bf8c890_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-030x56008bf8c890_rot" unit="deg" x="0" y="0" z="120"/>
       </physvol>
-      <physvol name="A-Spacer--0-030x56008bf8c950">
-        <volumeref ref="A-Spacer--0-030x56008bf8c780"/>
-        <position name="A-Spacer--0-030x56008bf8c950_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-030x56008bf8c950_rot" unit="deg" x="0" y="0" z="120"/>
+      <physvol name="A-Spacer-_-0-030x56008bf8c950">
+        <volumeref ref="A-Spacer-_-0-030x56008bf8c780"/>
+        <position name="A-Spacer-_-0-030x56008bf8c950_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-030x56008bf8c950_rot" unit="deg" x="0" y="0" z="120"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-040x56008bf8d170">
         <volumeref ref="BelleIIAerogel3-0-040x56008bf8ccb0"/>
         <position name="BelleIIAerogel3-0-040x56008bf8d170_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-040x56008bf8d170_rot" unit="deg" x="0" y="0" z="160"/>
       </physvol>
-      <physvol name="A-Spacer--0-040x56008bf8d230">
-        <volumeref ref="A-Spacer--0-040x56008bf8d010"/>
-        <position name="A-Spacer--0-040x56008bf8d230_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-040x56008bf8d230_rot" unit="deg" x="0" y="0" z="160"/>
+      <physvol name="A-Spacer-_-0-040x56008bf8d230">
+        <volumeref ref="A-Spacer-_-0-040x56008bf8d010"/>
+        <position name="A-Spacer-_-0-040x56008bf8d230_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-040x56008bf8d230_rot" unit="deg" x="0" y="0" z="160"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-050x56008bf8da50">
         <volumeref ref="BelleIIAerogel3-0-050x56008bf8d5e0"/>
         <position name="BelleIIAerogel3-0-050x56008bf8da50_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-050x56008bf8da50_rot" unit="deg" x="0" y="0" z="-160"/>
       </physvol>
-      <physvol name="A-Spacer--0-050x56008bf8db10">
-        <volumeref ref="A-Spacer--0-050x56008bf8d940"/>
-        <position name="A-Spacer--0-050x56008bf8db10_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-050x56008bf8db10_rot" unit="deg" x="0" y="0" z="-160"/>
+      <physvol name="A-Spacer-_-0-050x56008bf8db10">
+        <volumeref ref="A-Spacer-_-0-050x56008bf8d940"/>
+        <position name="A-Spacer-_-0-050x56008bf8db10_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-050x56008bf8db10_rot" unit="deg" x="0" y="0" z="-160"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-060x56008bf8e330">
         <volumeref ref="BelleIIAerogel3-0-060x56008bf8dec0"/>
         <position name="BelleIIAerogel3-0-060x56008bf8e330_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-060x56008bf8e330_rot" unit="deg" x="0" y="0" z="-120"/>
       </physvol>
-      <physvol name="A-Spacer--0-060x56008bf8e480">
-        <volumeref ref="A-Spacer--0-060x56008bf8e220"/>
-        <position name="A-Spacer--0-060x56008bf8e480_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-060x56008bf8e480_rot" unit="deg" x="0" y="0" z="-120"/>
+      <physvol name="A-Spacer-_-0-060x56008bf8e480">
+        <volumeref ref="A-Spacer-_-0-060x56008bf8e220"/>
+        <position name="A-Spacer-_-0-060x56008bf8e480_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-060x56008bf8e480_rot" unit="deg" x="0" y="0" z="-120"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-070x56008bf8ede0">
         <volumeref ref="BelleIIAerogel3-0-070x56008bf8e900"/>
         <position name="BelleIIAerogel3-0-070x56008bf8ede0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-070x56008bf8ede0_rot" unit="deg" x="0" y="0" z="-80"/>
       </physvol>
-      <physvol name="A-Spacer--0-070x56008bf8ef50">
-        <volumeref ref="A-Spacer--0-070x56008bf8ecb0"/>
-        <position name="A-Spacer--0-070x56008bf8ef50_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-070x56008bf8ef50_rot" unit="deg" x="0" y="0" z="-80"/>
+      <physvol name="A-Spacer-_-0-070x56008bf8ef50">
+        <volumeref ref="A-Spacer-_-0-070x56008bf8ecb0"/>
+        <position name="A-Spacer-_-0-070x56008bf8ef50_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-070x56008bf8ef50_rot" unit="deg" x="0" y="0" z="-80"/>
       </physvol>
       <physvol name="BelleIIAerogel3-0-080x56008bf8f930">
         <volumeref ref="BelleIIAerogel3-0-080x56008bf8f3d0"/>
         <position name="BelleIIAerogel3-0-080x56008bf8f930_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-0-080x56008bf8f930_rot" unit="deg" x="0" y="0" z="-40"/>
       </physvol>
-      <physvol name="A-Spacer--0-080x56008bf8faa0">
-        <volumeref ref="A-Spacer--0-080x56008bf8f780"/>
-        <position name="A-Spacer--0-080x56008bf8faa0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--0-080x56008bf8faa0_rot" unit="deg" x="0" y="0" z="-40"/>
+      <physvol name="A-Spacer-_-0-080x56008bf8faa0">
+        <volumeref ref="A-Spacer-_-0-080x56008bf8f780"/>
+        <position name="A-Spacer-_-0-080x56008bf8faa0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-0-080x56008bf8faa0_rot" unit="deg" x="0" y="0" z="-40"/>
       </physvol>
       <physvol name="BelleIIAerogel3-1-000x56008bf902b0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf8ff60"/>
         <position name="BelleIIAerogel3-1-000x56008bf902b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="A-Spacer--1-000x56008bf90420">
-        <volumeref ref="A-Spacer--1-000x56008bf90120"/>
-        <position name="A-Spacer--1-000x56008bf90420_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="A-Spacer-_-1-000x56008bf90420">
+        <volumeref ref="A-Spacer-_-1-000x56008bf90120"/>
+        <position name="A-Spacer-_-1-000x56008bf90420_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
       <physvol copynumber="1" name="BelleIIAerogel3-1-000x56008bf90820">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf905b0"/>
         <position name="BelleIIAerogel3-1-000x56008bf90820_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf90820_rot" unit="deg" x="0" y="0" z="24"/>
       </physvol>
-      <physvol copynumber="1" name="A-Spacer--1-000x56008bf908d0">
-        <volumeref ref="A-Spacer--1-000x56008bf906f0"/>
-        <position name="A-Spacer--1-000x56008bf908d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf908d0_rot" unit="deg" x="0" y="0" z="24"/>
+      <physvol copynumber="1" name="A-Spacer-_-1-000x56008bf908d0">
+        <volumeref ref="A-Spacer-_-1-000x56008bf906f0"/>
+        <position name="A-Spacer-_-1-000x56008bf908d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf908d0_rot" unit="deg" x="0" y="0" z="24"/>
       </physvol>
       <physvol copynumber="2" name="BelleIIAerogel3-1-000x56008bf90cb0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf90a00"/>
         <position name="BelleIIAerogel3-1-000x56008bf90cb0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf90cb0_rot" unit="deg" x="0" y="0" z="48"/>
       </physvol>
-      <physvol copynumber="2" name="A-Spacer--1-000x56008bf90d70">
-        <volumeref ref="A-Spacer--1-000x56008bf90b50"/>
-        <position name="A-Spacer--1-000x56008bf90d70_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf90d70_rot" unit="deg" x="0" y="0" z="48"/>
+      <physvol copynumber="2" name="A-Spacer-_-1-000x56008bf90d70">
+        <volumeref ref="A-Spacer-_-1-000x56008bf90b50"/>
+        <position name="A-Spacer-_-1-000x56008bf90d70_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf90d70_rot" unit="deg" x="0" y="0" z="48"/>
       </physvol>
       <physvol copynumber="3" name="BelleIIAerogel3-1-000x56008bf91120">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf90ed0"/>
         <position name="BelleIIAerogel3-1-000x56008bf91120_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf91120_rot" unit="deg" x="0" y="0" z="72"/>
       </physvol>
-      <physvol copynumber="3" name="A-Spacer--1-000x56008bf911b0">
-        <volumeref ref="A-Spacer--1-000x56008bf90ff0"/>
-        <position name="A-Spacer--1-000x56008bf911b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf911b0_rot" unit="deg" x="0" y="0" z="72"/>
+      <physvol copynumber="3" name="A-Spacer-_-1-000x56008bf911b0">
+        <volumeref ref="A-Spacer-_-1-000x56008bf90ff0"/>
+        <position name="A-Spacer-_-1-000x56008bf911b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf911b0_rot" unit="deg" x="0" y="0" z="72"/>
       </physvol>
       <physvol copynumber="4" name="BelleIIAerogel3-1-000x56008bf915d0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf912e0"/>
         <position name="BelleIIAerogel3-1-000x56008bf915d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf915d0_rot" unit="deg" x="0" y="0" z="96"/>
       </physvol>
-      <physvol copynumber="4" name="A-Spacer--1-000x56008bf91680">
-        <volumeref ref="A-Spacer--1-000x56008bf91450"/>
-        <position name="A-Spacer--1-000x56008bf91680_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf91680_rot" unit="deg" x="0" y="0" z="96"/>
+      <physvol copynumber="4" name="A-Spacer-_-1-000x56008bf91680">
+        <volumeref ref="A-Spacer-_-1-000x56008bf91450"/>
+        <position name="A-Spacer-_-1-000x56008bf91680_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf91680_rot" unit="deg" x="0" y="0" z="96"/>
       </physvol>
       <physvol copynumber="5" name="BelleIIAerogel3-1-000x56008bf919f0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf917d0"/>
         <position name="BelleIIAerogel3-1-000x56008bf919f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf919f0_rot" unit="deg" x="0" y="0" z="120"/>
       </physvol>
-      <physvol copynumber="5" name="A-Spacer--1-000x56008bf91a50">
-        <volumeref ref="A-Spacer--1-000x56008bf918c0"/>
-        <position name="A-Spacer--1-000x56008bf91a50_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf91a50_rot" unit="deg" x="0" y="0" z="120"/>
+      <physvol copynumber="5" name="A-Spacer-_-1-000x56008bf91a50">
+        <volumeref ref="A-Spacer-_-1-000x56008bf918c0"/>
+        <position name="A-Spacer-_-1-000x56008bf91a50_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf91a50_rot" unit="deg" x="0" y="0" z="120"/>
       </physvol>
       <physvol copynumber="6" name="BelleIIAerogel3-1-000x56008bf91dd0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf91b80"/>
         <position name="BelleIIAerogel3-1-000x56008bf91dd0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf91dd0_rot" unit="deg" x="0" y="0" z="144"/>
       </physvol>
-      <physvol copynumber="6" name="A-Spacer--1-000x56008bf91e60">
-        <volumeref ref="A-Spacer--1-000x56008bf91ca0"/>
-        <position name="A-Spacer--1-000x56008bf91e60_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf91e60_rot" unit="deg" x="0" y="0" z="144"/>
+      <physvol copynumber="6" name="A-Spacer-_-1-000x56008bf91e60">
+        <volumeref ref="A-Spacer-_-1-000x56008bf91ca0"/>
+        <position name="A-Spacer-_-1-000x56008bf91e60_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf91e60_rot" unit="deg" x="0" y="0" z="144"/>
       </physvol>
       <physvol copynumber="7" name="BelleIIAerogel3-1-000x56008bf921e0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf91f90"/>
         <position name="BelleIIAerogel3-1-000x56008bf921e0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf921e0_rot" unit="deg" x="0" y="0" z="168"/>
       </physvol>
-      <physvol copynumber="7" name="A-Spacer--1-000x56008bf92290">
-        <volumeref ref="A-Spacer--1-000x56008bf920b0"/>
-        <position name="A-Spacer--1-000x56008bf92290_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf92290_rot" unit="deg" x="0" y="0" z="168"/>
+      <physvol copynumber="7" name="A-Spacer-_-1-000x56008bf92290">
+        <volumeref ref="A-Spacer-_-1-000x56008bf920b0"/>
+        <position name="A-Spacer-_-1-000x56008bf92290_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf92290_rot" unit="deg" x="0" y="0" z="168"/>
       </physvol>
       <physvol copynumber="8" name="BelleIIAerogel3-1-000x56008bf92610">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf923c0"/>
         <position name="BelleIIAerogel3-1-000x56008bf92610_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf92610_rot" unit="deg" x="0" y="0" z="-168"/>
       </physvol>
-      <physvol copynumber="8" name="A-Spacer--1-000x56008bf92750">
-        <volumeref ref="A-Spacer--1-000x56008bf924e0"/>
-        <position name="A-Spacer--1-000x56008bf92750_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf92750_rot" unit="deg" x="0" y="0" z="-168"/>
+      <physvol copynumber="8" name="A-Spacer-_-1-000x56008bf92750">
+        <volumeref ref="A-Spacer-_-1-000x56008bf924e0"/>
+        <position name="A-Spacer-_-1-000x56008bf92750_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf92750_rot" unit="deg" x="0" y="0" z="-168"/>
       </physvol>
       <physvol copynumber="9" name="BelleIIAerogel3-1-000x56008bf92ac0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf92870"/>
         <position name="BelleIIAerogel3-1-000x56008bf92ac0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf92ac0_rot" unit="deg" x="0" y="0" z="-144"/>
       </physvol>
-      <physvol copynumber="9" name="A-Spacer--1-000x56008bf92b70">
-        <volumeref ref="A-Spacer--1-000x56008bf92990"/>
-        <position name="A-Spacer--1-000x56008bf92b70_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf92b70_rot" unit="deg" x="0" y="0" z="-144"/>
+      <physvol copynumber="9" name="A-Spacer-_-1-000x56008bf92b70">
+        <volumeref ref="A-Spacer-_-1-000x56008bf92990"/>
+        <position name="A-Spacer-_-1-000x56008bf92b70_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf92b70_rot" unit="deg" x="0" y="0" z="-144"/>
       </physvol>
       <physvol copynumber="10" name="BelleIIAerogel3-1-000x56008bf92e50">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf92c00"/>
         <position name="BelleIIAerogel3-1-000x56008bf92e50_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf92e50_rot" unit="deg" x="0" y="0" z="-120"/>
       </physvol>
-      <physvol copynumber="10" name="A-Spacer--1-000x56008bf92f00">
-        <volumeref ref="A-Spacer--1-000x56008bf92d20"/>
-        <position name="A-Spacer--1-000x56008bf92f00_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf92f00_rot" unit="deg" x="0" y="0" z="-120"/>
+      <physvol copynumber="10" name="A-Spacer-_-1-000x56008bf92f00">
+        <volumeref ref="A-Spacer-_-1-000x56008bf92d20"/>
+        <position name="A-Spacer-_-1-000x56008bf92f00_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf92f00_rot" unit="deg" x="0" y="0" z="-120"/>
       </physvol>
       <physvol copynumber="11" name="BelleIIAerogel3-1-000x56008bf93280">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf93030"/>
         <position name="BelleIIAerogel3-1-000x56008bf93280_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf93280_rot" unit="deg" x="0" y="0" z="-96"/>
       </physvol>
-      <physvol copynumber="11" name="A-Spacer--1-000x56008bf93330">
-        <volumeref ref="A-Spacer--1-000x56008bf93150"/>
-        <position name="A-Spacer--1-000x56008bf93330_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf93330_rot" unit="deg" x="0" y="0" z="-96"/>
+      <physvol copynumber="11" name="A-Spacer-_-1-000x56008bf93330">
+        <volumeref ref="A-Spacer-_-1-000x56008bf93150"/>
+        <position name="A-Spacer-_-1-000x56008bf93330_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf93330_rot" unit="deg" x="0" y="0" z="-96"/>
       </physvol>
       <physvol copynumber="12" name="BelleIIAerogel3-1-000x56008bf936b0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf93460"/>
         <position name="BelleIIAerogel3-1-000x56008bf936b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf936b0_rot" unit="deg" x="0" y="0" z="-72"/>
       </physvol>
-      <physvol copynumber="12" name="A-Spacer--1-000x56008bf93760">
-        <volumeref ref="A-Spacer--1-000x56008bf93580"/>
-        <position name="A-Spacer--1-000x56008bf93760_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf93760_rot" unit="deg" x="0" y="0" z="-72"/>
+      <physvol copynumber="12" name="A-Spacer-_-1-000x56008bf93760">
+        <volumeref ref="A-Spacer-_-1-000x56008bf93580"/>
+        <position name="A-Spacer-_-1-000x56008bf93760_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf93760_rot" unit="deg" x="0" y="0" z="-72"/>
       </physvol>
       <physvol copynumber="13" name="BelleIIAerogel3-1-000x56008bf93ae0">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf93890"/>
         <position name="BelleIIAerogel3-1-000x56008bf93ae0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf93ae0_rot" unit="deg" x="0" y="0" z="-48"/>
       </physvol>
-      <physvol copynumber="13" name="A-Spacer--1-000x56008bf93b90">
-        <volumeref ref="A-Spacer--1-000x56008bf939b0"/>
-        <position name="A-Spacer--1-000x56008bf93b90_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf93b90_rot" unit="deg" x="0" y="0" z="-48"/>
+      <physvol copynumber="13" name="A-Spacer-_-1-000x56008bf93b90">
+        <volumeref ref="A-Spacer-_-1-000x56008bf939b0"/>
+        <position name="A-Spacer-_-1-000x56008bf93b90_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf93b90_rot" unit="deg" x="0" y="0" z="-48"/>
       </physvol>
       <physvol copynumber="14" name="BelleIIAerogel3-1-000x56008bf93f10">
         <volumeref ref="BelleIIAerogel3-1-000x56008bf93cc0"/>
         <position name="BelleIIAerogel3-1-000x56008bf93f10_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-1-000x56008bf93f10_rot" unit="deg" x="0" y="0" z="-24"/>
       </physvol>
-      <physvol copynumber="14" name="A-Spacer--1-000x56008bf93fc0">
-        <volumeref ref="A-Spacer--1-000x56008bf93de0"/>
-        <position name="A-Spacer--1-000x56008bf93fc0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--1-000x56008bf93fc0_rot" unit="deg" x="0" y="0" z="-24"/>
+      <physvol copynumber="14" name="A-Spacer-_-1-000x56008bf93fc0">
+        <volumeref ref="A-Spacer-_-1-000x56008bf93de0"/>
+        <position name="A-Spacer-_-1-000x56008bf93fc0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-1-000x56008bf93fc0_rot" unit="deg" x="0" y="0" z="-24"/>
       </physvol>
       <physvol name="BelleIIAerogel3-2-000x56008bf947c0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf94470"/>
         <position name="BelleIIAerogel3-2-000x56008bf947c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="A-Spacer--2-000x56008bf94930">
-        <volumeref ref="A-Spacer--2-000x56008bf94630"/>
-        <position name="A-Spacer--2-000x56008bf94930_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="A-Spacer-_-2-000x56008bf94930">
+        <volumeref ref="A-Spacer-_-2-000x56008bf94630"/>
+        <position name="A-Spacer-_-2-000x56008bf94930_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
       <physvol copynumber="1" name="BelleIIAerogel3-2-000x56008bf94d30">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf94ac0"/>
         <position name="BelleIIAerogel3-2-000x56008bf94d30_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf94d30_rot" unit="deg" x="0" y="0" z="16.3636363636364"/>
       </physvol>
-      <physvol copynumber="1" name="A-Spacer--2-000x56008bf94de0">
-        <volumeref ref="A-Spacer--2-000x56008bf94c00"/>
-        <position name="A-Spacer--2-000x56008bf94de0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf94de0_rot" unit="deg" x="0" y="0" z="16.3636363636364"/>
+      <physvol copynumber="1" name="A-Spacer-_-2-000x56008bf94de0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf94c00"/>
+        <position name="A-Spacer-_-2-000x56008bf94de0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf94de0_rot" unit="deg" x="0" y="0" z="16.3636363636364"/>
       </physvol>
       <physvol copynumber="2" name="BelleIIAerogel3-2-000x56008bf951c0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf94f10"/>
         <position name="BelleIIAerogel3-2-000x56008bf951c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf951c0_rot" unit="deg" x="0" y="0" z="32.7272727272727"/>
       </physvol>
-      <physvol copynumber="2" name="A-Spacer--2-000x56008bf95280">
-        <volumeref ref="A-Spacer--2-000x56008bf95060"/>
-        <position name="A-Spacer--2-000x56008bf95280_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf95280_rot" unit="deg" x="0" y="0" z="32.7272727272727"/>
+      <physvol copynumber="2" name="A-Spacer-_-2-000x56008bf95280">
+        <volumeref ref="A-Spacer-_-2-000x56008bf95060"/>
+        <position name="A-Spacer-_-2-000x56008bf95280_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf95280_rot" unit="deg" x="0" y="0" z="32.7272727272727"/>
       </physvol>
       <physvol copynumber="3" name="BelleIIAerogel3-2-000x56008bf95630">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf953e0"/>
         <position name="BelleIIAerogel3-2-000x56008bf95630_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf95630_rot" unit="deg" x="0" y="0" z="49.0909090909091"/>
       </physvol>
-      <physvol copynumber="3" name="A-Spacer--2-000x56008bf956c0">
-        <volumeref ref="A-Spacer--2-000x56008bf95500"/>
-        <position name="A-Spacer--2-000x56008bf956c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf956c0_rot" unit="deg" x="0" y="0" z="49.0909090909091"/>
+      <physvol copynumber="3" name="A-Spacer-_-2-000x56008bf956c0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf95500"/>
+        <position name="A-Spacer-_-2-000x56008bf956c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf956c0_rot" unit="deg" x="0" y="0" z="49.0909090909091"/>
       </physvol>
       <physvol copynumber="4" name="BelleIIAerogel3-2-000x56008bf95ae0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf957f0"/>
         <position name="BelleIIAerogel3-2-000x56008bf95ae0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf95ae0_rot" unit="deg" x="0" y="0" z="65.4545454545455"/>
       </physvol>
-      <physvol copynumber="4" name="A-Spacer--2-000x56008bf95b90">
-        <volumeref ref="A-Spacer--2-000x56008bf95960"/>
-        <position name="A-Spacer--2-000x56008bf95b90_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf95b90_rot" unit="deg" x="0" y="0" z="65.4545454545455"/>
+      <physvol copynumber="4" name="A-Spacer-_-2-000x56008bf95b90">
+        <volumeref ref="A-Spacer-_-2-000x56008bf95960"/>
+        <position name="A-Spacer-_-2-000x56008bf95b90_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf95b90_rot" unit="deg" x="0" y="0" z="65.4545454545455"/>
       </physvol>
       <physvol copynumber="5" name="BelleIIAerogel3-2-000x56008bf95f00">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf95ce0"/>
         <position name="BelleIIAerogel3-2-000x56008bf95f00_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf95f00_rot" unit="deg" x="0" y="0" z="81.8181818181818"/>
       </physvol>
-      <physvol copynumber="5" name="A-Spacer--2-000x56008bf95f60">
-        <volumeref ref="A-Spacer--2-000x56008bf95dd0"/>
-        <position name="A-Spacer--2-000x56008bf95f60_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf95f60_rot" unit="deg" x="0" y="0" z="81.8181818181818"/>
+      <physvol copynumber="5" name="A-Spacer-_-2-000x56008bf95f60">
+        <volumeref ref="A-Spacer-_-2-000x56008bf95dd0"/>
+        <position name="A-Spacer-_-2-000x56008bf95f60_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf95f60_rot" unit="deg" x="0" y="0" z="81.8181818181818"/>
       </physvol>
       <physvol copynumber="6" name="BelleIIAerogel3-2-000x56008bf962e0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf96090"/>
         <position name="BelleIIAerogel3-2-000x56008bf962e0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf962e0_rot" unit="deg" x="0" y="0" z="98.1818181818182"/>
       </physvol>
-      <physvol copynumber="6" name="A-Spacer--2-000x56008bf96370">
-        <volumeref ref="A-Spacer--2-000x56008bf961b0"/>
-        <position name="A-Spacer--2-000x56008bf96370_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf96370_rot" unit="deg" x="0" y="0" z="98.1818181818182"/>
+      <physvol copynumber="6" name="A-Spacer-_-2-000x56008bf96370">
+        <volumeref ref="A-Spacer-_-2-000x56008bf961b0"/>
+        <position name="A-Spacer-_-2-000x56008bf96370_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf96370_rot" unit="deg" x="0" y="0" z="98.1818181818182"/>
       </physvol>
       <physvol copynumber="7" name="BelleIIAerogel3-2-000x56008bf966f0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf964a0"/>
         <position name="BelleIIAerogel3-2-000x56008bf966f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf966f0_rot" unit="deg" x="0" y="0" z="114.545454545455"/>
       </physvol>
-      <physvol copynumber="7" name="A-Spacer--2-000x56008bf967a0">
-        <volumeref ref="A-Spacer--2-000x56008bf965c0"/>
-        <position name="A-Spacer--2-000x56008bf967a0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf967a0_rot" unit="deg" x="0" y="0" z="114.545454545455"/>
+      <physvol copynumber="7" name="A-Spacer-_-2-000x56008bf967a0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf965c0"/>
+        <position name="A-Spacer-_-2-000x56008bf967a0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf967a0_rot" unit="deg" x="0" y="0" z="114.545454545455"/>
       </physvol>
       <physvol copynumber="8" name="BelleIIAerogel3-2-000x56008bf96c40">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf968d0"/>
         <position name="BelleIIAerogel3-2-000x56008bf96c40_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf96c40_rot" unit="deg" x="0" y="0" z="130.909090909091"/>
       </physvol>
-      <physvol copynumber="8" name="A-Spacer--2-000x56008bf96d80">
-        <volumeref ref="A-Spacer--2-000x56008bf96a80"/>
-        <position name="A-Spacer--2-000x56008bf96d80_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf96d80_rot" unit="deg" x="0" y="0" z="130.909090909091"/>
+      <physvol copynumber="8" name="A-Spacer-_-2-000x56008bf96d80">
+        <volumeref ref="A-Spacer-_-2-000x56008bf96a80"/>
+        <position name="A-Spacer-_-2-000x56008bf96d80_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf96d80_rot" unit="deg" x="0" y="0" z="130.909090909091"/>
       </physvol>
       <physvol copynumber="9" name="BelleIIAerogel3-2-000x56008bf970f0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf96ea0"/>
         <position name="BelleIIAerogel3-2-000x56008bf970f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf970f0_rot" unit="deg" x="0" y="0" z="147.272727272727"/>
       </physvol>
-      <physvol copynumber="9" name="A-Spacer--2-000x56008bf971a0">
-        <volumeref ref="A-Spacer--2-000x56008bf96fc0"/>
-        <position name="A-Spacer--2-000x56008bf971a0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf971a0_rot" unit="deg" x="0" y="0" z="147.272727272727"/>
+      <physvol copynumber="9" name="A-Spacer-_-2-000x56008bf971a0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf96fc0"/>
+        <position name="A-Spacer-_-2-000x56008bf971a0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf971a0_rot" unit="deg" x="0" y="0" z="147.272727272727"/>
       </physvol>
       <physvol copynumber="10" name="BelleIIAerogel3-2-000x56008bf97480">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf97230"/>
         <position name="BelleIIAerogel3-2-000x56008bf97480_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf97480_rot" unit="deg" x="0" y="0" z="163.636363636364"/>
       </physvol>
-      <physvol copynumber="10" name="A-Spacer--2-000x56008bf97530">
-        <volumeref ref="A-Spacer--2-000x56008bf97350"/>
-        <position name="A-Spacer--2-000x56008bf97530_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf97530_rot" unit="deg" x="0" y="0" z="163.636363636364"/>
+      <physvol copynumber="10" name="A-Spacer-_-2-000x56008bf97530">
+        <volumeref ref="A-Spacer-_-2-000x56008bf97350"/>
+        <position name="A-Spacer-_-2-000x56008bf97530_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf97530_rot" unit="deg" x="0" y="0" z="163.636363636364"/>
       </physvol>
       <physvol copynumber="11" name="BelleIIAerogel3-2-000x56008bf978b0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf97660"/>
         <position name="BelleIIAerogel3-2-000x56008bf978b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf978b0_rot" unit="deg" x="0" y="0" z="180"/>
       </physvol>
-      <physvol copynumber="11" name="A-Spacer--2-000x56008bf97960">
-        <volumeref ref="A-Spacer--2-000x56008bf97780"/>
-        <position name="A-Spacer--2-000x56008bf97960_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf97960_rot" unit="deg" x="0" y="0" z="180"/>
+      <physvol copynumber="11" name="A-Spacer-_-2-000x56008bf97960">
+        <volumeref ref="A-Spacer-_-2-000x56008bf97780"/>
+        <position name="A-Spacer-_-2-000x56008bf97960_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf97960_rot" unit="deg" x="0" y="0" z="180"/>
       </physvol>
       <physvol copynumber="12" name="BelleIIAerogel3-2-000x56008bf97ce0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf97a90"/>
         <position name="BelleIIAerogel3-2-000x56008bf97ce0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf97ce0_rot" unit="deg" x="0" y="0" z="-163.636363636364"/>
       </physvol>
-      <physvol copynumber="12" name="A-Spacer--2-000x56008bf97d90">
-        <volumeref ref="A-Spacer--2-000x56008bf97bb0"/>
-        <position name="A-Spacer--2-000x56008bf97d90_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf97d90_rot" unit="deg" x="0" y="0" z="-163.636363636364"/>
+      <physvol copynumber="12" name="A-Spacer-_-2-000x56008bf97d90">
+        <volumeref ref="A-Spacer-_-2-000x56008bf97bb0"/>
+        <position name="A-Spacer-_-2-000x56008bf97d90_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf97d90_rot" unit="deg" x="0" y="0" z="-163.636363636364"/>
       </physvol>
       <physvol copynumber="13" name="BelleIIAerogel3-2-000x56008bf98110">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf97ec0"/>
         <position name="BelleIIAerogel3-2-000x56008bf98110_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf98110_rot" unit="deg" x="0" y="0" z="-147.272727272727"/>
       </physvol>
-      <physvol copynumber="13" name="A-Spacer--2-000x56008bf981c0">
-        <volumeref ref="A-Spacer--2-000x56008bf97fe0"/>
-        <position name="A-Spacer--2-000x56008bf981c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf981c0_rot" unit="deg" x="0" y="0" z="-147.272727272727"/>
+      <physvol copynumber="13" name="A-Spacer-_-2-000x56008bf981c0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf97fe0"/>
+        <position name="A-Spacer-_-2-000x56008bf981c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf981c0_rot" unit="deg" x="0" y="0" z="-147.272727272727"/>
       </physvol>
       <physvol copynumber="14" name="BelleIIAerogel3-2-000x56008bf98540">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf982f0"/>
         <position name="BelleIIAerogel3-2-000x56008bf98540_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf98540_rot" unit="deg" x="0" y="0" z="-130.909090909091"/>
       </physvol>
-      <physvol copynumber="14" name="A-Spacer--2-000x56008bf985f0">
-        <volumeref ref="A-Spacer--2-000x56008bf98410"/>
-        <position name="A-Spacer--2-000x56008bf985f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf985f0_rot" unit="deg" x="0" y="0" z="-130.909090909091"/>
+      <physvol copynumber="14" name="A-Spacer-_-2-000x56008bf985f0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf98410"/>
+        <position name="A-Spacer-_-2-000x56008bf985f0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf985f0_rot" unit="deg" x="0" y="0" z="-130.909090909091"/>
       </physvol>
       <physvol copynumber="15" name="BelleIIAerogel3-2-000x56008bf98970">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf98720"/>
         <position name="BelleIIAerogel3-2-000x56008bf98970_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf98970_rot" unit="deg" x="0" y="0" z="-114.545454545455"/>
       </physvol>
-      <physvol copynumber="15" name="A-Spacer--2-000x56008bf98a20">
-        <volumeref ref="A-Spacer--2-000x56008bf98840"/>
-        <position name="A-Spacer--2-000x56008bf98a20_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf98a20_rot" unit="deg" x="0" y="0" z="-114.545454545455"/>
+      <physvol copynumber="15" name="A-Spacer-_-2-000x56008bf98a20">
+        <volumeref ref="A-Spacer-_-2-000x56008bf98840"/>
+        <position name="A-Spacer-_-2-000x56008bf98a20_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf98a20_rot" unit="deg" x="0" y="0" z="-114.545454545455"/>
       </physvol>
       <physvol copynumber="16" name="BelleIIAerogel3-2-000x56008bf98eb0">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf98b50"/>
         <position name="BelleIIAerogel3-2-000x56008bf98eb0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf98eb0_rot" unit="deg" x="0" y="0" z="-98.1818181818182"/>
       </physvol>
-      <physvol copynumber="16" name="A-Spacer--2-000x56008bf99070">
-        <volumeref ref="A-Spacer--2-000x56008bf98c70"/>
-        <position name="A-Spacer--2-000x56008bf99070_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf99070_rot" unit="deg" x="0" y="0" z="-98.1818181818182"/>
+      <physvol copynumber="16" name="A-Spacer-_-2-000x56008bf99070">
+        <volumeref ref="A-Spacer-_-2-000x56008bf98c70"/>
+        <position name="A-Spacer-_-2-000x56008bf99070_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf99070_rot" unit="deg" x="0" y="0" z="-98.1818181818182"/>
       </physvol>
       <physvol copynumber="17" name="BelleIIAerogel3-2-000x56008bf99500">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf992b0"/>
         <position name="BelleIIAerogel3-2-000x56008bf99500_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf99500_rot" unit="deg" x="0" y="0" z="-81.8181818181818"/>
       </physvol>
-      <physvol copynumber="17" name="A-Spacer--2-000x56008bf995b0">
-        <volumeref ref="A-Spacer--2-000x56008bf993d0"/>
-        <position name="A-Spacer--2-000x56008bf995b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf995b0_rot" unit="deg" x="0" y="0" z="-81.8181818181818"/>
+      <physvol copynumber="17" name="A-Spacer-_-2-000x56008bf995b0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf993d0"/>
+        <position name="A-Spacer-_-2-000x56008bf995b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf995b0_rot" unit="deg" x="0" y="0" z="-81.8181818181818"/>
       </physvol>
       <physvol copynumber="18" name="BelleIIAerogel3-2-000x56008bf99930">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf996e0"/>
         <position name="BelleIIAerogel3-2-000x56008bf99930_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf99930_rot" unit="deg" x="0" y="0" z="-65.4545454545455"/>
       </physvol>
-      <physvol copynumber="18" name="A-Spacer--2-000x56008bf999e0">
-        <volumeref ref="A-Spacer--2-000x56008bf99800"/>
-        <position name="A-Spacer--2-000x56008bf999e0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf999e0_rot" unit="deg" x="0" y="0" z="-65.4545454545455"/>
+      <physvol copynumber="18" name="A-Spacer-_-2-000x56008bf999e0">
+        <volumeref ref="A-Spacer-_-2-000x56008bf99800"/>
+        <position name="A-Spacer-_-2-000x56008bf999e0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf999e0_rot" unit="deg" x="0" y="0" z="-65.4545454545455"/>
       </physvol>
       <physvol copynumber="19" name="BelleIIAerogel3-2-000x56008bf99d60">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf99b10"/>
         <position name="BelleIIAerogel3-2-000x56008bf99d60_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf99d60_rot" unit="deg" x="0" y="0" z="-49.0909090909091"/>
       </physvol>
-      <physvol copynumber="19" name="A-Spacer--2-000x56008bf99e10">
-        <volumeref ref="A-Spacer--2-000x56008bf99c30"/>
-        <position name="A-Spacer--2-000x56008bf99e10_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf99e10_rot" unit="deg" x="0" y="0" z="-49.0909090909091"/>
+      <physvol copynumber="19" name="A-Spacer-_-2-000x56008bf99e10">
+        <volumeref ref="A-Spacer-_-2-000x56008bf99c30"/>
+        <position name="A-Spacer-_-2-000x56008bf99e10_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf99e10_rot" unit="deg" x="0" y="0" z="-49.0909090909091"/>
       </physvol>
       <physvol copynumber="20" name="BelleIIAerogel3-2-000x56008bf9a190">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf99f40"/>
         <position name="BelleIIAerogel3-2-000x56008bf9a190_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf9a190_rot" unit="deg" x="0" y="0" z="-32.7272727272727"/>
       </physvol>
-      <physvol copynumber="20" name="A-Spacer--2-000x56008bf9a890">
-        <volumeref ref="A-Spacer--2-000x56008bf9a060"/>
-        <position name="A-Spacer--2-000x56008bf9a890_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf9a890_rot" unit="deg" x="0" y="0" z="-32.7272727272727"/>
+      <physvol copynumber="20" name="A-Spacer-_-2-000x56008bf9a890">
+        <volumeref ref="A-Spacer-_-2-000x56008bf9a060"/>
+        <position name="A-Spacer-_-2-000x56008bf9a890_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf9a890_rot" unit="deg" x="0" y="0" z="-32.7272727272727"/>
       </physvol>
       <physvol copynumber="21" name="BelleIIAerogel3-2-000x56008bf9b260">
         <volumeref ref="BelleIIAerogel3-2-000x56008bf9a9c0"/>
         <position name="BelleIIAerogel3-2-000x56008bf9b260_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-2-000x56008bf9b260_rot" unit="deg" x="0" y="0" z="-16.3636363636364"/>
       </physvol>
-      <physvol copynumber="21" name="A-Spacer--2-000x56008bf9b310">
-        <volumeref ref="A-Spacer--2-000x56008bf9b130"/>
-        <position name="A-Spacer--2-000x56008bf9b310_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--2-000x56008bf9b310_rot" unit="deg" x="0" y="0" z="-16.3636363636364"/>
+      <physvol copynumber="21" name="A-Spacer-_-2-000x56008bf9b310">
+        <volumeref ref="A-Spacer-_-2-000x56008bf9b130"/>
+        <position name="A-Spacer-_-2-000x56008bf9b310_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-2-000x56008bf9b310_rot" unit="deg" x="0" y="0" z="-16.3636363636364"/>
       </physvol>
       <physvol name="BelleIIAerogel3-3-000x56008bf9bb10">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9b7c0"/>
         <position name="BelleIIAerogel3-3-000x56008bf9bb10_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="A-Spacer--3-000x56008bf9bc80">
-        <volumeref ref="A-Spacer--3-000x56008bf9b980"/>
-        <position name="A-Spacer--3-000x56008bf9bc80_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="A-Spacer-_-3-000x56008bf9bc80">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9b980"/>
+        <position name="A-Spacer-_-3-000x56008bf9bc80_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
       <physvol copynumber="1" name="BelleIIAerogel3-3-000x56008bf9c080">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9be10"/>
         <position name="BelleIIAerogel3-3-000x56008bf9c080_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9c080_rot" unit="deg" x="0" y="0" z="12.8571428571429"/>
       </physvol>
-      <physvol copynumber="1" name="A-Spacer--3-000x56008bf9c130">
-        <volumeref ref="A-Spacer--3-000x56008bf9bf50"/>
-        <position name="A-Spacer--3-000x56008bf9c130_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9c130_rot" unit="deg" x="0" y="0" z="12.8571428571429"/>
+      <physvol copynumber="1" name="A-Spacer-_-3-000x56008bf9c130">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9bf50"/>
+        <position name="A-Spacer-_-3-000x56008bf9c130_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9c130_rot" unit="deg" x="0" y="0" z="12.8571428571429"/>
       </physvol>
       <physvol copynumber="2" name="BelleIIAerogel3-3-000x56008bf9c510">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9c260"/>
         <position name="BelleIIAerogel3-3-000x56008bf9c510_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9c510_rot" unit="deg" x="0" y="0" z="25.7142857142857"/>
       </physvol>
-      <physvol copynumber="2" name="A-Spacer--3-000x56008bf9c5d0">
-        <volumeref ref="A-Spacer--3-000x56008bf9c3b0"/>
-        <position name="A-Spacer--3-000x56008bf9c5d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9c5d0_rot" unit="deg" x="0" y="0" z="25.7142857142857"/>
+      <physvol copynumber="2" name="A-Spacer-_-3-000x56008bf9c5d0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9c3b0"/>
+        <position name="A-Spacer-_-3-000x56008bf9c5d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9c5d0_rot" unit="deg" x="0" y="0" z="25.7142857142857"/>
       </physvol>
       <physvol copynumber="3" name="BelleIIAerogel3-3-000x56008bf9c980">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9c730"/>
         <position name="BelleIIAerogel3-3-000x56008bf9c980_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9c980_rot" unit="deg" x="0" y="0" z="38.5714285714286"/>
       </physvol>
-      <physvol copynumber="3" name="A-Spacer--3-000x56008bf9ca10">
-        <volumeref ref="A-Spacer--3-000x56008bf9c850"/>
-        <position name="A-Spacer--3-000x56008bf9ca10_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9ca10_rot" unit="deg" x="0" y="0" z="38.5714285714286"/>
+      <physvol copynumber="3" name="A-Spacer-_-3-000x56008bf9ca10">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9c850"/>
+        <position name="A-Spacer-_-3-000x56008bf9ca10_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9ca10_rot" unit="deg" x="0" y="0" z="38.5714285714286"/>
       </physvol>
       <physvol copynumber="4" name="BelleIIAerogel3-3-000x56008bf9ce30">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9cb40"/>
         <position name="BelleIIAerogel3-3-000x56008bf9ce30_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9ce30_rot" unit="deg" x="0" y="0" z="51.4285714285714"/>
       </physvol>
-      <physvol copynumber="4" name="A-Spacer--3-000x56008bf9cee0">
-        <volumeref ref="A-Spacer--3-000x56008bf9ccb0"/>
-        <position name="A-Spacer--3-000x56008bf9cee0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9cee0_rot" unit="deg" x="0" y="0" z="51.4285714285714"/>
+      <physvol copynumber="4" name="A-Spacer-_-3-000x56008bf9cee0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9ccb0"/>
+        <position name="A-Spacer-_-3-000x56008bf9cee0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9cee0_rot" unit="deg" x="0" y="0" z="51.4285714285714"/>
       </physvol>
       <physvol copynumber="5" name="BelleIIAerogel3-3-000x56008bf9d250">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9d030"/>
         <position name="BelleIIAerogel3-3-000x56008bf9d250_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9d250_rot" unit="deg" x="0" y="0" z="64.2857142857143"/>
       </physvol>
-      <physvol copynumber="5" name="A-Spacer--3-000x56008bf9d2b0">
-        <volumeref ref="A-Spacer--3-000x56008bf9d120"/>
-        <position name="A-Spacer--3-000x56008bf9d2b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9d2b0_rot" unit="deg" x="0" y="0" z="64.2857142857143"/>
+      <physvol copynumber="5" name="A-Spacer-_-3-000x56008bf9d2b0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9d120"/>
+        <position name="A-Spacer-_-3-000x56008bf9d2b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9d2b0_rot" unit="deg" x="0" y="0" z="64.2857142857143"/>
       </physvol>
       <physvol copynumber="6" name="BelleIIAerogel3-3-000x56008bf9d630">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9d3e0"/>
         <position name="BelleIIAerogel3-3-000x56008bf9d630_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9d630_rot" unit="deg" x="0" y="0" z="77.1428571428571"/>
       </physvol>
-      <physvol copynumber="6" name="A-Spacer--3-000x56008bf9d6c0">
-        <volumeref ref="A-Spacer--3-000x56008bf9d500"/>
-        <position name="A-Spacer--3-000x56008bf9d6c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9d6c0_rot" unit="deg" x="0" y="0" z="77.1428571428571"/>
+      <physvol copynumber="6" name="A-Spacer-_-3-000x56008bf9d6c0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9d500"/>
+        <position name="A-Spacer-_-3-000x56008bf9d6c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9d6c0_rot" unit="deg" x="0" y="0" z="77.1428571428571"/>
       </physvol>
       <physvol copynumber="7" name="BelleIIAerogel3-3-000x56008bf9da40">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9d7f0"/>
         <position name="BelleIIAerogel3-3-000x56008bf9da40_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9da40_rot" unit="deg" x="0" y="0" z="90"/>
       </physvol>
-      <physvol copynumber="7" name="A-Spacer--3-000x56008bf9daf0">
-        <volumeref ref="A-Spacer--3-000x56008bf9d910"/>
-        <position name="A-Spacer--3-000x56008bf9daf0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9daf0_rot" unit="deg" x="0" y="0" z="90"/>
+      <physvol copynumber="7" name="A-Spacer-_-3-000x56008bf9daf0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9d910"/>
+        <position name="A-Spacer-_-3-000x56008bf9daf0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9daf0_rot" unit="deg" x="0" y="0" z="90"/>
       </physvol>
       <physvol copynumber="8" name="BelleIIAerogel3-3-000x56008bf9de70">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9dc20"/>
         <position name="BelleIIAerogel3-3-000x56008bf9de70_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9de70_rot" unit="deg" x="0" y="0" z="102.857142857143"/>
       </physvol>
-      <physvol copynumber="8" name="A-Spacer--3-000x56008bf9df20">
-        <volumeref ref="A-Spacer--3-000x56008bf9dd40"/>
-        <position name="A-Spacer--3-000x56008bf9df20_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9df20_rot" unit="deg" x="0" y="0" z="102.857142857143"/>
+      <physvol copynumber="8" name="A-Spacer-_-3-000x56008bf9df20">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9dd40"/>
+        <position name="A-Spacer-_-3-000x56008bf9df20_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9df20_rot" unit="deg" x="0" y="0" z="102.857142857143"/>
       </physvol>
       <physvol copynumber="9" name="BelleIIAerogel3-3-000x56008bf9e200">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9dfb0"/>
         <position name="BelleIIAerogel3-3-000x56008bf9e200_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9e200_rot" unit="deg" x="0" y="0" z="115.714285714286"/>
       </physvol>
-      <physvol copynumber="9" name="A-Spacer--3-000x56008bf9e2b0">
-        <volumeref ref="A-Spacer--3-000x56008bf9e0d0"/>
-        <position name="A-Spacer--3-000x56008bf9e2b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9e2b0_rot" unit="deg" x="0" y="0" z="115.714285714286"/>
+      <physvol copynumber="9" name="A-Spacer-_-3-000x56008bf9e2b0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9e0d0"/>
+        <position name="A-Spacer-_-3-000x56008bf9e2b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9e2b0_rot" unit="deg" x="0" y="0" z="115.714285714286"/>
       </physvol>
       <physvol copynumber="10" name="BelleIIAerogel3-3-000x56008bf9e590">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9e340"/>
         <position name="BelleIIAerogel3-3-000x56008bf9e590_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9e590_rot" unit="deg" x="0" y="0" z="128.571428571429"/>
       </physvol>
-      <physvol copynumber="10" name="A-Spacer--3-000x56008bf9e640">
-        <volumeref ref="A-Spacer--3-000x56008bf9e460"/>
-        <position name="A-Spacer--3-000x56008bf9e640_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9e640_rot" unit="deg" x="0" y="0" z="128.571428571429"/>
+      <physvol copynumber="10" name="A-Spacer-_-3-000x56008bf9e640">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9e460"/>
+        <position name="A-Spacer-_-3-000x56008bf9e640_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9e640_rot" unit="deg" x="0" y="0" z="128.571428571429"/>
       </physvol>
       <physvol copynumber="11" name="BelleIIAerogel3-3-000x56008bf9e9c0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9e770"/>
         <position name="BelleIIAerogel3-3-000x56008bf9e9c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9e9c0_rot" unit="deg" x="0" y="0" z="141.428571428571"/>
       </physvol>
-      <physvol copynumber="11" name="A-Spacer--3-000x56008bf9ea70">
-        <volumeref ref="A-Spacer--3-000x56008bf9e890"/>
-        <position name="A-Spacer--3-000x56008bf9ea70_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9ea70_rot" unit="deg" x="0" y="0" z="141.428571428571"/>
+      <physvol copynumber="11" name="A-Spacer-_-3-000x56008bf9ea70">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9e890"/>
+        <position name="A-Spacer-_-3-000x56008bf9ea70_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9ea70_rot" unit="deg" x="0" y="0" z="141.428571428571"/>
       </physvol>
       <physvol copynumber="12" name="BelleIIAerogel3-3-000x56008bf9edf0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9eba0"/>
         <position name="BelleIIAerogel3-3-000x56008bf9edf0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9edf0_rot" unit="deg" x="0" y="0" z="154.285714285714"/>
       </physvol>
-      <physvol copynumber="12" name="A-Spacer--3-000x56008bf9eea0">
-        <volumeref ref="A-Spacer--3-000x56008bf9ecc0"/>
-        <position name="A-Spacer--3-000x56008bf9eea0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9eea0_rot" unit="deg" x="0" y="0" z="154.285714285714"/>
+      <physvol copynumber="12" name="A-Spacer-_-3-000x56008bf9eea0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9ecc0"/>
+        <position name="A-Spacer-_-3-000x56008bf9eea0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9eea0_rot" unit="deg" x="0" y="0" z="154.285714285714"/>
       </physvol>
       <physvol copynumber="13" name="BelleIIAerogel3-3-000x56008bf9f220">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9efd0"/>
         <position name="BelleIIAerogel3-3-000x56008bf9f220_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9f220_rot" unit="deg" x="0" y="0" z="167.142857142857"/>
       </physvol>
-      <physvol copynumber="13" name="A-Spacer--3-000x56008bf9f2d0">
-        <volumeref ref="A-Spacer--3-000x56008bf9f0f0"/>
-        <position name="A-Spacer--3-000x56008bf9f2d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9f2d0_rot" unit="deg" x="0" y="0" z="167.142857142857"/>
+      <physvol copynumber="13" name="A-Spacer-_-3-000x56008bf9f2d0">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9f0f0"/>
+        <position name="A-Spacer-_-3-000x56008bf9f2d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9f2d0_rot" unit="deg" x="0" y="0" z="167.142857142857"/>
       </physvol>
       <physvol copynumber="14" name="BelleIIAerogel3-3-000x56008bf9f650">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9f400"/>
         <position name="BelleIIAerogel3-3-000x56008bf9f650_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9f650_rot" unit="deg" x="0" y="0" z="180"/>
       </physvol>
-      <physvol copynumber="14" name="A-Spacer--3-000x56008bf9f700">
-        <volumeref ref="A-Spacer--3-000x56008bf9f520"/>
-        <position name="A-Spacer--3-000x56008bf9f700_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9f700_rot" unit="deg" x="0" y="0" z="180"/>
+      <physvol copynumber="14" name="A-Spacer-_-3-000x56008bf9f700">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9f520"/>
+        <position name="A-Spacer-_-3-000x56008bf9f700_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9f700_rot" unit="deg" x="0" y="0" z="180"/>
       </physvol>
       <physvol copynumber="15" name="BelleIIAerogel3-3-000x56008bf9fa80">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9f830"/>
         <position name="BelleIIAerogel3-3-000x56008bf9fa80_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bf9fa80_rot" unit="deg" x="0" y="0" z="-167.142857142857"/>
       </physvol>
-      <physvol copynumber="15" name="A-Spacer--3-000x56008bf9fb30">
-        <volumeref ref="A-Spacer--3-000x56008bf9f950"/>
-        <position name="A-Spacer--3-000x56008bf9fb30_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bf9fb30_rot" unit="deg" x="0" y="0" z="-167.142857142857"/>
+      <physvol copynumber="15" name="A-Spacer-_-3-000x56008bf9fb30">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9f950"/>
+        <position name="A-Spacer-_-3-000x56008bf9fb30_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bf9fb30_rot" unit="deg" x="0" y="0" z="-167.142857142857"/>
       </physvol>
       <physvol copynumber="16" name="BelleIIAerogel3-3-000x56008bfa00d0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bf9fc60"/>
         <position name="BelleIIAerogel3-3-000x56008bfa00d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa00d0_rot" unit="deg" x="0" y="0" z="-154.285714285714"/>
       </physvol>
-      <physvol copynumber="16" name="A-Spacer--3-000x56008bfa0290">
-        <volumeref ref="A-Spacer--3-000x56008bf9fe90"/>
-        <position name="A-Spacer--3-000x56008bfa0290_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa0290_rot" unit="deg" x="0" y="0" z="-154.285714285714"/>
+      <physvol copynumber="16" name="A-Spacer-_-3-000x56008bfa0290">
+        <volumeref ref="A-Spacer-_-3-000x56008bf9fe90"/>
+        <position name="A-Spacer-_-3-000x56008bfa0290_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa0290_rot" unit="deg" x="0" y="0" z="-154.285714285714"/>
       </physvol>
       <physvol copynumber="17" name="BelleIIAerogel3-3-000x56008bfa0720">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa04d0"/>
         <position name="BelleIIAerogel3-3-000x56008bfa0720_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa0720_rot" unit="deg" x="0" y="0" z="-141.428571428571"/>
       </physvol>
-      <physvol copynumber="17" name="A-Spacer--3-000x56008bfa07d0">
-        <volumeref ref="A-Spacer--3-000x56008bfa05f0"/>
-        <position name="A-Spacer--3-000x56008bfa07d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa07d0_rot" unit="deg" x="0" y="0" z="-141.428571428571"/>
+      <physvol copynumber="17" name="A-Spacer-_-3-000x56008bfa07d0">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa05f0"/>
+        <position name="A-Spacer-_-3-000x56008bfa07d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa07d0_rot" unit="deg" x="0" y="0" z="-141.428571428571"/>
       </physvol>
       <physvol copynumber="18" name="BelleIIAerogel3-3-000x56008bfa1360">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa1110"/>
         <position name="BelleIIAerogel3-3-000x56008bfa1360_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa1360_rot" unit="deg" x="0" y="0" z="-128.571428571429"/>
       </physvol>
-      <physvol copynumber="18" name="A-Spacer--3-000x56008bfa1410">
-        <volumeref ref="A-Spacer--3-000x56008bfa1230"/>
-        <position name="A-Spacer--3-000x56008bfa1410_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa1410_rot" unit="deg" x="0" y="0" z="-128.571428571429"/>
+      <physvol copynumber="18" name="A-Spacer-_-3-000x56008bfa1410">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa1230"/>
+        <position name="A-Spacer-_-3-000x56008bfa1410_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa1410_rot" unit="deg" x="0" y="0" z="-128.571428571429"/>
       </physvol>
       <physvol copynumber="19" name="BelleIIAerogel3-3-000x56008bfa1790">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa1540"/>
         <position name="BelleIIAerogel3-3-000x56008bfa1790_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa1790_rot" unit="deg" x="0" y="0" z="-115.714285714286"/>
       </physvol>
-      <physvol copynumber="19" name="A-Spacer--3-000x56008bfa1840">
-        <volumeref ref="A-Spacer--3-000x56008bfa1660"/>
-        <position name="A-Spacer--3-000x56008bfa1840_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa1840_rot" unit="deg" x="0" y="0" z="-115.714285714286"/>
+      <physvol copynumber="19" name="A-Spacer-_-3-000x56008bfa1840">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa1660"/>
+        <position name="A-Spacer-_-3-000x56008bfa1840_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa1840_rot" unit="deg" x="0" y="0" z="-115.714285714286"/>
       </physvol>
       <physvol copynumber="20" name="BelleIIAerogel3-3-000x56008bfa1bc0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa1970"/>
         <position name="BelleIIAerogel3-3-000x56008bfa1bc0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa1bc0_rot" unit="deg" x="0" y="0" z="-102.857142857143"/>
       </physvol>
-      <physvol copynumber="20" name="A-Spacer--3-000x56008bfa1c70">
-        <volumeref ref="A-Spacer--3-000x56008bfa1a90"/>
-        <position name="A-Spacer--3-000x56008bfa1c70_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa1c70_rot" unit="deg" x="0" y="0" z="-102.857142857143"/>
+      <physvol copynumber="20" name="A-Spacer-_-3-000x56008bfa1c70">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa1a90"/>
+        <position name="A-Spacer-_-3-000x56008bfa1c70_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa1c70_rot" unit="deg" x="0" y="0" z="-102.857142857143"/>
       </physvol>
       <physvol copynumber="21" name="BelleIIAerogel3-3-000x56008bfa1ff0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa1da0"/>
         <position name="BelleIIAerogel3-3-000x56008bfa1ff0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa1ff0_rot" unit="deg" x="0" y="0" z="-90"/>
       </physvol>
-      <physvol copynumber="21" name="A-Spacer--3-000x56008bfa20a0">
-        <volumeref ref="A-Spacer--3-000x56008bfa1ec0"/>
-        <position name="A-Spacer--3-000x56008bfa20a0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa20a0_rot" unit="deg" x="0" y="0" z="-90"/>
+      <physvol copynumber="21" name="A-Spacer-_-3-000x56008bfa20a0">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa1ec0"/>
+        <position name="A-Spacer-_-3-000x56008bfa20a0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa20a0_rot" unit="deg" x="0" y="0" z="-90"/>
       </physvol>
       <physvol copynumber="22" name="BelleIIAerogel3-3-000x56008bfa2420">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa21d0"/>
         <position name="BelleIIAerogel3-3-000x56008bfa2420_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa2420_rot" unit="deg" x="0" y="0" z="-77.1428571428572"/>
       </physvol>
-      <physvol copynumber="22" name="A-Spacer--3-000x56008bfa24d0">
-        <volumeref ref="A-Spacer--3-000x56008bfa22f0"/>
-        <position name="A-Spacer--3-000x56008bfa24d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa24d0_rot" unit="deg" x="0" y="0" z="-77.1428571428572"/>
+      <physvol copynumber="22" name="A-Spacer-_-3-000x56008bfa24d0">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa22f0"/>
+        <position name="A-Spacer-_-3-000x56008bfa24d0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa24d0_rot" unit="deg" x="0" y="0" z="-77.1428571428572"/>
       </physvol>
       <physvol copynumber="23" name="BelleIIAerogel3-3-000x56008bfa2850">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa2600"/>
         <position name="BelleIIAerogel3-3-000x56008bfa2850_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa2850_rot" unit="deg" x="0" y="0" z="-64.2857142857143"/>
       </physvol>
-      <physvol copynumber="23" name="A-Spacer--3-000x56008bfa2900">
-        <volumeref ref="A-Spacer--3-000x56008bfa2720"/>
-        <position name="A-Spacer--3-000x56008bfa2900_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa2900_rot" unit="deg" x="0" y="0" z="-64.2857142857143"/>
+      <physvol copynumber="23" name="A-Spacer-_-3-000x56008bfa2900">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa2720"/>
+        <position name="A-Spacer-_-3-000x56008bfa2900_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa2900_rot" unit="deg" x="0" y="0" z="-64.2857142857143"/>
       </physvol>
       <physvol copynumber="24" name="BelleIIAerogel3-3-000x56008bfa2c80">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa2a30"/>
         <position name="BelleIIAerogel3-3-000x56008bfa2c80_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa2c80_rot" unit="deg" x="0" y="0" z="-51.4285714285714"/>
       </physvol>
-      <physvol copynumber="24" name="A-Spacer--3-000x56008bfa2d30">
-        <volumeref ref="A-Spacer--3-000x56008bfa2b50"/>
-        <position name="A-Spacer--3-000x56008bfa2d30_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa2d30_rot" unit="deg" x="0" y="0" z="-51.4285714285714"/>
+      <physvol copynumber="24" name="A-Spacer-_-3-000x56008bfa2d30">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa2b50"/>
+        <position name="A-Spacer-_-3-000x56008bfa2d30_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa2d30_rot" unit="deg" x="0" y="0" z="-51.4285714285714"/>
       </physvol>
       <physvol copynumber="25" name="BelleIIAerogel3-3-000x56008bfa30b0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa2e60"/>
         <position name="BelleIIAerogel3-3-000x56008bfa30b0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa30b0_rot" unit="deg" x="0" y="0" z="-38.5714285714286"/>
       </physvol>
-      <physvol copynumber="25" name="A-Spacer--3-000x56008bfa3160">
-        <volumeref ref="A-Spacer--3-000x56008bfa2f80"/>
-        <position name="A-Spacer--3-000x56008bfa3160_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa3160_rot" unit="deg" x="0" y="0" z="-38.5714285714286"/>
+      <physvol copynumber="25" name="A-Spacer-_-3-000x56008bfa3160">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa2f80"/>
+        <position name="A-Spacer-_-3-000x56008bfa3160_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa3160_rot" unit="deg" x="0" y="0" z="-38.5714285714286"/>
       </physvol>
       <physvol copynumber="26" name="BelleIIAerogel3-3-000x56008bfa34e0">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa3290"/>
         <position name="BelleIIAerogel3-3-000x56008bfa34e0_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa34e0_rot" unit="deg" x="0" y="0" z="-25.7142857142857"/>
       </physvol>
-      <physvol copynumber="26" name="A-Spacer--3-000x56008bfa3590">
-        <volumeref ref="A-Spacer--3-000x56008bfa33b0"/>
-        <position name="A-Spacer--3-000x56008bfa3590_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa3590_rot" unit="deg" x="0" y="0" z="-25.7142857142857"/>
+      <physvol copynumber="26" name="A-Spacer-_-3-000x56008bfa3590">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa33b0"/>
+        <position name="A-Spacer-_-3-000x56008bfa3590_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa3590_rot" unit="deg" x="0" y="0" z="-25.7142857142857"/>
       </physvol>
       <physvol copynumber="27" name="BelleIIAerogel3-3-000x56008bfa3910">
         <volumeref ref="BelleIIAerogel3-3-000x56008bfa36c0"/>
         <position name="BelleIIAerogel3-3-000x56008bfa3910_pos" unit="mm" x="0" y="0" z="-204.525"/>
         <rotation name="BelleIIAerogel3-3-000x56008bfa3910_rot" unit="deg" x="0" y="0" z="-12.8571428571429"/>
       </physvol>
-      <physvol copynumber="27" name="A-Spacer--3-000x56008bfa39c0">
-        <volumeref ref="A-Spacer--3-000x56008bfa37e0"/>
-        <position name="A-Spacer--3-000x56008bfa39c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
-        <rotation name="A-Spacer--3-000x56008bfa39c0_rot" unit="deg" x="0" y="0" z="-12.8571428571429"/>
+      <physvol copynumber="27" name="A-Spacer-_-3-000x56008bfa39c0">
+        <volumeref ref="A-Spacer-_-3-000x56008bfa37e0"/>
+        <position name="A-Spacer-_-3-000x56008bfa39c0_pos" unit="mm" x="0" y="0" z="-204.525"/>
+        <rotation name="A-Spacer-_-3-000x56008bfa39c0_rot" unit="deg" x="0" y="0" z="-12.8571428571429"/>
       </physvol>
-      <physvol name="R-Spacer--0-000x56008bfa3f40">
-        <volumeref ref="R-Spacer--0-000x56008bfa3dd0"/>
-        <position name="R-Spacer--0-000x56008bfa3f40_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="R-Spacer-_-0-000x56008bfa3f40">
+        <volumeref ref="R-Spacer-_-0-000x56008bfa3dd0"/>
+        <position name="R-Spacer-_-0-000x56008bfa3f40_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="R-Spacer--1-000x56008bfa4350">
-        <volumeref ref="R-Spacer--1-000x56008bfa41e0"/>
-        <position name="R-Spacer--1-000x56008bfa4350_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="R-Spacer-_-1-000x56008bfa4350">
+        <volumeref ref="R-Spacer-_-1-000x56008bfa41e0"/>
+        <position name="R-Spacer-_-1-000x56008bfa4350_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="R-Spacer--2-000x56008bfa4760">
-        <volumeref ref="R-Spacer--2-000x56008bfa45f0"/>
-        <position name="R-Spacer--2-000x56008bfa4760_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="R-Spacer-_-2-000x56008bfa4760">
+        <volumeref ref="R-Spacer-_-2-000x56008bfa45f0"/>
+        <position name="R-Spacer-_-2-000x56008bfa4760_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="R-Spacer--3-000x56008bfa4b70">
-        <volumeref ref="R-Spacer--3-000x56008bfa4a00"/>
-        <position name="R-Spacer--3-000x56008bfa4b70_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="R-Spacer-_-3-000x56008bfa4b70">
+        <volumeref ref="R-Spacer-_-3-000x56008bfa4a00"/>
+        <position name="R-Spacer-_-3-000x56008bfa4b70_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
-      <physvol name="R-Spacer--4-000x56008bfa4f80">
-        <volumeref ref="R-Spacer--4-000x56008bfa4e10"/>
-        <position name="R-Spacer--4-000x56008bfa4f80_pos" unit="mm" x="0" y="0" z="-204.525"/>
+      <physvol name="R-Spacer-_-4-000x56008bfa4f80">
+        <volumeref ref="R-Spacer-_-4-000x56008bfa4e10"/>
+        <position name="R-Spacer-_-4-000x56008bfa4f80_pos" unit="mm" x="0" y="0" z="-204.525"/>
       </physvol>
       <physvol name="Acrylic0x56008bfa5a50">
         <volumeref ref="Acrylic0x56008bfa5410"/>
