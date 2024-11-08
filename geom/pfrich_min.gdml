@@ -503,18 +503,21 @@
       <second ref="Tmp0x56008bf895e0"/>
     </subtraction>
     <cone aunit="deg" deltaphi="360" lunit="mm" name="InnerMirror0x56008bfa5b50" rmax1="66" rmax2="115.96448390677" rmin1="65" rmin2="114.96448390677" startphi="0" z="375.15"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="InnerMirror0x56008bfa5ce0" rmax1="66" rmax2="115.96448390677" rmin1="65" rmin2="114.96448390677" startphi="0" z="375.15"/>
     <subtraction name="InnerMirror0x56008bfa5ce0">
       <first ref="InnerMirror0x56008bfa5b50"/>
       <second ref="Tmp0x56008bf895e0"/>
     </subtraction>
     <cone aunit="deg" deltaphi="360" lunit="mm" name="OuterMirror0x56008bfa8ab0" rmax1="625" rmax2="575.960784313726" rmin1="623" rmin2="573.960784313726" startphi="0" z="375.15"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="GasVolume0x56008bf65140" rmax="636.284" rmin="0" startphi="0" z="434.65"/>
+    <cone aunit="deg" deltaphi="360" lunit="mm" name="OuterMirror0x56008bfa8c60" rmax1="625" rmax2="575.960784313726" rmin1="623" rmin2="573.960784313726" startphi="0" z="375.15"/>
     <intersection name="OuterMirror0x56008bfa8c60">
       <first ref="OuterMirror0x56008bfa8ab0"/>
       <second ref="GasVolume0x56008bf65140"/>
     </intersection>
     <box lunit="mm" name="Dummy0x56008bfb10e0" x="123" y="123" z="30"/>
     <trd lunit="mm" name="Dummy0x56008bf728c0" x1="123" x2="104" y1="123" y2="104" z="30.022"/>
+    <box lunit="mm" name="MirrorPyramid0x56008bfb11e0" x="123" y="123" z="30"/>
     <subtraction name="MirrorPyramid0x56008bfb11e0">
       <first ref="Dummy0x56008bfb10e0"/>
       <second ref="Dummy0x56008bf728c0"/>
@@ -533,6 +536,7 @@
       <position name="Tmp0x56008bf65860_pos" unit="mm" x="-52.8495562130177" y="0" z="0"/>
       <rotation name="Tmp0x56008bf65860_rot" unit="deg" x="0" y="0" z="90"/>
     </union>
+    <box lunit="mm" name="GasVolume0x56008bf652f0" x="1500" y="1500" z="1500"/>
     <subtraction name="GasVolume0x56008bf652f0">
       <first ref="GasVolume0x56008bf65140"/>
       <second ref="Tmp0x56008bf65860"/>
@@ -546,6 +550,7 @@
     <opticalsurface finish="0" model="1" name="OuterMirror0x56008bfa9300" type="0" value="0">
       <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfab320"/>
     </opticalsurface>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="PFRICH_World0x56008bf17c10" rmax="1500" rmin="0" startphi="0" z="1500"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="FlangeEpipe0x56008bf695d0" rmax="64" rmin="0" startphi="0" z="6.35"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="FlangeHpipe0x56008bf696e0" rmax="33.7" rmin="0" startphi="0" z="6.35"/>
     <union name="Tmp0x56008bf699b0">
@@ -1002,6 +1007,7 @@
       <position name="Tmp0x56008bf12710_pos" unit="mm" x="-52.8495562130177" y="0" z="0"/>
       <rotation name="Tmp0x56008bf12710_rot" unit="deg" x="0" y="0" z="90"/>
     </union>
+    <box lunit="mm" name="PFRICH0x56008bf64610" x="1500" y="1500" z="1500"/>
     <subtraction name="PFRICH0x56008bf64610">
       <first ref="PFRICH0x56008bf17fa0"/>
       <second ref="Tmp0x56008bf12710"/>
@@ -1657,6 +1663,7 @@
     <volume name="GasVolume0x56008bf65c10">
       <materialref ref="Nitrogen0x56008be8a6b0"/>
       <solidref ref="GasVolume0x56008bf652f0"/>
+      <!--
       <physvol name="InnerWall0x56008bf67030">
         <volumeref ref="InnerWall0x56008bf66f20"/>
         <position name="InnerWall0x56008bf67030_pos" unit="mm" x="0" y="0" z="-1.5"/>
@@ -2417,6 +2424,7 @@
         <volumeref ref="Acrylic0x56008bfa5410"/>
         <position name="Acrylic0x56008bfa5a50_pos" unit="mm" x="0" y="0" z="-190.225"/>
       </physvol>
+      -->
       <physvol name="InnerMirror0x56008bfa8700">
         <volumeref ref="InnerMirror0x56008bfa5ed0"/>
         <position name="InnerMirror0x56008bfa8700_pos" unit="mm" x="0" y="0" z="-0.849999999999994"/>
@@ -2847,6 +2855,7 @@
         <volumeref ref="GasVolume0x56008bf65c10"/>
         <position name="GasVolume0x56008bf65d20_pos" unit="mm" x="0" y="0" z="-21.825"/>
       </physvol>
+      <!--
       <physvol name="FrontWall0x56008bf694c0">
         <volumeref ref="FrontWall0x56008bf69350"/>
         <position name="FrontWall0x56008bf694c0_pos" unit="mm" x="0" y="0" z="-242.325"/>
@@ -3131,14 +3140,15 @@
         <volumeref ref="AluFrame0x56008c0a2030"/>
         <position name="AluFrame0x56008c0a2180_pos" unit="mm" x="0" y="0" z="200.35"/>
       </physvol>
+      -->
     </volume>
     <volume name="PFRICH_World0x56008bf17d80">
       <materialref ref="Air0x56008be89d40"/>
       <solidref ref="PFRICH_World0x56008bf17c10"/>
       <physvol name="PFRICH0x56008bf65030">
         <volumeref ref="PFRICH0x56008bf64ed0"/>
-        <position name="PFRICH0x56008bf65030_pos" unit="mm" x="0" y="0" z="-1481.5"/>
-        <rotation name="PFRICH0x56008bf65030_rot" unit="deg" x="180" y="0" z="180"/>
+        <position name="PFRICH0x56008bf65030_pos" unit="mm" x="0" y="0" z="0"/>
+        <rotation name="PFRICH0x56008bf65030_rot" unit="deg" x="0" y="0" z="0"/>
       </physvol>
     </volume>
     <bordersurface name="MirrorPyramid0x56008bf9a3c0" surfaceproperty="MirrorPyramid0x56008bfb1550">
