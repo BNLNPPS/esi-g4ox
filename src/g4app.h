@@ -23,6 +23,7 @@
 #include "G4VUserPrimaryGeneratorAction.hh"
 
 #include "G4CX/G4CXOpticks.hh"
+#include "G4SDManager.hh"
 #include "SysRap/NP.hh"
 #include "SysRap/SEvt.hh"
 #include "SysRap/STrackInfo.h"
@@ -58,19 +59,126 @@ bool IsSubtractionSolid(G4VSolid *solid)
     return false;
 }
 
+struct PhotonHit : public G4VHit
+{
+    PhotonHit() = default;
+
+    PhotonHit(unsigned id, G4double energy, G4double time, G4ThreeVector position, G4ThreeVector direction,
+              G4ThreeVector polarization)
+        : fid(id), fenergy(energy), ftime(time), fposition(position), fdirection(direction), fpolarization(polarization)
+    {
+    }
+
+    // Copy constructor
+    PhotonHit(const PhotonHit &right)
+        : G4VHit(right), fid(right.fid), fenergy(right.fenergy), ftime(right.ftime), fposition(right.fposition),
+          fdirection(right.fdirection), fpolarization(right.fpolarization)
+    {
+    }
+
+    // Assignment operator
+    const PhotonHit &operator=(const PhotonHit &right)
+    {
+        if (this != &right)
+        {
+            G4VHit::operator=(right);
+            fid = right.fid;
+            fenergy = right.fenergy;
+            ftime = right.ftime;
+            fposition = right.fposition;
+            fdirection = right.fdirection;
+            fpolarization = right.fpolarization;
+        }
+        return *this;
+    }
+
+    // Equality operator
+    G4bool operator==(const PhotonHit &right) const
+    {
+        return (this == &right);
+    }
+
+    // Print method
+    void Print() override
+    {
+        G4cout << "Detector id: " << fid << " energy: " << fenergy << " nm"
+               << " time: " << ftime << " ns"
+               << " position: " << fposition << " direction: " << fdirection << " polarization: " << fpolarization
+               << G4endl;
+    }
+
+    // Member variables
+    G4int fid{0};
+    G4double fenergy{0};
+    G4double ftime{0};
+    G4ThreeVector fposition{0, 0, 0};
+    G4ThreeVector fdirection{0, 0, 0};
+    G4ThreeVector fpolarization{0, 0, 0};
+};
+
+using PhotonHitsCollection = G4THitsCollection<PhotonHit>;
+
+struct PhotonSD : public G4VSensitiveDetector
+{
+    PhotonSD(G4String name) : G4VSensitiveDetector(name), fHCID(-1)
+    {
+        G4String HCname = name + "_HC";
+        collectionName.insert(HCname);
+        G4cout << collectionName.size() << "   PhotonSD name:  " << name << " collection Name: " << HCname << G4endl;
+    }
+
+    void Initialize(G4HCofThisEvent *hce) override
+    {
+        fPhotonHitsCollection = new PhotonHitsCollection(SensitiveDetectorName, collectionName[0]);
+        if (fHCID < 0)
+        {
+            G4cout << "PhotonSD::Initialize:  " << SensitiveDetectorName << "   " << collectionName[0] << G4endl;
+            fHCID = G4SDManager::GetSDMpointer()->GetCollectionID(collectionName[0]);
+        }
+        hce->AddHitsCollection(fHCID, fPhotonHitsCollection);
+    }
+
+    G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *) override
+    {
+        G4Track *theTrack = aStep->GetTrack();
+        // Only process optical photons
+        if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+            return false;
+
+        G4double theEnergy = theTrack->GetTotalEnergy() / CLHEP::eV;
+
+        // Create a new hit (CopyNr is set to 0 as DetectorID is omitted)
+        PhotonHit *newHit = new PhotonHit(
+            0, // CopyNr set to 0
+            theEnergy, theTrack->GetGlobalTime(), aStep->GetPostStepPoint()->GetPosition(),
+            aStep->GetPostStepPoint()->GetMomentumDirection(), aStep->GetPostStepPoint()->GetPolarization());
+
+        fPhotonHitsCollection->insert(newHit);
+        theTrack->SetTrackStatus(fStopAndKill);
+        return true;
+    }
+
+    void EndOfEvent(G4HCofThisEvent *) override
+    {
+        G4int NbHits = fPhotonHitsCollection->entries();
+        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+    }
+
+  private:
+    PhotonHitsCollection *fPhotonHitsCollection{nullptr};
+    G4int fHCID;
+};
+
 struct DetectorConstruction : G4VUserDetectorConstruction
 {
-
     DetectorConstruction(std::filesystem::path gdml_file) : gdml_file_(gdml_file)
     {
     }
 
     G4VPhysicalVolume *Construct() override
     {
-        G4GDMLParser parser;
-        parser.Read(gdml_file_.string(), false);
-
-        G4VPhysicalVolume *world = parser.GetWorldVolume();
+        parser_.Read(gdml_file_.string(), false);
+        G4VPhysicalVolume *world = parser_.GetWorldVolume();
 
         G4CXOpticks::SetGeometry(world);
 
@@ -101,8 +209,31 @@ struct DetectorConstruction : G4VUserDetectorConstruction
         return world;
     }
 
+    void ConstructSDandField() override
+    {
+        G4cout << "ConstructSDandField is called." << G4endl;
+        G4SDManager *SDman = G4SDManager::GetSDMpointer();
+
+        const G4GDMLAuxMapType *auxmap = parser_.GetAuxMap();
+        for (auto const &[logVol, listType] : *auxmap)
+        {
+            for (auto const &auxtype : listType)
+            {
+                if (auxtype.type == "SensDet")
+                {
+                    G4cout << "Attaching sensitive detector to logical volume: " << logVol->GetName() << G4endl;
+                    G4String name = logVol->GetName() + "_PhotonDetector";
+                    PhotonSD *aPhotonSD = new PhotonSD(name);
+                    SDman->AddNewDetector(aPhotonSD);
+                    logVol->SetSensitiveDetector(aPhotonSD);
+                }
+            }
+        }
+    }
+
   private:
     std::filesystem::path gdml_file_;
+    G4GDMLParser parser_;
 };
 
 struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
@@ -196,7 +327,6 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *step)
     {
-
         if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
 
@@ -326,7 +456,7 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(std::filesystem::path gdml_file)
-        : sev(SEvt::HighLevelCreate(SEvt::ECPU)), det_cons_(new DetectorConstruction(gdml_file)),
+        : sev(SEvt::CreateOrReuse_ECPU()), det_cons_(new DetectorConstruction(gdml_file)),
           prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), stepping_(new SteppingAction(sev)),
           tracking_(new TrackingAction(sev))
     {
