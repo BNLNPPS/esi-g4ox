@@ -164,6 +164,41 @@ struct PhotonSD : public G4VSensitiveDetector
         G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
     }
 
+    void AddOpticksHits()
+    {
+        SEvt *sev = SEvt::Get_ECPU();
+        unsigned int num_hits = sev->GetNumHit(0);
+
+        for (int idx = 0; idx < int(num_hits); idx++)
+        {
+            sphoton hit;
+            sev->getHit(hit, idx);
+            G4ThreeVector position = G4ThreeVector(hit.pos.x, hit.pos.y, hit.pos.z);
+            G4ThreeVector direction = G4ThreeVector(hit.mom.x, hit.mom.y, hit.mom.z);
+            G4ThreeVector polarization = G4ThreeVector(hit.pol.x, hit.pol.y, hit.pol.z);
+            int theCreationProcessid;
+            if (OpticksPhoton::HasCerenkovFlag(hit.flagmask))
+            {
+                theCreationProcessid = 0;
+            }
+            else if (OpticksPhoton::HasScintillationFlag(hit.flagmask))
+            {
+                theCreationProcessid = 1;
+            }
+            else
+            {
+                theCreationProcessid = -1;
+            }
+            // to be done, first value of hit is detectorid
+            // tbd change wavelength to energy
+            std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << " "
+                      << polarization << std::endl;
+
+            PhotonHit *newHit = new PhotonHit(0, hit.wavelength, hit.time, position, direction, polarization);
+            fPhotonHitsCollection->insert(newHit);
+        }
+    }
+
   private:
     PhotonHitsCollection *fPhotonHitsCollection{nullptr};
     G4int fHCID;
@@ -181,7 +216,6 @@ struct DetectorConstruction : G4VUserDetectorConstruction
         G4VPhysicalVolume *world = parser_.GetWorldVolume();
 
         G4CXOpticks::SetGeometry(world);
-
         G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
 
         static G4VisAttributes invisibleVisAttr(false);
@@ -302,7 +336,30 @@ struct EventAction : G4UserEventAction
 
         // GPU-based simulation
         G4CXOpticks *gx = G4CXOpticks::Get();
+
         gx->simulate(eventID, true);
+        cudaDeviceSynchronize();
+        unsigned int num_hits = SEvt::GetNumHit(0);
+        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
+
+        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
+
+        std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
+        if (num_hits > 0)
+        {
+            G4HCtable *hctable = G4SDManager::GetSDMpointer()->GetHCtable();
+            for (G4int i = 0; i < hctable->entries(); ++i)
+            {
+                std::string sdn = hctable->GetSDname(i);
+                std::size_t found = sdn.find("Photondetector");
+                if (found != std::string::npos)
+                {
+                    PhotonSD *aSD = (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
+                    aSD->AddOpticksHits();
+                }
+            }
+        }
+        G4CXOpticks::Get()->reset(eventID);
     }
 };
 
@@ -327,6 +384,7 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *step)
     {
+        // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
         if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
 
@@ -461,6 +519,8 @@ struct G4App
           tracking_(new TrackingAction(sev))
     {
     }
+
+    //~G4App(){ G4CXOpticks::Finalize();}
 
     // Create "global" event
     SEvt *sev;
