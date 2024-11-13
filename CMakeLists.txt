@@ -32,6 +32,8 @@ find_package(Geant4 REQUIRED ui_all vis_all)
 find_package(g4cx REQUIRED)
 find_package(sysrap REQUIRED)
 
+get_target_property(OPTICKS_INCLUDE_DIRECTORIES Opticks::G4CX INTERFACE_INCLUDE_DIRECTORIES)
+
 add_subdirectory(src)
 
 # Install files and export configs
