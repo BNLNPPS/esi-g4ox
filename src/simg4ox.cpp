@@ -11,12 +11,16 @@
 #include "G4UImanager.hh"
 #include "G4VisExecutive.hh"
 
+#include "SysRap/OPTICKS_LOG.hh"
+
 #include "g4app.h"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
+    OPTICKS_LOG(argc, argv);
+
     argparse::ArgumentParser program("simg4ox", "0.0.0");
 
     string gdml_file, macro_name;
