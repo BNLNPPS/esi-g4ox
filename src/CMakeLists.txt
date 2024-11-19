@@ -24,7 +24,7 @@ install(TARGETS g4ox EXPORT g4oxTargets
 
 add_executable(consgeo consgeo.cpp ../include/argparse/argparse.hpp)
 target_link_libraries(consgeo g4ox)
-target_include_directories(consgeo PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
+target_include_directories(consgeo PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> $<INSTALL_INTERFACE:include>)
 
 add_executable(simg4ox simg4ox.cpp g4app.h ../include/argparse/argparse.hpp)
 target_link_libraries(simg4ox g4ox)
