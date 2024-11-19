@@ -33,3 +33,12 @@ export TMP=/tmp/myname
 export GEOM=mygeom
 export OPTICKS_EVENT_MODE=DebugLite
 ```
+
+
+## Visualization
+
+Plot any volume serialized 
+
+```
+scripts/plot-csg.py ../out/csg/CSGFoundry/SSim/scene/meshmerge/0/
+```
