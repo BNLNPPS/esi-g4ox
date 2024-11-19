@@ -2,9 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include <plog/Appenders/ColorConsoleAppender.h>
-#include <plog/Formatters/TxtFormatter.h>
-#include <plog/Init.h>
+#include "SysRap/OPTICKS_LOG.hh"
 
 #include <argparse/argparse.hpp>
 
@@ -14,9 +12,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    using PLogFormat = plog::TxtFormatter;
-    static plog::ColorConsoleAppender<PLogFormat> consoleAppender;
-    plog::init(plog::debug, &consoleAppender);
+    OPTICKS_LOG(argc, argv);
 
     argparse::ArgumentParser program("consgeo", "0.0.0");
 
