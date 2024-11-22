@@ -6,6 +6,7 @@
 #include "G4LogicalVolumeStore.hh"
 #include "G4OpBoundaryProcess.hh"
 #include "G4OpticalPhoton.hh"
+#include "G4Electron.hh"
 #include "G4PhysicalConstants.hh"
 #include "G4PrimaryParticle.hh"
 #include "G4PrimaryVertex.hh"
@@ -33,6 +34,11 @@
 #include "U4/U4StepPoint.hh"
 #include "U4/U4Touchable.h"
 #include "U4/U4Track.h"
+#include "U4.hh"
+
+#include "G4Scintillation.hh"
+#include "G4Cerenkov.hh"
+
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
@@ -166,7 +172,7 @@ struct PhotonSD : public G4VSensitiveDetector
 
     void AddOpticksHits()
     {
-        SEvt *sev = SEvt::Get_ECPU();
+        SEvt *sev = SEvt::Get_EGPU();
         unsigned int num_hits = sev->GetNumHit(0);
 
         for (int idx = 0; idx < int(num_hits); idx++)
@@ -215,8 +221,10 @@ struct DetectorConstruction : G4VUserDetectorConstruction
         parser_.Read(gdml_file_.string(), false);
         G4VPhysicalVolume *world = parser_.GetWorldVolume();
 
-        G4CXOpticks::SetGeometry(world);
-        G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
+        //G4CXOpticks::SetGeometry(world);
+        cudaDeviceReset();
+        G4CXOpticks::SetGeometry();
+	G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
 
         static G4VisAttributes invisibleVisAttr(false);
 
@@ -280,7 +288,9 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
-        NP *photons = NP::Make<float>(0, 4, 4);
+        
+	/*
+	NP *photons = NP::Make<float>(0, 4, 4);
 
         photons->load("out/photons.npy");
 
@@ -311,7 +321,22 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         }
 
         sev->SetInputPhoton(photons);
-    }
+    }*/
+
+    	    G4ThreeVector position_mm(0, 0, 0);
+            G4double time_ns = 0;
+            G4ThreeVector direction(1, 0, 0);
+            // direction = direction.unit();
+            G4double wavelength_nm = 0.1;
+
+            G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
+            G4double kineticEnergy = h_Planck * c_light / (wavelength_nm * nm);
+  	    G4PrimaryParticle *particle = new G4PrimaryParticle(G4Electron::Definition());
+            particle->SetKineticEnergy(10*GeV);
+            particle->SetMomentumDirection(direction);
+            vertex->SetPrimary(particle);
+            event->AddPrimaryVertex(vertex);
+}
 };
 
 struct EventAction : G4UserEventAction
@@ -330,14 +355,14 @@ struct EventAction : G4UserEventAction
     void EndOfEventAction(const G4Event *event) override
     {
         int eventID = event->GetEventID();
-        sev->addEventConfigArray();
-        sev->gather();
-        sev->endOfEvent(eventID);
+        //sev->addEventConfigArray();
+        //sev->gather();
+        //sev->endOfEvent(eventID);
 
         // GPU-based simulation
         G4CXOpticks *gx = G4CXOpticks::Get();
 
-        gx->simulate(eventID, true);
+        gx->simulate(eventID, false);
         cudaDeviceSynchronize();
         unsigned int num_hits = SEvt::GetNumHit(0);
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
@@ -382,28 +407,116 @@ struct SteppingAction : G4UserSteppingAction
     {
     }
 
-    void UserSteppingAction(const G4Step *step)
+    void UserSteppingAction(const G4Step *aStep)
     {
-        // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
-        if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+G4int fNumPhotons = 0;  // number of scintillation photons this step
+    const G4Track* aTrack;
+    G4SteppingManager* fpSteppingManager =
+    G4EventManager::GetEventManager()->GetTrackingManager()->GetSteppingManager();
+    G4StepStatus stepStatus = fpSteppingManager->GetfStepStatus();
+    if(stepStatus != fAtRestDoItProc)
+    {
+      G4ProcessVector* procPost = fpSteppingManager->GetfPostStepDoItVector();
+      size_t MAXofPostStepLoops = fpSteppingManager->GetMAXofPostStepLoops();
+      for(size_t i3 = 0; i3 < MAXofPostStepLoops; i3++)
+      {
+        if((*procPost)[i3]->GetProcessName() == "Cerenkov")
+        {
+          std::cout << "Nagec"<< std::endl;
+          aTrack                             = aStep->GetTrack();
+          const G4DynamicParticle* aParticle = aTrack->GetDynamicParticle();
+          G4double charge                    = aParticle->GetDefinition()->GetPDGCharge();
+          const G4Material* aMaterial        = aTrack->GetMaterial();
+          G4MaterialPropertiesTable* MPT     = aMaterial->GetMaterialPropertiesTable();
+          G4MaterialPropertyVector* Rindex   = MPT->GetProperty(kRINDEX);
+          G4Cerenkov* proc                   = (G4Cerenkov*) (*procPost)[i3];
+          fNumPhotons                        = proc->GetNumPhotons();
+    
+    //Photoncounter += fNumPhotons;
+          if(fNumPhotons > 0)
+          {
+            G4double Pmin        = Rindex->Energy(0);
+            G4double Pmax        = Rindex->GetMaxEnergy();
+            G4double nMax        = Rindex->GetMaxValue();
+            G4double beta1       = aStep->GetPreStepPoint()->GetBeta();
+            G4double beta2       = aStep->GetPostStepPoint()->GetBeta();
+            G4double beta        = (beta1 + beta2) * 0.5;
+            G4double BetaInverse = 1. / beta;
+            G4double maxCos      = BetaInverse / nMax;
+            G4double maxSin2     = (1.0 - maxCos) * (1.0 + maxCos);
+            G4double MeanNumberOfPhotons1 =
+              proc->GetAverageNumberOfPhotons(charge, beta1, aMaterial, Rindex);
+            G4double MeanNumberOfPhotons2 =
+              proc->GetAverageNumberOfPhotons(charge, beta2, aMaterial, Rindex);
+            U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin,
+                                                   Pmax, maxCos, maxSin2, MeanNumberOfPhotons1,
+                                                   MeanNumberOfPhotons2);
+           std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
+
+           SEvt::Check(0);
+        cudaDeviceSynchronize();
+           G4RunManager* rm     = G4RunManager::GetRunManager();
+        const G4Event* event = rm->GetCurrentEvent();
+           G4int eventid        = event->GetEventID();
+           G4CXOpticks::Get()->simulate(eventid, false);
+           cudaDeviceSynchronize();
+           unsigned int num_hits = SEvt::GetNumHit(0);
+           std::cout <<"gpl" << num_hits << std::endl;
+           G4CXOpticks::Get()->reset(eventid);
+            //std << GenStepcounter++;
+          }
+        }
+
+
+	        if((*procPost)[i3]->GetProcessName() == "Scintillation")
+        {
+                std::cout << "Nagec2"<< std::endl;
+          G4Scintillation* proc1 = (G4Scintillation*) (*procPost)[i3];
+          fNumPhotons            = proc1->GetNumPhotons();
+          ////Photoncounter += fNumPhotons;
+          std::cout << "fNumPhotons" << fNumPhotons << std::endl;
+
+          G4double timeconst = 0.0;
+          if(fNumPhotons > 0)
+          {
+            aTrack                         = aStep->GetTrack();
+            const G4Material* aMaterial    = aTrack->GetMaterial();
+            G4MaterialPropertiesTable* MPT = aMaterial->GetMaterialPropertiesTable();
+            timeconst                      = MPT->GetConstProperty(kSCINTILLATIONTIMECONSTANT1);
+            const G4Track* aTrack          = aStep->GetTrack();
+            //U4::CollectGenstep_DsG4Scintillation_r4695(aTrack, aStep, fNumPhotons, 1, timeconst);
+            //GenStepcounter++;
+            //
+            //
+
+          }
+        }
+      }
+    }
+
+	    
+	 return;
+
+	 // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
+        if (aStep->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
 
-        const G4VProcess *process = step->GetPreStepPoint()->GetProcessDefinedStep();
+        const G4VProcess *process = aStep->GetPreStepPoint()->GetProcessDefinedStep();
 
         if (process == nullptr)
             return;
 
-        const G4Track *track = step->GetTrack();
+        const G4Track *track = aStep->GetTrack();
         G4VPhysicalVolume *pv = track->GetVolume();
         const G4VTouchable *touch = track->GetTouchable();
 
         spho ulabel = {};
         get_label(ulabel, track);
 
-        const G4StepPoint *pre = step->GetPreStepPoint();
-        const G4StepPoint *post = step->GetPostStepPoint();
+        const G4StepPoint *pre = aStep->GetPreStepPoint();
+        const G4StepPoint *post = aStep->GetPostStepPoint();
 
-        G4ThreeVector delta = step->GetDeltaPosition();
+        G4ThreeVector delta = aStep->GetDeltaPosition();
         double step_mm = delta.mag() / mm;
 
         sev->checkPhotonLineage(ulabel);
@@ -442,6 +555,7 @@ struct TrackingAction : G4UserTrackingAction
 
     void PreUserTrackingAction_Optical_FabricateLabel(const G4Track *track)
     {
+	return;
         U4Track::SetFabricatedLabel<spho>(track);
         spho *label = STrackInfo<spho>::GetRef(track);
         assert(label);
@@ -449,7 +563,9 @@ struct TrackingAction : G4UserTrackingAction
 
     void PreUserTrackingAction(const G4Track *track) override
     {
-        spho *label = STrackInfo<spho>::GetRef(track);
+        
+	    return;
+	    spho *label = STrackInfo<spho>::GetRef(track);
 
         if (label == nullptr)
         {
@@ -487,6 +603,7 @@ struct TrackingAction : G4UserTrackingAction
 
     void PostUserTrackingAction(const G4Track *track) override
     {
+	   return;
         G4TrackStatus tstat = track->GetTrackStatus();
 
         bool is_fStopAndKill = tstat == fStopAndKill;
@@ -514,7 +631,7 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(std::filesystem::path gdml_file)
-        : sev(SEvt::CreateOrReuse_ECPU()), det_cons_(new DetectorConstruction(gdml_file)),
+        : sev(SEvt::CreateOrReuse_EGPU()), det_cons_(new DetectorConstruction(gdml_file)),
           prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), stepping_(new SteppingAction(sev)),
           tracking_(new TrackingAction(sev))
     {
