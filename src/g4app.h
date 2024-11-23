@@ -151,7 +151,10 @@ struct PhotonSD : public G4VSensitiveDetector
         if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return false;
 
-        G4double theEnergy = theTrack->GetTotalEnergy() / CLHEP::eV;
+        //G4cout << aStep -> GetTrack() -> GetCreatorProcess() -> GetProcessName() << G4endl; # will be relevant later if we have scintillation
+
+
+	G4double theEnergy = theTrack->GetTotalEnergy() / CLHEP::eV;
 
         // Create a new hit (CopyNr is set to 0 as DetectorID is omitted)
         PhotonHit *newHit = new PhotonHit(
@@ -323,16 +326,16 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         sev->SetInputPhoton(photons);
     }*/
 
-    	    G4ThreeVector position_mm(0, 0, 0);
+    	    G4ThreeVector position_mm(0, 0, -1*m);
             G4double time_ns = 0;
-            G4ThreeVector direction(1, 0, 0);
+            G4ThreeVector direction(0, 0.2, 0.8);
             // direction = direction.unit();
             G4double wavelength_nm = 0.1;
 
             G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
             G4double kineticEnergy = h_Planck * c_light / (wavelength_nm * nm);
   	    G4PrimaryParticle *particle = new G4PrimaryParticle(G4Electron::Definition());
-            particle->SetKineticEnergy(10*GeV);
+            particle->SetKineticEnergy(0.05*GeV);
             particle->SetMomentumDirection(direction);
             vertex->SetPrimary(particle);
             event->AddPrimaryVertex(vertex);
@@ -462,6 +465,26 @@ G4int fNumPhotons = 0;  // number of scintillation photons this step
            cudaDeviceSynchronize();
            unsigned int num_hits = SEvt::GetNumHit(0);
            std::cout <<"gpl" << num_hits << std::endl;
+
+		
+	    if(num_hits > 0)
+      {
+        G4HCtable* hctable = G4SDManager::GetSDMpointer()->GetHCtable();
+        for(G4int i = 0; i < hctable->entries(); ++i)
+        {
+          std::string sdn   = hctable->GetSDname(i);
+          std::size_t found = sdn.find("PhotonDetector");
+          if(found != std::string::npos)
+          {
+                      std::cout << "PhotonDetector: " << sdn << std::endl;
+            PhotonSD* aSD = (PhotonSD*) G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
+            aSD->AddOpticksHits();
+          }
+        }
+      }
+
+
+
            G4CXOpticks::Get()->reset(eventid);
             //std << GenStepcounter++;
           }
