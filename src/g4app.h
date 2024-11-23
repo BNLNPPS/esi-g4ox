@@ -38,7 +38,8 @@
 
 #include "G4Scintillation.hh"
 #include "G4Cerenkov.hh"
-
+#include "G4Profiler.hh"
+#include "G4ProfilerMessenger.hh"
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
