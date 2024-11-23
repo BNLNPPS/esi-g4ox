@@ -148,7 +148,7 @@ struct PhotonSD : public G4VSensitiveDetector
     {
         G4Track *theTrack = aStep->GetTrack();
         // Only process optical photons
-        if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+	if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return false;
 
         //G4cout << aStep -> GetTrack() -> GetCreatorProcess() -> GetProcessName() << G4endl; # will be relevant later if we have scintillation
@@ -412,6 +412,17 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *aStep)
     {
+
+
+    if(aStep->GetTrack()->GetTrackStatus() == fAlive){ 
+    if( aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName()  !="MirrorPyramid" && aStep->GetPostStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName()  =="MirrorPyramid")
+    {if (aStep->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition())
+			G4cout << "I am a photon enetering pyramid from outside. Am I coming from the correct way? Not sure" << aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName() << G4endl;
+aStep->GetTrack()->SetTrackStatus(fStopAndKill);			
+    }}
+
+
+
 G4int fNumPhotons = 0;  // number of scintillation photons this step
     const G4Track* aTrack;
     G4SteppingManager* fpSteppingManager =
