@@ -1,4 +1,8 @@
 #include <filesystem>
+#include <chrono>
+#include <thread>
+
+
 
 #include "G4BooleanSolid.hh"
 #include "G4Event.hh"
@@ -148,12 +152,14 @@ struct PhotonSD : public G4VSensitiveDetector
     G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *) override
     {
         G4Track *theTrack = aStep->GetTrack();
-        // Only process optical photons
+        
+	
+	// Only process optical photons
 	if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return false;
 
-        //G4cout << aStep -> GetTrack() -> GetCreatorProcess() -> GetProcessName() << G4endl; # will be relevant later if we have scintillation
-
+	
+	G4cout << "ProcessingHits in SD" << G4endl;
 
 	G4double theEnergy = theTrack->GetTotalEnergy() / CLHEP::eV;
 
@@ -327,10 +333,12 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         sev->SetInputPhoton(photons);
     }*/
 
-    	    G4ThreeVector position_mm(0, 0, -1*m);
-            G4double time_ns = 0;
+    	    G4ThreeVector position_mm(-0.4*m, -0.3*m, -0.2*m);
+            //G4ThreeVector position_mm(0, -0.3*m, -0.7*m);
+	    G4double time_ns = 0;
             G4ThreeVector direction(0, 0.2, 0.8);
-            // direction = direction.unit();
+            //G4ThreeVector direction(0, 0, 1);
+	    // direction = direction.unit();
             G4double wavelength_nm = 0.1;
 
             G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
@@ -364,12 +372,19 @@ struct EventAction : G4UserEventAction
         //sev->endOfEvent(eventID);
 
         // GPU-based simulation
-        G4CXOpticks *gx = G4CXOpticks::Get();
-
-        gx->simulate(eventID, false);
-        cudaDeviceSynchronize();
-        unsigned int num_hits = SEvt::GetNumHit(0);
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
+        
+	SEvt::Check(0);
+           cudaDeviceSynchronize();
+           G4RunManager* rm     = G4RunManager::GetRunManager();
+           G4CXOpticks::Get()->simulate(eventID, false);
+           cudaDeviceSynchronize();
+           unsigned int num_hits = SEvt::GetNumHit(0);
+           std::cout <<"gpl" << num_hits << std::endl;
+	
+	
+	
+	
+	std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
 
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
 
@@ -414,12 +429,17 @@ struct SteppingAction : G4UserSteppingAction
     void UserSteppingAction(const G4Step *aStep)
     {
 
+/*
+   if (aStep->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition()){G4cout <<"gilgames" << G4endl; 
+	   aStep->GetTrack()->SetTrackStatus(fStopAndKill);}
+*/
 
     if(aStep->GetTrack()->GetTrackStatus() == fAlive){ 
     if( aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName()  !="MirrorPyramid" && aStep->GetPostStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName()  =="MirrorPyramid")
-    {if (aStep->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition())
-			G4cout << "I am a photon enetering pyramid from outside. Am I coming from the correct way? Not sure" << aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName() << G4endl;
-aStep->GetTrack()->SetTrackStatus(fStopAndKill);			
+    {if (aStep->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition()){
+			G4cout << "I am a photon enetering pyramid from outside. Am I coming from the correct way? Not sure" << aStep->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume()->GetName() << aStep -> GetTrack() -> GetCreatorProcess() -> GetProcessName() << G4endl;
+//aStep->GetTrack()->SetTrackStatus(fStopAndKill);
+}			
     }}
 
 
@@ -468,16 +488,19 @@ G4int fNumPhotons = 0;  // number of scintillation photons this step
                                                    MeanNumberOfPhotons2);
            std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
 
+	G4cout << "zhebolname " << aStep->GetPreStepPoint()->GetPhysicalVolume()->GetName() << G4endl;
+
+	
            SEvt::Check(0);
-        cudaDeviceSynchronize();
+           cudaDeviceSynchronize();
            G4RunManager* rm     = G4RunManager::GetRunManager();
-        const G4Event* event = rm->GetCurrentEvent();
+           const G4Event* event = rm->GetCurrentEvent();
            G4int eventid        = event->GetEventID();
            G4CXOpticks::Get()->simulate(eventid, false);
            cudaDeviceSynchronize();
            unsigned int num_hits = SEvt::GetNumHit(0);
-           std::cout <<"gpl" << num_hits << std::endl;
-
+	   std::cout <<"gpl" << num_hits << std::endl;
+	//	std::this_thread::sleep_for(std::chrono::milliseconds(100));
 		
 	    if(num_hits > 0)
       {
@@ -490,7 +513,7 @@ G4int fNumPhotons = 0;  // number of scintillation photons this step
           {
                       std::cout << "PhotonDetector: " << sdn << std::endl;
             PhotonSD* aSD = (PhotonSD*) G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
-            aSD->AddOpticksHits();
+            //aSD->AddOpticksHits();
           }
         }
       }
@@ -498,7 +521,8 @@ G4int fNumPhotons = 0;  // number of scintillation photons this step
 
 
            G4CXOpticks::Get()->reset(eventid);
-            //std << GenStepcounter++;
+          
+      	//std << GenStepcounter++;
           }
         }
 
