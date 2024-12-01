@@ -13,11 +13,25 @@
 
 #include "g4app.h"
 
+#include "G4TiMemory.hh"
+#include "Randomize.hh"
+
 using namespace std;
 
 int main(int argc, char **argv)
 {
-    argparse::ArgumentParser program("simg4ox", "0.0.0");
+    
+U4Random* rnd = U4Random::Create() ; 
+if(rnd == nullptr) return 0 ;   // failed to load precooked
+
+G4Random::setTheEngine(rnd);
+
+G4Profiler::Configure(argc, argv);
+	
+	
+	
+	
+	argparse::ArgumentParser program("simg4ox", "0.0.0");
 
     string gdml_file, macro_name;
     bool interactive;
@@ -56,6 +70,9 @@ int main(int argc, char **argv)
     physics->RegisterPhysics(new G4OpticalPhysics);
 
     G4RunManager run_mgr;
+    //G4long seed = 123456789;
+    //CLHEP::HepRandom::setTheSeed(seed);
+    
     run_mgr.SetUserInitialization(physics);
 
     G4App *g4app = new G4App(gdml_file);
