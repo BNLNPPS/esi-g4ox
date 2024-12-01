@@ -384,7 +384,6 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *step)
     {
-        // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
         if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
 
@@ -519,8 +518,6 @@ struct G4App
           tracking_(new TrackingAction(sev))
     {
     }
-
-    //~G4App(){ G4CXOpticks::Finalize();}
 
     // Create "global" event
     SEvt *sev;
