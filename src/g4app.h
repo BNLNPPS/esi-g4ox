@@ -33,6 +33,10 @@
 #include "U4/U4StepPoint.hh"
 #include "U4/U4Touchable.h"
 #include "U4/U4Track.h"
+#include "SysRap/SEvt.hh"
+#include "SysRap/SGenerate.h"
+#include "U4/U4VPrimaryGenerator.h"
+
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
@@ -310,7 +314,13 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
             event->AddPrimaryVertex(vertex);
         }
 
-        sev->SetInputPhoton(photons);
+        sev->SetInputPhoton(photons); 
+        int idx_arg = event->GetEventID() ;
+        NP* gs = SEvent::MakeTorchGenstep(idx_arg) ;
+        NP* ph = SGenerate::GeneratePhotons(gs);
+        U4VPrimaryGenerator::GeneratePrimaries_From_Photons(event, ph);
+        delete ph ;
+        SEvent::SetGENSTEP(gs); 
     }
 };
 
@@ -337,7 +347,7 @@ struct EventAction : G4UserEventAction
         // GPU-based simulation
         G4CXOpticks *gx = G4CXOpticks::Get();
 
-        gx->simulate(eventID, true);
+        gx->simulate(eventID, false);
         cudaDeviceSynchronize();
         unsigned int num_hits = SEvt::GetNumHit(0);
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
