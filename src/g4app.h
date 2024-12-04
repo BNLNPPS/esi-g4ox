@@ -337,7 +337,7 @@ struct EventAction : G4UserEventAction
         // GPU-based simulation
         G4CXOpticks *gx = G4CXOpticks::Get();
 
-        gx->simulate(eventID, true);
+        gx->simulate(eventID, false);
         cudaDeviceSynchronize();
         unsigned int num_hits = SEvt::GetNumHit(0);
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
