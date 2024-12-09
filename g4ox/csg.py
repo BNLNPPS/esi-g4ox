@@ -11,3 +11,13 @@ def mesh(tri, vtx):
     edges = go.Scatter3d(x=tri_sides.T[0], y=tri_sides.T[1], z=tri_sides.T[2], mode='lines', line_width=5)
 
     return faces, edges
+
+
+def rays(rec, single_trace=True):
+    positions = rec[:, :, 0, :3]
+    mask = ~np.all(positions == 0, axis=2)
+    positions = positions[mask]
+    num_bounces = np.count_nonzero(mask, axis=1)
+    idx_bounces = np.cumsum(num_bounces[:-1])
+
+    return [go.Scatter3d(x=r.T[0], y=r.T[1], z=r.T[2], mode='lines', line_width=5) for r in np.split(positions, idx_bounces)]
