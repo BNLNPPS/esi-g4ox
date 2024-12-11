@@ -280,37 +280,18 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
-        NP *photons = NP::Make<float>(0, 4, 4);
+        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.2 * m);
+        G4double time_ns = 0;
+        G4ThreeVector direction(0, 0.2, 0.8);
+        G4double wavelength_nm = 0.1;
 
-        photons->load("out/photons.npy");
-
-        size_t n_photons = photons->num_items();
-        sphoton *sphotons = reinterpret_cast<sphoton *>(photons->bytes());
-
-        for (int i = 0; i < n_photons; i++)
-        {
-            sphoton &p = sphotons[i];
-
-            G4ThreeVector position_mm(p.pos.x, p.pos.y, p.pos.z);
-            G4double time_ns = p.time;
-            G4ThreeVector direction(p.mom.x, p.mom.y, p.mom.z);
-            // direction = direction.unit();
-            G4double wavelength_nm = p.wavelength;
-            G4ThreeVector polarization(p.pol.x, p.pol.y, p.pol.z);
-
-            G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
-            G4double kineticEnergy = h_Planck * c_light / (wavelength_nm * nm);
-
-            G4PrimaryParticle *particle = new G4PrimaryParticle(G4OpticalPhoton::Definition());
-            particle->SetKineticEnergy(kineticEnergy);
-            particle->SetMomentumDirection(direction);
-            particle->SetPolarization(polarization);
-
-            vertex->SetPrimary(particle);
-            event->AddPrimaryVertex(vertex);
-        }
-
-        sev->SetInputPhoton(photons);
+        G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
+        G4double kineticEnergy = h_Planck * c_light / (wavelength_nm * nm);
+        G4PrimaryParticle *particle = new G4PrimaryParticle(G4Electron::Definition());
+        particle->SetKineticEnergy(5 * GeV);
+        particle->SetMomentumDirection(direction);
+        vertex->SetPrimary(particle);
+        event->AddPrimaryVertex(vertex);
     }
 };
 
@@ -324,19 +305,14 @@ struct EventAction : G4UserEventAction
 
     void BeginOfEventAction(const G4Event *event) override
     {
-        sev->beginOfEvent(event->GetEventID());
     }
 
     void EndOfEventAction(const G4Event *event) override
     {
         int eventID = event->GetEventID();
-        sev->addEventConfigArray();
-        sev->gather();
-        sev->endOfEvent(eventID);
 
         // GPU-based simulation
         G4CXOpticks *gx = G4CXOpticks::Get();
-
         gx->simulate(eventID, false);
         cudaDeviceSynchronize();
         unsigned int num_hits = SEvt::GetNumHit(0);
