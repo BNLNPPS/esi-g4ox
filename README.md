@@ -14,12 +14,6 @@ cmake -S esi-g4ox -B build
 cmake --build build
 ```
 
-To run a test that generates a NumPy file (`out/photons.npy`) with the simulated photons, execute:
-
-```bash
-./build/src/simtox
-```
-
 Similarly, to start a Geant4-based simulation of optical photons, run:
 
 ```bash
@@ -32,6 +26,15 @@ Before runnning `simg4ox` it is recommended to set the following environment var
 export TMP=/tmp/myname
 export GEOM=mygeom
 export OPTICKS_EVENT_MODE=DebugLite
+QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
+opticks_running_mode=SRM_TORCH
+export storch_FillGenstep_pos=0,0,0
+export storch_FillGenstep_type=rectangle
+export storch_FillGenstep_zenith=-20,20
+export storch_FillGenstep_azimuth=-20,20
+export OPTICKS_RUNNING_MODE=${OPTICKS_RUNNING_MODE:-$opticks_running_mode}
+export OPTICKS_NUM_PHOTON=100
+unset export SGenerate__GeneratePhotons_RNG_PRECOOKED=NO
 ```
 
 
