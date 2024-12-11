@@ -21,6 +21,7 @@
 #include "G4Track.hh"
 #include "G4TrackStatus.hh"
 #include "G4UserEventAction.hh"
+#include "G4UserRunAction.hh"
 #include "G4UserSteppingAction.hh"
 #include "G4UserTrackingAction.hh"
 #include "G4VPhysicalVolume.hh"
@@ -145,7 +146,6 @@ struct PhotonSD : public G4VSensitiveDetector
     G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *) override
     {
         G4Track *theTrack = aStep->GetTrack();
-        // Only process optical photons
         if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return false;
 
@@ -193,8 +193,6 @@ struct PhotonSD : public G4VSensitiveDetector
             {
                 theCreationProcessid = -1;
             }
-            // to be done, first value of hit is detectorid
-            // tbd change wavelength to energy
             std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << " "
                       << polarization << std::endl;
 
@@ -315,43 +313,62 @@ struct EventAction : G4UserEventAction
         int eventID = event->GetEventID();
 
         // GPU-based simulation
-        G4CXOpticks *gx = G4CXOpticks::Get();
-        gx->simulate(eventID, false);
-        cudaDeviceSynchronize();
-        unsigned int num_hits = SEvt::GetNumHit(0);
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
 
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
+        /*
+            G4CXOpticks *gx = G4CXOpticks::Get();
+                gx->simulate(eventID, false);
+                cudaDeviceSynchronize();
+                unsigned int num_hits = SEvt::GetNumHit(0);
+                std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
 
-        std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
-        if (num_hits > 0)
-        {
-            G4HCtable *hctable = G4SDManager::GetSDMpointer()->GetHCtable();
-            for (G4int i = 0; i < hctable->entries(); ++i)
-            {
-                std::string sdn = hctable->GetSDname(i);
-                std::size_t found = sdn.find("Photondetector");
-                if (found != std::string::npos)
+                std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
+
+                std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
+                if (num_hits > 0)
                 {
-                    PhotonSD *aSD = (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
-                    aSD->AddOpticksHits();
+                    G4HCtable *hctable = G4SDManager::GetSDMpointer()->GetHCtable();
+                    for (G4int i = 0; i < hctable->entries(); ++i)
+                    {
+                        std::string sdn = hctable->GetSDname(i);
+                        std::size_t found = sdn.find("Photondetector");
+                        if (found != std::string::npos)
+                        {
+                            PhotonSD *aSD = (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
+                            aSD->AddOpticksHits();
+                        }
+                    }
                 }
-            }
-        }
-        G4CXOpticks::Get()->reset(eventID);
+                G4CXOpticks::Get()->reset(eventID);
+            */
     }
 };
 
-void get_label(spho &ulabel, const G4Track *track)
+struct RunAction : G4UserRunAction
 {
-    spho *label = STrackInfo<spho>::GetRef(track);
-    assert(label && label->isDefined() && "all photons are expected to be labelled");
+    RunAction()
+    {
+    }
 
-    std::array<int, spho::N> a_label;
-    label->serialize(a_label);
+    void BeginOfRunAction(const G4Run *run) override
+    {
+    }
 
-    ulabel.load(a_label);
-}
+    void EndOfRunAction(const G4Run *run) override
+    {
+
+        G4CXOpticks *gx = G4CXOpticks::Get();
+        gx->simulate(0, false);
+        cudaDeviceSynchronize();
+        // unsigned int num_hits = SEvt::GetNumHit(EGPU);
+        SEvt *sev = SEvt::Get_EGPU();
+        unsigned int num_hits = sev->GetNumHit(0);
+        std::cout << "Opticks: NumCollected:  " << sev->GetNumGenstepFromGenstep(0) << std::endl;
+
+        std::cout << "Opticks: NumCollected:  " << sev->GetNumPhotonCollected(0) << std::endl;
+
+        std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
+    }
+};
 
 struct SteppingAction : G4UserSteppingAction
 {
@@ -463,7 +480,9 @@ struct G4App
 {
     G4App(std::filesystem::path gdml_file)
         : sev(SEvt::CreateOrReuse_ECPU()), det_cons_(new DetectorConstruction(gdml_file)),
-          prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), stepping_(new SteppingAction(sev)),
+          prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), run_act_(new RunAction()),
+          stepping_(new SteppingAction(sev)),
+
           tracking_(new TrackingAction(sev))
     {
     }
@@ -476,6 +495,7 @@ struct G4App
     G4VUserDetectorConstruction *det_cons_;
     G4VUserPrimaryGeneratorAction *prim_gen_;
     EventAction *event_act_;
+    RunAction *run_act_;
     SteppingAction *stepping_;
     TrackingAction *tracking_;
 };
