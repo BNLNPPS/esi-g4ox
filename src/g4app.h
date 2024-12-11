@@ -26,6 +26,7 @@
 #include "G4SDManager.hh"
 #include "SysRap/NP.hh"
 #include "SysRap/SEvt.hh"
+#include "SysRap/SGenerate.h"
 #include "SysRap/STrackInfo.h"
 #include "SysRap/spho.h"
 #include "SysRap/sphoton.h"
@@ -33,10 +34,7 @@
 #include "U4/U4StepPoint.hh"
 #include "U4/U4Touchable.h"
 #include "U4/U4Track.h"
-#include "SysRap/SEvt.hh"
-#include "SysRap/SGenerate.h"
 #include "U4/U4VPrimaryGenerator.h"
-
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
@@ -284,11 +282,11 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
-	int idx_arg = event->GetEventID() ;
-        NP* gs = SEvent::MakeTorchGenstep(idx_arg) ;
-        NP* ph = SGenerate::GeneratePhotons(gs);
+        int idx_arg = event->GetEventID();
+        NP *gs = SEvent::MakeTorchGenstep(idx_arg);
+        NP *ph = SGenerate::GeneratePhotons(gs);
         U4VPrimaryGenerator::GeneratePrimaries_From_Photons(event, ph);
-        delete ph ;
+        delete ph;
         SEvent::SetGENSTEP(gs);
     }
 };
@@ -312,8 +310,8 @@ struct EventAction : G4UserEventAction
 
         // GPU-based simulation
         G4CXOpticks *gx = G4CXOpticks::Get();
-	gx->simulate(eventID, false);
-	cudaDeviceSynchronize();
+        gx->simulate(eventID, false);
+        cudaDeviceSynchronize();
         unsigned int num_hits = SEvt::GetNumHit(0);
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
 
@@ -351,8 +349,8 @@ struct SteppingAction : G4UserSteppingAction
         // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
         if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
-    	}
-    };
+    }
+};
 
 struct TrackingAction : G4UserTrackingAction
 {
