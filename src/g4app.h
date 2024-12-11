@@ -1,6 +1,11 @@
 #include <filesystem>
 
+#include "G4Cerenkov.hh"
+#include "G4Scintillation.hh"
+
 #include "G4BooleanSolid.hh"
+#include "G4CX/G4CXOpticks.hh"
+#include "G4Electron.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
 #include "G4LogicalVolumeStore.hh"
@@ -9,6 +14,7 @@
 #include "G4PhysicalConstants.hh"
 #include "G4PrimaryParticle.hh"
 #include "G4PrimaryVertex.hh"
+#include "G4SDManager.hh"
 #include "G4SubtractionSolid.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ThreeVector.hh"
@@ -21,14 +27,12 @@
 #include "G4VProcess.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
-
-#include "G4CX/G4CXOpticks.hh"
-#include "G4SDManager.hh"
 #include "SysRap/NP.hh"
 #include "SysRap/SEvt.hh"
 #include "SysRap/STrackInfo.h"
 #include "SysRap/spho.h"
 #include "SysRap/sphoton.h"
+#include "U4.hh"
 #include "U4/U4Random.hh"
 #include "U4/U4StepPoint.hh"
 #include "U4/U4Touchable.h"
@@ -286,7 +290,6 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         G4double wavelength_nm = 0.1;
 
         G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
-        G4double kineticEnergy = h_Planck * c_light / (wavelength_nm * nm);
         G4PrimaryParticle *particle = new G4PrimaryParticle(G4Electron::Definition());
         particle->SetKineticEnergy(5 * GeV);
         particle->SetMomentumDirection(direction);
@@ -358,52 +361,79 @@ struct SteppingAction : G4UserSteppingAction
     {
     }
 
-    void UserSteppingAction(const G4Step *step)
+    void UserSteppingAction(const G4Step *aStep)
     {
-        // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
-        if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
-            return;
-
-        const G4VProcess *process = step->GetPreStepPoint()->GetProcessDefinedStep();
-
-        if (process == nullptr)
-            return;
-
-        const G4Track *track = step->GetTrack();
-        G4VPhysicalVolume *pv = track->GetVolume();
-        const G4VTouchable *touch = track->GetTouchable();
-
-        spho ulabel = {};
-        get_label(ulabel, track);
-
-        const G4StepPoint *pre = step->GetPreStepPoint();
-        const G4StepPoint *post = step->GetPostStepPoint();
-
-        G4ThreeVector delta = step->GetDeltaPosition();
-        double step_mm = delta.mag() / mm;
-
-        sev->checkPhotonLineage(ulabel);
-
-        sphoton &current_photon = sev->current_ctx.p;
-
-        if (current_photon.flagmask_count() == 1)
+        const G4Track *aTrack;
+        G4int fNumPhotons = 0;
+        G4SteppingManager *fpSteppingManager =
+            G4EventManager::GetEventManager()->GetTrackingManager()->GetSteppingManager();
+        G4StepStatus stepStatus = fpSteppingManager->GetfStepStatus();
+        if (stepStatus != fAtRestDoItProc)
         {
-            U4StepPoint::Update(current_photon, pre); // populate current_photon with pos, mom, pol, time, wavelength
-            sev->pointPhoton(ulabel);                 // copying current into buffers
+            G4ProcessVector *procPost = fpSteppingManager->GetfPostStepDoItVector();
+            size_t MAXofPostStepLoops = fpSteppingManager->GetMAXofPostStepLoops();
+            for (size_t i3 = 0; i3 < MAXofPostStepLoops; i3++)
+            {
+                if ((*procPost)[i3]->GetProcessName() == "Cerenkov")
+                {
+                    aTrack = aStep->GetTrack();
+                    const G4DynamicParticle *aParticle = aTrack->GetDynamicParticle();
+                    G4double charge = aParticle->GetDefinition()->GetPDGCharge();
+                    const G4Material *aMaterial = aTrack->GetMaterial();
+                    G4MaterialPropertiesTable *MPT = aMaterial->GetMaterialPropertiesTable();
+                    G4MaterialPropertyVector *Rindex = MPT->GetProperty(kRINDEX);
+                    G4Cerenkov *proc = (G4Cerenkov *)(*procPost)[i3];
+                    fNumPhotons = proc->GetNumPhotons();
+
+                    if (fNumPhotons > 0)
+                    {
+                        G4double Pmin = Rindex->Energy(0);
+                        G4double Pmax = Rindex->GetMaxEnergy();
+                        G4double nMax = Rindex->GetMaxValue();
+                        G4double beta1 = aStep->GetPreStepPoint()->GetBeta();
+                        G4double beta2 = aStep->GetPostStepPoint()->GetBeta();
+                        G4double beta = (beta1 + beta2) * 0.5;
+                        G4double BetaInverse = 1. / beta;
+                        G4double maxCos = BetaInverse / nMax;
+                        G4double maxSin2 = (1.0 - maxCos) * (1.0 + maxCos);
+                        G4double MeanNumberOfPhotons1 =
+                            proc->GetAverageNumberOfPhotons(charge, beta1, aMaterial, Rindex);
+                        G4double MeanNumberOfPhotons2 =
+                            proc->GetAverageNumberOfPhotons(charge, beta2, aMaterial, Rindex);
+                        U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
+                                                               maxCos, maxSin2, MeanNumberOfPhotons1,
+                                                               MeanNumberOfPhotons2);
+                        std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
+
+                        G4RunManager *rm = G4RunManager::GetRunManager();
+                        const G4Event *event = rm->GetCurrentEvent();
+                        G4int eventid = event->GetEventID();
+                        // G4CXOpticks::Get()->simulate(eventid, false);
+                        // cudaDeviceSynchronize();
+                        // unsigned int num_hits = SEvt::GetNumHit(0);
+                        unsigned int num_hits = 0;
+                        //      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+                        if (num_hits > 0)
+                        {
+                            G4HCtable *hctable = G4SDManager::GetSDMpointer()->GetHCtable();
+                            for (G4int i = 0; i < hctable->entries(); ++i)
+                            {
+                                std::string sdn = hctable->GetSDname(i);
+                                std::size_t found = sdn.find("PhotonDetector");
+                                if (found != std::string::npos)
+                                {
+                                    std::cout << "PhotonDetector: " << sdn << std::endl;
+                                    PhotonSD *aSD =
+                                        (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
+                                    // aSD->AddOpticksHits();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-
-        bool tir;
-        unsigned flag = U4StepPoint::Flag<G4OpBoundaryProcess>(post, true, tir);
-        bool is_detect_flag = OpticksPhoton::IsSurfaceDetectFlag(flag);
-
-        current_photon.iindex =
-            is_detect_flag ? U4Touchable::ImmediateReplicaNumber(touch) : U4Touchable::AncestorReplicaNumber(touch);
-
-        U4StepPoint::Update(current_photon, post);
-
-        current_photon.set_flag(flag);
-
-        sev->pointPhoton(ulabel);
     }
 };
 
@@ -418,72 +448,14 @@ struct TrackingAction : G4UserTrackingAction
 
     void PreUserTrackingAction_Optical_FabricateLabel(const G4Track *track)
     {
-        U4Track::SetFabricatedLabel<spho>(track);
-        spho *label = STrackInfo<spho>::GetRef(track);
-        assert(label);
     }
 
     void PreUserTrackingAction(const G4Track *track) override
     {
-        spho *label = STrackInfo<spho>::GetRef(track);
-
-        if (label == nullptr)
-        {
-            PreUserTrackingAction_Optical_FabricateLabel(track);
-            label = STrackInfo<spho>::GetRef(track);
-        }
-
-        assert(label && label->isDefined());
-
-        std::array<int, spho::N> a_label;
-        label->serialize(a_label);
-
-        spho ulabel = {};
-        ulabel.load(a_label);
-
-        U4Random::SetSequenceIndex(ulabel.id);
-
-        bool resume_fSuspend = track == transient_fSuspend_track;
-
-        if (ulabel.gen() == 0)
-        {
-            if (resume_fSuspend == false)
-                sev->beginPhoton(ulabel);
-            else
-                sev->resumePhoton(ulabel);
-        }
-        else if (ulabel.gen() > 0)
-        {
-            if (resume_fSuspend == false)
-                sev->rjoinPhoton(ulabel);
-            else
-                sev->rjoin_resumePhoton(ulabel);
-        }
     }
 
     void PostUserTrackingAction(const G4Track *track) override
     {
-        G4TrackStatus tstat = track->GetTrackStatus();
-
-        bool is_fStopAndKill = tstat == fStopAndKill;
-        bool is_fSuspend = tstat == fSuspend;
-        bool is_fStopAndKill_or_fSuspend = is_fStopAndKill || is_fSuspend;
-
-        assert(is_fStopAndKill_or_fSuspend);
-
-        spho ulabel = {};
-        get_label(ulabel, track);
-
-        if (is_fStopAndKill)
-        {
-            U4Random::SetSequenceIndex(-1);
-            sev->finalPhoton(ulabel);
-            transient_fSuspend_track = nullptr;
-        }
-        else if (is_fSuspend)
-        {
-            transient_fSuspend_track = track;
-        }
     }
 };
 
