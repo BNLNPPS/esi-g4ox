@@ -17,7 +17,7 @@ cmake --build build
 Similarly, to start a Geant4-based simulation of optical photons, run:
 
 ```bash
-./build/src/simg4ox
+./build/src/simg4ox -g esi-g4ox/geom/pfrich_min.gdml -m esi-g4ox/run.mac
 ```
 
 Before runnning `simg4ox` it is recommended to set the following environment variables:
