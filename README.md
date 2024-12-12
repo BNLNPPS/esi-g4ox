@@ -20,7 +20,7 @@ Similarly, to start a Geant4-based simulation of optical photons, run:
 ./build/src/simg4ox -g esi-g4ox/geom/pfrich_min.gdml -m esi-g4ox/run.mac
 ```
 
-Before runnning `simg4ox` it is recommended to set the following environment variables:
+Before runnning `simg4ox` it is recommended to set the following environment variables where one also controls the number of input photons:
 
 ```
 export TMP=/tmp/myname
