@@ -3,7 +3,7 @@ set(source_files
 )
 
 add_library(g4ox ${source_files})
-target_link_libraries(g4ox PUBLIC Geant4::G4gdml Opticks::G4CX)
+target_link_libraries(g4ox PUBLIC Geant4::G4persistency Opticks::G4CX)
 
 target_include_directories(g4ox
     INTERFACE
