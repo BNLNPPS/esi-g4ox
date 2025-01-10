@@ -1,7 +1,8 @@
-#include <filesystem>
-
 #include "G4Cerenkov.hh"
 #include "G4Scintillation.hh"
+#include <filesystem>
+#include <fstream>
+#include <iostream>
 
 #include "G4BooleanSolid.hh"
 #include "G4CX/G4CXOpticks.hh"
@@ -193,8 +194,7 @@ struct PhotonSD : public G4VSensitiveDetector
             {
                 theCreationProcessid = -1;
             }
-            std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << " "
-                      << polarization << std::endl;
+            std::cout << hit.wavelength << " " << position << " " << direction << " " << polarization << std::endl;
 
             PhotonHit *newHit = new PhotonHit(0, hit.wavelength, hit.time, position, direction, polarization);
             fPhotonHitsCollection->insert(newHit);
@@ -368,6 +368,13 @@ struct RunAction : G4UserRunAction
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
 
+        std::ofstream outFile("opticks_hits_output.txt");
+        if (!outFile.is_open())
+        {
+            std::cerr << "Error opening output file!" << std::endl;
+            return;
+        }
+
         for (int idx = 0; idx < int(num_hits); idx++)
         {
             sphoton hit;
@@ -388,9 +395,17 @@ struct RunAction : G4UserRunAction
             {
                 theCreationProcessid = -1;
             }
-            std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << " "
-                      << polarization << std::endl;
+            //    std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << "
+            //    "
+            //              << polarization << std::endl;
+            outFile << hit.wavelength << "  "
+                    << "(" << position.x() << ", " << position.y() << ", " << position.z() << ")  "
+                    << "(" << direction.x() << ", " << direction.y() << ", " << direction.z() << ")  "
+                    << "(" << polarization.x() << ", " << polarization.y() << ", " << polarization.z() << ")  "
+                    << "CreationProcessID=" << theCreationProcessid << std::endl;
         }
+
+        outFile.close();
     }
 };
 
