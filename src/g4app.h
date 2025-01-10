@@ -170,7 +170,7 @@ struct PhotonSD : public G4VSensitiveDetector
 
     void AddOpticksHits()
     {
-        SEvt *sev = SEvt::Get_ECPU();
+        SEvt *sev = SEvt::Get_EGPU();
         unsigned int num_hits = sev->GetNumHit(0);
 
         for (int idx = 0; idx < int(num_hits); idx++)
@@ -367,6 +367,30 @@ struct RunAction : G4UserRunAction
         std::cout << "Opticks: NumCollected:  " << sev->GetNumPhotonCollected(0) << std::endl;
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
+
+        for (int idx = 0; idx < int(num_hits); idx++)
+        {
+            sphoton hit;
+            sev->getHit(hit, idx);
+            G4ThreeVector position = G4ThreeVector(hit.pos.x, hit.pos.y, hit.pos.z);
+            G4ThreeVector direction = G4ThreeVector(hit.mom.x, hit.mom.y, hit.mom.z);
+            G4ThreeVector polarization = G4ThreeVector(hit.pol.x, hit.pol.y, hit.pol.z);
+            int theCreationProcessid;
+            if (OpticksPhoton::HasCerenkovFlag(hit.flagmask))
+            {
+                theCreationProcessid = 0;
+            }
+            else if (OpticksPhoton::HasScintillationFlag(hit.flagmask))
+            {
+                theCreationProcessid = 1;
+            }
+            else
+            {
+                theCreationProcessid = -1;
+            }
+            std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << " "
+                      << polarization << std::endl;
+        }
     }
 };
 
@@ -479,7 +503,7 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(std::filesystem::path gdml_file)
-        : sev(SEvt::CreateOrReuse_ECPU()), det_cons_(new DetectorConstruction(gdml_file)),
+        : sev(SEvt::CreateOrReuse_EGPU()), det_cons_(new DetectorConstruction(gdml_file)),
           prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), run_act_(new RunAction()),
           stepping_(new SteppingAction(sev)),
 
