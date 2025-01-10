@@ -17,12 +17,19 @@ int main(int argc, char **argv)
     argparse::ArgumentParser program("consgeo", "0.0.0");
 
     string gdml_file;
+    string out_prefix;
 
     program.add_argument("-g", "--gdml")
         .help("path to GDML file")
         .default_value(string("geom.gdml"))
         .nargs(1)
         .store_into(gdml_file);
+
+    program.add_argument("-o", "--out-prefix")
+        .help("where to save CSG")
+        .default_value(string("csg"))
+        .nargs(1)
+        .store_into(out_prefix);
 
     try
     {
@@ -35,9 +42,9 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    cout << "gdml_file: " << gdml_file << endl;
+    LOG_INFO << "gdml_file: " << gdml_file << endl;
 
-    from_gdml(gdml_file);
+    from_gdml(gdml_file, out_prefix);
 
     return EXIT_SUCCESS;
 }
