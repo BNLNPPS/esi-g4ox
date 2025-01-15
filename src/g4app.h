@@ -65,6 +65,12 @@ bool IsSubtractionSolid(G4VSolid *solid)
     return false;
 }
 
+std::string str_tolower(std::string s)
+{
+    std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return std::tolower(c); });
+    return s;
+}
+
 struct PhotonHit : public G4VHit
 {
     PhotonHit() = default;
@@ -345,33 +351,17 @@ struct EventAction : G4UserEventAction
         int eventID = event->GetEventID();
 
         // GPU-based simulation
+        G4CXOpticks *gx = G4CXOpticks::Get();
+        gx->simulate(eventID, false);
+        cudaDeviceSynchronize();
+        unsigned int num_hits = SEvt::GetNumHit(0);
+        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
 
-        /*
-            G4CXOpticks *gx = G4CXOpticks::Get();
-                gx->simulate(eventID, false);
-                cudaDeviceSynchronize();
-                unsigned int num_hits = SEvt::GetNumHit(0);
-                std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
+        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
 
-                std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
+        std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
 
-                std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
-                if (num_hits > 0)
-                {
-                    G4HCtable *hctable = G4SDManager::GetSDMpointer()->GetHCtable();
-                    for (G4int i = 0; i < hctable->entries(); ++i)
-                    {
-                        std::string sdn = hctable->GetSDname(i);
-                        std::size_t found = sdn.find("Photondetector");
-                        if (found != std::string::npos)
-                        {
-                            PhotonSD *aSD = (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
-                            aSD->AddOpticksHits();
-                        }
-                    }
-                }
-                G4CXOpticks::Get()->reset(eventID);
-            */
+        gx->reset(eventID);
     }
 };
 

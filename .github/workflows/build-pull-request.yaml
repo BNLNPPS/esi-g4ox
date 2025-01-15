@@ -64,3 +64,4 @@ jobs:
           ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/A000
           ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/B000
           python tests/compare_ab.py
+          build/src/simg4ox -g geom/basic_detector.gdml -m run.mac
