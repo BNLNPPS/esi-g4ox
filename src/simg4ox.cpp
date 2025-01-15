@@ -64,6 +64,7 @@ int main(int argc, char **argv)
 
     G4App *g4app = new G4App(gdml_file);
     run_mgr.SetUserInitialization(g4app->det_cons_);
+    run_mgr.SetUserAction(g4app->run_act_);
     run_mgr.SetUserAction(g4app->prim_gen_);
     run_mgr.SetUserAction(g4app->event_act_);
     run_mgr.SetUserAction(g4app->tracking_);
