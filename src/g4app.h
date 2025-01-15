@@ -351,6 +351,21 @@ struct EventAction : G4UserEventAction
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
+        if (num_hits > 0)
+        {
+            G4HCtable *hctable = G4SDManager::GetSDMpointer()->GetHCtable();
+            for (G4int i = 0; i < hctable->entries(); ++i)
+            {
+                std::string sdn = hctable->GetSDname(i);
+                std::size_t found = str_tolower(sdn).find("photondetector");
+                if (found != std::string::npos)
+                {
+                    PhotonSD *aSD = (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
+                    aSD->AddOpticksHits();
+                }
+            }
+        }
+        G4CXOpticks::Get()->reset(eventID);
     }
 };
 
