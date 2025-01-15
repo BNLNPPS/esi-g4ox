@@ -351,7 +351,8 @@ struct EventAction : G4UserEventAction
         std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
-        G4CXOpticks::Get()->reset(eventID);
+
+        gx->reset(eventID);
     }
 };
 
