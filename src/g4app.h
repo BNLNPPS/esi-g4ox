@@ -59,6 +59,12 @@ bool IsSubtractionSolid(G4VSolid *solid)
     return false;
 }
 
+std::string str_tolower(std::string s)
+{
+    std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return std::tolower(c); });
+    return s;
+}
+
 struct PhotonHit : public G4VHit
 {
     PhotonHit() = default;
@@ -351,7 +357,7 @@ struct EventAction : G4UserEventAction
             for (G4int i = 0; i < hctable->entries(); ++i)
             {
                 std::string sdn = hctable->GetSDname(i);
-                std::size_t found = sdn.find("Photondetector");
+                std::size_t found = str_tolower(sdn).find("photondetector");
                 if (found != std::string::npos)
                 {
                     PhotonSD *aSD = (PhotonSD *)G4SDManager::GetSDMpointer()->FindSensitiveDetector(sdn);
