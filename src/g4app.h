@@ -146,10 +146,9 @@ struct PhotonSD : public G4VSensitiveDetector
             return false;
 
         // Create a new hit (CopyNr is set to 0 as DetectorID is omitted)
-        PhotonHit *hit = new PhotonHit(track->GetTotalEnergy(), track->GetGlobalTime(),
-            aStep->GetPostStepPoint()->GetPosition(),
-            aStep->GetPostStepPoint()->GetMomentumDirection(),
-            aStep->GetPostStepPoint()->GetPolarization());
+        PhotonHit *hit = new PhotonHit(
+            track->GetTotalEnergy(), track->GetGlobalTime(), aStep->GetPostStepPoint()->GetPosition(),
+            aStep->GetPostStepPoint()->GetMomentumDirection(), aStep->GetPostStepPoint()->GetPolarization());
 
         fPhotonHitsCollection->insert(hit);
         track->SetTrackStatus(fStopAndKill);
