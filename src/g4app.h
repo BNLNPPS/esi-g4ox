@@ -84,8 +84,7 @@ struct PhotonHit : public G4VHit
     }
 
     // Copy constructor
-    PhotonHit(const PhotonHit &right)
-        : G4VHit(right), photon(right.photon)
+    PhotonHit(const PhotonHit &right) : G4VHit(right), photon(right.photon)
     {
     }
 
