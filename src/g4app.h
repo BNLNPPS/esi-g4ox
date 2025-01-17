@@ -139,27 +139,40 @@ struct PhotonSD : public G4VSensitiveDetector
 
     G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *) override
     {
-        G4Track *theTrack = aStep->GetTrack();
+        G4Track *track = aStep->GetTrack();
+
         // Only process optical photons
-        if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+        if (track->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return false;
 
-        G4double theEnergy = theTrack->GetTotalEnergy() / CLHEP::eV;
-
         // Create a new hit (CopyNr is set to 0 as DetectorID is omitted)
-        PhotonHit *newHit = new PhotonHit(
-            theEnergy, theTrack->GetGlobalTime(), aStep->GetPostStepPoint()->GetPosition(),
-            aStep->GetPostStepPoint()->GetMomentumDirection(), aStep->GetPostStepPoint()->GetPolarization());
+        PhotonHit *hit = new PhotonHit(track->GetTotalEnergy(), track->GetGlobalTime(),
+            aStep->GetPostStepPoint()->GetPosition(),
+            aStep->GetPostStepPoint()->GetMomentumDirection(),
+            aStep->GetPostStepPoint()->GetPolarization());
 
-        fPhotonHitsCollection->insert(newHit);
-        theTrack->SetTrackStatus(fStopAndKill);
+        fPhotonHitsCollection->insert(hit);
+        track->SetTrackStatus(fStopAndKill);
+
         return true;
     }
 
     void EndOfEvent(G4HCofThisEvent *) override
     {
-        G4int NbHits = fPhotonHitsCollection->entries();
-        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+        G4int num_hits = fPhotonHitsCollection->entries();
+        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << num_hits << G4endl;
+
+        NP *hits = NP::Make<float>(num_hits, 4, 4);
+        int i = 0;
+
+        for (PhotonHit *hit : *fPhotonHitsCollection->GetVector())
+        {
+            float* photon_data = reinterpret_cast<float*>(&hit->photon);
+            std::copy(photon_data, photon_data + 16, hits->values<float>() + (i++)*16);
+        }
+
+        hits->save("g_hits.npy");
+        delete hits;
     }
 
   private:
@@ -302,12 +315,22 @@ struct EventAction : G4UserEventAction
 
         gx->simulate(eventID, false);
         cudaDeviceSynchronize();
-        unsigned int num_hits = SEvt::GetNumHit(0);
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
 
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
+        unsigned int num_hits = SEvt::GetNumHit(SEvt::EGPU);
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
+
+        SEvt *sev = SEvt::Get_EGPU();
+        NP *hits = NP::Make<float>(num_hits, 4, 4);
+
+        for (unsigned idx = 0; idx < num_hits; idx++)
+        {
+            sphoton* photon = reinterpret_cast<sphoton*>(hits->values<float>() + idx*16);
+            sev->getHit(*photon, idx);
+        }
+
+        hits->save("o_hits.npy");
+        delete hits;
 
         gx->reset(eventID);
     }
@@ -334,7 +357,6 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *step)
     {
-        // std::cout<<  step->GetPreStepPoint()->GetPhysicalVolume()->GetName() << std::endl;
         if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
 
