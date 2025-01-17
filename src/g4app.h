@@ -69,7 +69,8 @@ struct PhotonHit : public G4VHit
 {
     PhotonHit() = default;
 
-    PhotonHit(G4double energy, G4double time, G4ThreeVector position, G4ThreeVector direction, G4ThreeVector polarization)
+    PhotonHit(G4double energy, G4double time, G4ThreeVector position, G4ThreeVector direction,
+              G4ThreeVector polarization)
         : photon()
     {
         photon.pos = {static_cast<float>(position.x()), static_cast<float>(position.y()), static_cast<float>(position.z())};
