@@ -324,7 +324,7 @@ struct EventAction : G4UserEventAction
 
         for (unsigned idx = 0; idx < num_hits; idx++)
         {
-            sphoton* photon = reinterpret_cast<sphoton*>(hits->values<float>() + idx*16);
+            sphoton *photon = reinterpret_cast<sphoton *>(hits->values<float>() + idx * 16);
             sev->getHit(*photon, idx);
         }
 
