@@ -170,41 +170,6 @@ struct PhotonSD : public G4VSensitiveDetector
         G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
     }
 
-    void AddOpticksHits()
-    {
-        SEvt *sev = SEvt::Get_ECPU();
-        unsigned int num_hits = sev->GetNumHit(0);
-
-        for (int idx = 0; idx < int(num_hits); idx++)
-        {
-            sphoton hit;
-            sev->getHit(hit, idx);
-            G4ThreeVector position = G4ThreeVector(hit.pos.x, hit.pos.y, hit.pos.z);
-            G4ThreeVector direction = G4ThreeVector(hit.mom.x, hit.mom.y, hit.mom.z);
-            G4ThreeVector polarization = G4ThreeVector(hit.pol.x, hit.pol.y, hit.pol.z);
-            int theCreationProcessid;
-            if (OpticksPhoton::HasCerenkovFlag(hit.flagmask))
-            {
-                theCreationProcessid = 0;
-            }
-            else if (OpticksPhoton::HasScintillationFlag(hit.flagmask))
-            {
-                theCreationProcessid = 1;
-            }
-            else
-            {
-                theCreationProcessid = -1;
-            }
-            // to be done, first value of hit is detectorid
-            // tbd change wavelength to energy
-            std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << " "
-                      << polarization << std::endl;
-
-            PhotonHit *newHit = new PhotonHit(0, hit.wavelength, hit.time, position, direction, polarization);
-            fPhotonHitsCollection->insert(newHit);
-        }
-    }
-
   private:
     PhotonHitsCollection *fPhotonHitsCollection{nullptr};
     G4int fHCID;
