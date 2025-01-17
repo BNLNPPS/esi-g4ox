@@ -73,7 +73,8 @@ struct PhotonHit : public G4VHit
               G4ThreeVector polarization)
         : photon()
     {
-        photon.pos = {static_cast<float>(position.x()), static_cast<float>(position.y()), static_cast<float>(position.z())};
+        photon.pos = {static_cast<float>(position.x()), static_cast<float>(position.y()),
+                      static_cast<float>(position.z())};
         photon.time = time;
         photon.mom = {static_cast<float>(direction.x()), static_cast<float>(direction.y()), static_cast<float>(direction.z())};
         photon.pol = {static_cast<float>(polarization.x()), static_cast<float>(polarization.y()), static_cast<float>(polarization.z())};
