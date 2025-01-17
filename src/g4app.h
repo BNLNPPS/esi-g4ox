@@ -166,8 +166,8 @@ struct PhotonSD : public G4VSensitiveDetector
 
         for (PhotonHit *hit : *fPhotonHitsCollection->GetVector())
         {
-            float* photon_data = reinterpret_cast<float*>(&hit->photon);
-            std::copy(photon_data, photon_data + 16, hits->values<float>() + (i++)*16);
+            float *photon_data = reinterpret_cast<float *>(&hit->photon);
+            std::copy(photon_data, photon_data + 16, hits->values<float>() + (i++) * 16);
         }
 
         hits->save("g_hits.npy");
