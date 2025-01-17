@@ -69,16 +69,19 @@ struct PhotonHit : public G4VHit
 {
     PhotonHit() = default;
 
-    PhotonHit(unsigned id, G4double energy, G4double time, G4ThreeVector position, G4ThreeVector direction,
-              G4ThreeVector polarization)
-        : fid(id), fenergy(energy), ftime(time), fposition(position), fdirection(direction), fpolarization(polarization)
+    PhotonHit(G4double energy, G4double time, G4ThreeVector position, G4ThreeVector direction, G4ThreeVector polarization)
+        : photon()
     {
+        photon.pos = {static_cast<float>(position.x()), static_cast<float>(position.y()), static_cast<float>(position.z())};
+        photon.time = time;
+        photon.mom = {static_cast<float>(direction.x()), static_cast<float>(direction.y()), static_cast<float>(direction.z())};
+        photon.pol = {static_cast<float>(polarization.x()), static_cast<float>(polarization.y()), static_cast<float>(polarization.z())};
+        photon.wavelength = h_Planck * c_light / (energy * CLHEP::eV);
     }
 
     // Copy constructor
     PhotonHit(const PhotonHit &right)
-        : G4VHit(right), fid(right.fid), fenergy(right.fenergy), ftime(right.ftime), fposition(right.fposition),
-          fdirection(right.fdirection), fpolarization(right.fpolarization)
+        : G4VHit(right), photon(right.photon)
     {
     }
 
@@ -88,12 +91,7 @@ struct PhotonHit : public G4VHit
         if (this != &right)
         {
             G4VHit::operator=(right);
-            fid = right.fid;
-            fenergy = right.fenergy;
-            ftime = right.ftime;
-            fposition = right.fposition;
-            fdirection = right.fdirection;
-            fpolarization = right.fpolarization;
+            photon = right.photon;
         }
         return *this;
     }
@@ -107,19 +105,11 @@ struct PhotonHit : public G4VHit
     // Print method
     void Print() override
     {
-        G4cout << "Detector id: " << fid << " energy: " << fenergy << " nm"
-               << " time: " << ftime << " ns"
-               << " position: " << fposition << " direction: " << fdirection << " polarization: " << fpolarization
-               << G4endl;
+        G4cout << photon << G4endl;
     }
 
     // Member variables
-    G4int fid{0};
-    G4double fenergy{0};
-    G4double ftime{0};
-    G4ThreeVector fposition{0, 0, 0};
-    G4ThreeVector fdirection{0, 0, 0};
-    G4ThreeVector fpolarization{0, 0, 0};
+    sphoton photon;
 };
 
 using PhotonHitsCollection = G4THitsCollection<PhotonHit>;
