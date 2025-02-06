@@ -80,16 +80,22 @@
     <box lunit="mm" name="MirrorPyramid0x56008bfb11e0" x="123" y="123" z="30"/>
     <box lunit="mm" name="G4_WATER_solid0x560299392fb0" x="10" y="10" z="10"/>
     <box lunit="mm" name="G4_AIR_solid0x560299392d00" x="1200" y="1200" z="1200"/>
-    <opticalsurface finish="ground" model="glisur" name="medium_container_bs0x560299397a10" type="dielectric_metal" value="1">
-      <property name="RINDEX" ref="RINDEX0x5602993a1df0"/>
+	     <!-- <opticalsurface finish="ground" model="glisur" name="medium_container_bs0x560299397a10" type="dielectric_metal" value="1"> -->
+	     <opticalsurface finish="0" model="0" name="medium_container_bs0x560299397a10" type="0" value="1">
+
+	    <property name="RINDEX" ref="RINDEX0x5602993a1df0"/>
       <property name="REFLECTIVITY" ref="REFLECTIVITY0x5602993a4e30"/>
       <property name="GROUPVEL" ref="GROUPVEL0x56029939be20"/>
     </opticalsurface>
-    <opticalsurface finish="ground" model="glisur" name="medium_drop_surface" type="dielectric_dielectric" value="1">
-      <property name="EFFICIENCY" ref="EFFICIENCY0x560299349111"/>
+<!--     <opticalsurface finish="ground" model="glisur" name="medium_drop_surface" type="dielectric_dielectric" value="1">  -->
+
+	       <opticalsurface finish="0" model="0" name="medium_drop_surface" type="0" value="1">
+
+	    <property name="EFFICIENCY" ref="EFFICIENCY0x560299349111"/>
       <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfb3580"/>
     </opticalsurface>
-    <opticalsurface finish="0" model="1" name="MirrorPyramid0x56008bfb1550" type="0" value="0">
+<!--    <opticalsurface finish="0" model="1" name="MirrorPyramid0x56008bfb1550" type="0" value="0"> -->
+<opticalsurface finish="0" model="0" name="MirrorPyramid0x56008bfb1550" type="0" value="1">
       <property name="EFFICIENCY" ref="EFFICIENCY0x560299349111" />
       <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfb3580"/>
     </opticalsurface>
