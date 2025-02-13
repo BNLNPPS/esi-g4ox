@@ -485,7 +485,7 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(std::filesystem::path gdml_file)
-        : sev(SEvt::CreateOrReuse_ECPU()), det_cons_(new DetectorConstruction(gdml_file)),
+        : sev(SEvt::CreateOrReuse_EGPU()), det_cons_(new DetectorConstruction(gdml_file)),
           prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), stepping_(new SteppingAction(sev)),
           tracking_(new TrackingAction(sev))
     {
