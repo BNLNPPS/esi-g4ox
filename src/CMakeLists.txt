@@ -30,12 +30,12 @@ add_executable(simg4ox simg4ox.cpp g4app.h ../include/argparse/argparse.hpp)
 target_link_libraries(simg4ox g4ox)
 target_include_directories(simg4ox PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> $<INSTALL_INTERFACE:include>)
 
-add_executable(CSGOptiXSimTest CSGOptiXSimTest.cc)
-target_link_libraries(CSGOptiXSimTest g4ox)
-target_include_directories(CSGOptiXSimTest PRIVATE 
+add_executable(Opticks_GPU Opticks_GPU.cc)
+target_link_libraries(Opticks_GPU g4ox)
+target_include_directories(Opticks_GPU PRIVATE 
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> 
     $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> 
-    $<BUILD_INTERFACE:/esi/opticks/CSGOptiX>  
+    $<BUILD_INTERFACE:/esi/opticks/CSGOptiX> 
     $<INSTALL_INTERFACE:include>)
 
 add_executable(simtox simtox.cpp)
