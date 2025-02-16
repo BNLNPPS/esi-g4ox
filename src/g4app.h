@@ -366,8 +366,16 @@ struct RunAction : G4UserRunAction
     {
 
         G4CXOpticks *gx = G4CXOpticks::Get();
-        gx->simulate(0, false);
+        
+	auto start = std::chrono::high_resolution_clock::now();
+	gx->simulate(0, false);
         cudaDeviceSynchronize();
+	auto end = std::chrono::high_resolution_clock::now();
+        // Compute duration
+        std::chrono::duration<double> elapsed = end - start;
+        std::cout << "Simulation time: " << elapsed.count() << " seconds" << std::endl;
+
+
         // unsigned int num_hits = SEvt::GetNumHit(EGPU);
         SEvt *sev = SEvt::Get_EGPU();
         unsigned int num_hits = sev->GetNumHit(0);
