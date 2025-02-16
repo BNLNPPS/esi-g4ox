@@ -171,7 +171,8 @@ struct PhotonSD : public G4VSensitiveDetector
 
     void EndOfEvent(G4HCofThisEvent *) override
     {
-        G4int NbHits = fPhotonHitsCollection->entries();
+
+	     G4int NbHits = fPhotonHitsCollection->entries();
         G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
@@ -348,20 +349,6 @@ struct EventAction : G4UserEventAction
 
     void EndOfEventAction(const G4Event *event) override
     {
-        int eventID = event->GetEventID();
-
-        // GPU-based simulation
-        G4CXOpticks *gx = G4CXOpticks::Get();
-        gx->simulate(eventID, false);
-        cudaDeviceSynchronize();
-        unsigned int num_hits = SEvt::GetNumHit(0);
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumGenstepFromGenstep(0) << std::endl;
-
-        std::cout << "Opticks: NumCollected:  " << SEvt::GetNumPhotonCollected(0) << std::endl;
-
-        std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
-
-        gx->reset(eventID);
     }
 };
 
