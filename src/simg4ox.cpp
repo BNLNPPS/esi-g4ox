@@ -4,7 +4,6 @@
 
 #include "FTFP_BERT.hh"
 #include "G4OpticalPhysics.hh"
-#include "G4RunManager.hh"
 #include "G4VModularPhysicsList.hh"
 
 #include "G4UIExecutive.hh"
@@ -15,7 +14,42 @@
 
 #include "g4app.h"
 
+#include "G4VUserActionInitialization.hh"
+#include "G4RunManagerFactory.hh"
+#include "G4RunManager.hh"
+
+
 using namespace std;
+
+
+struct ActionInitialization : public G4VUserActionInitialization
+{
+private:
+    G4App* fG4App; // Store the pointer to G4App
+
+public:
+    // Note the signature: now we take a pointer to the G4App itself
+    ActionInitialization(G4App* app)
+        : G4VUserActionInitialization(), fG4App(app)
+    {
+    }
+
+    virtual void BuildForMaster() const override
+    {
+        // Possibly define master actions if needed
+    }
+
+    virtual void Build() const override
+    {
+        // Now you can safely refer to fG4App here
+        // because it is a member of ActionInitialization.
+        SetUserAction(fG4App->prim_gen_);
+        SetUserAction(fG4App->run_act_);
+        SetUserAction(fG4App->event_act_);
+        SetUserAction(fG4App->tracking_);
+        SetUserAction(fG4App->stepping_);
+    }
+};
 
 int main(int argc, char **argv)
 {
@@ -59,17 +93,16 @@ int main(int argc, char **argv)
     G4VModularPhysicsList *physics = new FTFP_BERT;
     physics->RegisterPhysics(new G4OpticalPhysics);
 
-    G4RunManager run_mgr;
-    run_mgr.SetUserInitialization(physics);
+    auto *run_mgr = G4RunManagerFactory::CreateRunManager();
+    run_mgr->SetUserInitialization(physics);
+
 
     G4App *g4app = new G4App(gdml_file);
-    run_mgr.SetUserInitialization(g4app->det_cons_);
-    run_mgr.SetUserAction(g4app->run_act_);
-    run_mgr.SetUserAction(g4app->prim_gen_);
-    run_mgr.SetUserAction(g4app->event_act_);
-    run_mgr.SetUserAction(g4app->tracking_);
-    run_mgr.SetUserAction(g4app->stepping_);
-    run_mgr.Initialize();
+
+    ActionInitialization* ActionInit = new ActionInitialization(g4app);
+    run_mgr->SetUserInitialization(ActionInit);
+    run_mgr->SetUserInitialization(g4app->det_cons_);
+    run_mgr->Initialize();
 
     G4UIExecutive *uix = nullptr;
     G4VisManager *vis = nullptr;

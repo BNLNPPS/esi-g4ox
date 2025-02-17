@@ -27,6 +27,7 @@
 #include "G4UserTrackingAction.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4VProcess.hh"
+#include "G4RunManager.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
 #include "SysRap/NP.hh"
@@ -39,6 +40,8 @@
 #include "U4/U4StepPoint.hh"
 #include "U4/U4Touchable.h"
 #include "U4/U4Track.h"
+#include "G4RunManagerFactory.hh"
+
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
@@ -176,8 +179,12 @@ struct PhotonSD : public G4VSensitiveDetector
         G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
-        std::ofstream outFile("g4_photon_hits.txt");
-        if (!outFile.is_open())
+        int tid = G4Threading::G4GetThreadId();
+	std::ostringstream fname;
+	fname << "g4_photon_hits_thread" << tid << ".txt";
+	std::ofstream outFile(fname.str().c_str());
+	
+	if (!outFile.is_open())
         {
             G4cerr << "Error opening output file g4_photon_hits.txt!" << G4endl;
             return;
@@ -368,8 +375,8 @@ struct RunAction : G4UserRunAction
         G4CXOpticks *gx = G4CXOpticks::Get();
         
 	auto start = std::chrono::high_resolution_clock::now();
-	gx->simulate(0, false);
-        cudaDeviceSynchronize();
+	//gx->simulate(0, false);
+        //cudaDeviceSynchronize();
 	auto end = std::chrono::high_resolution_clock::now();
         // Compute duration
         std::chrono::duration<double> elapsed = end - start;
@@ -454,8 +461,16 @@ struct SteppingAction : G4UserSteppingAction
                     G4double charge = aParticle->GetDefinition()->GetPDGCharge();
                     const G4Material *aMaterial = aTrack->GetMaterial();
                     G4MaterialPropertiesTable *MPT = aMaterial->GetMaterialPropertiesTable();
-                    G4MaterialPropertyVector *Rindex = MPT->GetProperty(kRINDEX);
-                    G4Cerenkov *proc = (G4Cerenkov *)(*procPost)[i3];
+		    
+		    G4MaterialPropertyVector *Rindex = MPT->GetProperty(kRINDEX);
+                                        if (!Rindex || Rindex->GetVectorLength() == 0)
+                        {
+                        G4cout << "WARNING: Material has no valid RINDEX data. Skipping Cerenkov calculation." << G4endl;
+                        return;
+                        }
+
+		    
+		    G4Cerenkov *proc = (G4Cerenkov *)(*procPost)[i3];
                     fNumPhotons = proc->GetNumPhotons();
 
                     if (fNumPhotons > 0)
@@ -473,14 +488,19 @@ struct SteppingAction : G4UserSteppingAction
                             proc->GetAverageNumberOfPhotons(charge, beta1, aMaterial, Rindex);
                         G4double MeanNumberOfPhotons2 =
                             proc->GetAverageNumberOfPhotons(charge, beta2, aMaterial, Rindex);
-                        U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
-                                                               maxCos, maxSin2, MeanNumberOfPhotons1,
-                                                               MeanNumberOfPhotons2);
+                        //U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
+                        //                                       maxCos, maxSin2, MeanNumberOfPhotons1,
+                        //                                       MeanNumberOfPhotons2);
                         std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
 
-                        G4RunManager *rm = G4RunManager::GetRunManager();
-                        const G4Event *event = rm->GetCurrentEvent();
-                        G4int eventid = event->GetEventID();
+			//G4RunManager *rm = G4RunManagerFactory::GetMasterRunManager();
+                        //const G4Event *event = rm->GetCurrentEvent();
+                        //G4int eventid = event->GetEventID();
+
+			const G4Event* event = G4EventManager::GetEventManager()->GetConstCurrentEvent();
+			if (!event) return;  // Always check for null
+			G4int eventid = event->GetEventID();
+
                         // G4CXOpticks::Get()->simulate(eventid, false);
                         // cudaDeviceSynchronize();
                         // unsigned int num_hits = SEvt::GetNumHit(0);
