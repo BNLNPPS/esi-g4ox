@@ -35,3 +35,9 @@ If the number of max photons simulated in Opticks needs to be increased use the 
 export OPTICKS_MAX_PHOTON=M60
 QCurandState_SPEC=60:0:0 /usr/local/opticks/lib/QCurandStateTest
 ```
+
+The way to minimise the info is dumped by Opticks (faster simulation) is:
+
+```
+export OPTICKS_EVENT_MODE=Minimal
+```
