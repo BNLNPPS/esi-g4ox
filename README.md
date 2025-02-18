@@ -29,11 +29,7 @@ export OPTICKS_EVENT_MODE=DebugLite
 QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
 ```
 
+If the number of max photons simulated in Opticks needs to be increased use the following commands:
 
-## Visualization
-
-Plot any volume serialized 
-
-```
-scripts/plot-csg.py ../out/csg/CSGFoundry/SSim/scene/meshmerge/0/
-```
+export OPTICKS_MAX_PHOTON=M60
+QCurandState_SPEC=60:0:0 /usr/local/opticks/lib/QCurandStateTest
