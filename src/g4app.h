@@ -173,7 +173,7 @@ struct PhotonSD : public G4VSensitiveDetector
     {
 
 	     G4int NbHits = fPhotonHitsCollection->entries();
-        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+        //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
         std::ofstream outFile("g4_photon_hits.txt");
@@ -476,7 +476,7 @@ struct SteppingAction : G4UserSteppingAction
                         U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
                                                                maxCos, maxSin2, MeanNumberOfPhotons1,
                                                                MeanNumberOfPhotons2);
-                        std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
+                        //std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
 
                         G4RunManager *rm = G4RunManager::GetRunManager();
                         const G4Event *event = rm->GetCurrentEvent();
