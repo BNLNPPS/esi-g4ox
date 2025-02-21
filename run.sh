@@ -1,4 +1,5 @@
-git clone https://github.com/BNLNPPS/esi-g4ox
+# needs to be copied out to home and called from there
+#git clone https://github.com/BNLNPPS/esi-g4ox
 cd esi-g4ox/
 git checkout GenSteps
 cd ..
