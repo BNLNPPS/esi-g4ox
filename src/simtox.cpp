@@ -1,12 +1,12 @@
-#include <iostream>
-#include <string>
-
 #include "SysRap/NP.hh"
 #include "SysRap/SEvent.hh"
 #include "SysRap/sphoton.h"
 #include "SysRap/srng.h"
 #include "SysRap/storch.h"
 #include "SysRap/storchtype.h"
+#include <curand_kernel.h>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
     sphoton *qphotons = reinterpret_cast<sphoton *>(photons->bytes());
     int unused = -1;
 
-    srng rng(12345);
+    curandStatePhilox4_32_10 rng;
 
     for (unsigned photon_id = 0; photon_id < n_photons; photon_id++)
     {
