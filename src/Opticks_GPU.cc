@@ -29,9 +29,6 @@ int main(int argc, char** argv)
     SEvt* evt = SEvt::Create(SEvt::EGPU) ;
 
     // Build the full path to the gensteps file
-    const char* outdir = evt->getOutputDir();  // see below
-    std::cout << "Genstep file path is: " << outdir << std::endl;
-    std::cout << evt->hasInputGenstepPath() << std::endl;
 
     const char* gdmlpath = "/esi/esi-g4ox/geom/basic_detector_diff_physics.gdml";  
     G4GDMLParser parser_;
@@ -57,10 +54,10 @@ int main(int argc, char** argv)
 
     CSGOptiX* cx = CSGOptiX::Create(fd_); // encumbent SSim used for QSim setup in here 
     QSim* qs = cx->sim ; 
-    if(!SEvt::HasInputPhoton(SEvt::EGPU)) SEvt::AddTorchGenstep();      
+    //if(!SEvt::HasInputPhoton(SEvt::EGPU)) SEvt::AddTorchGenstep();      
 
     int eventID = 0 ; 
-    bool end = true ; 
+    bool end = false ; 
     qs->simulate(eventID, end);  
     cudaDeviceSynchronize(); 
     evt->save(); 
