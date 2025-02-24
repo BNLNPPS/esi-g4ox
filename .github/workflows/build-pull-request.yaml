@@ -58,7 +58,8 @@ jobs:
           GEOM: fakegeom
           OPTICKS_EVENT_MODE: DebugLite
         run: |
-          QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
+          QCurandStateMonolithic_SPEC=3:0:0  $OPTICKS_PREFIX/lib/QCurandStateMonolithicTest
+          mv $HOME/.opticks/rngcache/RNG/QCurandStateMonolithic_3M_0_0.bin $HOME/.opticks/rngcache/RNG/QCurandState_3000000_0_0.bin
           build/src/simtox
           build/src/simg4ox -g geom/raindrop.gdml -m run.mac
           ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/A000
