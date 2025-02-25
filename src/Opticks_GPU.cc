@@ -66,11 +66,9 @@ int main(int argc, char **argv)
     std::chrono::duration<double> elapsed = endtime - start;
     std::cout << "Simulation time: " << elapsed.count() << " seconds" << std::endl;
 
-
     SEvt *sev = SEvt::Get_EGPU();
     unsigned int num_hits2 = sev->GetNumHit(0);
     std::cout << "Opticks: NumHits:  " << num_hits2 << std::endl;
-
 
     return 0;
 }
