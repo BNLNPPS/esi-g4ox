@@ -63,7 +63,7 @@ jobs:
           mv $HOME/.opticks/rngcache/RNG/QCurandStateMonolithic_3M_0_0.bin $HOME/.opticks/rngcache/RNG/QCurandState_3000000_0_0.bin
           build/src/simtox
           build/src/simg4ox -g geom/raindrop.gdml -m run.mac
-          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/A000
-          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0/B000
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0_none/A000
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0_none/B000
           python tests/compare_ab.py
           build/src/simg4ox -g geom/basic_detector.gdml -m run.mac
