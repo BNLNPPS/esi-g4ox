@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 
     // Build the full path to the gensteps file
 
-    const char *gdmlpath = "/esi/esi-g4ox/geom/basic_detector_diff_physics.gdml";
+    const char *gdmlpath = "/esi/esi-g4ox/geom/pfrich_min_added_parameters.gdml";
     G4GDMLParser parser_;
 
     parser_.Read(gdmlpath, false);
@@ -59,9 +59,18 @@ int main(int argc, char **argv)
 
     int eventID = 0;
     bool end = false;
+    auto start = std::chrono::high_resolution_clock::now();
     qs->simulate(eventID, end);
     cudaDeviceSynchronize();
-    evt->save();
+    auto endtime = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = endtime - start;
+    std::cout << "Simulation time: " << elapsed.count() << " seconds" << std::endl;
+
+
+    SEvt *sev = SEvt::Get_EGPU();
+    unsigned int num_hits2 = sev->GetNumHit(0);
+    std::cout << "Opticks: NumHits:  " << num_hits2 << std::endl;
+
 
     return 0;
 }
