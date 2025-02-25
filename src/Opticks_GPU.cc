@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     tr = U4Tree::Create(st, world, SensorIdentifier);
     sim->initSceneFromTree(); // not so easy to do at lower level as do not want to change to SSim arg to U4Tree::Create
     CSGFoundry *fd_ = CSGFoundry::CreateFromSim(); // adopts SSim::INSTANCE
-    CSGOptiX *cx = CSGOptiX::Create(fd_); // encumbent SSim used for QSim setup in here
+    CSGOptiX *cx = CSGOptiX::Create(fd_);          // encumbent SSim used for QSim setup in here
     QSim *qs = cx->sim;
     // if(!SEvt::HasInputPhoton(SEvt::EGPU)) SEvt::AddTorchGenstep();
 
