@@ -64,6 +64,6 @@ jobs:
           build/src/simtox
           build/src/simg4ox -g geom/raindrop.gdml -m run.mac
           ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0_none/A000
-          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0_none/B000
+          ls -la /tmp/GEOM/fakegeom/simg4ox/ALL0_none/B000/f000
           python tests/compare_ab.py
           build/src/simg4ox -g geom/basic_detector.gdml -m run.mac

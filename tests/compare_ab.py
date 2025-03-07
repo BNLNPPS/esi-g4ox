@@ -1,8 +1,8 @@
 import numpy as np
 import opticks.sysrap.sevt as s
 
-a = s.SEvt.Load("/tmp/GEOM/fakegeom/simg4ox/ALL0/A000/")
-b = s.SEvt.Load("/tmp/GEOM/fakegeom/simg4ox/ALL0/B000/")
+a = s.SEvt.Load("/tmp/GEOM/fakegeom/simg4ox/ALL0_none/A000/")
+b = s.SEvt.Load("/tmp/GEOM/fakegeom/simg4ox/ALL0_none/B000/f000")
 
 assert a.f.record.shape == b.f.record.shape
 
