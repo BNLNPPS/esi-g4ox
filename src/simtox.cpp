@@ -8,6 +8,8 @@
 #include "SysRap/storch.h"
 #include "SysRap/storchtype.h"
 
+#include <curand_kernel.h>
+
 using namespace std;
 
 int main(int argc, char **argv)
@@ -50,7 +52,7 @@ int main(int argc, char **argv)
     sphoton *qphotons = reinterpret_cast<sphoton *>(photons->bytes());
     int unused = -1;
 
-    srng rng(12345);
+    curandStatePhilox4_32_10 rng;
 
     for (unsigned photon_id = 0; photon_id < n_photons; photon_id++)
     {
