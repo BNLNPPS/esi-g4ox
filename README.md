@@ -42,3 +42,13 @@ Plot any volume serialized
 ```
 scripts/plot-csg.py ../out/csg/CSGFoundry/SSim/scene/meshmerge/0/
 ```
+
+## GPU code profiling
+
+nsys software can be used to profile GPU code. By adding 
+
+```
+nsys profile
+```
+
+The resulting file has nsys-rep extension. This can be opened either by nsys-ui or can be exported with "nsys stats" command into an sqlite database.
