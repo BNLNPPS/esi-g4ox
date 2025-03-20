@@ -128,7 +128,7 @@
       <fraction n="0.319617088375753" ref="O0x56008be75040"/>
       <fraction n="0.0805418407442842" ref="H0x56008be74870"/>
     </material>
-    <material name="CarbonFiber0x56008bf15730" state="solid">
+    <material name="CarbonFiber0x56008bf15730" state="gas">
 	    <property name="RINDEX" ref="RINDEX0x56008bf06450"/>
       <property name="GROUPVEL" ref="GROUPVEL0x56008bf0c600"/>
 
@@ -543,18 +543,15 @@
       <first ref="InnerMirror0x56008bfa5b50"/>
       <second ref="Tmp0x56008bf895e0"/>
     </subtraction>
-    <cone aunit="deg" deltaphi="360" lunit="mm" name="OuterMirror0x56008bfa8ab0" rmax1="625" rmax2="575.960784313726" rmin1="623" rmin2="573.960784313726" startphi="0" z="375.15"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="GasVolume0x56008bf65140" rmax="636.284" rmin="0" startphi="0" z="434.65"/>
-<cone
+	<tube
    name="OuterMirror0x56008bfa8c60"
    aunit="deg"
    deltaphi="360"
    lunit="mm"
-   rmin1="623"
-   rmax1="625"
-   rmin2="573.960784313726"
-   rmax2="575.960784313726"
    startphi="0"
+   rmin="598.4804"
+   rmax="600.4804"
    z="375.15"
 />
     <box lunit="mm" name="Dummy0x56008bfb10e0" x="123" y="123" z="30"/>
