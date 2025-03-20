@@ -16,7 +16,8 @@
     <matrix coldim="2" name="RINDEX0x56008be8cd60" values="1.54975e-06 1.0003 1.80804e-06 1.0003 2.06633e-06 1.0003 2.32462e-06 1.0003 2.58292e-06 1.0003 2.84121e-06 1.0003 3.0995e-06 1.0003 3.35779e-06 1.00031 3.61608e-06 1.00031 3.87437e-06 1.00031 4.13267e-06 1.00031 4.39096e-06 1.00032 4.64925e-06 1.00032 4.90754e-06 1.00032 5.16583e-06 1.00032 5.42412e-06 1.00033 5.68242e-06 1.00033 5.94071e-06 1.00034 6.199e-06 1.00034 6.45729e-06 1.00035 6.71558e-06 1.00035 6.97387e-06 1.00036 7.23217e-06 1.00036 7.49046e-06 1.00037 7.74875e-06 1.00038 8.00704e-06 1.00039 8.26533e-06 1.00039"/>
     <matrix coldim="2" name="GROUPVEL0x56008be8d000" values="1.54975e-06 299.702 1.6789e-06 299.702 1.93719e-06 299.701 2.19548e-06 299.7 2.45377e-06 299.699 2.71206e-06 299.697 2.97035e-06 299.696 3.22865e-06 299.694 3.48694e-06 299.692 3.74523e-06 299.69 4.00352e-06 299.688 4.26181e-06 299.685 4.5201e-06 299.682 4.7784e-06 299.679 5.03669e-06 299.676 5.29498e-06 299.672 5.55327e-06 299.668 5.81156e-06 299.664 6.06985e-06 299.659 6.32815e-06 299.653 6.58644e-06 299.647 6.84473e-06 299.64 7.10302e-06 299.633 7.36131e-06 299.625 7.6196e-06 299.615 7.8779e-06 299.605 8.26533e-06 299.592"/>
     <matrix coldim="2" name="REFLECTIVITY0x56008bfb3580" values="1.54975e-06 1 8.26533e-06 1"/>
-        <matrix coldim="2" name="REFLECTIVITY0x56008bfb3581" values="1.54975e-06 0.05 8.26533e-06 0.05"/>
+    <matrix coldim="2" name="REFLECTIVITY0x56008bfb3581" values="1.54975e-06 0.05 8.26533e-06 0.05"/>
+        <matrix coldim="2" name="ABSORPTION0x56008bfb3582" values="1.54975e-06 0.05 8.26533e-06 0.05"/>
 
     <matrix coldim="2" name="REFLECTIVITY0x56008bfa8460" values="1.54975e-06 0.9 1.80804e-06 0.9 2.06633e-06 0.9 2.32462e-06 0.9 2.58292e-06 0.9 2.84121e-06 0.9 3.0995e-06 0.9 3.35779e-06 0.9 3.61608e-06 0.9 3.87437e-06 0.9 4.13267e-06 0.9 4.39096e-06 0.9 4.64925e-06 0.9 4.90754e-06 0.9 5.16583e-06 0.9 5.42412e-06 0.9 5.68242e-06 0.9 5.94071e-06 0.9 6.199e-06 0.9 6.45729e-06 0.9 6.71558e-06 0.9 6.97387e-06 0.9 7.23217e-06 0.9 7.49046e-06 0.9 7.74875e-06 0.9 8.00704e-06 0.9 8.26533e-06 0.9"/>
     <matrix coldim="2" name="REFLECTIVITY0x56008bfab320" values="1.54975e-06 0.9 1.80804e-06 0.9 2.06633e-06 0.9 2.32462e-06 0.9 2.58292e-06 0.9 2.84121e-06 0.9 3.0995e-06 0.9 3.35779e-06 0.9 3.61608e-06 0.9 3.87437e-06 0.9 4.13267e-06 0.9 4.39096e-06 0.9 4.64925e-06 0.9 4.90754e-06 0.9 5.16583e-06 0.9 5.42412e-06 0.9 5.68242e-06 0.9 5.94071e-06 0.9 6.199e-06 0.9 6.45729e-06 0.9 6.71558e-06 0.9 6.97387e-06 0.9 7.23217e-06 0.9 7.49046e-06 0.9 7.74875e-06 0.9 8.00704e-06 0.9 8.26533e-06 0.9"/>
@@ -97,8 +98,9 @@
     <material name="BelleIIAerogel30x56008beff0d0" state="solid">
       <property name="RINDEX" ref="RINDEX0x56008bf127f9"/>
       <property name="GROUPVEL" ref="GROUPVEL0x56008bf06770"/>
+    <!--
       <property name="RAYLEIGH" ref="RAYLEIGH0x56008bf092d0"/>
-      <property name="ABSLENGTH" ref="ABSLENGTH0x56008bf07b30"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH0x56008bf07b30"/> -->
       <T unit="K" value="293.15"/>
       <MEE unit="eV" value="119.057215163865"/>
       <D unit="g/cm3" value="0.1425"/>
@@ -128,6 +130,8 @@
     </material>
     <material name="CarbonFiber0x56008bf15730" state="solid">
 	    <property name="RINDEX" ref="RINDEX0x56008bf06450"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x56008bf0c600"/>
+
 	    <T unit="K" value="293.15"/>
       <MEE unit="eV" value="81"/>
       <D unit="g/cm3" value="1.82465969517581"/>
@@ -326,6 +330,8 @@
     </material>
     <material name="Air0x56008be89d40" state="gas">
 	    <property name="RINDEX" ref="RINDEX0x56008bf06450"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x56008bf0c600"/>
+
 	    <T unit="K" value="293.15"/>
       <MEE unit="eV" value="85.7025566408487"/>
       <D unit="g/cm3" value="0.00129"/>
@@ -335,6 +341,7 @@
   </materials>
 
   <solids>
+  
 	  <tube
    name="BelleIIAerogelBig"
    rmin="67.5"
@@ -538,11 +545,18 @@
     </subtraction>
     <cone aunit="deg" deltaphi="360" lunit="mm" name="OuterMirror0x56008bfa8ab0" rmax1="625" rmax2="575.960784313726" rmin1="623" rmin2="573.960784313726" startphi="0" z="375.15"/>
     <tube aunit="deg" deltaphi="360" lunit="mm" name="GasVolume0x56008bf65140" rmax="636.284" rmin="0" startphi="0" z="434.65"/>
-    <cone aunit="deg" deltaphi="360" lunit="mm" name="OuterMirror0x56008bfa8c60" rmax1="625" rmax2="575.960784313726" rmin1="623" rmin2="573.960784313726" startphi="0" z="375.15"/>
-    <intersection name="OuterMirror0x56008bfa8c60">
-      <first ref="OuterMirror0x56008bfa8ab0"/>
-      <second ref="GasVolume0x56008bf65140"/>
-    </intersection>
+<cone
+   name="OuterMirror0x56008bfa8c60"
+   aunit="deg"
+   deltaphi="360"
+   lunit="mm"
+   rmin1="623"
+   rmax1="625"
+   rmin2="573.960784313726"
+   rmax2="575.960784313726"
+   startphi="0"
+   z="375.15"
+/>
     <box lunit="mm" name="Dummy0x56008bfb10e0" x="123" y="123" z="30"/>
     <trd lunit="mm" name="Dummy0x56008bf728c0" x1="123" x2="104" y1="123" y2="104" z="30.022"/>
     <box lunit="mm" name="MirrorPyramid0x56008bfb11e0" x="123" y="123" z="30"/>
@@ -578,7 +592,9 @@
                     name="GasAerogelSurface0x999999"
                     type="0"
 	    value="0">
-	               <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfb3581"/>
+        <property name="ABSORPTION" ref="ABSORPTION0x56008bfb3582"/>
+
+    <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfb3581"/>
 
 	   </opticalsurface>
     
@@ -1695,7 +1711,7 @@
       <materialref ref="CarbonFiber0x56008bf15730"/>
       <solidref ref="InnerMirror0x56008bfa5ce0"/>
     </volume>
-    <volume name="OuterMirror0x56008bfa8e50">
+   <volume name="OuterMirror0x56008bfa8e50">
       <materialref ref="CarbonFiber0x56008bf15730"/>
       <solidref ref="OuterMirror0x56008bfa8c60"/>
     </volume>
@@ -3201,12 +3217,18 @@
         <rotation name="PFRICH0x56008bf65030_rot" unit="deg" x="0" y="0" z="0"/>
       </physvol>
     </volume>
-    <bordersurface name="GasVolume_BelleIIAerogelBigSurface"
+    
+<!--
+
+	<bordersurface name="GasVolume_BelleIIAerogelBigSurface"
                surfaceproperty="GasAerogelSurface0x999999">
    <physvolref ref="GasVolume0x56008bf65d20"/>
    <physvolref ref="BelleIIAerogelBigPhys"/>
    </bordersurface>
-    <bordersurface name="MirrorPyramid0x56008bf9a3c0" surfaceproperty="MirrorPyramid0x56008bfb1550">
+
+   -->	
+
+	<bordersurface name="MirrorPyramid0x56008bf9a3c0" surfaceproperty="MirrorPyramid0x56008bfb1550">
       <physvolref ref="GasVolume0x56008bf65d20"/>
       <physvolref ref="MirrorPyramid0x56008bf9a330"/>
     </bordersurface>
@@ -3477,6 +3499,9 @@
   </setup>
 
 </gdml>
+
+
+
 
 
 
