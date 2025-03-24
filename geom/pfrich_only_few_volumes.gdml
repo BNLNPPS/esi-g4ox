@@ -354,17 +354,24 @@
    deltaphi="360" aunit="deg" lunit="mm"/>
 
 
-   <tube
+<cone
    name="OuterMirror0x56008bfa8c60"
    aunit="deg"
    deltaphi="360"
    lunit="mm"
+   rmin1="623"
+   rmax1="625"
+   rmin2="573.960784313726"
+   rmax2="575.960784313726"
    startphi="0"
-   rmin="598.4804"
-   rmax="600.4804"
    z="375.15"
 />
 
+<!--
+
+   <tube
+   name="OuterMirror0x56008bfa8c60" aunit="deg" deltaphi="360" lunit="mm" startphi="0" rmin="598.4804"  rmax="600.4804"  z="375.15" />
+-->
 
     <box lunit="mm" name="Dummy0x56008bfb10e0" x="123" y="123" z="30"/>
     <trd lunit="mm" name="Dummy0x56008bf728c0" x1="123" x2="104" y1="123" y2="104" z="30.022"/>
