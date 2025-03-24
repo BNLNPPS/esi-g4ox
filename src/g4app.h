@@ -173,7 +173,7 @@ struct PhotonSD : public G4VSensitiveDetector
     {
 
 	     G4int NbHits = fPhotonHitsCollection->entries();
-        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+        //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
         std::ofstream outFile("g4_photon_hits.txt");
@@ -356,7 +356,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
-        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.4 * m);
+        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.2 * m);
         G4double time_ns = 0;
         G4ThreeVector direction(0, 0.2, 0.8);
         G4double wavelength_nm = 0.1;
