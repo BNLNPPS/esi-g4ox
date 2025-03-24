@@ -173,7 +173,7 @@ struct PhotonSD : public G4VSensitiveDetector
     {
 
 	     G4int NbHits = fPhotonHitsCollection->entries();
-        //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
         std::ofstream outFile("g4_photon_hits.txt");
@@ -255,9 +255,44 @@ struct DetectorConstruction : G4VUserDetectorConstruction
     {
         parser_.Read(gdml_file_.string(), false);
         G4VPhysicalVolume *world = parser_.GetWorldVolume();
-
+        G4bool overlapsFound = world->CheckOverlaps(
+            1000,    // maxErr
+            0.0,     // overlap tolerance
+            true     // verbose
+        );
         G4CXOpticks::SetGeometry(world);
-        G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
+
+	if(overlapsFound) {
+	      G4cout << "Found overlap " << G4endl; exit(-1);}
+	else{G4cout << "No overlaps found " << G4endl;}
+
+  G4LogicalVolumeStore* lvStore = G4LogicalVolumeStore::GetInstance();
+
+  for (auto lv : *lvStore)
+  {
+    G4String name = lv->GetName();
+    G4VSolid* solid = lv->GetSolid();
+    if (solid)
+    {
+      // This is the volume in mm^3
+      G4double volume_mm3 = solid->GetCubicVolume();
+
+      // Convert to cm^3 for easier reading:
+      G4double volume_cm3 = volume_mm3 / cm3;
+
+      // Print the volume:
+      G4cout << "Logical Volume: " << name
+             << " has volume: " << volume_mm3 << "Volume"
+             << " (" << volume_cm3 << " cm^3)" << G4endl;
+    }
+    else
+    {
+      G4cout << "Logical Volume: " << name
+             << " has no associated solid!" << G4endl;
+    }
+  }
+
+
 
         static G4VisAttributes invisibleVisAttr(false);
 
@@ -321,7 +356,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
-        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.2 * m);
+        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.4 * m);
         G4double time_ns = 0;
         G4ThreeVector direction(0, 0.2, 0.8);
         G4double wavelength_nm = 0.1;
@@ -555,3 +590,4 @@ struct G4App
     SteppingAction *stepping_;
     TrackingAction *tracking_;
 };
+
