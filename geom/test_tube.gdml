@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <materials>
+    <element name="C" Z="6">
+      <atom value="12.0107" unit="g/mole"/>
+    </element>
+    <element name="N" Z="7">
+      <atom value="14.0067" unit="g/mole"/>
+    </element>
+    <element name="O" Z="8">
+      <atom value="15.999" unit="g/mole"/>
+    </element>
+    <material name="CarbonFiber" state="solid">
+      <D value="1.8247" unit="g/cm3"/>
+      <fraction n="1.0" ref="C"/>
+    </material>
+
+    <material name="Air" state="gas">
+      <D value="0.00129" unit="g/cm3"/>
+      <fraction n="0.7" ref="N"/>
+      <fraction n="0.3" ref="O"/>
+    </material>
+  </materials>
+
+  <solids>
+   <tube aunit="deg" deltaphi="360" lunit="mm" name="GasVolume0x56008bf65140" rmax="636.284" rmin="0" startphi="0" z="434.65"/>
+        <tube
+   name="OuterMirror"
+   aunit="deg"
+   deltaphi="360"
+   lunit="mm"
+   startphi="0"
+   rmin="598.4804"
+   rmax="600.4804"
+   z="375.15"
+/>
+
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="World" 
+          rmax="2000" rmin="0" startphi="0" z="12000"/>
+  </solids>
+
+  <structure>
+    <volume name="OuterMirrorVolume">
+      <materialref ref="CarbonFiber"/>
+      <solidref ref="OuterMirror"/>
+    </volume>
+
+    <volume name="WorldVolume">
+      <materialref ref="Air"/>
+      <solidref ref="World"/>
+
+      <physvol name="OuterMirrorPhys">
+        <volumeref ref="OuterMirrorVolume"/>
+        <position name="OuterMirrorPos" unit="mm" x="0" y="0" z="0"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="DefaultSetup" version="1.0">
+    <world ref="WorldVolume"/>
+  </setup>
+
+</gdml>
+
+
+
