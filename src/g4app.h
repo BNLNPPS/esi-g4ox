@@ -491,8 +491,6 @@ struct G4App
     {
     }
 
-    //~G4App(){ G4CXOpticks::Finalize();}
-
     // Create "global" event
     SEvt *sev;
 
