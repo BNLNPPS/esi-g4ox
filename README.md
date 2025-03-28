@@ -50,10 +50,28 @@ nsys software can be used to profile GPU code. By adding
 ```
 nsys profile
 ```
-An examples a follows:
+An examples as follows:
 
 ```
 nsys profile ./build/src/simg4ox -g esi-g4ox/geom/opticks_raindrop.gdml -m esi-g4ox/run.mac
 ```
 
 The resulting file has nsys-rep extension. This can be opened either by nsys-ui or can be exported with "nsys stats" command into an sqlite database.
+
+In order to achieve a more detailed profiling one can use the nsight compute framework. The user needs to download nsight compute, accept the license agreement. If one is using docker the following argument needs to be added: 
+
+```
+--cap-add=SYS_ADMIN
+```
+
+An example of running the nsight compute profiling command:
+
+```
+/usr/local/NVIDIA-Nsight-Compute/ncu --set full --target-processes all -o report --import-source on ./build/src/simg4ox -g  esi-g4ox/geom/pfrich_min_added_parameters.gdml -m esi-g4ox/run.mac
+```
+
+Afterwards the resulting profile file can opened in the following GUI:
+
+```
+/usr/local/NVIDIA-Nsight-Compute/ncu-ui
+```
