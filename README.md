@@ -58,9 +58,11 @@ nsys profile ./build/src/simg4ox -g esi-g4ox/geom/opticks_raindrop.gdml -m esi-g
 
 The resulting file has nsys-rep extension. This can be opened either by nsys-ui or can be exported with "nsys stats" command into an sqlite database.
 
-In order to achieve a more detailed profiling one can use the nsight compute framework. The user needs to download nsight compute, accept the license agreement. 
+In order to achieve a more detailed profiling one can use the nsight compute framework. The user needs to download nsight compute, accept the license agreement. If one is using docker the following argument needs to be added: 
 
-If one is using docker the argument needs to be added.
+```
+--cap-add=SYS_ADMIN
+```
 
 An example of running the nsight compute profiling command:
 
