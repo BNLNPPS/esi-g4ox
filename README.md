@@ -50,5 +50,10 @@ nsys software can be used to profile GPU code. By adding
 ```
 nsys profile
 ```
+An examples a follows:
+
+```
+nsys profile ./build/src/simg4ox -g esi-g4ox/geom/opticks_raindrop.gdml -m esi-g4ox/run.mac
+```
 
 The resulting file has nsys-rep extension. This can be opened either by nsys-ui or can be exported with "nsys stats" command into an sqlite database.
