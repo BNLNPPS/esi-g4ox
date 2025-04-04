@@ -362,7 +362,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
-        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.2 * m);
+        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.3 * m);
         G4double time_ns = 0;
         G4ThreeVector direction(0, 0.2, 0.8);
         G4double wavelength_nm = 0.1;
@@ -476,8 +476,26 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *aStep)
     {
-        const G4Track *aTrack;
+        G4Track *aTrack;
+        aTrack = aStep->GetTrack();
         G4int fNumPhotons = 0;
+        G4StepPoint *preStep = aStep->GetPostStepPoint();
+
+        G4VPhysicalVolume *volume = preStep->GetPhysicalVolume();
+
+        if (aTrack->GetDefinition() == G4Electron::ElectronDefinition())
+        {
+            G4cout << "eeeeeeeeeeeee" << volume->GetName() << G4endl;
+        }
+
+        if (volume && volume->GetName() == "MirrorPyramid")
+        {
+            if (aTrack->GetDefinition() == G4Electron::ElectronDefinition())
+            {
+                aTrack->SetTrackStatus(fStopAndKill);
+            }
+        }
+
         G4SteppingManager *fpSteppingManager =
             G4EventManager::GetEventManager()->GetTrackingManager()->GetSteppingManager();
         G4StepStatus stepStatus = fpSteppingManager->GetfStepStatus();
@@ -489,7 +507,6 @@ struct SteppingAction : G4UserSteppingAction
             {
                 if ((*procPost)[i3]->GetProcessName() == "Cerenkov")
                 {
-                    aTrack = aStep->GetTrack();
                     const G4DynamicParticle *aParticle = aTrack->GetDynamicParticle();
                     G4double charge = aParticle->GetDefinition()->GetPDGCharge();
                     const G4Material *aMaterial = aTrack->GetMaterial();
