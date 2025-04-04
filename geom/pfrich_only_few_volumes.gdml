@@ -129,8 +129,8 @@
       <fraction n="0.0805418407442842" ref="H0x56008be74870"/>
     </material>
     <material name="CarbonFiber0x56008bf15730" state="gas">
-	    <property name="RINDEX" ref="RINDEX0x56008bf06450"/>
-      <property name="GROUPVEL" ref="GROUPVEL0x56008bf0c600"/>
+      <property name="RINDEX" ref="RINDEX0x56008bf127f9"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x56008bf06770"/>
 
 	    <T unit="K" value="293.15"/>
       <MEE unit="eV" value="81"/>
@@ -354,6 +354,10 @@
    deltaphi="360" aunit="deg" lunit="mm"/>
 
 
+
+
+
+
 <cone
    name="OuterMirror0x56008bfa8c60"
    aunit="deg"
@@ -373,6 +377,9 @@
    name="OuterMirror0x56008bfa8c60" aunit="deg" deltaphi="360" lunit="mm" startphi="0" rmin="598.4804"  rmax="600.4804"  z="375.15" />
 -->
 
+    <box lunit="mm" name="MirrorPyramid0x56008bfb11e0" x="123" y="123" z="30"/>
+    
+<!--
     <box lunit="mm" name="Dummy0x56008bfb10e0" x="123" y="123" z="30"/>
     <trd lunit="mm" name="Dummy0x56008bf728c0" x1="123" x2="104" y1="123" y2="104" z="30.022"/>
     <box lunit="mm" name="MirrorPyramid0x56008bfb11e0" x="123" y="123" z="30"/>
@@ -380,6 +387,7 @@
       <first ref="Dummy0x56008bfb10e0"/>
       <second ref="Dummy0x56008bf728c0"/>
     </subtraction>
+-->
 
 
 <box lunit="mm" name="GasVolume0x56008bf652f0" x="1500" y="1500" z="1500"/>
@@ -388,16 +396,6 @@
 	    <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfb3580"/>
     </opticalsurface>
 
-    <opticalsurface finish="0"
-                    model="1"
-                    name="GasAerogelSurface0x999999"
-                    type="0"
-	    value="0">
-        <property name="ABSORPTION" ref="ABSORPTION0x56008bfb3582"/>
-
-    <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfb3581"/>
-
-	   </opticalsurface>
     
     <opticalsurface finish="0" model="1" name="InnerMirror0x56008bfa6280" type="0" value="0">
       <property name="REFLECTIVITY" ref="REFLECTIVITY0x56008bfa8460"/>
@@ -988,5 +986,6 @@
   </setup>
 
 </gdml>
+
 
 
