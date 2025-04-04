@@ -154,15 +154,20 @@ struct PhotonSD : public G4VSensitiveDetector
     {
         G4Track *theTrack = aStep->GetTrack();
         if (theTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+        {
+            theTrack->SetTrackStatus(fStopAndKill);
             return false;
+        }
 
         G4double theEnergy = theTrack->GetTotalEnergy() / CLHEP::eV;
 
         // Create a new hit (CopyNr is set to 0 as DetectorID is omitted)
-        PhotonHit *newHit = new PhotonHit(
-            0, // CopyNr set to 0
-            theEnergy, theTrack->GetGlobalTime(), aStep->GetPostStepPoint()->GetPosition(),
-            aStep->GetPostStepPoint()->GetMomentumDirection(), aStep->GetPostStepPoint()->GetPolarization());
+        //
+        //
+        PhotonHit *newHit = new PhotonHit(0, // CopyNr set to 0
+                                          theEnergy, theTrack->GetGlobalTime(), aStep->GetPreStepPoint()->GetPosition(),
+                                          aStep->GetPreStepPoint()->GetMomentumDirection(),
+                                          aStep->GetPreStepPoint()->GetPolarization());
 
         fPhotonHitsCollection->insert(newHit);
         theTrack->SetTrackStatus(fStopAndKill);
@@ -172,8 +177,8 @@ struct PhotonSD : public G4VSensitiveDetector
     void EndOfEvent(G4HCofThisEvent *) override
     {
 
-	     G4int NbHits = fPhotonHitsCollection->entries();
-        //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+        G4int NbHits = fPhotonHitsCollection->entries();
+        // G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
         std::ofstream outFile("g4_photon_hits.txt");
@@ -255,44 +260,45 @@ struct DetectorConstruction : G4VUserDetectorConstruction
     {
         parser_.Read(gdml_file_.string(), false);
         G4VPhysicalVolume *world = parser_.GetWorldVolume();
-        G4bool overlapsFound = world->CheckOverlaps(
-            1000,    // maxErr
-            0.0,     // overlap tolerance
-            true     // verbose
+        G4bool overlapsFound = world->CheckOverlaps(1000, // maxErr
+                                                    0.0,  // overlap tolerance
+                                                    true  // verbose
         );
         G4CXOpticks::SetGeometry(world);
 
-	if(overlapsFound) {
-	      G4cout << "Found overlap " << G4endl; exit(-1);}
-	else{G4cout << "No overlaps found " << G4endl;}
+        if (overlapsFound)
+        {
+            G4cout << "Found overlap " << G4endl;
+            exit(-1);
+        }
+        else
+        {
+            G4cout << "No overlaps found " << G4endl;
+        }
 
-  G4LogicalVolumeStore* lvStore = G4LogicalVolumeStore::GetInstance();
+        G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
 
-  for (auto lv : *lvStore)
-  {
-    G4String name = lv->GetName();
-    G4VSolid* solid = lv->GetSolid();
-    if (solid)
-    {
-      // This is the volume in mm^3
-      G4double volume_mm3 = solid->GetCubicVolume();
+        for (auto lv : *lvStore)
+        {
+            G4String name = lv->GetName();
+            G4VSolid *solid = lv->GetSolid();
+            if (solid)
+            {
+                // This is the volume in mm^3
+                G4double volume_mm3 = solid->GetCubicVolume();
 
-      // Convert to cm^3 for easier reading:
-      G4double volume_cm3 = volume_mm3 / cm3;
+                // Convert to cm^3 for easier reading:
+                G4double volume_cm3 = volume_mm3 / cm3;
 
-      // Print the volume:
-      G4cout << "Logical Volume: " << name
-             << " has volume: " << volume_mm3 << "Volume"
-             << " (" << volume_cm3 << " cm^3)" << G4endl;
-    }
-    else
-    {
-      G4cout << "Logical Volume: " << name
-             << " has no associated solid!" << G4endl;
-    }
-  }
-
-
+                // Print the volume:
+                G4cout << "Logical Volume: " << name << " has volume: " << volume_mm3 << "Volume"
+                       << " (" << volume_cm3 << " cm^3)" << G4endl;
+            }
+            else
+            {
+                G4cout << "Logical Volume: " << name << " has no associated solid!" << G4endl;
+            }
+        }
 
         static G4VisAttributes invisibleVisAttr(false);
 
@@ -401,15 +407,14 @@ struct RunAction : G4UserRunAction
     {
 
         G4CXOpticks *gx = G4CXOpticks::Get();
-        
-	auto start = std::chrono::high_resolution_clock::now();
-	gx->simulate(0, false);
+
+        auto start = std::chrono::high_resolution_clock::now();
+        gx->simulate(0, false);
         cudaDeviceSynchronize();
-	auto end = std::chrono::high_resolution_clock::now();
+        auto end = std::chrono::high_resolution_clock::now();
         // Compute duration
         std::chrono::duration<double> elapsed = end - start;
         std::cout << "Simulation time: " << elapsed.count() << " seconds" << std::endl;
-
 
         // unsigned int num_hits = SEvt::GetNumHit(EGPU);
         SEvt *sev = SEvt::Get_EGPU();
@@ -511,7 +516,7 @@ struct SteppingAction : G4UserSteppingAction
                         U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
                                                                maxCos, maxSin2, MeanNumberOfPhotons1,
                                                                MeanNumberOfPhotons2);
-                        //std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
+                        // std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
 
                         G4RunManager *rm = G4RunManager::GetRunManager();
                         const G4Event *event = rm->GetCurrentEvent();
@@ -590,4 +595,3 @@ struct G4App
     SteppingAction *stepping_;
     TrackingAction *tracking_;
 };
-
