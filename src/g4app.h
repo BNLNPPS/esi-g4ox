@@ -483,10 +483,10 @@ struct SteppingAction : G4UserSteppingAction
 
         G4VPhysicalVolume *volume = preStep->GetPhysicalVolume();
 
-        if (aTrack->GetDefinition() == G4Electron::ElectronDefinition())
-        {
-            G4cout << "eeeeeeeeeeeee" << volume->GetName() << G4endl;
-        }
+       // if (aTrack->GetDefinition() == G4Electron::ElectronDefinition())
+       // {
+       //     G4cout << "eeeeeeeeeeeee" << volume->GetName() << G4endl;
+        //}
 
         if (volume && volume->GetName() == "MirrorPyramid")
         {
