@@ -449,10 +449,12 @@
     <volume name="Arapuca0x6000011b7160">
       <materialref ref="acrylic0x1296147d0"/>
       <solidref ref="Arapuca0x600000bbc150"/>
+
     </volume>
     <volume name="ArapucaBackCoating0x6000011b72a0">
       <materialref ref="Mylar0x129613e50"/>
       <solidref ref="PTP_film0x600000bbc1c0"/>
+      <auxiliary auxtype="SensDet" auxvalue="PhotonDetector"/>
     </volume>
     <volume name="PTPs_film0x6000011b73e0">
       <materialref ref="ptp_mat0x129614180"/>
@@ -465,6 +467,7 @@
     <volume name="ArapucaBackCoatingShort0x6000011b7480">
       <materialref ref="Mylar0x129613e50"/>
       <solidref ref="PTPs_film0x600000bbc2a0"/>
+      <auxiliary auxtype="SensDet" auxvalue="PhotonDetector"/>
     </volume>
     <volume name="VerticalBar0x6000011b7520">
       <materialref ref="acrylic0x1296147d0"/>
