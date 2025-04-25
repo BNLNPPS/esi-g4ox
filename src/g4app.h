@@ -181,8 +181,9 @@ struct PhotonSD : public G4VSensitiveDetector
         // G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
-        std::ofstream outFile("g4_photon_hits.txt");
-        if (!outFile.is_open())
+        std::ofstream outFile("g4_photon_hits.txt", std::ios::out | std::ios::app);
+
+	if (!outFile.is_open())
         {
             G4cerr << "Error opening output file g4_photon_hits.txt!" << G4endl;
             return;
@@ -369,7 +370,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
         G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
         G4PrimaryParticle *particle = new G4PrimaryParticle(G4Electron::Definition());
-        particle->SetKineticEnergy(5 * GeV);
+        particle->SetKineticEnergy(0.005 * GeV);
         particle->SetMomentumDirection(direction);
         vertex->SetPrimary(particle);
         event->AddPrimaryVertex(vertex);
