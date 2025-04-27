@@ -4,6 +4,10 @@
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
 #include "G4LogicalVolumeStore.hh"
+#include "G4PhysicalVolumeStore.hh"
+
+#include "G4VoxelLimits.hh"
+#include "G4AffineTransform.hh"
 #include "G4OpBoundaryProcess.hh"
 #include "G4OpticalPhoton.hh"
 #include "G4PhysicalConstants.hh"
@@ -151,7 +155,8 @@ struct PhotonSD : public G4VSensitiveDetector
             aStep->GetPostStepPoint()->GetMomentumDirection(), aStep->GetPostStepPoint()->GetPolarization());
 
         fPhotonHitsCollection->insert(hit);
-        track->SetTrackStatus(fStopAndKill);
+	std::cout << "why" << std::endl;
+	track->SetTrackStatus(fStopAndKill);
 
         return true;
     }
@@ -196,7 +201,8 @@ struct DetectorConstruction : G4VUserDetectorConstruction
         static G4VisAttributes invisibleVisAttr(false);
 
         // Check if the store is not empty
-        if (lvStore && !lvStore->empty())
+        /*
+	if (lvStore && !lvStore->empty())
         {
             // Iterate over all logical volumes in the store
             for (auto &logicalVolume : *lvStore)
@@ -214,6 +220,40 @@ struct DetectorConstruction : G4VUserDetectorConstruction
                 }
             }
         }
+	*/
+
+    auto pvStore = G4PhysicalVolumeStore::GetInstance();
+
+    G4cout << "====================== Volume Information Dump ======================" << G4endl;
+
+    G4int lvCount = 0;
+    G4VoxelLimits voxelLimits; // Properly instantiated voxel limits
+    G4AffineTransform transform; // Default transform
+
+    for (auto* lv : *lvStore) {
+        G4Box* box = dynamic_cast<G4Box*>(lv->GetSolid());
+        if (box) {
+            G4double xHalf = box->GetXHalfLength();
+            G4double yHalf = box->GetYHalfLength();
+            G4double zHalf = box->GetZHalfLength();
+
+            G4cout << "Logical Volume: " << lv->GetName()
+                   << " | Material: " << lv->GetMaterial()->GetName()
+                   << " | Solid: " << lv->GetSolid()->GetName()
+                   << " | Half Dimensions: (" << xHalf / mm << ", " << yHalf / mm << ", " << zHalf / mm << ") mm"
+                   << G4endl;
+        }
+    }
+
+    for (auto* pv : *pvStore) {
+        G4ThreeVector pos = pv->GetTranslation();
+
+        G4cout << "Physical Volume: " << pv->GetName()
+               << " | Copy Number: " << pv->GetCopyNo()
+               << " | Parent: " << (pv->GetMotherLogical() ? pv->GetMotherLogical()->GetName() : "None")
+               << " | Position: (" << pos.x() / mm << ", " << pos.y() / mm << ", " << pos.z() / mm << ") mm"
+               << G4endl;
+    }
 
         return world;
     }
@@ -255,6 +295,8 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
     void GeneratePrimaries(G4Event *event) override
     {
+       
+	   
         NP *photons = NP::Make<float>(0, 4, 4);
 
         photons->load("out/photons.npy");
@@ -282,7 +324,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
             particle->SetPolarization(polarization);
 
             vertex->SetPrimary(particle);
-            event->AddPrimaryVertex(vertex);
+            //event->AddPrimaryVertex(vertex);
         }
 
         sev->SetInputPhoton(photons);
@@ -316,7 +358,6 @@ struct EventAction : G4UserEventAction
         cudaDeviceSynchronize();
 
         unsigned int num_hits = SEvt::GetNumHit(SEvt::EGPU);
-
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
 
         SEvt *sev = SEvt::Get_EGPU();
@@ -356,7 +397,8 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *step)
     {
-        if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+        
+	if (step->GetTrack()->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             return;
 
         const G4VProcess *process = step->GetPreStepPoint()->GetProcessDefinedStep();
