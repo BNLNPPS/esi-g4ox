@@ -324,7 +324,8 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
             particle->SetPolarization(polarization);
 
             vertex->SetPrimary(particle);
-            //event->AddPrimaryVertex(vertex);
+           // event->AddPrimaryVertex(vertex);
+	    
         }
 
         sev->SetInputPhoton(photons);
@@ -544,3 +545,4 @@ struct G4App
     SteppingAction *stepping_;
     TrackingAction *tracking_;
 };
+
