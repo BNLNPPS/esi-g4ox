@@ -10,4 +10,7 @@ export OPTICKS_EVENT_MODE=Minimal
 export OPTICKS_MAX_PHOTON=M60
 export OPTICKS_MAX_SLOT=M60
 QCurandState_SPEC=60:0:0 /usr/local/opticks/lib/QCurandStateTest
-./build/src/simg4ox -g  esi-g4ox/geom/pfrich_min_added_parameters.gdml -m esi-g4ox/run.mac
+python scripts/cone_opticks_intersection_modify.py
+cmake --build /usr/local/eic-opticks/build --parallel --target install
+cmake --build build
+./build/src/simg4ox -g  esi-g4ox/geom/pfrich_min_FINAL.gdml -m esi-g4ox/run.mac
