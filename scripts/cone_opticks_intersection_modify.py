@@ -33,23 +33,12 @@ new_code = '''\
             o.y + t_cand * d.y,
             o.z + t_cand * d.z
         );
-
-        printf("// Intersection at t = %.4f, position: (%.4f, %.4f, %.4f)\\n",
-            t_cand,
-            intersection_point.x,
-            intersection_point.y,
-            intersection_point.z
-        );
-
         float3 n = normalize(make_float3(
             intersection_point.x,
             intersection_point.y,
             (z0 - intersection_point.z)*tth2
         ));
 
-        printf("// Intersection with cone side. Normal: (%.4f, %.4f, %.4f)\\n",
-            n.x, n.y, n.z
-        );
 
         isect.x = n.x;
         isect.y = n.y;
