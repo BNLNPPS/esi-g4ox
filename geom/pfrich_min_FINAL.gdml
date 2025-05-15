@@ -2512,7 +2512,7 @@
       </physvol>
       <physvol copynumber="2" name="MirrorPyramid0x56008bfbb720">
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-        <position name="MirrorPyramid0x56008bfbb720_pos" unit="mm" x="-532" y="0" z="202.325"/>
+        <position name="MirrorPyramid0x56008bfbb720_pos" unit="mm" x="-492" y="0" z="202.325"/>
       </physvol>
       <physvol copynumber="3" name="MirrorPyramid0x56008bfbe990">
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
@@ -2536,7 +2536,7 @@
       </physvol>
       <physvol copynumber="8" name="MirrorPyramid0x56008bfd0660">
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-        <position name="MirrorPyramid0x56008bfd0660_pos" unit="mm" x="-409" y="0" z="202.325"/>
+        <position name="MirrorPyramid0x56008bfd0660_pos" unit="mm" x="-369" y="0" z="202.325"/>
       </physvol>
       <physvol copynumber="9" name="MirrorPyramid0x56008bfd37d0">
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
@@ -2568,7 +2568,7 @@
       </physvol>
       <physvol copynumber="16" name="MirrorPyramid0x56008bfcf080">
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-        <position name="MirrorPyramid0x56008bfcf080_pos" unit="mm" x="-286" y="0" z="202.325"/>
+        <position name="MirrorPyramid0x56008bfcf080_pos" unit="mm" x="-246" y="0" z="202.325"/>
       </physvol>
       <physvol copynumber="17" name="MirrorPyramid0x56008bfee420">
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
@@ -2760,7 +2760,7 @@
       </physvol>
     <physvol copynumber="68" name="MirrorPyramid_center">
   <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-  <position name="MirrorPyramid_center_pos"  unit="mm" x="-40"   y="0"   z="202.325"/>
+  <position name="MirrorPyramid_center_pos"  unit="mm" x="0"   y="0"   z="202.325"/>
 </physvol>
 
 <physvol copynumber="69" name="MirrorPyramid_posY">
@@ -2780,7 +2780,7 @@
 
 <physvol copynumber="72" name="MirrorPyramid_negX">
   <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-  <position name="MirrorPyramid_negX_pos"     unit="mm" x="-163" y="0"   z="202.325"/>
+  <position name="MirrorPyramid_negX_pos"     unit="mm" x="-123" y="0"   z="202.325"/>
 </physvol>
 
 <!-- ───── TOP ROW: y = +492 mm ───── -->
