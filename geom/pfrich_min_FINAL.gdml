@@ -2788,26 +2788,6 @@
     <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
     <position name="MirrorPyramidEdge_200_pos" unit="mm" x="-369" y="492" z="202.325"/>
   </physvol>
-  <physvol copynumber="201" name="MirrorPyramidEdge_201">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_201_pos" unit="mm" x="-246" y="492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="202" name="MirrorPyramidEdge_202">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_202_pos" unit="mm" x="-123" y="492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="203" name="MirrorPyramidEdge_203">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_203_pos" unit="mm" x="0" y="492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="204" name="MirrorPyramidEdge_204">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_204_pos" unit="mm" x="123" y="492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="205" name="MirrorPyramidEdge_205">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_205_pos" unit="mm" x="246" y="492" z="202.325"/>
-  </physvol>
   <physvol copynumber="206" name="MirrorPyramidEdge_206">
     <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
     <position name="MirrorPyramidEdge_206_pos" unit="mm" x="369" y="492" z="202.325"/>
@@ -2817,26 +2797,6 @@
   <physvol copynumber="207" name="MirrorPyramidEdge_207">
     <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
     <position name="MirrorPyramidEdge_207_pos" unit="mm" x="-369" y="-492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="208" name="MirrorPyramidEdge_208">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_208_pos" unit="mm" x="-246" y="-492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="209" name="MirrorPyramidEdge_209">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_209_pos" unit="mm" x="-123" y="-492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="210" name="MirrorPyramidEdge_210">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_210_pos" unit="mm" x="0" y="-492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="211" name="MirrorPyramidEdge_211">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_211_pos" unit="mm" x="123" y="-492" z="202.325"/>
-  </physvol>
-  <physvol copynumber="212" name="MirrorPyramidEdge_212">
-    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-    <position name="MirrorPyramidEdge_212_pos" unit="mm" x="246" y="-492" z="202.325"/>
   </physvol>
   <physvol copynumber="213" name="MirrorPyramidEdge_213">
     <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
@@ -2946,7 +2906,7 @@
 
 <physvol copynumber="514" name="MirrorPyramidEdge_514">
   <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
-  <position name="MirrorPyramidEdge_514_pos" unit="mm" x="-655" y="   0" z="202.325"/>
+  <position name="MirrorPyramidEdge_514_pos" unit="mm" x="-615" y="   0" z="202.325"/>
 </physvol>
 
 <physvol copynumber="515" name="MirrorPyramidEdge_515">
@@ -3457,54 +3417,15 @@
     <physvolref ref="GasVolume0x56008bf65d20"/>
     <physvolref ref="MirrorPyramidEdge_200"/>
   </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_201" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_201"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_202" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_202"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_203" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_203"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_204" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_204"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_205" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_205"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_206" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_206"/>
+ <bordersurface name="Absorbing_MirrorPyramidEdge_206" surfaceproperty="Absorbing">
+ <physvolref ref="GasVolume0x56008bf65d20"/>
+
+  <physvolref ref="MirrorPyramidEdge_206"/>
   </bordersurface>
   <!-- BOTTOM ROW: y = -492 mm -->
   <bordersurface name="Absorbing_MirrorPyramidEdge_207" surfaceproperty="Absorbing">
     <physvolref ref="GasVolume0x56008bf65d20"/>
     <physvolref ref="MirrorPyramidEdge_207"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_208" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_208"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_209" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_209"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_210" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_210"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_211" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_211"/>
-  </bordersurface>
-  <bordersurface name="Absorbing_MirrorPyramidEdge_212" surfaceproperty="Absorbing">
-    <physvolref ref="GasVolume0x56008bf65d20"/>
-    <physvolref ref="MirrorPyramidEdge_212"/>
   </bordersurface>
   <bordersurface name="Absorbing_MirrorPyramidEdge_213" surfaceproperty="Absorbing">
     <physvolref ref="GasVolume0x56008bf65d20"/>
