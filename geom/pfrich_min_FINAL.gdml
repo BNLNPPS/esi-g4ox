@@ -2752,6 +2752,208 @@
         <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
         <position name="MirrorPyramid0x56008c094df0_pos" unit="mm" x="492" y="246" z="202.325"/>
       </physvol>
+    <physvol copynumber="68" name="MirrorPyramid_center">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramid_center_pos"  unit="mm" x="-40"   y="0"   z="202.325"/>
+</physvol>
+
+<physvol copynumber="69" name="MirrorPyramid_posY">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramid_posY_pos"     unit="mm" x="0"   y="123"  z="202.325"/>
+</physvol>
+
+<physvol copynumber="70" name="MirrorPyramid_negY">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramid_negY_pos"     unit="mm" x="0"   y="-123" z="202.325"/>
+</physvol>
+
+<physvol copynumber="71" name="MirrorPyramid_posX">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramid_posX_pos"     unit="mm" x="123"  y="0"   z="202.325"/>
+</physvol>
+
+<physvol copynumber="72" name="MirrorPyramid_negX">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramid_negX_pos"     unit="mm" x="-163" y="0"   z="202.325"/>
+</physvol>
+
+<!-- ───── TOP ROW: y = +492 mm ───── -->
+  <physvol copynumber="200" name="MirrorPyramidEdge_200">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_200_pos" unit="mm" x="-369" y="492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="201" name="MirrorPyramidEdge_201">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_201_pos" unit="mm" x="-246" y="492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="202" name="MirrorPyramidEdge_202">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_202_pos" unit="mm" x="-123" y="492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="203" name="MirrorPyramidEdge_203">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_203_pos" unit="mm" x="0" y="492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="204" name="MirrorPyramidEdge_204">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_204_pos" unit="mm" x="123" y="492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="205" name="MirrorPyramidEdge_205">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_205_pos" unit="mm" x="246" y="492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="206" name="MirrorPyramidEdge_206">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_206_pos" unit="mm" x="369" y="492" z="202.325"/>
+  </physvol>
+
+  <!-- ───── BOTTOM ROW: y = –492 mm ───── -->
+  <physvol copynumber="207" name="MirrorPyramidEdge_207">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_207_pos" unit="mm" x="-369" y="-492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="208" name="MirrorPyramidEdge_208">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_208_pos" unit="mm" x="-246" y="-492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="209" name="MirrorPyramidEdge_209">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_209_pos" unit="mm" x="-123" y="-492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="210" name="MirrorPyramidEdge_210">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_210_pos" unit="mm" x="0" y="-492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="211" name="MirrorPyramidEdge_211">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_211_pos" unit="mm" x="123" y="-492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="212" name="MirrorPyramidEdge_212">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_212_pos" unit="mm" x="246" y="-492" z="202.325"/>
+  </physvol>
+  <physvol copynumber="213" name="MirrorPyramidEdge_213">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_213_pos" unit="mm" x="369" y="-492" z="202.325"/>
+  </physvol>
+
+  <!-- ───── SIDE CORNERS: x = ±492 mm, y = ±369 mm ───── -->
+  <physvol copynumber="214" name="MirrorPyramidEdge_214">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_214_pos" unit="mm" x="-492" y="-369" z="202.325"/>
+  </physvol>
+  <physvol copynumber="215" name="MirrorPyramidEdge_215">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_215_pos" unit="mm" x="-492" y="369" z="202.325"/>
+  </physvol>
+  <physvol copynumber="216" name="MirrorPyramidEdge_216">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_216_pos" unit="mm" x="492" y="-369" z="202.325"/>
+  </physvol>
+  <physvol copynumber="217" name="MirrorPyramidEdge_217">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_217_pos" unit="mm" x="492" y="369" z="202.325"/>
+  </physvol>
+
+
+  <!-- �~T~@�~T~@�~T~@�~T~@�~T~@ BOTTOM ROW: y = �~@615 mm �~T~@�~T~@�~T~@�~T~@�~T~@ -->
+  <physvol copynumber="408" name="MirrorPyramidEdge_408">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_208_pos" unit="mm" x="-246" y="-615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="409" name="MirrorPyramidEdge_409">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_209_pos" unit="mm" x="-123" y="-615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="410" name="MirrorPyramidEdge_410">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_210_pos" unit="mm" x="0" y="-615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="411" name="MirrorPyramidEdge_411">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_211_pos" unit="mm" x="123" y="-615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="412" name="MirrorPyramidEdge_412">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_212_pos" unit="mm" x="246" y="-615" z="202.325"/>
+  </physvol>
+
+
+  <!-- �~T~@�~T~@�~T~@�~T@ TOP          OM ROW: y = �~@~S615 mm �~T~@�~T~@�~T~@�~T~@�~T~@ -->>>>�~T~
+  <physvol copynumber="308" name="MirrorPyramidEdge_308">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_208_pos" unit="mm" x="-246" y="615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="309" name="MirrorPyramidEdge_309">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_209_pos" unit="mm" x="-123" y="615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="310" name="MirrorPyramidEdge_310">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_210_pos" unit="mm" x="0" y="615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="311" name="MirrorPyramidEdge_311">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_251_pos" unit="mm" x="123" y="615" z="202.325"/>
+  </physvol>
+  <physvol copynumber="312" name="MirrorPyramidEdge_312">
+    <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+    <position name="MirrorPyramidEdge_250_pos" unit="mm" x="246" y="615" z="202.325"/>
+  </physvol>
+
+<!-- ───────── RIGHT ROW : x = +615 mm ───────── -->
+<physvol copynumber="612" name="MirrorPyramidEdge_612">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_612_pos" unit="mm" x="615" y="-246" z="202.325"/>
+</physvol>
+
+<physvol copynumber="613" name="MirrorPyramidEdge_613">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_613_pos" unit="mm" x="615" y="-123" z="202.325"/>
+</physvol>
+
+<physvol copynumber="614" name="MirrorPyramidEdge_614">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_614_pos" unit="mm" x="615" y="   0" z="202.325"/>
+</physvol>
+
+<physvol copynumber="615" name="MirrorPyramidEdge_615">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_615_pos" unit="mm" x="615" y=" 123" z="202.325"/>
+</physvol>
+
+<physvol copynumber="616" name="MirrorPyramidEdge_616">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_616_pos" unit="mm" x="615" y=" 246" z="202.325"/>
+</physvol>
+
+<!-- ───────── LEFT ROW : x = -615 mm ───────── -->
+<physvol copynumber="512" name="MirrorPyramidEdge_512">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_512_pos" unit="mm" x="-615" y="-246" z="202.325"/>
+</physvol>
+
+<physvol copynumber="513" name="MirrorPyramidEdge_513">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_513_pos" unit="mm" x="-615" y="-123" z="202.325"/>
+</physvol>
+
+<physvol copynumber="514" name="MirrorPyramidEdge_514">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_514_pos" unit="mm" x="-655" y="   0" z="202.325"/>
+</physvol>
+
+<physvol copynumber="515" name="MirrorPyramidEdge_515">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_515_pos" unit="mm" x="-615" y=" 123" z="202.325"/>
+</physvol>
+
+<physvol copynumber="516" name="MirrorPyramidEdge_516">
+  <volumeref ref="MirrorPyramid0x56008bfb13e0"/>
+  <position name="MirrorPyramidEdge_516_pos" unit="mm" x="-615" y=" 246" z="202.325"/>
+</physvol>
+
+
     </volume>
     <volume name="FrontWallAluRing10x56008bf6aae0">
       <materialref ref="PEEK0x56008bf17290"/>
