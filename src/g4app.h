@@ -491,7 +491,7 @@ struct SteppingAction : G4UserSteppingAction
 
         if (volume && volume->GetName() == "MirrorPyramid")
         {
-            if (aTrack->GetDefinition() == G4Electron::ElectronDefinition())
+            if (aTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
             {
                 aTrack->SetTrackStatus(fStopAndKill);
             }
