@@ -1,5 +1,5 @@
 git clone https://github.com/BNLNPPS/esi-g4ox
-esi-g4ox/
+cd esi-g4ox/
 git checkout GenStepsMT
 cd ..
 cmake -S esi-g4ox -B build
