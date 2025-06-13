@@ -10,15 +10,14 @@
 #include "G4UImanager.hh"
 #include "G4VisExecutive.hh"
 
-#include "SysRap/OPTICKS_LOG.hh"
 
 #include "g4app.h"
 
 #include "G4VUserActionInitialization.hh"
 #include "G4RunManagerFactory.hh"
 #include "G4RunManager.hh"
-
-
+#include <ctime>
+ #include "Randomize.hh"
 using namespace std;
 
 
@@ -53,7 +52,9 @@ public:
 
 int main(int argc, char **argv)
 {
-    OPTICKS_LOG(argc, argv);
+   long seed = static_cast<long>(time(nullptr));
+    CLHEP::HepRandom::setTheSeed(seed);
+    G4cout << "Random seed set to: " << seed << G4endl; 
 
     argparse::ArgumentParser program("simg4ox", "0.0.0");
 
