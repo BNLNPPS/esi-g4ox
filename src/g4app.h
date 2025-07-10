@@ -440,23 +440,23 @@ struct RunAction : G4UserRunAction
             G4ThreeVector position = G4ThreeVector(hit.pos.x, hit.pos.y, hit.pos.z);
             G4ThreeVector direction = G4ThreeVector(hit.mom.x, hit.mom.y, hit.mom.z);
             G4ThreeVector polarization = G4ThreeVector(hit.pol.x, hit.pol.y, hit.pol.z);
-            int theCreationProcessid;
+            int thenProcessid;
             if (OpticksPhoton::HasCerenkovFlag(hit.flagmask))
             {
-                theCreationProcessid = 0;
+                thenProcessid = 0;
             }
             else if (OpticksPhoton::HasScintillationFlag(hit.flagmask))
             {
-                theCreationProcessid = 1;
+                thenProcessid = 1;
             }
             else
             {
-                theCreationProcessid = -1;
+                thenProcessid = -1;
             }
             //    std::cout << "Adding hit from Opticks:" << hit.wavelength << " " << position << " " << direction << "
             //    "
             //              << polarization << std::endl;
-            outFile << hit.wavelength << "  "
+            outFile << hit.time  << " " << hit.wavelength << "  "
                     << "(" << position.x() << ", " << position.y() << ", " << position.z() << ")  "
                     << "(" << direction.x() << ", " << direction.y() << ", " << direction.z() << ")  "
                     << "(" << polarization.x() << ", " << polarization.y() << ", " << polarization.z() << ")  "
