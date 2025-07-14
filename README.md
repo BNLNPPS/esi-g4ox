@@ -34,6 +34,13 @@ export GEOM=mygeom
 export OPTICKS_EVENT_MODE=DebugLite
 ```
 
+Also the following environment variables need to be set:
+
+```
+export OPTICKS_MAX_PHOTON=M60
+export OPTICKS_MAX_SLOT=M60
+```
+
 
 ## Visualization
 
