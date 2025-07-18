@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="">
+
+  <!-- 1) Define any matrices, etc. (optional) -->
+  <define>
+    <matrix coldim="2" name="REFLECTIVITY_MIRROR" values="1.55e-06 1.0  1.55e-05 1.0" />
+    <matrix coldim="2" name="REFLECTIVITYZero" values="1.55e-06 0.0  1.55e-05 0.0" />
+    <matrix coldim="2" name="REFLECTIVITYMAX" values="1.55e-06 1  1.55e-05 1" />
+    <matrix coldim="2" name="RINDEX_MIRROR" values="1.55e-06 1.0 1.55e-05 1.0" />
+    <matrix coldim="2" name="RINDEX_WATER" values="1.55e-06 1.333 1.55e-05 1.333" />
+    <matrix coldim="2" name="ABSLENGTH_WATER" values="1.55e-06 100.0*m 1.55e-05 100.0*m" />
+    <matrix coldim="2" name="SCATTERLENGTH_WATER" values="1.55e-06 50.0*m 1.55e-05 50.0*m" />
+    <matrix coldim="2" name="RINDEX_GLASS" values="1.55e-06 1.5  1.55e-05 1.5" />
+    <matrix coldim="2" name="EFFICIENCYDET" values="2.034*eV 1 2.068*eV 1 2.103*eV 1 2.139*eV 1 2.177*eV 1 2.216*eV 1 2.256*eV 1 2.298*eV 1 2.341*eV 1 2.386*eV 1 2.433*eV 1 2.481*eV 1 2.532*eV 1 2.585*eV 1 2.64*eV 1 2.697*eV 1 2.757*eV 1 2.82*eV 1 2.885*eV 1 2.954*eV 1 3.026*eV 1 3.102*eV 1 3.181*eV  1 3.265*eV 1 3.353*eV 1 3.446*eV 1 3.545*eV 1 3.649*eV 1 3.76*eV 1 3.877*eV 1 4.002*eV 1 4.136*eV 1 5.0*eV 1 6.0*eV 1 7.0*eV 1 8.0*eV 1 9.0*eV 1 9.0*eV 1 10.0*eV 1 11.0*eV 1 11.6*eV 1" />
+  </define>
+
+  <!-- 2) Materials -->
+  <materials>
+    <element name="H" formula="H" Z="1">
+      <atom value="1.0079" unit="g/mole"/>
+    </element>
+    <element name="O" formula="O" Z="8">
+      <atom value="15.999" unit="g/mole"/>
+    </element>
+    <material name="WaterMaterial" state="liquid">
+      <D value="1.0" unit="g/cm3"/>
+      <fraction n="0.1119" ref="H"/>
+      <fraction n="0.8881" ref="O"/>
+      <property name="RINDEX" ref="RINDEX_WATER"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH_WATER"/>
+      <property name="SCATTERLENGTH" ref="SCATTERLENGTH_WATER"/>
+    </material>
+    <material name="MirrorMaterial" state="solid">
+      <D value="2.7" unit="g/cm3"/>
+      <fraction n="1.0" ref="O"/>
+      <property name="REFLECTIVITY" ref="REFLECTIVITY_MIRROR"/>
+      <property name="RINDEX" ref="RINDEX_MIRROR"/>
+    </material>
+    <material name="GlassMaterial" state="solid">
+      <D value="2.5" unit="g/cm3"/>
+      <fraction n="1.0" ref="O"/>
+      <property name="RINDEX" ref="RINDEX_GLASS"/>
+    </material>
+    <material name="TubeMaterial" state="solid">
+      <D value="1.2" unit="g/cm3"/>
+      <fraction n="1.0" ref="O"/>
+    </material>
+    <material name="OuterTubeMaterial" state="solid">
+      <D value="1.4" unit="g/cm3"/>
+      <fraction n="1.0" ref="O"/>
+    </material>
+  </materials>
+
+  <!-- 3) Solids: geometry -->
+  <solids>
+    <box name="WorldBox" x="100000" y="100000" z="100000" lunit="mm" />
+    <sphere name="MirrorSphere" rmin="50" rmax="51" deltaphi="6.28318530718" deltatheta="1.5707963268" aunit="rad" lunit="mm"/>
+    <box name="GlassSphere" x="30" y="30" z="30" lunit="mm"/>
+    <tube name="Tube1" rmin="0" rmax="5" z="10" deltaphi="360" aunit="deg" lunit="mm"/>
+    <tube name="Tube2" rmin="5" rmax="5.1" z="10" deltaphi="360" aunit="deg" lunit="mm"/>
+    <!-- Optical Surfaces -->
+    <opticalsurface name="MirrorSurface" type="dielectric_metal" model="glisur" finish="polished" value="1">
+      <property name="REFLECTIVITY" ref="REFLECTIVITY_MIRROR" />
+      <property name="RINDEX" ref="RINDEX_MIRROR" />
+    </opticalsurface>
+    <opticalsurface finish="0" model="0" name="Det_optical" type="0" value="1">
+      <property name="EFFICIENCY" ref="EFFICIENCYDET"/>
+      <property name="REFLECTIVITY" ref="REFLECTIVITYMAX"/>
+    </opticalsurface>
+    <opticalsurface finish="0" model="0" name="Absorb_optical" type="0" value="1">
+      <property name="REFLECTIVITY" ref="REFLECTIVITYZero"/>
+    </opticalsurface>
+  </solids>
+
+  <!-- 5) Structure -->
+  <structure>
+    <volume name="Mirror_logical">
+      <materialref ref="MirrorMaterial"/>
+      <solidref ref="MirrorSphere"/>
+    </volume>
+    <volume name="Tube_logical">
+      <materialref ref="TubeMaterial"/>
+      <auxiliary auxtype="SensDet" auxvalue="PhotonDetector" />
+      <solidref ref="Tube1"/>
+    </volume>
+    <volume name="OuterTube_logical">
+      <materialref ref="OuterTubeMaterial"/>
+      <solidref ref="Tube2"/>
+    </volume>
+    <volume name="World_logical">
+      <materialref ref="WaterMaterial"/>
+      <solidref ref="WorldBox"/>
+      <physvol>
+        <volumeref ref="Mirror_logical"/>
+        <position name="MirrorPos" unit="mm" x="0" y="0" z="0"/>
+      </physvol>
+
+
+    <!-- +X  direction -->
+    <physvol>
+      <volumeref ref="OuterTube_logical"/>
+      <position name="TubePos_XP" unit="mm" x="15" y="0" z="0"/>
+      <rotation name="TubeRot_XP" unit="deg" x="0"   y="-90" z="0"/>
+    </physvol>
+    <physvol>
+      <volumeref ref="Tube_logical"/>
+      <position name="TubePos_XP" unit="mm" x="15" y="0" z="0"/>
+      <rotation name="TubeRot_XP" unit="deg" x="0"   y="-90" z="0"/>
+    </physvol>
+
+    <!-- –X  direction -->
+    <physvol>
+      <volumeref ref="OuterTube_logical"/>
+      <position name="TubePos_XN" unit="mm" x="-15" y="0" z="0"/>
+      <rotation name="TubeRot_XN" unit="deg" x="0"   y="90"  z="0"/>
+    </physvol>
+    <physvol>
+      <volumeref ref="Tube_logical"/>
+      <position name="TubePos_XN" unit="mm" x="-15" y="0" z="0"/>
+      <rotation name="TubeRot_XN" unit="deg" x="0"   y="90"  z="0"/>
+    </physvol>
+
+    <!-- +Y  direction -->
+    <physvol>
+      <volumeref ref="OuterTube_logical"/>
+      <position name="TubePos_YP" unit="mm" x="0" y="15" z="0"/>
+      <rotation name="TubeRot_YP" unit="deg" x="90"  y="0"  z="0"/>
+    </physvol>
+    <physvol>
+      <volumeref ref="Tube_logical"/>
+      <position name="TubePos_YP" unit="mm" x="0" y="15" z="0"/>
+      <rotation name="TubeRot_YP" unit="deg" x="90"  y="0"  z="0"/>
+    </physvol>
+
+    <!-- –Y  direction -->
+    <physvol>
+      <volumeref ref="OuterTube_logical"/>
+      <position name="TubePos_YN" unit="mm" x="0" y="-15" z="0"/>
+      <rotation name="TubeRot_YN" unit="deg" x="-90" y="0"  z="0"/>
+    </physvol>
+    <physvol>
+      <volumeref ref="Tube_logical"/>
+      <position name="TubePos_YN" unit="mm" x="0" y="-15" z="0"/>
+      <rotation name="TubeRot_YN" unit="deg" x="-90" y="0"  z="0"/>
+    </physvol>
+
+    <!-- +Z  direction -->
+    <physvol>
+      <volumeref ref="OuterTube_logical"/>
+      <position name="TubePos_ZP" unit="mm" x="0" y="0" z="15"/>
+      <rotation name="TubeRot_ZP" unit="deg" x="0"   y="0"  z="0"/>
+    </physvol>
+    <physvol>
+      <volumeref ref="Tube_logical"/>
+      <position name="TubePos_ZP" unit="mm" x="0" y="0" z="15"/>
+      <rotation name="TubeRot_ZP" unit="deg" x="0"   y="0"  z="0"/>
+    </physvol>
+
+    <!-- –Z  direction -->
+    <physvol>
+      <volumeref ref="OuterTube_logical"/>
+      <position name="TubePos_ZN" unit="mm" x="0" y="0" z="-15"/>
+      <rotation name="TubeRot_ZN" unit="deg" x="180" y="0"  z="0"/>
+    </physvol>
+    <physvol>
+      <volumeref ref="Tube_logical"/>
+      <position name="TubePos_ZN" unit="mm" x="0" y="0" z="-15"/>
+      <rotation name="TubeRot_ZN" unit="deg" x="180" y="0"  z="0"/>
+    </physvol>
+
+
+    </volume>
+    <skinsurface name="MirrorSkinSurface" surfaceproperty="MirrorSurface">
+      <volumeref ref="Mirror_logical"/>
+    </skinsurface>
+    <skinsurface name="GlassSkinSurface" surfaceproperty="Det_optical">
+      <volumeref ref="Tube_logical"/>
+    </skinsurface>
+    <skinsurface name="GlassSkinSurface" surfaceproperty="Absorb_optical">
+      <volumeref ref="OuterTube_logical"/>
+    </skinsurface>
+  </structure>
+  <!-- 6) Setup -->
+  <setup name="Default" version="1.0">
+    <world ref="World_logical"/>
+  </setup>
+</gdml>
+
+
