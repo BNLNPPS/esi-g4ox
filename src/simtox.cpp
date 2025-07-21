@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     torch.pos = {0.0f, 0.0f, -90.0f};
     torch.time = 0.0f;
 
-    torch.mom = {0.0f, 0.3f, 1.0f};
+    torch.mom = {0.0f, 0.0f, 1.0f};
     torch.mom = normalize(torch.mom);
     torch.weight = 0.0f;
 
