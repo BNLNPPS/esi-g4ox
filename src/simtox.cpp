@@ -14,7 +14,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    unsigned n_photons = 1000;
+    unsigned n_photons = 100000;
 
     // Initialize one torch object
     storch torch;
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     torch.zenith = {0.0f, 1.0f};
     torch.azimuth = {0.0f, 1.0f};
 
-    torch.radius = 150.0f;
+    torch.radius = 300.0f;
     torch.distance = 0.0f;
     torch.mode = 255;
     torch.type = T_DISC;
