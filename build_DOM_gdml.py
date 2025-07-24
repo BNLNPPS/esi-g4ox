@@ -188,12 +188,6 @@ HEAD = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   <materialref ref="OuterTubeMaterial"/>
   <solidref ref="OuterTube"/>
   
-  <!-- Now nest the inner tube inside the outer one -->
-  <physvol>
-    <volumeref ref="Tube_logical"/>
-    <position name="InnerTubePos" unit="mm" x="0" y="0" z="0.5"/>
-    <rotation name="InnerTubeRot" unit="deg" x="0" y="0" z="0"/>
-  </physvol>
 </volume>
 
 
