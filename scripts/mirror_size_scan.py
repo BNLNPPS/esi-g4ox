@@ -5,7 +5,7 @@ import shutil
 GDML_FILE = "lo3.gdml"
 BACKUP_FILE = GDML_FILE + ".bak"
 RUN_CMD = ["./build/src/simg4ox", "-g", GDML_FILE, "-m", "esi-g4ox/run.mac"]
-RMIN_RANGE = range(50, 301, 10)  # 90, 100, ..., 300
+RMIN_RANGE = range(300, 2001, 50)  # 90, 100, ..., 300
 
 def update_gdml(rmin, rmax):
     with open(BACKUP_FILE, "r") as f:
@@ -58,3 +58,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
