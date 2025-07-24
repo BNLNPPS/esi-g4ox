@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "G4BooleanSolid.hh"
+#include "G4CX/G4CXOpticks.hh"
 #include "G4Electron.hh"
 #include "G4Event.hh"
 #include "G4GDMLParser.hh"
@@ -29,7 +30,22 @@
 #include "G4RunManager.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
+#include "SysRap/NP.hh"
+#include "SysRap/SEvt.hh"
+#include "SysRap/STrackInfo.h"
+#include "SysRap/spho.h"
+#include "SysRap/sphoton.h"
+#include "U4.hh"
+#include "U4/U4Random.hh"
+#include "U4/U4StepPoint.hh"
+#include "U4/U4Touchable.h"
+#include "U4/U4Track.h"
 #include "G4RunManagerFactory.hh"
+#include "G4AutoLock.hh"
+
+
+namespace { G4Mutex genstep_mutex = G4MUTEX_INITIALIZER; }
+
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
@@ -164,7 +180,7 @@ struct PhotonSD : public G4VSensitiveDetector
     {
 
 	     G4int NbHits = fPhotonHitsCollection->entries();
-        //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
         int tid = G4Threading::G4GetThreadId();
@@ -203,6 +219,37 @@ struct PhotonSD : public G4VSensitiveDetector
         outFile.close();
     }
 
+    void AddOpticksHits()
+    {
+        SEvt *sev = SEvt::Get_EGPU();
+        unsigned int num_hits = sev->GetNumHit(0);
+
+        for (int idx = 0; idx < int(num_hits); idx++)
+        {
+            sphoton hit;
+            sev->getHit(hit, idx);
+            G4ThreeVector position = G4ThreeVector(hit.pos.x, hit.pos.y, hit.pos.z);
+            G4ThreeVector direction = G4ThreeVector(hit.mom.x, hit.mom.y, hit.mom.z);
+            G4ThreeVector polarization = G4ThreeVector(hit.pol.x, hit.pol.y, hit.pol.z);
+            int theCreationProcessid;
+            if (OpticksPhoton::HasCerenkovFlag(hit.flagmask))
+            {
+                theCreationProcessid = 0;
+            }
+            else if (OpticksPhoton::HasScintillationFlag(hit.flagmask))
+            {
+                theCreationProcessid = 1;
+            }
+            else
+            {
+                theCreationProcessid = -1;
+            }
+            std::cout << hit.wavelength << " " << position << " " << direction << " " << polarization << std::endl;
+
+            PhotonHit *newHit = new PhotonHit(0, hit.wavelength, hit.time, position, direction, polarization);
+            fPhotonHitsCollection->insert(newHit);
+        }
+    }
 
   private:
     PhotonHitsCollection *fPhotonHitsCollection{nullptr};
@@ -220,6 +267,7 @@ struct DetectorConstruction : G4VUserDetectorConstruction
         parser_.Read(gdml_file_.string(), false);
         G4VPhysicalVolume *world = parser_.GetWorldVolume();
 
+        G4CXOpticks::SetGeometry(world);
         G4LogicalVolumeStore *lvStore = G4LogicalVolumeStore::GetInstance();
 
         static G4VisAttributes invisibleVisAttr(false);
@@ -276,14 +324,15 @@ struct DetectorConstruction : G4VUserDetectorConstruction
 
 struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 {
+    SEvt *sev;
 
-    PrimaryGenerator() 
+    PrimaryGenerator(SEvt *sev) : sev(sev)
     {
     }
 
     void GeneratePrimaries(G4Event *event) override
     {
-        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.3 * m);
+        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.2 * m);
         G4double time_ns = 0;
         G4ThreeVector direction(0, 0.2, 0.8);
         G4double wavelength_nm = 0.1;
@@ -299,9 +348,9 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 
 struct EventAction : G4UserEventAction
 {
-    
+    SEvt *sev;
 
-    EventAction() 
+    EventAction(SEvt *sev) : sev(sev)
     {
     }
 
@@ -327,11 +376,13 @@ struct RunAction : G4UserRunAction
     void EndOfRunAction(const G4Run *run) override
     {
 
-        //G4CXOpticks *gx = G4CXOpticks::Get();
+     if (G4Threading::IsMasterThread()) 
+	{
+        G4CXOpticks *gx = G4CXOpticks::Get();
         
 	auto start = std::chrono::high_resolution_clock::now();
-	//gx->simulate(0, false);
-        //cudaDeviceSynchronize();
+	gx->simulate(0, false);
+        cudaDeviceSynchronize();
 	auto end = std::chrono::high_resolution_clock::now();
         // Compute duration
         std::chrono::duration<double> elapsed = end - start;
@@ -339,9 +390,8 @@ struct RunAction : G4UserRunAction
 
 
         // unsigned int num_hits = SEvt::GetNumHit(EGPU);
-        //SEvt *sev = SEvt::Get_EGPU();
-        /*
-	unsigned int num_hits = sev->GetNumHit(0);
+        SEvt *sev = SEvt::Get_EGPU();
+        unsigned int num_hits = sev->GetNumHit(0);
         std::cout << "Opticks: NumCollected:  " << sev->GetNumGenstepFromGenstep(0) << std::endl;
 
         std::cout << "Opticks: NumCollected:  " << sev->GetNumPhotonCollected(0) << std::endl;
@@ -386,36 +436,23 @@ struct RunAction : G4UserRunAction
         }
 
         outFile.close();
-    */
-
-	}
+    	}
+    }
 };
 
 struct SteppingAction : G4UserSteppingAction
 {
+    SEvt *sev;
 
-    SteppingAction()
+    SteppingAction(SEvt *sev) : sev(sev)
     {
     }
 
     void UserSteppingAction(const G4Step *aStep)
     {
-        G4Track *aTrack;
+        const G4Track *aTrack;
         G4int fNumPhotons = 0;
-        
-
-        G4StepPoint *preStep = aStep->GetPostStepPoint();
-
-        G4VPhysicalVolume *volume = preStep->GetPhysicalVolume();	
-	if (volume && volume->GetName() == "MirrorPyramid")
-        {
-		aTrack = aStep->GetTrack();
-            if (aTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
-            {
-                aTrack->SetTrackStatus(fStopAndKill);
-            }}
-	
-	G4SteppingManager *fpSteppingManager =
+        G4SteppingManager *fpSteppingManager =
             G4EventManager::GetEventManager()->GetTrackingManager()->GetSteppingManager();
         G4StepStatus stepStatus = fpSteppingManager->GetfStepStatus();
         if (stepStatus != fAtRestDoItProc)
@@ -443,6 +480,9 @@ struct SteppingAction : G4UserSteppingAction
 		    G4Cerenkov *proc = (G4Cerenkov *)(*procPost)[i3];
                     fNumPhotons = proc->GetNumPhotons();
 
+    G4AutoLock lock(&genstep_mutex);   // <-- Mutex is locked here
+
+
                     if (fNumPhotons > 0)
                     {
                         G4double Pmin = Rindex->Energy(0);
@@ -458,14 +498,14 @@ struct SteppingAction : G4UserSteppingAction
                             proc->GetAverageNumberOfPhotons(charge, beta1, aMaterial, Rindex);
                         G4double MeanNumberOfPhotons2 =
                             proc->GetAverageNumberOfPhotons(charge, beta2, aMaterial, Rindex);
-                        //U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
-                        //                                       maxCos, maxSin2, MeanNumberOfPhotons1,
-                        //                                       MeanNumberOfPhotons2);
-                        //std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
-
-			//G4RunManager *rm = G4RunManagerFactory::GetMasterRunManager();
-                        //const G4Event *event = rm->GetCurrentEvent();
-                        //G4int eventid = event->GetEventID();
+                        
+			
+			
+			
+			U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
+                                                               maxCos, maxSin2, MeanNumberOfPhotons1,
+                                                               MeanNumberOfPhotons2);
+                        std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
 
 			const G4Event* event = G4EventManager::GetEventManager()->GetConstCurrentEvent();
 			if (!event) return;  // Always check for null
@@ -503,8 +543,9 @@ struct SteppingAction : G4UserSteppingAction
 struct TrackingAction : G4UserTrackingAction
 {
     const G4Track *transient_fSuspend_track = nullptr;
+    SEvt *sev;
 
-    TrackingAction() 
+    TrackingAction(SEvt *sev) : sev(sev)
     {
     }
 
@@ -524,17 +565,18 @@ struct TrackingAction : G4UserTrackingAction
 struct G4App
 {
     G4App(std::filesystem::path gdml_file)
-        : det_cons_(new DetectorConstruction(gdml_file)),
-          prim_gen_(new PrimaryGenerator()), event_act_(new EventAction()), run_act_(new RunAction()),
-          stepping_(new SteppingAction()),
+        : sev(SEvt::CreateOrReuse_EGPU()), det_cons_(new DetectorConstruction(gdml_file)),
+          prim_gen_(new PrimaryGenerator(sev)), event_act_(new EventAction(sev)), run_act_(new RunAction()),
+          stepping_(new SteppingAction(sev)),
 
-          tracking_(new TrackingAction())
+          tracking_(new TrackingAction(sev))
     {
     }
 
     //~G4App(){ G4CXOpticks::Finalize();}
 
     // Create "global" event
+    SEvt *sev;
 
     G4VUserDetectorConstruction *det_cons_;
     G4VUserPrimaryGeneratorAction *prim_gen_;
@@ -543,4 +585,3 @@ struct G4App
     SteppingAction *stepping_;
     TrackingAction *tracking_;
 };
-
