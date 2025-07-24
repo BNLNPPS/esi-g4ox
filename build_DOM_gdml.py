@@ -295,7 +295,7 @@ ROT = {
 # 5.  Build <physvol> blocks with your fixed angles
 # --------------------------------------------------------------------
 placements = []
-shift_mm = 0.5
+shift_mm = 0.0
 
 for i in range(n):
     # --- position vectors ---
