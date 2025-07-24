@@ -143,13 +143,13 @@ HEAD = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   <!-- 3) Solids: geometry -->
   <solids>
     <box name="WorldBox" x="100000" y="100000" z="100000" lunit="mm" />
-    <sphere name="MirrorSphere" rmin="50" rmax="51" deltaphi="6.28318530718" deltatheta="1.5707963268" aunit="rad" lunit="mm"/>
+    <sphere name="MirrorSphere" rmin="300" rmax="301" deltaphi="6.28318530718" deltatheta="1.5707963268" aunit="rad" lunit="mm"/>
     <box name="GlassSphere" x="30" y="30" z="30" lunit="mm"/>
 
  <!-- Tube primitives -->
-    <tube name="Tube1" rmin="0" rmax="5"   z="9"   deltaphi="360" aunit="deg" lunit="mm"/>
-    <tube name="Tube2" rmin="0" rmax="5.1" z="10"  deltaphi="360" aunit="deg" lunit="mm"/>
-    <tube name="Tube3" rmin="0" rmax="5"   z="9.1" deltaphi="360" aunit="deg" lunit="mm"/>
+    <tube name="Tube1" rmin="0" rmax="23"   z="120"   deltaphi="360" aunit="deg" lunit="mm"/>
+    <tube name="Tube2" rmin="0" rmax="23.1" z="121"  deltaphi="360" aunit="deg" lunit="mm"/>
+    <tube name="Tube3" rmin="0" rmax="23"   z="120.1" deltaphi="360" aunit="deg" lunit="mm"/>
 
     <!-- Outer tube shell created by Boolean subtraction (inner tube shifted +0.5 mm) -->
     <subtraction name="OuterTube">
