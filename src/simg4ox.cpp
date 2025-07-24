@@ -53,6 +53,10 @@ public:
 
 int main(int argc, char **argv)
 {
+    
+   long seed = static_cast<long>(time(nullptr));
+    CLHEP::HepRandom::setTheSeed(seed);
+    G4cout << "Random seed set to: " << seed << G4endl; 
     OPTICKS_LOG(argc, argv);
 
     argparse::ArgumentParser program("simg4ox", "0.0.0");
