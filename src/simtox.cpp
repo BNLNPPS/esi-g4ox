@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     torch.zenith = {0.0f, 1.0f};
     torch.azimuth = {0.0f, 1.0f};
 
-    torch.radius = 300.0f;
+    torch.radius = 2000.0f;
     torch.distance = 0.0f;
     torch.mode = 255;
     torch.type = T_DISC;
