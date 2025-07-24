@@ -1,6 +1,6 @@
 git clone https://github.com/BNLNPPS/esi-g4ox
 cd esi-g4ox/
-git checkout GenStepsMT
+git checkout PerformanceAnalysis
 cd ..
 cmake -S esi-g4ox -B build
 cmake --build build
