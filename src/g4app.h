@@ -450,9 +450,21 @@ struct SteppingAction : G4UserSteppingAction
 
     void UserSteppingAction(const G4Step *aStep)
     {
-        const G4Track *aTrack;
+
+        G4Track *aTrack;
         G4int fNumPhotons = 0;
-        G4SteppingManager *fpSteppingManager =
+        
+        G4StepPoint *preStep = aStep->GetPostStepPoint();
+        G4VPhysicalVolume *volume = preStep->GetPhysicalVolume();	
+	if (volume && volume->GetName() == "MirrorPyramid")
+        {
+		aTrack = aStep->GetTrack();
+            if (aTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
+            {
+                aTrack->SetTrackStatus(fStopAndKill);
+            }}
+	
+	G4SteppingManager *fpSteppingManager =
             G4EventManager::GetEventManager()->GetTrackingManager()->GetSteppingManager();
         G4StepStatus stepStatus = fpSteppingManager->GetfStepStatus();
         if (stepStatus != fAtRestDoItProc)
