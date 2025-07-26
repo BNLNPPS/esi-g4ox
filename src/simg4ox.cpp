@@ -36,13 +36,11 @@ public:
 
     virtual void BuildForMaster() const override
     {
-        // Possibly define master actions if needed
+       SetUserAction(fG4App->run_act_);
     }
 
     virtual void Build() const override
     {
-        // Now you can safely refer to fG4App here
-        // because it is a member of ActionInitialization.
         SetUserAction(fG4App->prim_gen_);
         SetUserAction(fG4App->run_act_);
         SetUserAction(fG4App->event_act_);
