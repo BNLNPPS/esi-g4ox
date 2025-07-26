@@ -183,10 +183,11 @@ struct PhotonSD : public G4VSensitiveDetector
         //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
-        int tid = G4Threading::G4GetThreadId();
+        int tid = G4ing::G4GetThreadId();
 	std::ostringstream fname;
 	fname << "g4_photon_hits_thread" << tid << ".txt";
-	std::ofstream outFile(fname.str().c_str());
+	std::ofstream outFile(fname.str().c_str(), std::ios::app);
+
 	
 	if (!outFile.is_open())
         {
