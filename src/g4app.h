@@ -151,7 +151,7 @@ struct PhotonSD : public G4VSensitiveDetector
         fPhotonHitsCollection = new PhotonHitsCollection(SensitiveDetectorName, collectionName[0]);
         if (fHCID < 0)
         {
-            G4cout << "PhotonSD::Initialize:  " << SensitiveDetectorName << "   " << collectionName[0] << G4endl;
+            //G4cout << "PhotonSD::Initialize:  " << SensitiveDetectorName << "   " << collectionName[0] << G4endl;
             fHCID = G4SDManager::GetSDMpointer()->GetCollectionID(collectionName[0]);
         }
         hce->AddHitsCollection(fHCID, fPhotonHitsCollection);
@@ -179,8 +179,8 @@ struct PhotonSD : public G4VSensitiveDetector
     void EndOfEvent(G4HCofThisEvent *) override
     {
 
-	     G4int NbHits = fPhotonHitsCollection->entries();
-        G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
+	G4int NbHits = fPhotonHitsCollection->entries();
+        //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
         int tid = G4Threading::G4GetThreadId();
@@ -517,7 +517,7 @@ struct SteppingAction : G4UserSteppingAction
 			U4::CollectGenstep_G4Cerenkov_modified(aTrack, aStep, fNumPhotons, BetaInverse, Pmin, Pmax,
                                                                maxCos, maxSin2, MeanNumberOfPhotons1,
                                                                MeanNumberOfPhotons2);
-                        std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
+                        //std::cout << "MeanNumberOfPhotons1" << MeanNumberOfPhotons1 << std::endl;
 
 			const G4Event* event = G4EventManager::GetEventManager()->GetConstCurrentEvent();
 			if (!event) return;  // Always check for null
