@@ -457,6 +457,14 @@ struct SteppingAction : G4UserSteppingAction
         
         G4StepPoint *preStep = aStep->GetPostStepPoint();
         G4VPhysicalVolume *volume = preStep->GetPhysicalVolume();	
+
+	if ( aStep->GetTrack()->GetDefinition() == G4OpticalPhoton::OpticalPhotonDefinition()) {
+        // Kill if step count exceeds 10000 to avoid reflection forever
+        if (aStep->GetTrack()->GetCurrentStepNumber() > 10000) {
+        aStep->GetTrack()->SetTrackStatus(fStopAndKill);
+        }}
+
+	    
 	if (volume && volume->GetName() == "MirrorPyramid")
         {
 		aTrack = aStep->GetTrack();
