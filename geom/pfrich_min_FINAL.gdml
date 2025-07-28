@@ -1829,6 +1829,10 @@
       <solidref ref="MirrorPyramid0x56008bfb11e0"/>
       <auxiliary auxtype="SensDet" auxvalue="PhotonDetector" />
     </volume>
+    <volume name="MirrorPyramidAbsorbing">
+      <materialref ref="Absorber0x56008bf13750"/>
+      <solidref ref="MirrorPyramid0x56008bfb11e0"/>
+    </volume>
     <volume name="GasVolume0x56008bf65c10">
       <materialref ref="Nitrogen0x56008be8a6b0"/>
       <solidref ref="GasVolume0x56008bf652f0"/>
