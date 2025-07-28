@@ -2406,10 +2406,6 @@
       <physvolref ref="GasVolume0x56008bf65d20" />
       <physvolref ref="MirrorPyramidEdge_516" />
     </bordersurface>
-    <bordersurface name="Absorbing_MirrorPyramid0x56008c094df0" surfaceproperty="Absorbing">
-      <physvolref ref="GasVolume0x56008bf65d20" />
-      <physvolref ref="MirrorPyramid0x56008c094df0" />
-    </bordersurface>
     <bordersurface name="MirrorPyramid0x56008bf9a3c0" surfaceproperty="MirrorPyramid0x56008bfb1550">
       <physvolref ref="GasVolume0x56008bf65d20" />
       <physvolref ref="MirrorPyramid0x56008bf9a330" />
