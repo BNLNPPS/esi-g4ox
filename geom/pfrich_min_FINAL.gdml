@@ -1964,7 +1964,7 @@
         <position name="MirrorPyramid0x56008c094df0_pos" unit="mm" x="492" y="246" z="202.325" />
       </physvol>
       <physvol copynumber="68" name="MirrorPyramid_center">
-        <volumeref ref="MirrorPyramid0x56008bfb13e0" />
+        <volumeref ref="MirrorPyramidAbsorbing" />
         <position name="MirrorPyramid_center_pos" unit="mm" x="0" y="0" z="202.325" />
       </physvol>
       <physvol copynumber="69" name="MirrorPyramid_posY">
