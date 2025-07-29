@@ -183,6 +183,8 @@ struct PhotonSD : public G4VSensitiveDetector
         //G4cout << "PhotonSD::EndOfEvent Number of PhotonHits: " << NbHits << G4endl;
 
         // Open an output file (text mode)
+
+	/*    
         int tid = G4Threading::G4GetThreadId();
 	std::ostringstream fname;
 	fname << "g4_photon_hits_thread" << tid << ".txt";
@@ -208,16 +210,18 @@ struct PhotonSD : public G4VSensitiveDetector
             G4ThreeVector pol = hit->fpolarization;
 
             // Write out info in a style similar to Opticks hits
-            outFile << "Adding hit from Geant4: " << energy << " eV  "
+            
+	    outFile << "Adding hit from Geant4: " << energy << " eV  "
                     << "(" << position.x() << ", " << position.y() << ", " << position.z() << ")  "
                     << "(" << direction.x() << ", " << direction.y() << ", " << direction.z() << ")  "
                     << "(" << pol.x() << ", " << pol.y() << ", " << pol.z() << ")  "
                     << "Time=" << time << " "
                     << "ID=" << id << G4endl;
+	    
         }
 
         // Close the file
-        outFile.close();
+        outFile.close(); */
     }
 
     void AddOpticksHits()
@@ -399,6 +403,7 @@ struct RunAction : G4UserRunAction
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
 
+        /*
         std::ofstream outFile("opticks_hits_output.txt");
         if (!outFile.is_open())
         {
@@ -437,6 +442,7 @@ struct RunAction : G4UserRunAction
         }
 
         outFile.close();
+	*/	
     	}
     }
 };
