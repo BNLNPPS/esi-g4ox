@@ -10,15 +10,27 @@ with open('timings.txt', 'r') as f:
         g4_threads.append(int(t))
         g4_times.append(float(val))
 
-# Read Opticks times
-opticks_times = []
-with open('Opticks.txt', 'r') as f:
-    for line in f:
-        _, val = line.strip().split()
-        opticks_times.append(float(val))
+# Calculate average, skipping the first entry since that includes the geometry upload
+def compute_average(filename):
+    values = []
+    with open(filename, "r") as f:
+        for line in f:
+            parts = line.strip().split()
+            if len(parts) == 2:
+                try:
+                    values.append(float(parts[1]))
+                except ValueError:
+                    continue
+    if len(values) <= 1:
+        print(f"Not enough values in {filename} to calculate average (excluding first entry).")
+        return
+    # Exclude the first entry
+    avg = sum(values[1:]) / len(values[1:])
+    print(f"Average (excluding first entry) for {filename}: {avg:.3f}")
+    return avg
 
 # Calculate average Opticks time
-opticks_avg = np.mean(opticks_times)
+opticks_avg = compute_average("Opticks.txt")
 
 # Calculate G4/Opticks ratio for each thread
 ratios = [g4_time / opticks_avg for g4_time in g4_times]
