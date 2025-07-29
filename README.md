@@ -14,7 +14,7 @@ Since Opticks simulation is run each time the runtimes are printed out to a file
 
 ### Outputs
 
-```Opticks.txt``` contains the Opticks simulation time for each number of threads.  ```timings.txt``` contains the G4 OPTICAL photon simulation time for each number of threads.
+```Opticks.txt``` contains the Opticks simulation time for each number of threads (constant except first one where geometry is pushed to GPU and seeds are init).  ```timings.txt``` contains the G4 OPTICAL photon simulation time for each number of threads.
 
 ### Plotting the results:
 
