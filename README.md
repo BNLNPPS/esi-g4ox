@@ -22,7 +22,7 @@ Since Opticks simulation is run each time the runtimes are printed out to a file
 
 creates the plot for speedup of Opticks vs G4 for each seed setting.
 
-An example plot:
+An example plot with not full GPU utilization:
 
 ![G4 vs Opticks Ratio](g4_opticks_ratio.png)
 
