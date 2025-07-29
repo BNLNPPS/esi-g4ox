@@ -1,6 +1,6 @@
 ### How to run the performance analysis in this branch
 
-The following command install the code from Git, compiles it and sets the revelant env variables for Opticks:
+The following command installs the code from Git, compiles it and sets the revelant env variables for Opticks:
 
 ```bash install.sh``` 
 
