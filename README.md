@@ -6,7 +6,7 @@ The following command install the code from Git, compiles it and sets the revela
 
 The following command performs the performance analysis:
 
-```python run_performance.py``` 
+```python esi-g4ox/scripts/run_performance.py``` 
 
 The latter command runs the Geant4 CPU simulation 40 times all together. It runs with number of treads from 1 to 20. For each thread number it runs with and without tracking the Cerenkov light. The difference of these runtimes is the G4 simulation time required to simulate solely the optical photons.
 
@@ -18,7 +18,7 @@ Since Opticks simulation is run each time the runtimes are printed out to a file
 
 ### Plotting the results:
 
-```python plot_performance.py```
+```python esi-g4ox/scripts/plot_performance.py```
 
 creates the plot for speedup of Opticks vs G4 for each seed setting.
 
