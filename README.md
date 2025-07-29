@@ -1,39 +1,31 @@
-### Quick Start
+### How to run the performance analysis in this branch
 
-To get the source code for `esi-g4ox`, download or clone the repository from [GitHub](https://github.com/BNLNPPS/esi-g4ox). If you have the code in your `$HOME` directory and prefer not to install all external dependencies manually, you can use [`esi-shell`](https://github.com/BNLNPPS/esi-shell) for development. The following command mounts your `$HOME` inside the container:
+The following command install the code from Git, compiles it and sets the revelant env variables for Opticks:
 
-```bash
-esi-shell -- -v $HOME -e HOME=$HOME -w $HOME -u $(id -u ${USER}):$(id -g ${USER})
-```
+```bash install.sh``` 
 
-Once inside the container, run the following commands:
+The following command performs the performance analysis:
 
-```bash
-cd $HOME
-cmake -S esi-g4ox -B build
-cmake --build build
-```
+```python run_performance.py``` 
 
-Similarly, to start a Geant4-based simulation of optical photons, run:
+The latter command runs the Geant4 CPU simulation 40 times all together. It runs with number of treads from 1 to 20. For each thread number it runs with and without tracking the Cerenkov light. The difference of these runtimes is the G4 simulation time required to simulate solely the optical photons.
 
-```bash
-./build/src/simg4ox -g  esi-g4ox/geom/pfrich_min_added_parameters.gdml -m esi-g4ox/run.mac
-```
+Since Opticks simulation is run each time the runtimes are printed out to a file.
 
-Before runnning `simg4ox` it is recommended to set the following environment variables:
+### Outputs
 
-```
-export TMP=/tmp/myname
-export GEOM=mygeom
-export OPTICKS_EVENT_MODE=DebugLite
-QCurandState_SPEC=3:0:0 /usr/local/opticks/lib/QCurandStateTest
-```
+```Opticks.txt``` contains the Opticks simulation time for each number of threads.  ```timings.txt``` contains the G4 OPTICAL photon simulation time for each number of threads.
+
+### Plotting the results:
+
+```python plot_performance.py```
+
+creates the plot for speedup of Opticks vs G4 for each seed setting.
+
+An example plot:
 
 
-## Visualization
 
-Plot any volume serialized 
+### Notes
 
-```
-scripts/plot-csg.py ../out/csg/CSGFoundry/SSim/scene/meshmerge/0/
-```
+Currently 50k electrons are simulated. This does not fully utilize the GPU so extra speedup is expected.
