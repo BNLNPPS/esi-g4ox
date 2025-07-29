@@ -24,7 +24,7 @@ creates the plot for speedup of Opticks vs G4 for each seed setting.
 
 An example plot:
 
-
+![G4 vs Opticks Ratio](g4_opticks_ratio.png)
 
 ### Notes
 
