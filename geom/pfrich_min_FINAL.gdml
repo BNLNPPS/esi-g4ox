@@ -2262,7 +2262,7 @@
       <solidref ref="PFRICH0x56008bf64610" />
       <physvol name="GasVolume0x56008bf65d20">
         <volumeref ref="GasVolume0x56008bf65c10" />
-        <position name="GasVolume0x56008bf65d20_pos" unit="mm" x="0" y="0" z="-21.825" />
+        <position name="GasVolume0x56008bf65d20_pos" unit="mm" x="0" y="0" z="0" />
       </physvol>
     </volume>
     <volume name="PFRICH_World0x56008bf17d80">
