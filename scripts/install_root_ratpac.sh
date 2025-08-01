@@ -31,4 +31,4 @@ git clone https://github.com/rat-pac/ratpac-setup.git
 cd ratpac-setup
 ./setup.sh -j"$(nproc)"
 
-./ratpac/build/bin/rat --help
+./ratpac/build/bin/rat -o output.root -l log.txt ./ratpac/install/share/RAT/macros/examples/electron.mac
