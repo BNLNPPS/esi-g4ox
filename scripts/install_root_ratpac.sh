@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update -y
 apt-get install -y \
     libgsl-dev libxpm-dev libxft-dev libtbb-dev binutils cmake dpkg-dev \
-    g++ gcc libssl-dev git libx11-dev libxext-dev python3 libgif-dev
+    g++ gcc libssl-dev git libx11-dev libxext-dev python3 libgif-dev python3 python3-dev
 
 # ------------------------------------------------------------------
 # 2. Build and install ROOT (latest-stable branch)
@@ -30,5 +30,3 @@ cd ..
 git clone https://github.com/rat-pac/ratpac-setup.git
 cd ratpac-setup
 ./setup.sh -j"$(nproc)"
-
-./ratpac/build/bin/rat -o output.root -l log.txt ./ratpac/install/share/RAT/macros/examples/electron.mac
