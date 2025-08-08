@@ -42,9 +42,13 @@
 #include "U4/U4Track.h"
 #include "G4RunManagerFactory.hh"
 #include "G4AutoLock.hh"
+#include <cmath>
+#include "Randomize.hh"
+
 
 
 namespace { G4Mutex genstep_mutex = G4MUTEX_INITIALIZER; }
+namespace { G4Mutex genstep_mutex2 = G4MUTEX_INITIALIZER; }
 
 
 bool IsSubtractionSolid(G4VSolid *solid)
@@ -327,27 +331,62 @@ struct DetectorConstruction : G4VUserDetectorConstruction
     G4GDMLParser parser_;
 };
 
+
 struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 {
-    SEvt *sev;
+    SEvt* sev;
+    PrimaryGenerator(SEvt* sev) : sev(sev) {}
 
-    PrimaryGenerator(SEvt *sev) : sev(sev)
+    void GeneratePrimaries(G4Event* event) override
     {
-    }
+        // 1) Position: uniform annulus in x–y, fixed z
+        const G4double Rin  = 0.1 * m;
+        const G4double Rout = 0.5 * m;
+        const G4double z0   = -0.3 * m; // fixed Z
 
-    void GeneratePrimaries(G4Event *event) override
-    {
-        G4ThreeVector position_mm(-0.4 * m, -0.3 * m, -0.3 * m);
-	G4double time_ns = 0;
-        G4ThreeVector direction(0, 0.2, 0.8);
-        G4double wavelength_nm = 0.1;
+        const G4double u   = G4UniformRand();
+        const G4double r   = std::sqrt(u*(Rout*Rout - Rin*Rin) + Rin*Rin);
+        const G4double phi = 2.0 * CLHEP::pi * G4UniformRand();
 
-        G4PrimaryVertex *vertex = new G4PrimaryVertex(position_mm, time_ns);
-        G4PrimaryParticle *particle = new G4PrimaryParticle(G4Electron::Definition());
-        particle->SetKineticEnergy(5 * GeV);
+        const G4double x = r * std::cos(phi);
+        const G4double y = r * std::sin(phi);
+        const G4ThreeVector position(x, y, z0);
+
+        // 2) Direction: dx,dy in [-0.2,0.2], dz>=0 so |v|=1
+        const G4double dx = -0.2 + 0.4 * G4UniformRand();
+        const G4double dy = -0.2 + 0.4 * G4UniformRand();
+        const G4double dz = std::sqrt(std::max(0.0, 1.0 - dx*dx - dy*dy)); // +Z
+        G4ThreeVector direction(dx, dy, dz);
+        direction = direction.unit();
+
+        // 3) Energy: KE uniform in [0.5, 5] GeV
+        const G4double KEmin = 0.5 * GeV;
+        const G4double KEmax = 5.0 * GeV;
+        const G4double KE    = KEmin + (KEmax - KEmin) * G4UniformRand();
+
+        // Build primary
+        auto* vertex   = new G4PrimaryVertex(position, 0.0 * ns);
+        auto* particle = new G4PrimaryParticle(G4Electron::Definition());
+        particle->SetKineticEnergy(KE);
         particle->SetMomentumDirection(direction);
         vertex->SetPrimary(particle);
         event->AddPrimaryVertex(vertex);
+
+        const G4double m0   = G4Electron::Definition()->GetPDGMass();
+        const G4double Etot = KE + m0;
+        const G4double pabs = std::sqrt(std::max(0.0, Etot*Etot - m0*m0)); // same units as KE
+        const G4ThreeVector pvec = direction * pabs;
+
+        // Thread-safe append (no header)
+        {
+            G4AutoLock lock(&genstep_mutex2);
+            std::ofstream out("primaries.csv", std::ios::out | std::ios::app);
+            out << event->GetEventID() << ","
+                << (x / m)   << "," << (y / m)   << "," << (z0 / m) << ","
+                << direction.x() << "," << direction.y() << "," << direction.z() << ","
+                << (pvec.x() / GeV) << "," << (pvec.y() / GeV) << "," << (pvec.z() / GeV) << ","
+                << (pabs / GeV) << "," << (KE / GeV) << "\n";
+        }
     }
 };
 
@@ -403,7 +442,7 @@ struct RunAction : G4UserRunAction
 
         std::cout << "Opticks: NumHits:  " << num_hits << std::endl;
 
-        /*
+        
         std::ofstream outFile("opticks_hits_output.txt");
         if (!outFile.is_open())
         {
@@ -442,7 +481,7 @@ struct RunAction : G4UserRunAction
         }
 
         outFile.close();
-	*/	
+		
     	}
     }
 };
