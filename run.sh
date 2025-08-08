@@ -1,6 +1,6 @@
 git clone https://github.com/BNLNPPS/esi-g4ox
 cd esi-g4ox/
-git checkout PerformanceAnalysis
+git checkout esi-fastlight_data
 cd ..
 QCurandState_SPEC=3000000:0:0 /usr/local/opticks/lib/QCurandStateTest
 export OPTICKS_EVENT_MODE=Minimal
