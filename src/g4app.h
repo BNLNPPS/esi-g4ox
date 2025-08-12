@@ -340,8 +340,8 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
     void GeneratePrimaries(G4Event* event) override
     {
         // 1) Position: uniform annulus in x–y, fixed z
-        const G4double Rin  = 0.1 * m;
-        const G4double Rout = 0.5 * m;
+        const G4double Rin  = 0.3 * m;
+        const G4double Rout = 0.4 * m;
         const G4double z0   = -0.3 * m; // fixed Z
 
         const G4double u   = G4UniformRand();
@@ -352,9 +352,9 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         const G4double y = r * std::sin(phi);
         const G4ThreeVector position(x, y, z0);
 
-        // 2) Direction: dx,dy in [-0.2,0.2], dz>=0 so |v|=1
-        const G4double dx = -0.2 + 0.4 * G4UniformRand();
-        const G4double dy = -0.2 + 0.4 * G4UniformRand();
+        // 2) Direction: dx,dy in [-0.2,0], dz>=0 so |v|=1
+        const G4double dx = -0.2 + 0.2 * G4UniformRand();
+        const G4double dy = -0.2 + 0.2 * G4UniformRand();
         const G4double dz = std::sqrt(std::max(0.0, 1.0 - dx*dx - dy*dy)); // +Z
         G4ThreeVector direction(dx, dy, dz);
         direction = direction.unit();
