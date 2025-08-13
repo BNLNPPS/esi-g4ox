@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <cstring>
 
 #include "G4BooleanSolid.hh"
 #include "G4Electron.hh"
@@ -407,7 +408,7 @@ struct SteppingAction : G4UserSteppingAction
         G4StepPoint *preStep = aStep->GetPostStepPoint();
 
         G4VPhysicalVolume *volume = preStep->GetPhysicalVolume();	
-	if (volume && volume->GetName() == "MirrorPyramid")
+        if (volume &&   std::strstr(volume->GetName().c_str(), "MirrorPyramid") != nullptr)
         {
 		aTrack = aStep->GetTrack();
             if (aTrack->GetDefinition() != G4OpticalPhoton::OpticalPhotonDefinition())
