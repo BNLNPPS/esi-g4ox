@@ -354,8 +354,8 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         const G4ThreeVector position(x, y, z0);
 
         // 2) Direction: dx,dy in [-0.2,0], dz>=0 so |v|=1
-        const G4double dx = -0.2 + 0.2 * G4UniformRand();
-        const G4double dy = -0.2 + 0.2 * G4UniformRand();
+        const G4double dx = -0.1 + 0.2 * G4UniformRand();
+        const G4double dy = -0.1 + 0.2 * G4UniformRand();
         const G4double dz = std::sqrt(std::max(0.0, 1.0 - dx*dx - dy*dy)); // +Z
         G4ThreeVector direction(dx, dy, dz);
         direction = direction.unit();
