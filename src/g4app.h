@@ -373,7 +373,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
         vertex->SetPrimary(particle);
         event->AddPrimaryVertex(vertex);
 
-        const G4double m0   = G4Electron::Definition()->GetPDGMass();
+        const G4double m0   = particle->GetParticleDefinition()->GetPDGMass();
         const G4double Etot = KE + m0;
         const G4double pabs = std::sqrt(std::max(0.0, Etot*Etot - m0*m0)); // same units as KE
         const G4ThreeVector pvec = direction * pabs;
@@ -384,6 +384,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
             std::ofstream out("primaries.csv", std::ios::out | std::ios::app);
             out << event->GetEventID() << ","
                 << (x / m)   << "," << (y / m)   << "," << (z0 / m) << ","
+				<< particle->GetParticleDefinition()->GetPDGMass() << ","
                 << direction.x() << "," << direction.y() << "," << direction.z() << ","
                 << (pvec.x() / GeV) << "," << (pvec.y() / GeV) << "," << (pvec.z() / GeV) << ","
                 << (pabs / GeV) << "," << (KE / GeV) << "\n";
