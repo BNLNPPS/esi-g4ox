@@ -10,4 +10,5 @@ python scripts/cone_opticks_intersection_modify.py
 cmake --build /usr/local/eic-opticks/build --parallel --target install
 cmake -S esi-g4ox -B build
 cmake --build build
+export OPTICKS_MAX_BOUNCE=24
 ./build/src/simg4ox -g  esi-g4ox/geom/pfrich_min_FINAL.gdml -m esi-g4ox/run.mac
