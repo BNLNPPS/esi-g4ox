@@ -9,7 +9,7 @@ run_mac_template = """
 /run/verbose 1
 /process/optical/cerenkov/setStackPhotons {flag}
 /run/initialize
-/run/beamOn 160000
+/run/beamOn 320000
 """
 
 def parse_real_time(time_str):
