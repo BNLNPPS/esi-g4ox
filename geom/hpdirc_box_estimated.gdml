@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define>
+    <matrix coldim="2" name="RINDEX0x55abfa3001a0" values="1.90745e-06 1.45653 1.93725e-06 1.45681 1.968e-06 1.4571 1.99974e-06 1.4574 2.03253e-06 1.45771 2.0664e-06 1.45804 2.10143e-06 1.45838 2.13766e-06 1.45873 2.17516e-06 1.45911 2.214e-06 1.4595 2.25426e-06 1.45991 2.296e-06 1.46034 2.33932e-06 1.4608 2.38431e-06 1.46128 2.43106e-06 1.46179 2.47968e-06 1.46233 2.53029e-06 1.4629 2.583e-06 1.4635 2.63796e-06 1.46415 2.69531e-06 1.46483 2.7552e-06 1.46557 2.81782e-06 1.46635 2.88335e-06 1.46719 2.952e-06 1.46809 3.024e-06 1.46907 3.0996e-06 1.47012 3.17908e-06 1.47125 3.26274e-06 1.47249 3.35092e-06 1.47383 3.44401e-06 1.47529 3.54241e-06 1.47689 3.64659e-06 1.47865 3.7571e-06 1.48059 3.87451e-06 1.48274 3.99949e-06 1.48513 4.13281e-06 1.48779"/>
+    <matrix coldim="2" name="GROUPVEL0x55abfa3004e0" values="1.90745e-06 203.332 1.92235e-06 203.313 1.95263e-06 203.216 1.98387e-06 203.12 2.01614e-06 203.001 2.04947e-06 202.892 2.08391e-06 202.777 2.11954e-06 202.639 2.15641e-06 202.512 2.19458e-06 202.364 2.23413e-06 202.219 2.27513e-06 202.054 2.31766e-06 201.892 2.36182e-06 201.705 2.40769e-06 201.508 2.45537e-06 201.314 2.50499e-06 201.085 2.55665e-06 200.86 2.61048e-06 200.609 2.66663e-06 200.338 2.72526e-06 200.055 2.78651e-06 199.749 2.85059e-06 199.422 2.91768e-06 199.057 2.988e-06 198.681 3.0618e-06 198.261 3.13934e-06 197.811 3.22091e-06 197.318 3.30683e-06 196.787 3.39746e-06 196.205 3.49321e-06 195.565 3.5945e-06 194.862 3.70185e-06 194.086 3.8158e-06 193.235 3.937e-06 192.28 4.13281e-06 191.06"/>
+    <matrix coldim="2" name="ABSLENGTH0x55abfa300740" values="1.90745e-06 2.33615e+06 1.93725e-06 2.19567e+06 1.968e-06 2.06162e+06 1.99974e-06 1.93381e+06 2.03253e-06 1.81203e+06 2.0664e-06 1.6961e+06 2.10143e-06 1.58582e+06 2.13766e-06 1.48101e+06 2.17516e-06 1.38148e+06 2.214e-06 1.28706e+06 2.25426e-06 1.19756e+06 2.296e-06 1.11281e+06 2.33932e-06 1.03264e+06 2.38431e-06 956885 2.43106e-06 885374 2.47968e-06 817949 2.53029e-06 754450 2.583e-06 694722 2.63796e-06 638613 2.69531e-06 585973 2.7552e-06 536656 2.81782e-06 490520 2.88335e-06 447425 2.952e-06 407233 3.024e-06 369813 3.0996e-06 335032 3.17908e-06 302764 3.26274e-06 272886 3.35092e-06 245275 3.44401e-06 219814 3.54241e-06 196390 3.64659e-06 174889 3.7571e-06 155204 3.87451e-06 137229 3.99949e-06 120863 4.13281e-06 106006"/>
+    <matrix coldim="2" name="RINDEX0x55abfa310660" values="1.90745e-06 1.55403 1.93725e-06 1.55557 1.968e-06 1.55698 1.99974e-06 1.55827 2.03253e-06 1.55945 2.0664e-06 1.56056 2.10143e-06 1.5616 2.13766e-06 1.5626 2.17516e-06 1.56358 2.214e-06 1.56455 2.25426e-06 1.56553 2.296e-06 1.56654 2.33932e-06 1.5676 2.38431e-06 1.56872 2.43106e-06 1.56993 2.47968e-06 1.57125 2.53029e-06 1.57269 2.583e-06 1.57427 2.63796e-06 1.57601 2.69531e-06 1.57793 2.7552e-06 1.58005 2.81782e-06 1.58238 2.88335e-06 1.58495 2.952e-06 1.58777 3.024e-06 1.59086 3.0996e-06 1.59424 3.17908e-06 1.59793 3.26274e-06 1.60195 3.35092e-06 1.60631 3.44401e-06 1.61103 3.54241e-06 1.61614 3.64659e-06 1.62165 3.7571e-06 1.62758 3.87451e-06 1.63395 3.99949e-06 1.64077 4.13281e-06 1.64807"/>
+    <matrix coldim="2" name="GROUPVEL0x55abfa3109a0" values="1.90745e-06 181.316 1.92235e-06 181.231 1.95263e-06 182.19 1.98387e-06 183.024 2.01614e-06 183.705 2.04947e-06 184.27 2.08391e-06 184.692 2.11954e-06 184.988 2.15641e-06 185.154 2.19458e-06 185.2 2.23413e-06 185.129 2.27513e-06 184.934 2.31766e-06 184.633 2.36182e-06 184.23 2.40769e-06 183.725 2.45537e-06 183.124 2.50499e-06 182.439 2.55665e-06 181.675 2.61048e-06 180.834 2.66663e-06 179.921 2.72526e-06 178.947 2.78651e-06 177.92 2.85059e-06 176.835 2.91768e-06 175.707 2.988e-06 174.543 3.0618e-06 173.343 3.13934e-06 172.117 3.22091e-06 170.862 3.30683e-06 169.599 3.39746e-06 168.313 3.49321e-06 167.024 3.5945e-06 165.725 3.70185e-06 164.43 3.8158e-06 163.137 3.937e-06 161.849 4.13281e-06 160.259"/>
+    <matrix coldim="2" name="ABSLENGTH0x55abfa310f00" values="1.90745e-06 2.54e+06 1.93725e-06 2.54e+06 1.968e-06 2.54e+06 1.99974e-06 2.54e+06 2.03253e-06 2.54e+06 2.0664e-06 2.54e+06 2.10143e-06 2.54e+06 2.13766e-06 2.54e+06 2.17516e-06 2.54e+06 2.214e-06 2.54e+06 2.25426e-06 2.54e+06 2.296e-06 2.54e+06 2.33932e-06 2.54e+06 2.38431e-06 2.54e+06 2.43106e-06 2.54e+06 2.47968e-06 2.54e+06 2.53029e-06 2.54e+06 2.583e-06 2.54e+06 2.63796e-06 2.54e+06 2.69531e-06 2.54e+06 2.7552e-06 2.54e+06 2.81782e-06 2.54e+06 2.88335e-06 2.54e+06 2.952e-06 2.54e+06 3.024e-06 2.54e+06 3.0996e-06 253.987 3.17908e-06 126.987 3.26274e-06 50.7873 3.35092e-06 25.3873 3.44401e-06 12.6873 3.54241e-06 8.45396 3.64659e-06 6.33729 3.7571e-06 5.63173 3.87451e-06 3.61586 3.99949e-06 1.95626 4.13281e-06 0.983324"/>
+    <matrix coldim="2" name="RINDEX0x55abfa3029a0" values="1.90745e-06 1 1.93725e-06 1 1.968e-06 1 1.99974e-06 1 2.03253e-06 1 2.0664e-06 1 2.10143e-06 1 2.13766e-06 1 2.17516e-06 1 2.214e-06 1 2.25426e-06 1 2.296e-06 1 2.33932e-06 1 2.38431e-06 1 2.43106e-06 1 2.47968e-06 1 2.53029e-06 1 2.583e-06 1 2.63796e-06 1 2.69531e-06 1 2.7552e-06 1 2.81782e-06 1 2.88335e-06 1 2.952e-06 1 3.024e-06 1 3.0996e-06 1 3.17908e-06 1 3.26274e-06 1 3.35092e-06 1 3.44401e-06 1 3.54241e-06 1 3.64659e-06 1 3.7571e-06 1 3.87451e-06 1 3.99949e-06 1 4.13281e-06 1"/>
+    <matrix coldim="2" name="GROUPVEL0x55abfa302ce0" values="1.90745e-06 299.792 1.92235e-06 299.792 1.95263e-06 299.792 1.98387e-06 299.792 2.01614e-06 299.792 2.04947e-06 299.792 2.08391e-06 299.792 2.11954e-06 299.792 2.15641e-06 299.792 2.19458e-06 299.792 2.23413e-06 299.792 2.27513e-06 299.792 2.31766e-06 299.792 2.36182e-06 299.792 2.40769e-06 299.792 2.45537e-06 299.792 2.50499e-06 299.792 2.55665e-06 299.792 2.61048e-06 299.792 2.66663e-06 299.792 2.72526e-06 299.792 2.78651e-06 299.792 2.85059e-06 299.792 2.91768e-06 299.792 2.988e-06 299.792 3.0618e-06 299.792 3.13934e-06 299.792 3.22091e-06 299.792 3.30683e-06 299.792 3.39746e-06 299.792 3.49321e-06 299.792 3.5945e-06 299.792 3.70185e-06 299.792 3.8158e-06 299.792 3.937e-06 299.792 4.13281e-06 299.792"/>
+    <matrix coldim="2" name="ABSLENGTH0x55abfa302e20" values="1.90745e-06 4000 1.93725e-06 4000 1.968e-06 4000 1.99974e-06 4000 2.03253e-06 4000 2.0664e-06 4000 2.10143e-06 4000 2.13766e-06 4000 2.17516e-06 4000 2.214e-06 4000 2.25426e-06 4000 2.296e-06 4000 2.33932e-06 4000 2.38431e-06 4000 2.43106e-06 4000 2.47968e-06 4000 2.53029e-06 4000 2.583e-06 4000 2.63796e-06 4000 2.69531e-06 4000 2.7552e-06 4000 2.81782e-06 4000 2.88335e-06 4000 2.952e-06 4000 3.024e-06 4000 3.0996e-06 4000 3.17908e-06 4000 3.26274e-06 4000 3.35092e-06 4000 3.44401e-06 4000 3.54241e-06 4000 3.64659e-06 4000 3.7571e-06 4000 3.87451e-06 4000 3.99949e-06 4000 4.13281e-06 4000"/>
+    <matrix coldim="2" name="REFLECTIVITY0x55abfa339e20" values="1.90745e-06 0.8755 1.93725e-06 0.882 1.968e-06 0.889 1.99974e-06 0.895 2.03253e-06 0.9 2.0664e-06 0.9025 2.10143e-06 0.91 2.13766e-06 0.913 2.17516e-06 0.9165 2.214e-06 0.92 2.25426e-06 0.923 2.296e-06 0.9245 2.33932e-06 0.9285 2.38431e-06 0.932 2.43106e-06 0.934 2.47968e-06 0.935 2.53029e-06 0.936 2.583e-06 0.9385 2.63796e-06 0.9395 2.69531e-06 0.94 2.7552e-06 0.9405 2.81782e-06 0.9405 2.88335e-06 0.9405 2.952e-06 0.9405 3.024e-06 0.94 3.0996e-06 0.9385 3.17908e-06 0.936 3.26274e-06 0.934 3.35092e-06 0.931 3.44401e-06 0.9295 3.54241e-06 0.928 3.64659e-06 0.928 3.7571e-06 0.921 3.87451e-06 0.92 3.99949e-06 0.927 4.13281e-06 0.9215"/>
+    <matrix coldim="2" name="EFFICIENCY0x55abfa33a160" values="1.90745e-06 0 1.93725e-06 0 1.968e-06 0 1.99974e-06 0 2.03253e-06 0 2.0664e-06 0 2.10143e-06 0 2.13766e-06 0 2.17516e-06 0 2.214e-06 0 2.25426e-06 0 2.296e-06 0 2.33932e-06 0 2.38431e-06 0 2.43106e-06 0 2.47968e-06 0 2.53029e-06 0 2.583e-06 0 2.63796e-06 0 2.69531e-06 0 2.7552e-06 0 2.81782e-06 0 2.88335e-06 0 2.952e-06 0 3.024e-06 0 3.0996e-06 0 3.17908e-06 0 3.26274e-06 0 3.35092e-06 0 3.44401e-06 0 3.54241e-06 0 3.64659e-06 0 3.7571e-06 0 3.87451e-06 0 3.99949e-06 0 4.13281e-06 0"/>
+    <matrix coldim="2" name="RINDEX0x55abfa30d8e0" values="1.02212e-06 1.75188 1.05518e-06 1.75253 1.09045e-06 1.75319 1.1261e-06 1.75382 1.16307e-06 1.75444 1.20023e-06 1.75505 1.23984e-06 1.75567 1.28043e-06 1.75629 1.32221e-06 1.75691 1.36561e-06 1.75754 1.41019e-06 1.75818 1.45641e-06 1.75883 1.50393e-06 1.75949 1.5531e-06 1.76017 1.60393e-06 1.76088 1.65643e-06 1.7616 1.71059e-06 1.76235 1.76665e-06 1.76314 1.82437e-06 1.76395 1.88397e-06 1.7648 1.94576e-06 1.7657 2.00946e-06 1.76664 2.07504e-06 1.76763 2.14283e-06 1.76867 2.21321e-06 1.76978 2.28542e-06 1.77095 2.36025e-06 1.77219 2.43727e-06 1.7735 2.51693e-06 1.7749 2.59924e-06 1.77639 2.6848e-06 1.77799 2.77245e-06 1.77968 2.86337e-06 1.7815 2.95693e-06 1.78343 3.05379e-06 1.78551 3.1532e-06 1.78772 3.25674e-06 1.79011 3.36273e-06 1.79265 3.47294e-06 1.7954 3.58646e-06 1.79835 3.70433e-06 1.80154 3.82549e-06 1.80497 3.94979e-06 1.80864 4.07976e-06 1.81266 4.21285e-06 1.81696 4.35032e-06 1.82163 4.4938e-06 1.82674 4.64012e-06 1.83223 4.79258e-06 1.83825 4.94946e-06 1.8448 5.11064e-06 1.85191 5.27816e-06 1.85975 5.44985e-06 1.86829 5.62797e-06 1.87774 5.81266e-06 1.88822 6.00407e-06 1.89988 6.1992e-06 1.9127"/>
+    <matrix coldim="2" name="GROUPVEL0x55abfa30dd60" values="1.02212e-06 169.155 1.03865e-06 169.124 1.07281e-06 169.094 1.10827e-06 169.079 1.14459e-06 169.057 1.18165e-06 168.979 1.22004e-06 168.949 1.26013e-06 168.876 1.30132e-06 168.811 1.34391e-06 168.733 1.3879e-06 168.633 1.4333e-06 168.55 1.48017e-06 168.45 1.52851e-06 168.331 1.57851e-06 168.18 1.63018e-06 168.083 1.68351e-06 167.924 1.73862e-06 167.74 1.79551e-06 167.6 1.85417e-06 167.405 1.91486e-06 167.189 1.97761e-06 166.983 2.04225e-06 166.74 2.10894e-06 166.505 2.17802e-06 166.221 2.24931e-06 165.924 2.32283e-06 165.626 2.39876e-06 165.299 2.4771e-06 164.927 2.55808e-06 164.545 2.64202e-06 164.127 2.72863e-06 163.692 2.81791e-06 163.197 2.91015e-06 162.71 3.00536e-06 162.137 3.10349e-06 161.561 3.20497e-06 160.929 3.30973e-06 160.258 3.41783e-06 159.523 3.5297e-06 158.739 3.64539e-06 157.902 3.76491e-06 156.973 3.88764e-06 156.014 4.01478e-06 154.946 4.1463e-06 153.837 4.28158e-06 152.587 4.42206e-06 151.283 4.56696e-06 149.834 4.71635e-06 148.305 4.87102e-06 146.606 5.03005e-06 144.812 5.1944e-06 142.833 5.364e-06 140.694 5.53891e-06 138.354 5.72031e-06 135.804 5.90837e-06 133.008 6.1992e-06 129.582"/>
+    <matrix coldim="2" name="ABSLENGTH0x55abfa30e2c0" values="1.02212e-06 350.051 1.05518e-06 306.241 1.09045e-06 272.261 1.1261e-06 279.226 1.16307e-06 286.437 1.20023e-06 293.904 1.23984e-06 301.904 1.28043e-06 310.351 1.32221e-06 319.283 1.36561e-06 328.902 1.41019e-06 339.286 1.45641e-06 350.525 1.50393e-06 362.724 1.5531e-06 376.214 1.60393e-06 391.412 1.65643e-06 408.131 1.71059e-06 427.135 1.76665e-06 449.164 1.82437e-06 474.24 1.88397e-06 503.751 1.94576e-06 424.371 2.00946e-06 450.512 2.07504e-06 481.764 2.14283e-06 519.629 2.21321e-06 264.962 2.28542e-06 277.522 2.36025e-06 292.202 2.43727e-06 309.495 2.51693e-06 330.389 2.59924e-06 355.962 2.6848e-06 279.174 2.77245e-06 299.856 2.86337e-06 325.849 2.95693e-06 358.828 3.05379e-06 286.622 3.1532e-06 315.914 3.25674e-06 301.32 3.36273e-06 289.86 3.47294e-06 328.204 3.58646e-06 320.766 3.70433e-06 377.382 3.82549e-06 377.423 3.94979e-06 320.861 4.07976e-06 395.85 4.21285e-06 527.699 4.35032e-06 826.489 4.4938e-06 2170.06 4.64012e-06 -2912.13 4.79258e-06 -816.677 4.94946e-06 -458.257 5.11064e-06 -310.5 5.27816e-06 -347.823 5.44985e-06 118.61 5.62797e-06 12.869 5.81266e-06 4.79845 6.00407e-06 2.32194 6.1992e-06 2.28269"/>
+    <matrix coldim="2" name="REFLECTIVITY0x55abfa337990" values="1.90745e-06 0 1.93725e-06 0 1.968e-06 0 1.99974e-06 0 2.03253e-06 0 2.0664e-06 0 2.10143e-06 0 2.13766e-06 0 2.17516e-06 0 2.214e-06 0 2.25426e-06 0 2.296e-06 0 2.33932e-06 0 2.38431e-06 0 2.43106e-06 0 2.47968e-06 0 2.53029e-06 0 2.583e-06 0 2.63796e-06 0 2.69531e-06 0 2.7552e-06 0 2.81782e-06 0 2.88335e-06 0 2.952e-06 0 3.024e-06 0 3.0996e-06 0 3.17908e-06 0 3.26274e-06 0 3.35092e-06 0 3.44401e-06 0 3.54241e-06 0 3.64659e-06 0 3.7571e-06 0 3.87451e-06 0 3.99949e-06 0 4.13281e-06 0"/>
+    <matrix coldim="2" name="EFFICIENCY0x55abfa337650" values="1.90745e-06 1 1.93725e-06 1 1.968e-06 1 1.99974e-06 1 2.03253e-06 1 2.0664e-06 1 2.10143e-06 1 2.13766e-06 1 2.17516e-06 1 2.214e-06 1 2.25426e-06 1 2.296e-06 1 2.33932e-06 1 2.38431e-06 1 2.43106e-06 1 2.47968e-06 1 2.53029e-06 1 2.583e-06 1 2.63796e-06 1 2.69531e-06 1 2.7552e-06 1 2.81782e-06 1 2.88335e-06 1 2.952e-06 1 3.024e-06 1 3.0996e-06 1 3.17908e-06 1 3.26274e-06 1 3.35092e-06 1 3.44401e-06 1 3.54241e-06 1 3.64659e-06 1 3.7571e-06 1 3.87451e-06 1 3.99949e-06 1 4.13281e-06 1"/>
+  </define>
+
+  <materials>
+    <isotope N="28" Z="14" name="Si280x55abfa2e27e0">
+      <atom unit="g/mole" value="27.9769"/>
+    </isotope>
+    <isotope N="29" Z="14" name="Si290x55abfa2edbb0">
+      <atom unit="g/mole" value="28.9765"/>
+    </isotope>
+    <isotope N="30" Z="14" name="Si300x55abfa2edc00">
+      <atom unit="g/mole" value="29.9738"/>
+    </isotope>
+    <element name="Silicon0x55abfa2eda70">
+      <fraction n="0.922296077703922" ref="Si280x55abfa2e27e0"/>
+      <fraction n="0.0468319531680468" ref="Si290x55abfa2edbb0"/>
+      <fraction n="0.0308719691280309" ref="Si300x55abfa2edc00"/>
+    </element>
+    <isotope N="16" Z="8" name="O160x55abfa2e28a0">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O170x55abfa2ed930">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O180x55abfa2ed980">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="Oxygen0x55abfa2dcad0">
+      <fraction n="0.99757" ref="O160x55abfa2e28a0"/>
+      <fraction n="0.00038" ref="O170x55abfa2ed930"/>
+      <fraction n="0.00205" ref="O180x55abfa2ed980"/>
+    </element>
+    <material name="quartz0x55abf9a89cb0" state="solid">
+      <property name="RINDEX" ref="RINDEX0x55abfa3001a0"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x55abfa3004e0"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH0x55abfa300740"/>
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="125.663004061076"/>
+      <D unit="g/cm3" value="2.2"/>
+      <fraction n="0.467465468463971" ref="Silicon0x55abfa2eda70"/>
+      <fraction n="0.532534531536029" ref="Oxygen0x55abfa2dcad0"/>
+    </material>
+    <isotope N="12" Z="6" name="C120x55abfa2e2530">
+      <atom unit="g/mole" value="12"/>
+    </isotope>
+    <isotope N="13" Z="6" name="C130x55abfa2e2580">
+      <atom unit="g/mole" value="13.0034"/>
+    </isotope>
+    <element name="Carbon0x55abfa2e23d0">
+      <fraction n="0.9893" ref="C120x55abfa2e2530"/>
+      <fraction n="0.0107" ref="C130x55abfa2e2580"/>
+    </element>
+    <isotope N="1" Z="1" name="H10x55abfa2e2050">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="H20x55abfa2e2340">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="Hydrogen0x55abfa2af810">
+      <fraction n="0.999885" ref="H10x55abfa2e2050"/>
+      <fraction n="0.000115" ref="H20x55abfa2e2340"/>
+    </element>
+    <material name="Epotek0x55abfa2fd540" state="solid">
+      <property name="RINDEX" ref="RINDEX0x55abfa310660"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x55abfa3109a0"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH0x55abfa310f00"/>
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="71.9016447230671"/>
+      <D unit="g/cm3" value="1.2"/>
+      <fraction n="0.493021346469622" ref="Carbon0x55abfa2e23d0"/>
+      <fraction n="0.0691023535851122" ref="Hydrogen0x55abfa2af810"/>
+      <fraction n="0.437876299945265" ref="Oxygen0x55abfa2dcad0"/>
+    </material>
+    <isotope N="1" Z="1" name="H10x55abfa2f6de0">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="H20x55abfa2f6e30">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="H0x55abfa2f6e80">
+      <fraction n="0.999885" ref="H10x55abfa2f6de0"/>
+      <fraction n="0.000115" ref="H20x55abfa2f6e30"/>
+    </element>
+    <material name="interGalactic0x55abfa2f6ca0" state="gas">
+      <property name="RINDEX" ref="RINDEX0x55abfa3029a0"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x55abfa302ce0"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH0x55abfa302e20"/>
+      <T unit="K" value="2.73"/>
+      <P unit="pascal" value="3e-18"/>
+      <MEE unit="eV" value="19.2"/>
+      <D unit="g/cm3" value="1e-25"/>
+      <fraction n="1" ref="H0x55abfa2f6e80"/>
+    </material>
+    <material Z="13" name="Aluminum0x55abfa2fbe10" state="solid">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="166"/>
+      <D unit="g/cm3" value="2.7"/>
+      <atom unit="g/mole" value="26.98"/>
+    </material>
+    <isotope N="27" Z="13" name="Al270x55abfa2edec0">
+      <atom unit="g/mole" value="26.9815"/>
+    </isotope>
+    <element name="Aluminum0x55abfa2edd40">
+      <fraction n="1" ref="Al270x55abfa2edec0"/>
+    </element>
+    <material name="Sapphire0x55abf9a3e2a0" state="solid">
+      <property name="RINDEX" ref="RINDEX0x55abfa30d8e0"/>
+      <property name="GROUPVEL" ref="GROUPVEL0x55abfa30dd60"/>
+      <property name="ABSLENGTH" ref="ABSLENGTH0x55abfa30e2c0"/>
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="126.988249418435"/>
+      <D unit="g/cm3" value="3.98"/>
+      <fraction n="0.529227147901138" ref="Aluminum0x55abfa2edd40"/>
+      <fraction n="0.470772852098862" ref="Oxygen0x55abfa2dcad0"/>
+    </material>
+  </materials>
+
+  <solids>
+    <box lunit="mm" name="gBar0x55abfa31ede0" x="17" y="35" z="1225"/>
+    <box lunit="mm" name="gGlue0x55abfa31f550" x="17" y="35" z="0.05"/>
+    <box lunit="mm" name="gEvBar0x55abfa31f070" x="17" y="35" z="840"/>
+    <box lunit="mm" name="gTracker0x55abfa31fa30" x="1" y="350" z="4515.2"/>
+    <box lunit="mm" name="gMirror0x55abfa323140" x="18" y="351.5" z="1"/>
+    <opticalsurface finish="0" model="0" name="MirrorOpSurface0x55abfa337df0" type="0" value="1">
+      <property name="REFLECTIVITY" ref="REFLECTIVITY0x55abfa339e20"/>
+      <property name="EFFICIENCY" ref="EFFICIENCY0x55abfa33a160"/>
+    </opticalsurface>
+    <box lunit="mm" name="Fbox0x55abfa323480" x="50" y="35.15" z="12"/>
+    <intersection name="bbox0x55abfa323700">
+      <first ref="Fbox0x55abfa323480"/>
+      <second ref="Fbox0x55abfa323480"/>
+      <position name="bbox0x55abfa323700_pos" unit="mm" x="0" y="0" z="4"/>
+    </intersection>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="ftube0x55abfa2af9e0" rmax="19.5225670699322" rmin="0" startphi="0" z="12"/>
+    <intersection name="sbox0x55abfa3239f0">
+      <first ref="ftube0x55abfa2af9e0"/>
+      <second ref="Fbox0x55abfa323480"/>
+      <position name="sbox0x55abfa3239f0_pos" unit="mm" x="0" y="0" z="-4"/>
+    </intersection>
+    <union name="ub0x55abfa323c60">
+      <first ref="bbox0x55abfa323700"/>
+      <second ref="sbox0x55abfa3239f0"/>
+    </union>
+    <sphere aunit="deg" deltaphi="360" deltatheta="180" lunit="mm" name="Sphere10x55abf962a2d0" rmax="62" rmin="0" startphi="0" starttheta="0"/>
+    <intersection name="Lens10x55abfa323f80">
+      <first ref="ub0x55abfa323c60"/>
+      <second ref="Sphere10x55abf962a2d0"/>
+      <position name="Lens10x55abfa323f80_pos" unit="mm" x="0" y="0" z="-62.8461500439918"/>
+    </intersection>
+    <subtraction name="temp0x55abfa324220">
+      <first ref="ub0x55abfa323c60"/>
+      <second ref="Sphere10x55abf962a2d0"/>
+      <position name="temp0x55abfa324220_pos" unit="mm" x="0" y="0" z="-62.8461500439918"/>
+    </subtraction>
+    <sphere aunit="deg" deltaphi="360" deltatheta="180" lunit="mm" name="Sphere20x55abf9aa4970" rmax="36" rmin="0" startphi="0" starttheta="0"/>
+    <intersection name="Lens20x55abfa324530">
+      <first ref="temp0x55abfa324220"/>
+      <second ref="Sphere20x55abf9aa4970"/>
+      <position name="Lens20x55abfa324530_pos" unit="mm" x="0" y="0" z="-32.2468076827952"/>
+    </intersection>
+    <subtraction name="Lens30x55abfa3247f0">
+      <first ref="bbox0x55abfa323700"/>
+      <second ref="Sphere20x55abf9aa4970"/>
+      <position name="Lens30x55abfa3247f0_pos" unit="mm" x="0" y="0" z="-32.2468076827952"/>
+    </subtraction>
+    <box lunit="mm" name="gPrizm0x55abf9a9ecd0" x="50" y="300" z="351.35"/>
+    <box lunit="mm" name="gPixel0x55abfa327300" x="3.3125" y="3.3125" z="0.02"/>
+    <opticalsurface finish="0" model="0" name="HamamatsuPMTOpSurface0x55abfa337cd0" type="1" value="1">
+      <property name="REFLECTIVITY" ref="REFLECTIVITY0x55abfa337990"/>
+      <property name="EFFICIENCY" ref="EFFICIENCY0x55abfa337650"/>
+    </opticalsurface>
+    <box lunit="mm" name="gMcp0x55abfa327090" x="59" y="59" z="1"/>
+    <box lunit="mm" name="gFd0x55abfa31ea60" x="237.460805572798" y="351.35" z="1"/>
+    <box lunit="mm" name="gDirc0x55abfa2f5370" x="257.460805572798" y="353.35" z="5515.2"/>
+    <box lunit="mm" name="gExpHall0x55abfa3137b0" x="3000" y="3000" z="7000"/>
+  </solids>
+
+  <structure>
+    <volume name="lBar0x55abfa31ef00">
+      <materialref ref="quartz0x55abf9a89cb0"/>
+      <solidref ref="gBar0x55abfa31ede0"/>
+    </volume>
+    <volume name="lGlue0x55abfa31f650">
+      <materialref ref="Epotek0x55abfa2fd540"/>
+      <solidref ref="gGlue0x55abfa31f550"/>
+    </volume>
+    <volume name="lEvBar0x55abfa31f170">
+      <materialref ref="quartz0x55abf9a89cb0"/>
+      <solidref ref="gEvBar0x55abfa31f070"/>
+    </volume>
+    <volume name="lTracker0x55abfa31fb30">
+      <materialref ref="interGalactic0x55abfa2f6ca0"/>
+      <solidref ref="gTracker0x55abfa31fa30"/>
+    </volume>
+    <volume name="lMirror0x55abfa323220">
+      <materialref ref="Aluminum0x55abfa2fbe10"/>
+      <solidref ref="gMirror0x55abfa323140"/>
+    </volume>
+    <volume name="lLens10x55abfa324ab0">
+      <materialref ref="quartz0x55abf9a89cb0"/>
+      <solidref ref="Lens10x55abfa323f80"/>
+    </volume>
+    <volume name="lLens20x55abfa324c20">
+      <materialref ref="Sapphire0x55abf9a3e2a0"/>
+      <solidref ref="Lens20x55abfa324530"/>
+    </volume>
+    <volume name="lLens30x55abfa324d90">
+      <materialref ref="quartz0x55abf9a89cb0"/>
+      <solidref ref="Lens30x55abfa3247f0"/>
+    </volume>
+    <volume name="lPrizm0x55abfa326d00">
+	    <materialref ref="quartz0x55abf9a89cb0"/>
+
+      <solidref ref="gPrizm0x55abf9a9ecd0"/>
+    </volume>
+    <volume name="lPixel0x55abfa327400">
+      <materialref ref="quartz0x55abf9a89cb0"/>
+      <solidref ref="gPixel0x55abfa327300"/>
+    </volume>
+    <volume name="lMcp0x55abfa327190">
+      <materialref ref="quartz0x55abf9a89cb0"/>
+      <solidref ref="gMcp0x55abfa327090"/>
+      <physvol name="wPixel0x55abfa327570">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327570_pos" unit="mm" x="-24.84375" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="1" name="wPixel0x55abfa327680">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327680_pos" unit="mm" x="-24.84375" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="2" name="wPixel0x55abfa327730">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327730_pos" unit="mm" x="-24.84375" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="3" name="wPixel0x55abfa327820">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327820_pos" unit="mm" x="-24.84375" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="4" name="wPixel0x55abfa3278b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3278b0_pos" unit="mm" x="-24.84375" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="wPixel0x55abfa3279e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3279e0_pos" unit="mm" x="-24.84375" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="6" name="wPixel0x55abfa327a40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327a40_pos" unit="mm" x="-24.84375" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="7" name="wPixel0x55abfa327aa0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327aa0_pos" unit="mm" x="-24.84375" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="8" name="wPixel0x55abfa327b30">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327b30_pos" unit="mm" x="-24.84375" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="9" name="wPixel0x55abfa327ce0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327ce0_pos" unit="mm" x="-24.84375" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="10" name="wPixel0x55abfa327d70">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327d70_pos" unit="mm" x="-24.84375" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="11" name="wPixel0x55abfa327e00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327e00_pos" unit="mm" x="-24.84375" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="12" name="wPixel0x55abfa327e90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327e90_pos" unit="mm" x="-24.84375" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="wPixel0x55abfa327f20">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327f20_pos" unit="mm" x="-24.84375" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="14" name="wPixel0x55abfa327fb0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa327fb0_pos" unit="mm" x="-24.84375" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="15" name="wPixel0x55abfa328040">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328040_pos" unit="mm" x="-24.84375" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="16" name="wPixel0x55abfa3280d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3280d0_pos" unit="mm" x="-21.53125" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="17" name="wPixel0x55abfa328160">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328160_pos" unit="mm" x="-21.53125" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="18" name="wPixel0x55abfa3281f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3281f0_pos" unit="mm" x="-21.53125" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="19" name="wPixel0x55abfa328280">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328280_pos" unit="mm" x="-21.53125" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="20" name="wPixel0x55abfa328310">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328310_pos" unit="mm" x="-21.53125" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="21" name="wPixel0x55abfa3283a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3283a0_pos" unit="mm" x="-21.53125" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="22" name="wPixel0x55abfa328430">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328430_pos" unit="mm" x="-21.53125" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="23" name="wPixel0x55abfa3284c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3284c0_pos" unit="mm" x="-21.53125" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="24" name="wPixel0x55abfa328550">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328550_pos" unit="mm" x="-21.53125" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="25" name="wPixel0x55abfa3285e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3285e0_pos" unit="mm" x="-21.53125" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="26" name="wPixel0x55abfa328670">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328670_pos" unit="mm" x="-21.53125" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="27" name="wPixel0x55abfa328700">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328700_pos" unit="mm" x="-21.53125" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="28" name="wPixel0x55abfa328790">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328790_pos" unit="mm" x="-21.53125" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="29" name="wPixel0x55abfa328820">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328820_pos" unit="mm" x="-21.53125" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="30" name="wPixel0x55abfa3288b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3288b0_pos" unit="mm" x="-21.53125" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="31" name="wPixel0x55abfa328940">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328940_pos" unit="mm" x="-21.53125" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="32" name="wPixel0x55abfa3289d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3289d0_pos" unit="mm" x="-18.21875" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="33" name="wPixel0x55abfa328e80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328e80_pos" unit="mm" x="-18.21875" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="34" name="wPixel0x55abfa328f10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328f10_pos" unit="mm" x="-18.21875" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="35" name="wPixel0x55abfa328fa0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa328fa0_pos" unit="mm" x="-18.21875" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="36" name="wPixel0x55abfa329030">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329030_pos" unit="mm" x="-18.21875" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="37" name="wPixel0x55abfa3290c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3290c0_pos" unit="mm" x="-18.21875" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="38" name="wPixel0x55abfa329150">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329150_pos" unit="mm" x="-18.21875" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="39" name="wPixel0x55abfa3291e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3291e0_pos" unit="mm" x="-18.21875" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="40" name="wPixel0x55abfa329270">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329270_pos" unit="mm" x="-18.21875" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="41" name="wPixel0x55abfa329300">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329300_pos" unit="mm" x="-18.21875" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="42" name="wPixel0x55abfa329390">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329390_pos" unit="mm" x="-18.21875" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="43" name="wPixel0x55abfa329420">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329420_pos" unit="mm" x="-18.21875" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="44" name="wPixel0x55abfa3294b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3294b0_pos" unit="mm" x="-18.21875" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="45" name="wPixel0x55abfa329540">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329540_pos" unit="mm" x="-18.21875" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="46" name="wPixel0x55abfa3295d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3295d0_pos" unit="mm" x="-18.21875" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="47" name="wPixel0x55abfa329660">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329660_pos" unit="mm" x="-18.21875" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="48" name="wPixel0x55abfa3296f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3296f0_pos" unit="mm" x="-14.90625" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="49" name="wPixel0x55abfa329780">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329780_pos" unit="mm" x="-14.90625" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="50" name="wPixel0x55abfa329810">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329810_pos" unit="mm" x="-14.90625" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="51" name="wPixel0x55abfa3298a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3298a0_pos" unit="mm" x="-14.90625" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="52" name="wPixel0x55abfa329930">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329930_pos" unit="mm" x="-14.90625" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="53" name="wPixel0x55abfa3299c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3299c0_pos" unit="mm" x="-14.90625" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="54" name="wPixel0x55abfa329a50">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329a50_pos" unit="mm" x="-14.90625" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="55" name="wPixel0x55abfa329ae0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329ae0_pos" unit="mm" x="-14.90625" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="56" name="wPixel0x55abfa329b70">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329b70_pos" unit="mm" x="-14.90625" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="57" name="wPixel0x55abfa329c00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329c00_pos" unit="mm" x="-14.90625" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="58" name="wPixel0x55abfa329c90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329c90_pos" unit="mm" x="-14.90625" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="59" name="wPixel0x55abfa329d20">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329d20_pos" unit="mm" x="-14.90625" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="60" name="wPixel0x55abfa329db0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329db0_pos" unit="mm" x="-14.90625" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="61" name="wPixel0x55abfa329e40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329e40_pos" unit="mm" x="-14.90625" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="62" name="wPixel0x55abfa329ed0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329ed0_pos" unit="mm" x="-14.90625" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="63" name="wPixel0x55abfa329f60">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329f60_pos" unit="mm" x="-14.90625" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="64" name="wPixel0x55abfa329ff0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa329ff0_pos" unit="mm" x="-11.59375" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="65" name="wPixel0x55abfa32a080">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a080_pos" unit="mm" x="-11.59375" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="66" name="wPixel0x55abfa32a110">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a110_pos" unit="mm" x="-11.59375" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="67" name="wPixel0x55abfa32a1a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a1a0_pos" unit="mm" x="-11.59375" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="68" name="wPixel0x55abfa32a230">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a230_pos" unit="mm" x="-11.59375" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="69" name="wPixel0x55abfa32a2c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a2c0_pos" unit="mm" x="-11.59375" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="70" name="wPixel0x55abfa32a350">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a350_pos" unit="mm" x="-11.59375" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="71" name="wPixel0x55abfa32a3e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a3e0_pos" unit="mm" x="-11.59375" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="72" name="wPixel0x55abfa32a470">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a470_pos" unit="mm" x="-11.59375" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="73" name="wPixel0x55abfa32a500">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a500_pos" unit="mm" x="-11.59375" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="74" name="wPixel0x55abfa32a590">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a590_pos" unit="mm" x="-11.59375" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="75" name="wPixel0x55abfa32a620">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a620_pos" unit="mm" x="-11.59375" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="76" name="wPixel0x55abfa32a6b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a6b0_pos" unit="mm" x="-11.59375" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="77" name="wPixel0x55abfa32a740">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a740_pos" unit="mm" x="-11.59375" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="78" name="wPixel0x55abfa32a7d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a7d0_pos" unit="mm" x="-11.59375" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="79" name="wPixel0x55abfa32a860">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a860_pos" unit="mm" x="-11.59375" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="80" name="wPixel0x55abfa32a8f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a8f0_pos" unit="mm" x="-8.28125" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="81" name="wPixel0x55abfa32a980">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32a980_pos" unit="mm" x="-8.28125" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="82" name="wPixel0x55abfa32aa10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32aa10_pos" unit="mm" x="-8.28125" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="83" name="wPixel0x55abfa32aaa0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32aaa0_pos" unit="mm" x="-8.28125" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="84" name="wPixel0x55abfa32ab30">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ab30_pos" unit="mm" x="-8.28125" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="85" name="wPixel0x55abfa325ad0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325ad0_pos" unit="mm" x="-8.28125" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="86" name="wPixel0x55abfa325b60">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325b60_pos" unit="mm" x="-8.28125" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="87" name="wPixel0x55abfa325bf0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325bf0_pos" unit="mm" x="-8.28125" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="88" name="wPixel0x55abfa325c80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325c80_pos" unit="mm" x="-8.28125" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="89" name="wPixel0x55abfa325d10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325d10_pos" unit="mm" x="-8.28125" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="90" name="wPixel0x55abfa325da0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325da0_pos" unit="mm" x="-8.28125" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="91" name="wPixel0x55abfa325e30">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325e30_pos" unit="mm" x="-8.28125" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="92" name="wPixel0x55abfa325ec0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325ec0_pos" unit="mm" x="-8.28125" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="93" name="wPixel0x55abfa325f50">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325f50_pos" unit="mm" x="-8.28125" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="94" name="wPixel0x55abfa325fe0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa325fe0_pos" unit="mm" x="-8.28125" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="95" name="wPixel0x55abfa326070">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa326070_pos" unit="mm" x="-8.28125" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="96" name="wPixel0x55abfa32b850">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32b850_pos" unit="mm" x="-4.96875" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="97" name="wPixel0x55abfa32b8e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32b8e0_pos" unit="mm" x="-4.96875" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="98" name="wPixel0x55abfa32b970">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32b970_pos" unit="mm" x="-4.96875" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="99" name="wPixel0x55abfa32ba00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ba00_pos" unit="mm" x="-4.96875" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="100" name="wPixel0x55abfa32ba90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ba90_pos" unit="mm" x="-4.96875" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="101" name="wPixel0x55abfa32bb20">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bb20_pos" unit="mm" x="-4.96875" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="102" name="wPixel0x55abfa32bbb0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bbb0_pos" unit="mm" x="-4.96875" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="103" name="wPixel0x55abfa32bc40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bc40_pos" unit="mm" x="-4.96875" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="104" name="wPixel0x55abfa32bcd0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bcd0_pos" unit="mm" x="-4.96875" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="105" name="wPixel0x55abfa32bd60">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bd60_pos" unit="mm" x="-4.96875" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="106" name="wPixel0x55abfa32bdf0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bdf0_pos" unit="mm" x="-4.96875" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="107" name="wPixel0x55abfa32be80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32be80_pos" unit="mm" x="-4.96875" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="108" name="wPixel0x55abfa32bf10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bf10_pos" unit="mm" x="-4.96875" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="109" name="wPixel0x55abfa32bfa0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32bfa0_pos" unit="mm" x="-4.96875" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="110" name="wPixel0x55abfa32c030">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c030_pos" unit="mm" x="-4.96875" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="111" name="wPixel0x55abfa32c0c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c0c0_pos" unit="mm" x="-4.96875" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="112" name="wPixel0x55abfa32c150">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c150_pos" unit="mm" x="-1.65625" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="113" name="wPixel0x55abfa32c1e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c1e0_pos" unit="mm" x="-1.65625" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="114" name="wPixel0x55abfa32c270">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c270_pos" unit="mm" x="-1.65625" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="115" name="wPixel0x55abfa32c300">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c300_pos" unit="mm" x="-1.65625" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="116" name="wPixel0x55abfa32c390">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c390_pos" unit="mm" x="-1.65625" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="117" name="wPixel0x55abfa32c420">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c420_pos" unit="mm" x="-1.65625" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="118" name="wPixel0x55abfa32c4b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c4b0_pos" unit="mm" x="-1.65625" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="119" name="wPixel0x55abfa32c540">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c540_pos" unit="mm" x="-1.65625" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="120" name="wPixel0x55abfa32c5d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c5d0_pos" unit="mm" x="-1.65625" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="121" name="wPixel0x55abfa32c660">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c660_pos" unit="mm" x="-1.65625" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="122" name="wPixel0x55abfa32c6f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c6f0_pos" unit="mm" x="-1.65625" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="123" name="wPixel0x55abfa32c780">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c780_pos" unit="mm" x="-1.65625" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="124" name="wPixel0x55abfa32c810">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c810_pos" unit="mm" x="-1.65625" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="125" name="wPixel0x55abfa32c8a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c8a0_pos" unit="mm" x="-1.65625" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="126" name="wPixel0x55abfa32c930">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c930_pos" unit="mm" x="-1.65625" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="127" name="wPixel0x55abfa32c9c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32c9c0_pos" unit="mm" x="-1.65625" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="128" name="wPixel0x55abfa32ca50">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ca50_pos" unit="mm" x="1.65625" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="129" name="wPixel0x55abfa32db00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32db00_pos" unit="mm" x="1.65625" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="130" name="wPixel0x55abfa32db90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32db90_pos" unit="mm" x="1.65625" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="131" name="wPixel0x55abfa32dc20">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32dc20_pos" unit="mm" x="1.65625" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="132" name="wPixel0x55abfa32dcb0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32dcb0_pos" unit="mm" x="1.65625" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="133" name="wPixel0x55abfa32dd40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32dd40_pos" unit="mm" x="1.65625" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="134" name="wPixel0x55abfa32ddd0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ddd0_pos" unit="mm" x="1.65625" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="135" name="wPixel0x55abfa32de60">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32de60_pos" unit="mm" x="1.65625" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="136" name="wPixel0x55abfa32def0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32def0_pos" unit="mm" x="1.65625" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="137" name="wPixel0x55abfa32df80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32df80_pos" unit="mm" x="1.65625" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="138" name="wPixel0x55abfa32e010">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e010_pos" unit="mm" x="1.65625" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="139" name="wPixel0x55abfa32e0a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e0a0_pos" unit="mm" x="1.65625" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="140" name="wPixel0x55abfa32e130">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e130_pos" unit="mm" x="1.65625" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="141" name="wPixel0x55abfa32e1c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e1c0_pos" unit="mm" x="1.65625" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="142" name="wPixel0x55abfa32e250">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e250_pos" unit="mm" x="1.65625" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="143" name="wPixel0x55abfa32e2e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e2e0_pos" unit="mm" x="1.65625" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="144" name="wPixel0x55abfa32e370">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e370_pos" unit="mm" x="4.96875" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="145" name="wPixel0x55abfa32e400">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e400_pos" unit="mm" x="4.96875" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="146" name="wPixel0x55abfa32e490">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e490_pos" unit="mm" x="4.96875" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="147" name="wPixel0x55abfa32e520">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e520_pos" unit="mm" x="4.96875" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="148" name="wPixel0x55abfa32e5b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e5b0_pos" unit="mm" x="4.96875" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="149" name="wPixel0x55abfa32e640">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e640_pos" unit="mm" x="4.96875" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="150" name="wPixel0x55abfa32e6d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e6d0_pos" unit="mm" x="4.96875" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="151" name="wPixel0x55abfa32e760">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e760_pos" unit="mm" x="4.96875" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="152" name="wPixel0x55abfa32e7f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e7f0_pos" unit="mm" x="4.96875" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="153" name="wPixel0x55abfa32e880">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e880_pos" unit="mm" x="4.96875" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="154" name="wPixel0x55abfa32e910">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e910_pos" unit="mm" x="4.96875" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="155" name="wPixel0x55abfa32e9a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32e9a0_pos" unit="mm" x="4.96875" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="156" name="wPixel0x55abfa32ea30">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ea30_pos" unit="mm" x="4.96875" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="157" name="wPixel0x55abfa32eac0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32eac0_pos" unit="mm" x="4.96875" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="158" name="wPixel0x55abfa32eb50">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32eb50_pos" unit="mm" x="4.96875" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="159" name="wPixel0x55abfa32ebe0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ebe0_pos" unit="mm" x="4.96875" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="160" name="wPixel0x55abfa32ec70">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ec70_pos" unit="mm" x="8.28125" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="161" name="wPixel0x55abfa32ed00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ed00_pos" unit="mm" x="8.28125" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="162" name="wPixel0x55abfa32ed90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ed90_pos" unit="mm" x="8.28125" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="163" name="wPixel0x55abfa32ee20">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ee20_pos" unit="mm" x="8.28125" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="164" name="wPixel0x55abfa32eeb0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32eeb0_pos" unit="mm" x="8.28125" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="165" name="wPixel0x55abfa32ef40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ef40_pos" unit="mm" x="8.28125" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="166" name="wPixel0x55abfa32efd0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32efd0_pos" unit="mm" x="8.28125" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="167" name="wPixel0x55abfa32f060">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f060_pos" unit="mm" x="8.28125" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="168" name="wPixel0x55abfa32f0f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f0f0_pos" unit="mm" x="8.28125" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="169" name="wPixel0x55abfa32f180">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f180_pos" unit="mm" x="8.28125" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="170" name="wPixel0x55abfa32f210">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f210_pos" unit="mm" x="8.28125" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="171" name="wPixel0x55abfa32f2a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f2a0_pos" unit="mm" x="8.28125" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="172" name="wPixel0x55abfa32f330">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f330_pos" unit="mm" x="8.28125" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="173" name="wPixel0x55abfa32f3c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f3c0_pos" unit="mm" x="8.28125" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="174" name="wPixel0x55abfa32f450">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f450_pos" unit="mm" x="8.28125" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="175" name="wPixel0x55abfa32f4e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f4e0_pos" unit="mm" x="8.28125" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="176" name="wPixel0x55abfa32f570">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f570_pos" unit="mm" x="11.59375" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="177" name="wPixel0x55abfa32f600">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f600_pos" unit="mm" x="11.59375" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="178" name="wPixel0x55abfa32f690">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f690_pos" unit="mm" x="11.59375" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="179" name="wPixel0x55abfa32f720">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f720_pos" unit="mm" x="11.59375" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="180" name="wPixel0x55abfa32f7b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f7b0_pos" unit="mm" x="11.59375" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="181" name="wPixel0x55abfa32f840">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f840_pos" unit="mm" x="11.59375" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="182" name="wPixel0x55abfa32f8d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f8d0_pos" unit="mm" x="11.59375" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="183" name="wPixel0x55abfa32f960">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f960_pos" unit="mm" x="11.59375" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="184" name="wPixel0x55abfa32f9f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32f9f0_pos" unit="mm" x="11.59375" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="185" name="wPixel0x55abfa32fa80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fa80_pos" unit="mm" x="11.59375" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="186" name="wPixel0x55abfa32fb10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fb10_pos" unit="mm" x="11.59375" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="187" name="wPixel0x55abfa32fba0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fba0_pos" unit="mm" x="11.59375" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="188" name="wPixel0x55abfa32fc30">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fc30_pos" unit="mm" x="11.59375" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="189" name="wPixel0x55abfa32fcc0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fcc0_pos" unit="mm" x="11.59375" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="190" name="wPixel0x55abfa32fd50">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fd50_pos" unit="mm" x="11.59375" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="191" name="wPixel0x55abfa32fde0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fde0_pos" unit="mm" x="11.59375" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="192" name="wPixel0x55abfa32fe70">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32fe70_pos" unit="mm" x="14.90625" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="193" name="wPixel0x55abfa32ff00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ff00_pos" unit="mm" x="14.90625" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="194" name="wPixel0x55abfa32ff90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa32ff90_pos" unit="mm" x="14.90625" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="195" name="wPixel0x55abfa330020">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330020_pos" unit="mm" x="14.90625" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="196" name="wPixel0x55abfa3300b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3300b0_pos" unit="mm" x="14.90625" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="197" name="wPixel0x55abfa330140">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330140_pos" unit="mm" x="14.90625" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="198" name="wPixel0x55abfa3301d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3301d0_pos" unit="mm" x="14.90625" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="199" name="wPixel0x55abfa330260">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330260_pos" unit="mm" x="14.90625" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="200" name="wPixel0x55abfa3302f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3302f0_pos" unit="mm" x="14.90625" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="201" name="wPixel0x55abfa330380">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330380_pos" unit="mm" x="14.90625" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="202" name="wPixel0x55abfa330410">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330410_pos" unit="mm" x="14.90625" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="203" name="wPixel0x55abfa3304a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3304a0_pos" unit="mm" x="14.90625" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="204" name="wPixel0x55abfa330530">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330530_pos" unit="mm" x="14.90625" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="205" name="wPixel0x55abfa3305c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3305c0_pos" unit="mm" x="14.90625" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="206" name="wPixel0x55abfa330650">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330650_pos" unit="mm" x="14.90625" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="207" name="wPixel0x55abfa3306e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3306e0_pos" unit="mm" x="14.90625" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="208" name="wPixel0x55abfa330770">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330770_pos" unit="mm" x="18.21875" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="209" name="wPixel0x55abfa330800">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330800_pos" unit="mm" x="18.21875" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="210" name="wPixel0x55abfa330890">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330890_pos" unit="mm" x="18.21875" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="211" name="wPixel0x55abfa330920">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330920_pos" unit="mm" x="18.21875" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="212" name="wPixel0x55abfa3309b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3309b0_pos" unit="mm" x="18.21875" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="213" name="wPixel0x55abfa330a40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330a40_pos" unit="mm" x="18.21875" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="214" name="wPixel0x55abfa330ad0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330ad0_pos" unit="mm" x="18.21875" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="215" name="wPixel0x55abfa330b60">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330b60_pos" unit="mm" x="18.21875" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="216" name="wPixel0x55abfa330bf0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330bf0_pos" unit="mm" x="18.21875" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="217" name="wPixel0x55abfa330c80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330c80_pos" unit="mm" x="18.21875" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="218" name="wPixel0x55abfa330d10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330d10_pos" unit="mm" x="18.21875" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="219" name="wPixel0x55abfa330da0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330da0_pos" unit="mm" x="18.21875" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="220" name="wPixel0x55abfa330e30">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330e30_pos" unit="mm" x="18.21875" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="221" name="wPixel0x55abfa330ec0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330ec0_pos" unit="mm" x="18.21875" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="222" name="wPixel0x55abfa330f50">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330f50_pos" unit="mm" x="18.21875" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="223" name="wPixel0x55abfa330fe0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa330fe0_pos" unit="mm" x="18.21875" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="224" name="wPixel0x55abfa331070">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331070_pos" unit="mm" x="21.53125" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="225" name="wPixel0x55abfa331100">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331100_pos" unit="mm" x="21.53125" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="226" name="wPixel0x55abfa331190">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331190_pos" unit="mm" x="21.53125" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="227" name="wPixel0x55abfa331220">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331220_pos" unit="mm" x="21.53125" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="228" name="wPixel0x55abfa3312b0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3312b0_pos" unit="mm" x="21.53125" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="229" name="wPixel0x55abfa331340">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331340_pos" unit="mm" x="21.53125" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="230" name="wPixel0x55abfa3313d0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3313d0_pos" unit="mm" x="21.53125" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="231" name="wPixel0x55abfa331460">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331460_pos" unit="mm" x="21.53125" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="232" name="wPixel0x55abfa3314f0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3314f0_pos" unit="mm" x="21.53125" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="233" name="wPixel0x55abfa331580">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331580_pos" unit="mm" x="21.53125" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="234" name="wPixel0x55abfa331610">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331610_pos" unit="mm" x="21.53125" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="235" name="wPixel0x55abfa3316a0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3316a0_pos" unit="mm" x="21.53125" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="236" name="wPixel0x55abfa331730">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331730_pos" unit="mm" x="21.53125" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="237" name="wPixel0x55abfa3317c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3317c0_pos" unit="mm" x="21.53125" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="238" name="wPixel0x55abfa331850">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331850_pos" unit="mm" x="21.53125" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="239" name="wPixel0x55abfa3318e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3318e0_pos" unit="mm" x="21.53125" y="24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="240" name="wPixel0x55abfa331970">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331970_pos" unit="mm" x="24.84375" y="-24.84375" z="0"/>
+      </physvol>
+      <physvol copynumber="241" name="wPixel0x55abfa331a00">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331a00_pos" unit="mm" x="24.84375" y="-21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="242" name="wPixel0x55abfa331a90">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331a90_pos" unit="mm" x="24.84375" y="-18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="243" name="wPixel0x55abfa331b20">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331b20_pos" unit="mm" x="24.84375" y="-14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="244" name="wPixel0x55abfa331bb0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331bb0_pos" unit="mm" x="24.84375" y="-11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="245" name="wPixel0x55abfa331c40">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331c40_pos" unit="mm" x="24.84375" y="-8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="246" name="wPixel0x55abfa331cd0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331cd0_pos" unit="mm" x="24.84375" y="-4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="247" name="wPixel0x55abfa331d60">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331d60_pos" unit="mm" x="24.84375" y="-1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="248" name="wPixel0x55abfa331df0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331df0_pos" unit="mm" x="24.84375" y="1.65625" z="0"/>
+      </physvol>
+      <physvol copynumber="249" name="wPixel0x55abfa331e80">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331e80_pos" unit="mm" x="24.84375" y="4.96875" z="0"/>
+      </physvol>
+      <physvol copynumber="250" name="wPixel0x55abfa331f10">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331f10_pos" unit="mm" x="24.84375" y="8.28125" z="0"/>
+      </physvol>
+      <physvol copynumber="251" name="wPixel0x55abfa331fa0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa331fa0_pos" unit="mm" x="24.84375" y="11.59375" z="0"/>
+      </physvol>
+      <physvol copynumber="252" name="wPixel0x55abfa332030">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa332030_pos" unit="mm" x="24.84375" y="14.90625" z="0"/>
+      </physvol>
+      <physvol copynumber="253" name="wPixel0x55abfa3320c0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3320c0_pos" unit="mm" x="24.84375" y="18.21875" z="0"/>
+      </physvol>
+      <physvol copynumber="254" name="wPixel0x55abfa332150">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa332150_pos" unit="mm" x="24.84375" y="21.53125" z="0"/>
+      </physvol>
+      <physvol copynumber="255" name="wPixel0x55abfa3321e0">
+        <volumeref ref="lPixel0x55abfa327400"/>
+        <position name="wPixel0x55abfa3321e0_pos" unit="mm" x="24.84375" y="24.84375" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="lFd0x55abfa31eb60">
+      <materialref ref="interGalactic0x55abfa2f6ca0"/>
+      <solidref ref="gFd0x55abfa31ea60"/>
+      <physvol name="wMcp0x55abfa332270">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332270_pos" unit="mm" x="-88.9382416718395" y="-146.532142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="1" name="wMcp0x55abfa332360">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332360_pos" unit="mm" x="-88.9382416718395" y="-87.8892857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="2" name="wMcp0x55abfa3323f0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa3323f0_pos" unit="mm" x="-88.9382416718395" y="-29.2464285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="3" name="wMcp0x55abfa3324e0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa3324e0_pos" unit="mm" x="-88.9382416718395" y="29.3964285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="4" name="wMcp0x55abfa332570">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332570_pos" unit="mm" x="-88.9382416718395" y="88.0392857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="5" name="wMcp0x55abfa332600">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332600_pos" unit="mm" x="-88.9382416718395" y="146.682142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="6" name="wMcp0x55abfa332660">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332660_pos" unit="mm" x="-29.6460805572798" y="-146.532142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="7" name="wMcp0x55abfa3326c0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa3326c0_pos" unit="mm" x="-29.6460805572798" y="-87.8892857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="8" name="wMcp0x55abfa332750">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332750_pos" unit="mm" x="-29.6460805572798" y="-29.2464285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="9" name="wMcp0x55abfa3327e0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa3327e0_pos" unit="mm" x="-29.6460805572798" y="29.3964285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="10" name="wMcp0x55abfa332870">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332870_pos" unit="mm" x="-29.6460805572798" y="88.0392857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="11" name="wMcp0x55abfa332900">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332900_pos" unit="mm" x="-29.6460805572798" y="146.682142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="12" name="wMcp0x55abfa332990">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332990_pos" unit="mm" x="29.6460805572798" y="-146.532142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="13" name="wMcp0x55abfa332a20">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332a20_pos" unit="mm" x="29.6460805572798" y="-87.8892857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="14" name="wMcp0x55abfa332ab0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332ab0_pos" unit="mm" x="29.6460805572798" y="-29.2464285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="15" name="wMcp0x55abfa332b40">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332b40_pos" unit="mm" x="29.6460805572798" y="29.3964285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="16" name="wMcp0x55abfa332bd0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332bd0_pos" unit="mm" x="29.6460805572798" y="88.0392857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="17" name="wMcp0x55abfa332c60">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332c60_pos" unit="mm" x="29.6460805572798" y="146.682142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="18" name="wMcp0x55abfa332cf0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332cf0_pos" unit="mm" x="88.9382416718395" y="-146.532142857143" z="0"/>
+      </physvol>
+      <physvol copynumber="19" name="wMcp0x55abfa332d80">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332d80_pos" unit="mm" x="88.9382416718395" y="-87.8892857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="20" name="wMcp0x55abfa332e10">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332e10_pos" unit="mm" x="88.9382416718395" y="-29.2464285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="21" name="wMcp0x55abfa332ea0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332ea0_pos" unit="mm" x="88.9382416718395" y="29.3964285714286" z="0"/>
+      </physvol>
+      <physvol copynumber="22" name="wMcp0x55abfa332f30">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332f30_pos" unit="mm" x="88.9382416718395" y="88.0392857142857" z="0"/>
+      </physvol>
+      <physvol copynumber="23" name="wMcp0x55abfa332fc0">
+        <volumeref ref="lMcp0x55abfa327190"/>
+        <position name="wMcp0x55abfa332fc0_pos" unit="mm" x="88.9382416718395" y="146.682142857143" z="0"/>
+      </physvol>
+    </volume>
+    <volume name="lDirc0x55abfa2fc720">
+      <materialref ref="interGalactic0x55abfa2f6ca0"/>
+      <solidref ref="gDirc0x55abfa2f5370"/>
+      <physvol name="wBar0x55abfa31fca0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa31fca0_pos" unit="mm" x="-100" y="-158.25" z="-1645.1"/>
+      </physvol>
+      <physvol name="wGlue0x55abfa31fdb0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa31fdb0_pos" unit="mm" x="-100" y="-158.25" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="1" name="wBar0x55abfa31fee0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa31fee0_pos" unit="mm" x="-100" y="-158.25" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="1" name="wGlue0x55abfa31ffa0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa31ffa0_pos" unit="mm" x="-100" y="-158.25" z="192.475"/>
+      </physvol>
+      <physvol copynumber="2" name="wBar0x55abfa320030">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320030_pos" unit="mm" x="-100" y="-158.25" z="805"/>
+      </physvol>
+      <physvol copynumber="2" name="wGlue0x55abfa3200f0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3200f0_pos" unit="mm" x="-100" y="-158.25" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="3" name="wBar0x55abfa320180">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa320180_pos" unit="mm" x="-100" y="-158.25" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="3" name="wGlue0x55abfa320210">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320210_pos" unit="mm" x="-100" y="-158.25" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="4" name="wBar0x55abfa3202a0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa3202a0_pos" unit="mm" x="-100" y="-123.1" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="4" name="wGlue0x55abfa320410">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320410_pos" unit="mm" x="-100" y="-123.1" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="5" name="wBar0x55abfa320470">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320470_pos" unit="mm" x="-100" y="-123.1" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="5" name="wGlue0x55abfa3204d0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3204d0_pos" unit="mm" x="-100" y="-123.1" z="192.475"/>
+      </physvol>
+      <physvol copynumber="6" name="wBar0x55abfa320560">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320560_pos" unit="mm" x="-100" y="-123.1" z="805"/>
+      </physvol>
+      <physvol copynumber="6" name="wGlue0x55abfa3205f0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3205f0_pos" unit="mm" x="-100" y="-123.1" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="7" name="wBar0x55abfa320680">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa320680_pos" unit="mm" x="-100" y="-123.1" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="7" name="wGlue0x55abfa320710">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320710_pos" unit="mm" x="-100" y="-123.1" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="8" name="wBar0x55abfa3207a0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa3207a0_pos" unit="mm" x="-100" y="-87.95" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="8" name="wGlue0x55abfa3208c0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3208c0_pos" unit="mm" x="-100" y="-87.95" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="9" name="wBar0x55abfa320950">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320950_pos" unit="mm" x="-100" y="-87.95" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="9" name="wGlue0x55abfa3209e0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3209e0_pos" unit="mm" x="-100" y="-87.95" z="192.475"/>
+      </physvol>
+      <physvol copynumber="10" name="wBar0x55abfa320a70">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320a70_pos" unit="mm" x="-100" y="-87.95" z="805"/>
+      </physvol>
+      <physvol copynumber="10" name="wGlue0x55abfa320b00">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320b00_pos" unit="mm" x="-100" y="-87.95" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="11" name="wBar0x55abfa320b90">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa320b90_pos" unit="mm" x="-100" y="-87.95" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="11" name="wGlue0x55abfa320c20">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320c20_pos" unit="mm" x="-100" y="-87.95" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="12" name="wBar0x55abfa320cb0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320cb0_pos" unit="mm" x="-100" y="-52.8" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="12" name="wGlue0x55abfa320d40">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320d40_pos" unit="mm" x="-100" y="-52.8" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="13" name="wBar0x55abfa320dd0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320dd0_pos" unit="mm" x="-100" y="-52.8" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="13" name="wGlue0x55abfa320e60">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320e60_pos" unit="mm" x="-100" y="-52.8" z="192.475"/>
+      </physvol>
+      <physvol copynumber="14" name="wBar0x55abfa320ef0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa320ef0_pos" unit="mm" x="-100" y="-52.8" z="805"/>
+      </physvol>
+      <physvol copynumber="14" name="wGlue0x55abfa320f80">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa320f80_pos" unit="mm" x="-100" y="-52.8" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="15" name="wBar0x55abfa321010">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa321010_pos" unit="mm" x="-100" y="-52.8" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="15" name="wGlue0x55abfa3210a0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3210a0_pos" unit="mm" x="-100" y="-52.8" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="16" name="wBar0x55abfa321130">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321130_pos" unit="mm" x="-100" y="-17.65" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="16" name="wGlue0x55abfa3213d0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3213d0_pos" unit="mm" x="-100" y="-17.65" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="17" name="wBar0x55abfa321460">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321460_pos" unit="mm" x="-100" y="-17.65" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="17" name="wGlue0x55abfa3214f0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3214f0_pos" unit="mm" x="-100" y="-17.65" z="192.475"/>
+      </physvol>
+      <physvol copynumber="18" name="wBar0x55abfa321580">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321580_pos" unit="mm" x="-100" y="-17.65" z="805"/>
+      </physvol>
+      <physvol copynumber="18" name="wGlue0x55abfa321610">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321610_pos" unit="mm" x="-100" y="-17.65" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="19" name="wBar0x55abfa3216a0">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa3216a0_pos" unit="mm" x="-100" y="-17.65" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="19" name="wGlue0x55abfa321730">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321730_pos" unit="mm" x="-100" y="-17.65" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="20" name="wBar0x55abfa3217c0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa3217c0_pos" unit="mm" x="-100" y="17.5" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="20" name="wGlue0x55abfa321850">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321850_pos" unit="mm" x="-100" y="17.5" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="21" name="wBar0x55abfa3218e0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa3218e0_pos" unit="mm" x="-100" y="17.5" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="21" name="wGlue0x55abfa321970">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321970_pos" unit="mm" x="-100" y="17.5" z="192.475"/>
+      </physvol>
+      <physvol copynumber="22" name="wBar0x55abfa321a00">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321a00_pos" unit="mm" x="-100" y="17.5" z="805"/>
+      </physvol>
+      <physvol copynumber="22" name="wGlue0x55abfa321a90">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321a90_pos" unit="mm" x="-100" y="17.5" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="23" name="wBar0x55abfa321b20">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa321b20_pos" unit="mm" x="-100" y="17.5" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="23" name="wGlue0x55abfa321bb0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321bb0_pos" unit="mm" x="-100" y="17.5" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="24" name="wBar0x55abfa321c40">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321c40_pos" unit="mm" x="-100" y="52.65" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="24" name="wGlue0x55abfa321cd0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321cd0_pos" unit="mm" x="-100" y="52.65" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="25" name="wBar0x55abfa321d60">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321d60_pos" unit="mm" x="-100" y="52.65" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="25" name="wGlue0x55abfa321df0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321df0_pos" unit="mm" x="-100" y="52.65" z="192.475"/>
+      </physvol>
+      <physvol copynumber="26" name="wBar0x55abfa321e80">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa321e80_pos" unit="mm" x="-100" y="52.65" z="805"/>
+      </physvol>
+      <physvol copynumber="26" name="wGlue0x55abfa321f10">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa321f10_pos" unit="mm" x="-100" y="52.65" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="27" name="wBar0x55abfa321fa0">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa321fa0_pos" unit="mm" x="-100" y="52.65" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="27" name="wGlue0x55abfa322030">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322030_pos" unit="mm" x="-100" y="52.65" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="28" name="wBar0x55abfa3220c0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa3220c0_pos" unit="mm" x="-100" y="87.8" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="28" name="wGlue0x55abfa322150">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322150_pos" unit="mm" x="-100" y="87.8" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="29" name="wBar0x55abfa3221e0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa3221e0_pos" unit="mm" x="-100" y="87.8" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="29" name="wGlue0x55abfa322270">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322270_pos" unit="mm" x="-100" y="87.8" z="192.475"/>
+      </physvol>
+      <physvol copynumber="30" name="wBar0x55abfa322300">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322300_pos" unit="mm" x="-100" y="87.8" z="805"/>
+      </physvol>
+      <physvol copynumber="30" name="wGlue0x55abfa322390">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322390_pos" unit="mm" x="-100" y="87.8" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="31" name="wBar0x55abfa322420">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa322420_pos" unit="mm" x="-100" y="87.8" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="31" name="wGlue0x55abfa3224b0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3224b0_pos" unit="mm" x="-100" y="87.8" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="32" name="wBar0x55abfa322540">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322540_pos" unit="mm" x="-100" y="122.95" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="32" name="wGlue0x55abfa3227e0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa3227e0_pos" unit="mm" x="-100" y="122.95" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="33" name="wBar0x55abfa322870">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322870_pos" unit="mm" x="-100" y="122.95" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="33" name="wGlue0x55abfa322900">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322900_pos" unit="mm" x="-100" y="122.95" z="192.475"/>
+      </physvol>
+      <physvol copynumber="34" name="wBar0x55abfa322990">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322990_pos" unit="mm" x="-100" y="122.95" z="805"/>
+      </physvol>
+      <physvol copynumber="34" name="wGlue0x55abfa322a20">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322a20_pos" unit="mm" x="-100" y="122.95" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="35" name="wBar0x55abfa322ab0">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa322ab0_pos" unit="mm" x="-100" y="122.95" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="35" name="wGlue0x55abfa322b40">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322b40_pos" unit="mm" x="-100" y="122.95" z="2257.575"/>
+      </physvol>
+      <physvol copynumber="36" name="wBar0x55abfa322bd0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322bd0_pos" unit="mm" x="-100" y="158.1" z="-1645.1"/>
+      </physvol>
+      <physvol copynumber="36" name="wGlue0x55abfa322c60">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322c60_pos" unit="mm" x="-100" y="158.1" z="-1032.575"/>
+      </physvol>
+      <physvol copynumber="37" name="wBar0x55abfa322cf0">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322cf0_pos" unit="mm" x="-100" y="158.1" z="-420.05"/>
+      </physvol>
+      <physvol copynumber="37" name="wGlue0x55abfa322d80">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322d80_pos" unit="mm" x="-100" y="158.1" z="192.475"/>
+      </physvol>
+      <physvol copynumber="38" name="wBar0x55abfa322e10">
+        <volumeref ref="lBar0x55abfa31ef00"/>
+        <position name="wBar0x55abfa322e10_pos" unit="mm" x="-100" y="158.1" z="805"/>
+      </physvol>
+      <physvol copynumber="38" name="wGlue0x55abfa322ea0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322ea0_pos" unit="mm" x="-100" y="158.1" z="1417.525"/>
+      </physvol>
+      <physvol copynumber="39" name="wBar0x55abfa322f30">
+        <volumeref ref="lEvBar0x55abfa31f170"/>
+        <position name="wBar0x55abfa322f30_pos" unit="mm" x="-100" y="158.1" z="1837.55"/>
+      </physvol>
+      <physvol copynumber="39" name="wGlue0x55abfa322fc0">
+        <volumeref ref="lGlue0x55abfa31f650"/>
+        <position name="wGlue0x55abfa322fc0_pos" unit="mm" x="-100" y="158.1" z="2257.575"/>
+      </physvol>
+      <physvol name="wTracker0x55abfa323050">
+        <volumeref ref="lTracker0x55abfa31fb30"/>
+        <position name="wTracker0x55abfa323050_pos" unit="mm" x="-126.5" y="0" z="0"/>
+      </physvol>
+      <physvol name="wMirror0x55abfa323370">
+        <volumeref ref="lMirror0x55abfa323220"/>
+        <position name="wMirror0x55abfa323370_pos" unit="mm" x="-100" y="0" z="-2258.1"/>
+      </physvol>
+      <physvol name="wLens10x55abfa324f00">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa324f00_pos" unit="mm" x="-100" y="-158.175" z="2263.6"/>
+      </physvol>
+      <physvol name="wLens20x55abfa324fe0">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa324fe0_pos" unit="mm" x="-100" y="-158.175" z="2263.6"/>
+      </physvol>
+      <physvol name="wLens30x55abfa3250f0">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa3250f0_pos" unit="mm" x="-100" y="-158.175" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="1" name="wLens10x55abfa325200">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa325200_pos" unit="mm" x="-100" y="-123.025" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="1" name="wLens20x55abfa325290">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa325290_pos" unit="mm" x="-100" y="-123.025" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="1" name="wLens30x55abfa325320">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa325320_pos" unit="mm" x="-100" y="-123.025" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="2" name="wLens10x55abfa3253b0">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa3253b0_pos" unit="mm" x="-100" y="-87.875" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="2" name="wLens20x55abfa325470">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa325470_pos" unit="mm" x="-100" y="-87.875" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="2" name="wLens30x55abfa325530">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa325530_pos" unit="mm" x="-100" y="-87.875" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="3" name="wLens10x55abfa3255f0">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa3255f0_pos" unit="mm" x="-100" y="-52.725" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="3" name="wLens20x55abfa325680">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa325680_pos" unit="mm" x="-100" y="-52.725" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="3" name="wLens30x55abfa325710">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa325710_pos" unit="mm" x="-100" y="-52.725" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="4" name="wLens10x55abfa3257a0">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa3257a0_pos" unit="mm" x="-100" y="-17.575" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="4" name="wLens20x55abfa325880">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa325880_pos" unit="mm" x="-100" y="-17.575" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="4" name="wLens30x55abfa325930">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa325930_pos" unit="mm" x="-100" y="-17.575" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="5" name="wLens10x55abfa3259e0">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa3259e0_pos" unit="mm" x="-100" y="17.575" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="5" name="wLens20x55abfa325a40">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa325a40_pos" unit="mm" x="-100" y="17.575" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="5" name="wLens30x55abfa326120">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa326120_pos" unit="mm" x="-100" y="17.575" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="6" name="wLens10x55abfa3261b0">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa3261b0_pos" unit="mm" x="-100" y="52.725" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="6" name="wLens20x55abfa326240">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa326240_pos" unit="mm" x="-100" y="52.725" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="6" name="wLens30x55abfa3262d0">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa3262d0_pos" unit="mm" x="-100" y="52.725" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="7" name="wLens10x55abfa326360">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa326360_pos" unit="mm" x="-100" y="87.875" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="7" name="wLens20x55abfa3263f0">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa3263f0_pos" unit="mm" x="-100" y="87.875" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="7" name="wLens30x55abfa326480">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa326480_pos" unit="mm" x="-100" y="87.875" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="8" name="wLens10x55abfa326510">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa326510_pos" unit="mm" x="-100" y="123.025" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="8" name="wLens20x55abfa3265a0">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa3265a0_pos" unit="mm" x="-100" y="123.025" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="8" name="wLens30x55abfa326630">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa326630_pos" unit="mm" x="-100" y="123.025" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="9" name="wLens10x55abfa326750">
+        <volumeref ref="lLens10x55abfa324ab0"/>
+        <position name="wLens10x55abfa326750_pos" unit="mm" x="-100" y="158.175" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="9" name="wLens20x55abfa3267e0">
+        <volumeref ref="lLens20x55abfa324c20"/>
+        <position name="wLens20x55abfa3267e0_pos" unit="mm" x="-100" y="158.175" z="2263.6"/>
+      </physvol>
+      <physvol copynumber="9" name="wLens30x55abfa326870">
+        <volumeref ref="lLens30x55abfa324d90"/>
+        <position name="wLens30x55abfa326870_pos" unit="mm" x="-100" y="158.175" z="2263.6"/>
+      </physvol>
+      <physvol name="wPrizm0x55abfa326e70">
+        <volumeref ref="lPrizm0x55abfa326d00"/>
+        <position name="wPrizm0x55abfa326e70_pos" unit="mm" x="-100.1347986068004" y="0" z="2419.6"/>
+        <rotation name="wPrizm0x55abfa326e70_rot" unit="deg" x="90" y="0" z="0"/>
+      </physvol>
+      <physvol name="wFd0x55abfa326f80">
+        <volumeref ref="lFd0x55abfa31eb60"/>
+        <position name="wFd0x55abfa326f80_pos" unit="mm" x="-6.26959721360087" y="0" z="2570.1"/>
+      </physvol>
+    </volume>
+    <volume name="lExpHall0x55abfa2fc7d0">
+      <materialref ref="interGalactic0x55abfa2f6ca0"/>
+      <solidref ref="gExpHall0x55abfa3137b0"/>
+      <physvol name="wDirc0x55abfa31ecd0">
+        <volumeref ref="lDirc0x55abfa2fc720"/>
+        <position name="wDirc0x55abfa31ecd0_pos" unit="mm" x="890" y="0" z="427.5"/>
+      </physvol>
+    </volume>
+    <skinsurface name="MirrorSurface0x55abfa327990" surfaceproperty="MirrorOpSurface0x55abfa337df0">
+      <volumeref ref="lMirror0x55abfa323220"/>
+    </skinsurface>
+    <skinsurface name="HamamatsuPMTSurface0x55abfa327940" surfaceproperty="HamamatsuPMTOpSurface0x55abfa337cd0">
+      <volumeref ref="lPixel0x55abfa327400"/>
+    </skinsurface>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="lExpHall0x55abfa2fc7d0"/>
+  </setup>
+
+</gdml>
+
