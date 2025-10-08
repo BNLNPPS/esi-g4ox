@@ -234,6 +234,7 @@
     </volume>
     <volume name="lPixel0x55abfa327400">
       <materialref ref="quartz0x55abf9a89cb0"/>
+	  <auxiliary auxtype="SensDet" auxvalue="PhotonDetector" />
       <solidref ref="gPixel0x55abfa327300"/>
     </volume>
     <volume name="lMcp0x55abfa327190">
