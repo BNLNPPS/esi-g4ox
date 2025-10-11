@@ -461,7 +461,7 @@ struct RunAction : G4UserRunAction
                     << "(" << position.x() << ", " << position.y() << ", " << position.z() << ")  "
                     << "(" << direction.x() << ", " << direction.y() << ", " << direction.z() << ")  "
                     << "(" << polarization.x() << ", " << polarization.y() << ", " << polarization.z() << ")  "
-                    << "CreationProcessID=" << theCreationProcessid << std::endl;
+                    << "CreationProcessID=" << thenProcessid << std::endl;
         }
 
         outFile.close();
