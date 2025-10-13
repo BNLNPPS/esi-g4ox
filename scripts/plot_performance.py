@@ -1,14 +1,15 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 from collections import defaultdict
 
 # --- Config ---
 N_RUNS = 10
 G4_FILE_TEMPLATE = "timings{idx}.txt"
 OPTICKS_FILE = "Opticks.txt"
-USE_SEM = True            # True -> standard error of the mean; False -> sample std dev
-ERR_STYLE = "linear_on_log"  # "linear_on_log" or "log_symmetric"
+USE_SEM = False               # True -> standard error of the mean; False -> sample std dev
+ERR_STYLE = "linear_on_log"   # "linear_on_log" or "log_symmetric"
 
 def parse_thread_value_lines(path):
     """Return list of (thread, value) from 't val' lines; ignores malformed lines."""
@@ -91,7 +92,7 @@ if ERR_STYLE == "log_symmetric":
 else:
     # symmetric in linear space (appears longer downward on a log axis)
     yerr_lin  = ratio * rel_err
-    # guard to avoid zero/negative lower bound
+    # guard to avoid zero/negative lower bound on a log axis
     yerr_down = np.minimum(yerr_lin, ratio * 0.999999)
     yerr_up   = yerr_lin
 
@@ -105,19 +106,27 @@ for t, a, ea, b, eb, r, re, yd, yu in zip(threads, g4_mean, g4_err, opt_mean, op
     line = f"{t:6d}  {a:7.3f}  {ea:6.3f}  {b:8.3f}  {eb:7.3f}  {r:5.3f}  {re:7.4f}  {yd:9.3f}  {yu:8.3f}"
     print(line)
     lines.append(line)
-
 with open("ratio_stats.txt", "w") as outf:
     outf.write("\n".join(lines) + "\n")
 
-# --- Plot: points with vertical error bars only, log y-axis ---
+# --- Plot: points with vertical error bars only, log y-axis, integer x ticks, no title ---
+threads_arr = np.array(threads, dtype=int)
 valid = np.isfinite(ratio) & np.isfinite(yerr_down) & np.isfinite(yerr_up) & (ratio > 0)
-plt.figure(figsize=(8, 5))
-plt.errorbar(np.array(threads)[valid], ratio[valid], yerr=yerr[:, valid], fmt='o', linestyle='none', capsize=3)
-plt.yscale('log')
-plt.xlabel('Number of G4 threads')
-plt.ylabel('G4 time / Opticks time')
-plt.title('G4 vs Opticks Simulation Time (mean ± 1σ)')
-plt.grid(True, which='both', alpha=0.3)
-plt.tight_layout()
-plt.savefig('g4_opticks_ratio_log.png', dpi=200)
+x = threads_arr[valid]
+y = ratio[valid]
+yerr_plot = yerr[:, valid]
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.errorbar(x, y, yerr=yerr_plot, fmt='o', linestyle='none', capsize=3)
+ax.set_yscale('log')
+ax.set_xlabel('Number of G4 threads')
+ax.set_ylabel('G4 time / Opticks time')
+ax.grid(True, which='both', alpha=0.3)
+
+# Integer x-axis tick labels
+ax.set_xticks(x.tolist())
+ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+
+fig.tight_layout()
+fig.savefig('g4_opticks_ratio_log.png', dpi=200)
 print("Plot saved as g4_opticks_ratio_log.png; table also written to ratio_stats.txt")
