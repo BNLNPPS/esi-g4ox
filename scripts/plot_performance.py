@@ -1,47 +1,123 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
+from collections import defaultdict
 
-# Read Geant4 real times
-g4_threads = []
-g4_times = []
-with open('timings.txt', 'r') as f:
-    for line in f:
-        t, val = line.strip().split()
-        g4_threads.append(int(t))
-        g4_times.append(float(val))
+# --- Config ---
+N_RUNS = 10
+G4_FILE_TEMPLATE = "timings{idx}.txt"
+OPTICKS_FILE = "Opticks.txt"
+USE_SEM = True            # True -> standard error of the mean; False -> sample std dev
+ERR_STYLE = "linear_on_log"  # "linear_on_log" or "log_symmetric"
 
-# Calculate average, skipping the first entry since that includes the geometry upload
-def compute_average(filename):
-    values = []
-    with open(filename, "r") as f:
+def parse_thread_value_lines(path):
+    """Return list of (thread, value) from 't val' lines; ignores malformed lines."""
+    data = []
+    with open(path, "r") as f:
         for line in f:
             parts = line.strip().split()
-            if len(parts) == 2:
-                try:
-                    values.append(float(parts[1]))
-                except ValueError:
-                    continue
-    if len(values) <= 1:
-        print(f"Not enough values in {filename} to calculate average (excluding first entry).")
-        return
-    # Exclude the first entry
-    avg = sum(values[1:]) / len(values[1:])
-    print(f"Average (excluding first entry) for {filename}: {avg:.3f}")
-    return avg
+            if len(parts) != 2:
+                continue
+            try:
+                t = int(parts[0]); v = float(parts[1])
+                data.append((t, v))
+            except ValueError:
+                continue
+    return data
 
-# Calculate average Opticks time
-opticks_avg = compute_average("Opticks.txt")
+# --- Load Geant4 data from 10 files ---
+g4_samples = defaultdict(list)  # thread -> list of values across runs
+missing = []
+for i in range(N_RUNS):
+    fn = G4_FILE_TEMPLATE.format(idx=i)
+    if not os.path.exists(fn):
+        missing.append(fn)
+        continue
+    for t, v in parse_thread_value_lines(fn):
+        g4_samples[t].append(v)
 
-# Calculate G4/Opticks ratio for each thread
-ratios = [g4_time / opticks_avg for g4_time in g4_times]
+if missing:
+    print(f"[!] Missing G4 files: {', '.join(missing)}")
 
-# Plot and save
+# --- Load Opticks data (take last 10 values per thread if more exist) ---
+opticks_samples = defaultdict(list)
+if not os.path.exists(OPTICKS_FILE):
+    raise FileNotFoundError(f"{OPTICKS_FILE} not found")
+
+for t, v in parse_thread_value_lines(OPTICKS_FILE):
+    opticks_samples[t].append(v)
+
+# keep only last N_RUNS per thread (most recent 10)
+for t in list(opticks_samples.keys()):
+    if len(opticks_samples[t]) >= N_RUNS:
+        opticks_samples[t] = opticks_samples[t][-N_RUNS:]
+
+# --- Align threads present in both sets ---
+threads = sorted(set(g4_samples.keys()) & set(opticks_samples.keys()))
+if not threads:
+    raise RuntimeError("No overlapping thread IDs between G4 and Opticks data.")
+
+def mean_and_err(vals):
+    arr = np.asarray(vals, dtype=float)
+    mean = float(np.mean(arr)) if arr.size > 0 else float("nan")
+    if arr.size > 1:
+        std = float(np.std(arr, ddof=1))
+    else:
+        std = 0.0
+    err = std / np.sqrt(arr.size) if (USE_SEM and arr.size > 0) else std
+    return mean, err, int(arr.size)
+
+# --- Compute per-thread stats ---
+g4_mean, g4_err, opt_mean, opt_err = [], [], [], []
+for t in threads:
+    m, e, _ = mean_and_err(g4_samples[t])
+    g4_mean.append(m); g4_err.append(e)
+    m2, e2, _ = mean_and_err(opticks_samples[t])
+    opt_mean.append(m2); opt_err.append(e2)
+
+g4_mean = np.array(g4_mean, dtype=float)
+g4_err  = np.array(g4_err,  dtype=float)
+opt_mean = np.array(opt_mean, dtype=float)
+opt_err  = np.array(opt_err,  dtype=float)
+
+# --- Ratio and error propagation ---
+ratio = g4_mean / opt_mean
+rel_err = np.sqrt((g4_err / g4_mean)**2 + (opt_err / opt_mean)**2)
+
+if ERR_STYLE == "log_symmetric":
+    # equal in log-space (multiplicative)
+    yerr_down = ratio * (1.0 - np.exp(-rel_err))
+    yerr_up   = ratio * (np.exp(rel_err) - 1.0)
+else:
+    # symmetric in linear space (appears longer downward on a log axis)
+    yerr_lin  = ratio * rel_err
+    # guard to avoid zero/negative lower bound
+    yerr_down = np.minimum(yerr_lin, ratio * 0.999999)
+    yerr_up   = yerr_lin
+
+yerr = np.vstack([yerr_down, yerr_up])
+
+# --- Print a stats table and also save it ---
+header = "thread  G4_mean  G4_err  Opt_mean  Opt_err  Ratio  rel_err  yerr_down  yerr_up"
+print(header)
+lines = [header]
+for t, a, ea, b, eb, r, re, yd, yu in zip(threads, g4_mean, g4_err, opt_mean, opt_err, ratio, rel_err, yerr_down, yerr_up):
+    line = f"{t:6d}  {a:7.3f}  {ea:6.3f}  {b:8.3f}  {eb:7.3f}  {r:5.3f}  {re:7.4f}  {yd:9.3f}  {yu:8.3f}"
+    print(line)
+    lines.append(line)
+
+with open("ratio_stats.txt", "w") as outf:
+    outf.write("\n".join(lines) + "\n")
+
+# --- Plot: points with vertical error bars only, log y-axis ---
+valid = np.isfinite(ratio) & np.isfinite(yerr_down) & np.isfinite(yerr_up) & (ratio > 0)
 plt.figure(figsize=(8, 5))
-plt.plot(g4_threads, ratios, marker='o')
+plt.errorbar(np.array(threads)[valid], ratio[valid], yerr=yerr[:, valid], fmt='o', linestyle='none', capsize=3)
+plt.yscale('log')
 plt.xlabel('Number of G4 threads')
-plt.ylabel('G4 simulation time / Opticks simulation time')
-plt.title('G4 vs Opticks Simulation Time Scaling')
-plt.grid(True)
+plt.ylabel('G4 time / Opticks time')
+plt.title('G4 vs Opticks Simulation Time (mean ± 1σ)')
+plt.grid(True, which='both', alpha=0.3)
 plt.tight_layout()
-plt.savefig('g4_opticks_ratio.png', dpi=200)
-print("Plot saved as g4_opticks_ratio.png")
+plt.savefig('g4_opticks_ratio_log.png', dpi=200)
+print("Plot saved as g4_opticks_ratio_log.png; table also written to ratio_stats.txt")
