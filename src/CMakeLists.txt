@@ -1,3 +1,6 @@
+# src/CMakeLists.txt
+
+# Common include dir for your own headers (argparse, g4app.h, etc.)
 set(G4OX_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 
 # ----------------------------------------------------------------------
@@ -9,14 +12,14 @@ add_executable(consgeo
 )
 
 target_link_libraries(consgeo
-    PRIVATE
-        Geant4::G4persistency      
-        eic-opticks::G4CX
-        eic-opticks::SysRap
+        PUBLIC
+        ${Geant4_LIBRARIES}
+        eic-opticks::g4cx
+        eic-opticks::sysrap
 )
 
 target_include_directories(consgeo
-    PRIVATE
+        PUBLIC
         ${G4OX_INCLUDE_DIR}
 )
 
@@ -30,14 +33,14 @@ add_executable(simg4ox
 )
 
 target_link_libraries(simg4ox
-    PRIVATE
-        Geant4::G4persistency
-        eic-opticks::G4CX
-        eic-opticks::SysRap
+        PUBLIC
+        ${Geant4_LIBRARIES}
+        eic-opticks::g4cx
+        eic-opticks::sysrap
 )
 
 target_include_directories(simg4ox
-    PRIVATE
+        PUBLIC
         ${G4OX_INCLUDE_DIR}
 )
 
@@ -50,6 +53,6 @@ add_executable(simtox
 
 # This one only needs SysRap
 target_link_libraries(simtox
-    PRIVATE
-        eic-opticks::SysRap
+        PUBLIC
+        eic-opticks::sysrap
 )
