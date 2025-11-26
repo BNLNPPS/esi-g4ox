@@ -1,34 +1,55 @@
-set(source_files
-    csg_tree.cpp
+set(G4OX_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
+
+# ----------------------------------------------------------------------
+# consgeo
+# ----------------------------------------------------------------------
+add_executable(consgeo
+    consgeo.cpp
+    ../include/argparse/argparse.hpp
 )
 
-add_library(g4ox ${source_files})
-target_link_libraries(g4ox PUBLIC Geant4::G4persistency Opticks::G4CX)
-
-target_include_directories(g4ox
-    INTERFACE
-    $<INSTALL_INTERFACE:include>
+target_link_libraries(consgeo
     PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR})
+        Geant4::G4persistency      
+        eic-opticks::G4CX
+        eic-opticks::SysRap
+)
 
-set_target_properties(g4ox PROPERTIES
-    VERSION ${PROJECT_VERSION}
-    POSITION_INDEPENDENT_CODE ON)
+target_include_directories(consgeo
+    PRIVATE
+        ${G4OX_INCLUDE_DIR}
+)
 
-install(TARGETS g4ox EXPORT g4oxTargets
-    RUNTIME   DESTINATION ${G4OX_RUNTIME_INSTALL_DIR}
-    LIBRARY   DESTINATION ${G4OX_LIBRARY_INSTALL_DIR}
-    ARCHIVE   DESTINATION ${G4OX_ARCHIVE_INSTALL_DIR}
-    FRAMEWORK DESTINATION ${G4OX_FRAMEWORK_INSTALL_DIR})
+# ----------------------------------------------------------------------
+# simg4ox
+# ----------------------------------------------------------------------
+add_executable(simg4ox
+    simg4ox.cpp
+    g4app.h
+    ../include/argparse/argparse.hpp
+)
 
-add_executable(consgeo consgeo.cpp ../include/argparse/argparse.hpp)
-target_link_libraries(consgeo g4ox)
-target_include_directories(consgeo PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> $<INSTALL_INTERFACE:include>)
+target_link_libraries(simg4ox
+    PRIVATE
+        Geant4::G4persistency
+        eic-opticks::G4CX
+        eic-opticks::SysRap
+)
 
-add_executable(simg4ox simg4ox.cpp g4app.h ../include/argparse/argparse.hpp)
-target_link_libraries(simg4ox g4ox)
-target_include_directories(simg4ox PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> $<INSTALL_INTERFACE:include>)
+target_include_directories(simg4ox
+    PRIVATE
+        ${G4OX_INCLUDE_DIR}
+)
 
-add_executable(simtox simtox.cpp)
-target_link_libraries(simtox Opticks::SysRap)
+# ----------------------------------------------------------------------
+# simtox
+# ----------------------------------------------------------------------
+add_executable(simtox
+    simtox.cpp
+)
+
+# This one only needs SysRap
+target_link_libraries(simtox
+    PRIVATE
+        eic-opticks::SysRap
+)
