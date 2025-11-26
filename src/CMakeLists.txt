@@ -14,8 +14,8 @@ add_executable(consgeo
 target_link_libraries(consgeo
         PUBLIC
         ${Geant4_LIBRARIES}
-        eic-opticks::g4cx
-        eic-opticks::sysrap
+        eic-opticks::G4CX
+        eic-opticks::SysRap
 )
 
 target_include_directories(consgeo
@@ -35,8 +35,8 @@ add_executable(simg4ox
 target_link_libraries(simg4ox
         PUBLIC
         ${Geant4_LIBRARIES}
-        eic-opticks::g4cx
-        eic-opticks::sysrap
+        eic-opticks::G4CX
+        eic-opticks::SysRap
 )
 
 target_include_directories(simg4ox
@@ -54,5 +54,6 @@ add_executable(simtox
 # This one only needs SysRap
 target_link_libraries(simtox
         PUBLIC
-        eic-opticks::sysrap
+        eic-opticks::SysRap
 )
+
