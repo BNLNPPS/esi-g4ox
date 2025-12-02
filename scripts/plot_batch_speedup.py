@@ -1,4 +1,3 @@
-
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")  # headless backend for saving PNGs without a display
@@ -11,6 +10,47 @@ OUT1 = "time_per_photon_opticks.png"
 OUT2 = "speedup_batching.png"
 CSV_OUT = "Opticks_aggregated.csv"
 NPZ_OUT = "Opticks_aggregated.npz"
+
+# Scale factor for fonts, numbers, line widths, etc.
+STYLE_SCALE = 1.6  # keep this
+
+def scale_style(factor=2.0):
+    """
+    Scale fonts, tick label sizes, and common line widths by 'factor'.
+
+    Works even if some rcParams are strings (e.g. 'medium') by
+    falling back to numeric defaults in that case.
+    """
+    def _scaled(key, fallback):
+        val = matplotlib.rcParams.get(key, fallback)
+        if isinstance(val, (int, float)):
+            return val * factor
+        else:
+            # e.g. 'medium', 'large' → use numeric fallback instead
+            return fallback * factor
+
+    matplotlib.rcParams.update({
+        # Fonts
+        "font.size":        _scaled("font.size", 10.0),
+        "axes.titlesize":   _scaled("axes.titlesize", 12.0),
+        "axes.labelsize":   _scaled("axes.labelsize", 10.0),
+        "xtick.labelsize":  _scaled("xtick.labelsize", 10.0),
+        "ytick.labelsize":  _scaled("ytick.labelsize", 10.0),
+        "legend.fontsize":  _scaled("legend.fontsize", 10.0),
+
+        # Lines & markers
+        "lines.linewidth":  _scaled("lines.linewidth", 1.5),
+        "lines.markersize": _scaled("lines.markersize", 6.0),
+        "axes.linewidth":   _scaled("axes.linewidth", 1.0),
+        "grid.linewidth":   _scaled("grid.linewidth", 0.8),
+
+        # Tick width/length
+        "xtick.major.width": _scaled("xtick.major.width", 0.8),
+        "ytick.major.width": _scaled("ytick.major.width", 0.8),
+        "xtick.major.size":  _scaled("xtick.major.size", 3.5),
+        "ytick.major.size":  _scaled("ytick.major.size", 3.5),
+    })
+
 
 def load_data(path):
     try:
@@ -52,6 +92,9 @@ def save_plotted_data_csv(x, y_mean, y_std, y_mean_us, y_std_us, speed_mean, spe
     np.savetxt(path, arr, delimiter=",", header=header, comments="", fmt="%.10g")
 
 def main():
+    # Apply 2x styling
+    scale_style(STYLE_SCALE)
+
     p = Path(INPUT_FILE)
     if not p.exists():
         print(f"[!] File not found: {INPUT_FILE}", file=sys.stderr)
@@ -79,8 +122,16 @@ def main():
     y_std_us  = y_std[mask_pos]  * 1e6
     yerr_us   = clipped_sym_err(y_mean_us, y_std_us)
 
+    # 2x capsize (was 3)
+    capsize = 3 * STYLE_SCALE
+
     plt.figure(figsize=(7.5, 4.8))
-    plt.errorbar(x1, y_mean_us, yerr=yerr_us, fmt="o", linestyle="none", capsize=3)
+    plt.errorbar(
+        x1, y_mean_us, yerr=yerr_us,
+        fmt="o",
+        linestyle="none",
+        capsize=capsize
+    )
     plt.xscale("log")
     plt.yscale("log")
     plt.xlabel("number of Geant4 Events in a single GPU call")
@@ -114,7 +165,12 @@ def main():
     speedup_err = clipped_sym_err(speedup_mean, speedup_std)
 
     plt.figure(figsize=(7.5, 4.8))
-    plt.errorbar(x2, speedup_mean, yerr=speedup_err, fmt="o", linestyle="none", capsize=3)
+    plt.errorbar(
+        x2, speedup_mean, yerr=speedup_err,
+        fmt="o",
+        linestyle="none",
+        capsize=capsize
+    )
     plt.xscale("log")
     plt.yscale("log")
     plt.xlabel("Number of Geant4 Events")
