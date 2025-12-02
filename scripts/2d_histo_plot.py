@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-Build XY and XZ 2D histograms (10×10, log‑scale) for Geant4 vs Opticks hits.
-
-Geant4 hits are collected from consecutive files
-      g4_photon_hits_thread0.txt, g4_photon_hits_thread1.txt, ...
-  and filtered so that only the sensitive layer is hit
-Opticks hits come from  opticks_hits_output.txt  (all kept).
-Images saved:  hits_xy_hist.png  and  hits_xz_hist.png
-Prints:
-      - # of Geant4 hits kept
-      - # of Geant4 hits discarded by the Z cut 
-      - # of Opticks hits
-      - Fractional Poisson error
+Build XY and XZ 2D histograms (10×10, log-scale) for Geant4 vs Opticks hits.
+...
 """
 
 import os, re, math
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
+
+BASE_FONTSIZE = plt.rcParams.get("font.size", 10.0)
+plt.rcParams.update({
+    "font.size"      : BASE_FONTSIZE * 2.0,   # base text
+    "axes.titlesize" : BASE_FONTSIZE * 2.4,   # subplot titles
+    "axes.labelsize" : BASE_FONTSIZE * 2.2,   # x/y labels
+    "xtick.labelsize": BASE_FONTSIZE * 2.0,   # tick numbers
+    "ytick.labelsize": BASE_FONTSIZE * 2.0,
+    "legend.fontsize": BASE_FONTSIZE * 2.0,
+})
 
 # ---- Configurable Z cut ------------------------------------------------
 Z_MIN, Z_MAX = 187.125, 187.525   # mm
@@ -92,29 +92,40 @@ def main():
                                 constrained_layout=True)
 
         h1 = axs[0].hist2d(x1, y1, bins=100, norm=LogNorm(), cmap="viridis")
-        axs[0].set_title("Geant4 (filtered)")
+        axs[0].set_title("Geant4")
         axs[0].set_xlabel(xlabel); axs[0].set_ylabel(ylabel)
 
         h2 = axs[1].hist2d(x2, y2, bins=100, norm=LogNorm(), cmap="viridis")
-        axs[1].set_title("Opticks")
+        axs[1].set_title("EIC-Opticks")
         axs[1].set_xlabel(xlabel)
 
-        cbar = fig.colorbar(h1[3], ax=axs.ravel().tolist(), pad=0.02)
-        cbar.set_label("Hits per bin (log scale)")
+        for ax in axs:
+            ax.tick_params(axis="both", which="both",
+                           labelsize=plt.rcParams["xtick.labelsize"])
 
-        fig.suptitle(title, fontsize=14)
+        cbar = fig.colorbar(h1[3], ax=axs.ravel().tolist(), pad=0.02)
+        cbar.set_label("Hits per bin",
+                       fontsize=plt.rcParams["axes.labelsize"])         
+        cbar.ax.tick_params(labelsize=plt.rcParams["xtick.labelsize"])   
+
+        if title:
+            fig.suptitle(
+                title,
+                fontsize=plt.rcParams["axes.titlesize"] * 1.2
+            )
+
         plt.savefig(outfile, dpi=300)
         plt.close()
         print(f"Saved {outfile}")
 
     # --- Produce plots ---------------------------------------------------
-    make_hist("Photon hits XY plane (Z filtered Geant4)",
+    make_hist("",
               g4_x, g4_y, ok_x, ok_y,
-              "X position", "Y position", xy_out)
+              "X position [mm]", "Y position [mm]", xy_out)
 
-    make_hist("Photon hits XZ plane (Z filtered Geant4)",
+    make_hist("",
               g4_x, g4_z, ok_x, ok_z,
-              "X position", "Z position", xz_out)
+              "X position [mm]", "Z position [mm]", xz_out)
 
 if __name__ == "__main__":
     main()
