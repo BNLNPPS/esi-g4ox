@@ -17,6 +17,47 @@ OUT_PNG = "hits_vs_bounce_points.png"
 OUT_CSV = "hits_vs_bounce_plotted.csv"
 OUT_NPZ = "hits_vs_bounce_plotted.npz"
 
+# ---- Style scaling ----
+STYLE_SCALE = 1.5  # 2x fonts, numbers, line widths, markers, etc.
+
+def scale_style(factor=2.0):
+    """
+    Scale fonts, tick label sizes, and common line widths by 'factor'.
+
+    Works even if some rcParams are strings (e.g. 'medium') by
+    falling back to numeric defaults in that case.
+    """
+    def _scaled(key, fallback):
+        val = matplotlib.rcParams.get(key, fallback)
+        if isinstance(val, (int, float)):
+            return val * factor
+        else:
+            # e.g. 'medium', 'large' → use numeric fallback instead
+            return fallback * factor
+
+    matplotlib.rcParams.update({
+        # Fonts
+        "font.size":        _scaled("font.size", 10.0),
+        "axes.titlesize":   _scaled("axes.titlesize", 12.0),
+        "axes.labelsize":   _scaled("axes.labelsize", 10.0),
+        "xtick.labelsize":  _scaled("xtick.labelsize", 10.0),
+        "ytick.labelsize":  _scaled("ytick.labelsize", 10.0),
+        "legend.fontsize":  _scaled("legend.fontsize", 10.0),
+
+        # Lines & markers
+        "lines.linewidth":  _scaled("lines.linewidth", 0.5),
+        "lines.markersize": _scaled("lines.markersize",0.1),
+        "axes.linewidth":   _scaled("axes.linewidth", 0.1),
+        "grid.linewidth":   _scaled("grid.linewidth", 0.1),
+
+        # Tick width/length
+        "xtick.major.width": _scaled("xtick.major.width", 0.8),
+        "ytick.major.width": _scaled("ytick.major.width", 0.8),
+        "xtick.major.size":  _scaled("xtick.major.size", 1),
+        "ytick.major.size":  _scaled("ytick.major.size", 1),
+    })
+
+
 def load_from_csv(path):
     """Load aggregated CSV: columns = bounce, repeats, mean_hits, std_hits."""
     arr = np.loadtxt(path, delimiter=",", skiprows=1)
@@ -76,6 +117,9 @@ def fixed_e6_formatter(y, _pos):
     return rf"${m:.3g}\times 10^{{6}}$"
 
 def main():
+    # Apply 2x styling before any plotting
+    scale_style(STYLE_SCALE)
+
     bounce, repeats, mean, stdev = load_data()
 
     # Save exactly what we will plot (for later reuse)
@@ -91,7 +135,18 @@ def main():
 
     # Plot: points with vertical error bars; NO line; NO title
     fig, ax = plt.subplots(figsize=(7.2, 5.0))
-    ax.errorbar(bounce, mean, yerr=stdev, fmt="o", linestyle="none", capsize=3)
+
+    capsize = 3 * STYLE_SCALE  # 2x capsize
+
+    ax.errorbar(
+        bounce,
+        mean,
+        yerr=stdev,
+        fmt="o",
+        linestyle="none",
+        capsize=capsize,
+        markersize=4,   # <<< decrease this number for smaller circles
+    )
 
     # Axis labels
     ax.set_xlabel("Maximum allowed photon reflection")
