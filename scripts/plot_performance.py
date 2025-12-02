@@ -116,12 +116,15 @@ x = threads_arr[valid]
 y = ratio[valid]
 yerr_plot = yerr[:, valid]
 
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.errorbar(x, y, yerr=yerr_plot, fmt='o', linestyle='none', capsize=3)
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.errorbar(x, y, yerr=yerr_plot, fmt='o', linestyle='none', capsize=10, 
+            markersize=5, linewidth=2, elinewidth=4, markeredgewidth=2)
 ax.set_yscale('log')
-ax.set_xlabel('Number of G4 threads')
-ax.set_ylabel('G4 time / Opticks time')
-ax.grid(True, which='both', alpha=0.3)
+ax.set_xlabel('Number of G4 threads', fontsize=30)
+ax.set_ylabel('G4 time / EIC-Opticks time', fontsize=30)
+ax.tick_params(axis='both', which='major', labelsize=24)
+ax.tick_params(axis='both', which='minor', labelsize=20)
+ax.grid(True, which='both', alpha=0.3, linewidth=3)
 
 # Integer x-axis tick labels
 ax.set_xticks(x.tolist())
@@ -130,3 +133,4 @@ ax.xaxis.set_major_locator(MaxNLocator(integer=True))
 fig.tight_layout()
 fig.savefig('g4_opticks_ratio_log.png', dpi=200)
 print("Plot saved as g4_opticks_ratio_log.png; table also written to ratio_stats.txt")
+
