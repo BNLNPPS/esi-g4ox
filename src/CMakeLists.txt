@@ -3,7 +3,7 @@ set(source_files
 )
 
 add_library(g4ox ${source_files})
-target_link_libraries(g4ox PUBLIC Geant4::G4persistency Opticks::G4CX)
+target_link_libraries(g4ox PUBLIC Geant4::G4gdml eic-opticks::G4CX)
 
 target_include_directories(g4ox
     INTERFACE
@@ -27,7 +27,7 @@ target_link_libraries(consgeo g4ox)
 target_include_directories(consgeo PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> $<INSTALL_INTERFACE:include>)
 
 add_executable(simg4ox simg4ox.cpp g4app.h ../include/argparse/argparse.hpp)
-target_link_libraries(simg4ox g4ox)
+target_link_libraries(simg4ox g4ox ${Geant4_LIBRARIES})
 target_include_directories(simg4ox PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> $<BUILD_INTERFACE:${OPTICKS_INCLUDE_DIRECTORIES}/G4CX> $<INSTALL_INTERFACE:include>)
 
 add_executable(Opticks_GPU Opticks_GPU.cc)
@@ -39,4 +39,4 @@ target_include_directories(Opticks_GPU PRIVATE
     $<INSTALL_INTERFACE:include>)
 
 add_executable(simtox simtox.cpp)
-target_link_libraries(simtox Opticks::SysRap)
+target_link_libraries(simtox eic-opticks::SysRap)
