@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
 
-#include "SysRap/NP.hh"
-#include "SysRap/SEvent.hh"
-#include "SysRap/sphoton.h"
-#include "SysRap/srng.h"
-#include "SysRap/storch.h"
-#include "SysRap/storchtype.h"
+#include "sysrap/NP.hh"
+#include "sysrap/SEvent.hh"
+#include "sysrap/sphoton.h"
+#include "sysrap/srng.h"
+#include "sysrap/storch.h"
+#include "sysrap/storchtype.h"
 
 #include <curand_kernel.h>
 
