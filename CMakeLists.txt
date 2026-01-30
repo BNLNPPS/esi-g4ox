@@ -25,14 +25,11 @@ set(G4OX_CMAKE_CONFIG_DIR           "${CMAKE_CURRENT_BINARY_DIR}")
 set(G4OX_CMAKE_VERSION_CONFIG_FILE  "${G4OX_CMAKE_CONFIG_DIR}/${PROJECT_NAME}ConfigVersion.cmake")
 set(G4OX_CMAKE_PROJECT_CONFIG_FILE  "${G4OX_CMAKE_CONFIG_DIR}/${PROJECT_NAME}Config.cmake")
 
-list(APPEND CMAKE_MODULE_PATH "$ENV{OPTICKS_HOME}/cmake/Modules")
-
 # Set up external dependencies
 find_package(Geant4 REQUIRED ui_all vis_all)
-find_package(g4cx REQUIRED)
-find_package(sysrap REQUIRED)
+find_package(eic-opticks REQUIRED)
 
-get_target_property(OPTICKS_INCLUDE_DIRECTORIES Opticks::G4CX INTERFACE_INCLUDE_DIRECTORIES)
+get_target_property(OPTICKS_INCLUDE_DIRECTORIES eic-opticks::G4CX INTERFACE_INCLUDE_DIRECTORIES)
 
 add_subdirectory(src)
 
