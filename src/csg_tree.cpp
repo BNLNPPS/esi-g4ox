@@ -5,7 +5,7 @@
 #include "G4GDMLParser.hh"
 #include "G4VPhysicalVolume.hh"
 
-#include "G4CX/G4CXOpticks.hh"
+#include "g4cx/G4CXOpticks.hh"
 
 using namespace std;
 
