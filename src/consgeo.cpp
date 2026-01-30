@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include "SysRap/OPTICKS_LOG.hh"
+#include "sysrap/OPTICKS_LOG.hh"
 
 #include <argparse/argparse.hpp>
 
