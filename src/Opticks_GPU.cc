@@ -8,16 +8,16 @@ Canonically used by cxsim.sh
 
 #include <cuda_runtime.h>
 
-#include "CSGFoundry.h"
-#include "CSGOptiX.h"
+#include "CSG/CSGFoundry.h"
+#include "CSGOptiX/CSGOptiX.h"
 #include "G4GDMLParser.hh"
-#include "OPTICKS_LOG.hh"
-#include "QSim.hh"
-#include "SEventConfig.hh"
-#include "SEvt.hh"
-#include "SSim.hh"
-#include "U4GDML.h"
-#include "U4Tree.h"
+#include "sysrap/OPTICKS_LOG.hh"
+#include "qudarap/QSim.hh"
+#include "sysrap/SEventConfig.hh"
+#include "sysrap/SEvt.hh"
+#include "sysrap/SSim.hh"
+#include "u4/U4GDML.h"
+#include "u4/U4Tree.h"
 
 int main(int argc, char **argv)
 {
