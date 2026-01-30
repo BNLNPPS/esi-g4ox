@@ -11,5 +11,7 @@ cmake --build /usr/local/eic-opticks/build --parallel --target install
 cmake -S esi-g4ox -B build
 cmake --build build
 export OPTICKS_MAX_BOUNCE=32
-./build/src/simtox 
+cmake ../esi-g4ox -DCMAKE_PREFIX_PATH=/opt/eic-opticks                        
+make -j$(nproc)
+./build/src/simtox
 ./build/src/simg4ox -g  esi-g4ox/geom/sphere_leak.gdml -m esi-g4ox/run.mac
