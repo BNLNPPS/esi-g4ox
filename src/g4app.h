@@ -26,17 +26,17 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
 
-#include "G4CX/G4CXOpticks.hh"
+#include "g4cx/G4CXOpticks.hh"
 #include "G4SDManager.hh"
-#include "SysRap/NP.hh"
-#include "SysRap/SEvt.hh"
-#include "SysRap/STrackInfo.h"
-#include "SysRap/spho.h"
-#include "SysRap/sphoton.h"
-#include "U4/U4Random.hh"
-#include "U4/U4StepPoint.hh"
-#include "U4/U4Touchable.h"
-#include "U4/U4Track.h"
+#include "sysrap/NP.hh"
+#include "sysrap/SEvt.hh"
+#include "sysrap/STrackInfo.h"
+#include "sysrap/spho.h"
+#include "sysrap/sphoton.h"
+#include "u4/U4Random.hh"
+#include "u4/U4StepPoint.hh"
+#include "u4/U4Touchable.h"
+#include "u4/U4Track.h"
 
 bool IsSubtractionSolid(G4VSolid *solid)
 {
@@ -299,7 +299,7 @@ struct PrimaryGenerator : G4VUserPrimaryGeneratorAction
 	   
         NP *photons = NP::Make<float>(0, 4, 4);
 
-        photons->load("out/photons.npy");
+        photons->load("out/photons.npy", nullptr);
 
         size_t n_photons = photons->num_items();
         sphoton *sphotons = reinterpret_cast<sphoton *>(photons->bytes());
@@ -434,8 +434,8 @@ struct SteppingAction : G4UserSteppingAction
         unsigned flag = U4StepPoint::Flag<G4OpBoundaryProcess>(post, true, tir);
         bool is_detect_flag = OpticksPhoton::IsSurfaceDetectFlag(flag);
 
-        current_photon.iindex =
-            is_detect_flag ? U4Touchable::ImmediateReplicaNumber(touch) : U4Touchable::AncestorReplicaNumber(touch);
+        current_photon.set_iindex(
+            is_detect_flag ? U4Touchable::ImmediateReplicaNumber(touch) : U4Touchable::AncestorReplicaNumber(touch));
 
         U4StepPoint::Update(current_photon, post);
 
